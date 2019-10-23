@@ -50,6 +50,7 @@ class GameScreen : public QWidget
 
     signals:
         void boardResized();
+        void returnToMainMenu();
 
     protected:
         friend GameTile;

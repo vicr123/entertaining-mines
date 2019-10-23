@@ -44,6 +44,8 @@ class MainScreen : public QWidget
 
         void on_startDifficult_clicked();
 
+        void on_exitButton_clicked();
+
     private:
         Ui::MainScreen *ui;
         void resizeEvent(QResizeEvent* event);

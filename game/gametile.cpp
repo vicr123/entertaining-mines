@@ -25,6 +25,7 @@
 #include <QSvgRenderer>
 #include <QMouseEvent>
 
+#include <musicengine.h>
 #include <focuspointer.h>
 
 struct GameTilePrivate {
@@ -269,7 +270,11 @@ void GameTile::keyPressEvent(QKeyEvent*event)
 {
     QRect boardDimensions = QRect(QPoint(0, 0), d->parent->boardDimensions());
     auto handOffFocus = [=](QPoint point) {
-        if (boardDimensions.contains(point)) d->parent->tileAt(point)->setFocus();
+        if (boardDimensions.contains(point)) {
+            d->parent->tileAt(point)->setFocus();
+        } else {
+            MusicEngine::playSoundEffect(MusicEngine::FocusChangedFailed);
+        }
     };
 
     QPoint thisPoint(d->x, d->y);

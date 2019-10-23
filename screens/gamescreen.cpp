@@ -55,6 +55,12 @@ GameScreen::GameScreen(QWidget *parent) :
 
     d->dialogue = new DialogueOverlay(this);
     connect(d->dialogue, QOverload<QString>::of(&DialogueOverlay::progressDialogue), this, [=](QString selectedOption) {
+        if (selectedOption == "mainmenu") {
+            MusicEngine::pauseBackgroundMusic();
+            emit returnToMainMenu();
+        } else if (selectedOption == "newgame") {
+            startGame(d->width, boardDimensions().height(), d->mines);
+        }
         d->dialogue->dismiss();
     });
 
@@ -151,6 +157,7 @@ void GameScreen::startGame(int width, int height, int mines)
     //Clear out the tiles
     for (GameTile* tile : d->tiles) {
         ui->gameGrid->removeWidget(tile);
+        tile->deleteLater();
     }
     d->tiles.clear();
 
@@ -174,6 +181,9 @@ void GameScreen::startGame(int width, int height, int mines)
     MusicEngine::playBackgroundMusic();
 
     MusicEngine::playSoundEffect(MusicEngine::Selection);
+
+    this->setFocusProxy(d->tiles.first());
+    d->tiles.first()->setFocus();
 }
 
 void GameScreen::distributeMines(QPoint clickLocation)
@@ -236,6 +246,13 @@ void GameScreen::on_menuButton_clicked()
     connect(screen, &PauseScreen::resume, this, [=] {
         MusicEngine::playSoundEffect(MusicEngine::Backstep);
         MusicEngine::playBackgroundMusic();
+        overlay->hideOverlay();
+        overlay->deleteLater();
+        screen->deleteLater();
+    });
+    connect(screen, &PauseScreen::mainMenu, this, [=] {
+        emit returnToMainMenu();
+        MusicEngine::playSoundEffect(MusicEngine::Selection);
         overlay->hideOverlay();
         overlay->deleteLater();
         screen->deleteLater();

@@ -20,6 +20,7 @@
 #include "gamewindow.h"
 #include "ui_gamewindow.h"
 
+#include <textinputoverlay.h>
 #include <focuspointer.h>
 
 GameWindow::GameWindow(QWidget *parent)
@@ -32,7 +33,16 @@ GameWindow::GameWindow(QWidget *parent)
 
     connect(ui->mainScreen, &MainScreen::startGame, ui->gameScreen, &GameScreen::startGame);
     connect(ui->mainScreen, &MainScreen::startGame, this, [=] {
-        ui->stackedWidget->setCurrentWidget(ui->gameScreen);
+        bool canceled;
+        TextInputOverlay::getText(this, tr("What is your name?"), &canceled);
+        if (!canceled) {
+            ui->stackedWidget->setCurrentWidget(ui->gameScreen);
+            ui->gameScreen->setFocus();
+        }
+    });
+
+    connect(ui->gameScreen, &GameScreen::returnToMainMenu, this, [=] {
+        ui->stackedWidget->setCurrentWidget(ui->mainScreen);
     });
 
     FocusPointer::enableAutomaticFocusPointer();

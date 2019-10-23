@@ -31,6 +31,9 @@ PauseScreen::PauseScreen(QWidget *parent) :
 
     this->setFocusProxy(ui->resumeButton);
 
+    ui->focusBarrierTop->setBounceWidget(ui->resumeButton);
+    ui->focusBarrierBottom->setBounceWidget(ui->mainMenuButton);
+
     ui->AHudButton->setText(tr("%1 Select").arg(GamepadButtons::stringForButton(QGamepadManager::ButtonA)));
     ui->BHudButton->setText(tr("%2 Resume").arg(GamepadButtons::stringForButton(QGamepadManager::ButtonB)));
 
@@ -56,4 +59,9 @@ void PauseScreen::resizeEvent(QResizeEvent*event)
 {
     ui->leftSpacing->changeSize(this->width() * 0.1, 0, QSizePolicy::Fixed, QSizePolicy::Fixed);
     this->layout()->invalidate();
+}
+
+void PauseScreen::on_mainMenuButton_clicked()
+{
+    emit mainMenu();
 }

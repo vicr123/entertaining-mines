@@ -69,6 +69,13 @@
         </widget>
        </item>
        <item>
+        <widget class="FocusBarrier" name="focusBarrierTop">
+         <property name="text">
+          <string notr="true">Barrier</string>
+         </property>
+        </widget>
+       </item>
+       <item>
         <widget class="QCommandLinkButton" name="startEasy">
          <property name="text">
           <string>Easy Game</string>
@@ -155,6 +162,13 @@
         </widget>
        </item>
        <item>
+        <widget class="FocusBarrier" name="focusBarrierBottom">
+         <property name="text">
+          <string notr="true">Barrier</string>
+         </property>
+        </widget>
+       </item>
+       <item>
         <spacer name="verticalSpacer_2">
          <property name="orientation">
           <enum>Qt::Vertical</enum>
@@ -222,6 +236,11 @@
    <class>GamepadLabel</class>
    <extends>QLabel</extends>
    <header location="global">gamepadlabel.h</header>
+  </customwidget>
+  <customwidget>
+   <class>FocusBarrier</class>
+   <extends>QPushButton</extends>
+   <header location="global">focusbarrier.h</header>
   </customwidget>
  </customwidgets>
  <resources/>

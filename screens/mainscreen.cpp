@@ -20,6 +20,7 @@
 #include "mainscreen.h"
 #include "ui_mainscreen.h"
 
+#include <QApplication>
 #include <gamepadbuttons.h>
 
 MainScreen::MainScreen(QWidget *parent) :
@@ -27,6 +28,9 @@ MainScreen::MainScreen(QWidget *parent) :
     ui(new Ui::MainScreen)
 {
     ui->setupUi(this);
+
+    ui->focusBarrierTop->setBounceWidget(ui->startEasy);
+    ui->focusBarrierBottom->setBounceWidget(ui->exitButton);
 
     ui->AHudButton->setText(tr("%1 Select").arg(GamepadButtons::stringForButton(QGamepadManager::ButtonA)));
     ui->BHudButton->setText(tr("%2 Exit").arg(GamepadButtons::stringForButton(QGamepadManager::ButtonB)));
@@ -58,4 +62,9 @@ void MainScreen::on_startIntermediate_clicked()
 void MainScreen::on_startDifficult_clicked()
 {
     emit startGame(30, 16, 99);
+}
+
+void MainScreen::on_exitButton_clicked()
+{
+    QApplication::exit();
 }

@@ -36,9 +36,12 @@ class PauseScreen : public QWidget
 
     signals:
         void resume();
+        void mainMenu();
 
     private slots:
         void on_resumeButton_clicked();
+
+        void on_mainMenuButton_clicked();
 
     private:
         Ui::PauseScreen *ui;
