@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/">
+        <file>audio/crypto.ogg</file>
+    </qresource>
+</RCC>

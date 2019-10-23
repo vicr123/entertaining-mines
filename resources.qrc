@@ -1,0 +1,10 @@
+<RCC>
+    <qresource prefix="/">
+        <file>tiles/background.svg</file>
+        <file>tiles/backgroundHov.svg</file>
+        <file>tiles/backgroundRev.svg</file>
+        <file>tiles/flag.svg</file>
+        <file>tiles/mine.svg</file>
+        <file>tiles/flagNot.svg</file>
+    </qresource>
+</RCC>
