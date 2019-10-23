@@ -21,7 +21,9 @@
 #include "ui_mainscreen.h"
 
 #include <QApplication>
+#include <QKeyEvent>
 #include <gamepadbuttons.h>
+#include <textinputoverlay.h>
 
 MainScreen::MainScreen(QWidget *parent) :
     QWidget(parent),
@@ -32,8 +34,19 @@ MainScreen::MainScreen(QWidget *parent) :
     ui->focusBarrierTop->setBounceWidget(ui->startEasy);
     ui->focusBarrierBottom->setBounceWidget(ui->exitButton);
 
-    ui->AHudButton->setText(tr("%1 Select").arg(GamepadButtons::stringForButton(QGamepadManager::ButtonA)));
-    ui->BHudButton->setText(tr("%2 Exit").arg(GamepadButtons::stringForButton(QGamepadManager::ButtonB)));
+    ui->gamepadHud->setButtonText(QGamepadManager::ButtonA, tr("Select"));
+    ui->gamepadHud->setButtonText(QGamepadManager::ButtonB, tr("Exit"));
+
+    ui->gamepadHud->setButtonAction(QGamepadManager::ButtonA, [=] {
+        QKeyEvent event(QKeyEvent::KeyPress, Qt::Key_Space, Qt::NoModifier);
+        QApplication::sendEvent(QApplication::focusWidget(), &event);
+
+        QKeyEvent event2(QKeyEvent::KeyRelease, Qt::Key_Space, Qt::NoModifier);
+        QApplication::sendEvent(QApplication::focusWidget(), &event2);
+    });
+    ui->gamepadHud->setButtonAction(QGamepadManager::ButtonB, [=] {
+        ui->exitButton->click();
+    });
 
     ui->exitButton->setProperty("type", "destructive");
 }
@@ -51,17 +64,29 @@ void MainScreen::resizeEvent(QResizeEvent*event)
 
 void MainScreen::on_startEasy_clicked()
 {
-    emit startGame(9, 9, 10);
+    bool canceled;
+    TextInputOverlay::getText(this, tr("What is your name?"), &canceled);
+    if (!canceled) {
+        emit startGame(9, 9, 10);
+    }
 }
 
 void MainScreen::on_startIntermediate_clicked()
 {
-    emit startGame(16, 16, 40);
+    bool canceled;
+    TextInputOverlay::getText(this, tr("What is your name?"), &canceled);
+    if (!canceled) {
+        emit startGame(16, 16, 40);
+    }
 }
 
 void MainScreen::on_startDifficult_clicked()
 {
-    emit startGame(30, 16, 99);
+    bool canceled;
+    TextInputOverlay::getText(this, tr("What is your name?"), &canceled);
+    if (!canceled) {
+        emit startGame(30, 16, 99);
+    }
 }
 
 void MainScreen::on_exitButton_clicked()

@@ -22,6 +22,7 @@
 
 #include <QShortcut>
 #include <gamepadbuttons.h>
+#include <QKeyEvent>
 
 PauseScreen::PauseScreen(QWidget *parent) :
     QWidget(parent),
@@ -34,8 +35,19 @@ PauseScreen::PauseScreen(QWidget *parent) :
     ui->focusBarrierTop->setBounceWidget(ui->resumeButton);
     ui->focusBarrierBottom->setBounceWidget(ui->mainMenuButton);
 
-    ui->AHudButton->setText(tr("%1 Select").arg(GamepadButtons::stringForButton(QGamepadManager::ButtonA)));
-    ui->BHudButton->setText(tr("%2 Resume").arg(GamepadButtons::stringForButton(QGamepadManager::ButtonB)));
+    ui->gamepadHud->setButtonText(QGamepadManager::ButtonA, tr("Select"));
+    ui->gamepadHud->setButtonText(QGamepadManager::ButtonB, tr("Resume"));
+
+    ui->gamepadHud->setButtonAction(QGamepadManager::ButtonA, [=] {
+        QKeyEvent event(QKeyEvent::KeyPress, Qt::Key_Space, Qt::NoModifier);
+        QApplication::sendEvent(QApplication::focusWidget(), &event);
+
+        QKeyEvent event2(QKeyEvent::KeyRelease, Qt::Key_Space, Qt::NoModifier);
+        QApplication::sendEvent(QApplication::focusWidget(), &event2);
+    });
+    ui->gamepadHud->setButtonAction(QGamepadManager::ButtonB, [=] {
+        ui->resumeButton->click();
+    });
 
     ui->mainMenuButton->setProperty("type", "destructive");
 

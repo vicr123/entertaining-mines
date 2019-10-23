@@ -140,7 +140,7 @@ void GameTile::toggleFlagStatus()
             break;
         case Flagged:
             d->state = Idle; //TODO: Add marked state
-            d->parent->flagChanged(true);
+            d->parent->flagChanged(false);
             break;
         case Marked:
             d->state = Idle;
@@ -280,16 +280,16 @@ void GameTile::keyPressEvent(QKeyEvent*event)
     QPoint thisPoint(d->x, d->y);
     switch (event->key()) {
         case Qt::Key_Left:
-            handOffFocus(thisPoint + QPoint(0, -1));
-            break;
-        case Qt::Key_Right:
-            handOffFocus(thisPoint + QPoint(0, 1));
-            break;
-        case Qt::Key_Up:
             handOffFocus(thisPoint + QPoint(-1, 0));
             break;
-        case Qt::Key_Down:
+        case Qt::Key_Right:
             handOffFocus(thisPoint + QPoint(1, 0));
+            break;
+        case Qt::Key_Up:
+            handOffFocus(thisPoint + QPoint(0, -1));
+            break;
+        case Qt::Key_Down:
+            handOffFocus(thisPoint + QPoint(0, 1));
             break;
         case Qt::Key_Enter:
         case Qt::Key_Return:

@@ -53,6 +53,9 @@ GameScreen::GameScreen(QWidget *parent) :
     ui->setupUi(this);
     d = new GameScreenPrivate();
 
+    ui->gamepadHud->setButtonText(QGamepadManager::ButtonA, tr("Reveal"));
+    ui->gamepadHud->setButtonText(QGamepadManager::ButtonX, tr("Flag"));
+
     d->dialogue = new DialogueOverlay(this);
     connect(d->dialogue, QOverload<QString>::of(&DialogueOverlay::progressDialogue), this, [=](QString selectedOption) {
         if (selectedOption == "mainmenu") {
@@ -165,7 +168,7 @@ void GameScreen::startGame(int width, int height, int mines)
     for (int y = 0; y < height; y++) {
         for (int x = 0; x < width; x++) {
             GameTile* tile = new GameTile(this, x, y);
-            ui->gameGrid->addWidget(tile, x, y);
+            ui->gameGrid->addWidget(tile, y, x);
             d->tiles.append(tile);
         }
     }
