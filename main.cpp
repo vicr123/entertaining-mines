@@ -20,11 +20,13 @@
 #include "gamewindow.h"
 
 #include <QApplication>
+#include <QStyleFactory>
 #include <entertaining.h>
 
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
+    a.setStyle(QStyleFactory::create("contemporary"));
 
     Entertaining::initialize();
 

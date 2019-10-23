@@ -1,4 +1,4 @@
-QT       += core gui entertaining thelib svg
+QT       += core gui svg gamepad
 TARGET   = entertaining-mines
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
@@ -36,12 +36,58 @@ FORMS += \
     screens/gamescreen.ui \
     screens/mainscreen.ui \
     screens/pausescreen.ui
-
-# Default rules for deployment.
-qnx: target.path = /tmp/$${TARGET}/bin
-else: unix:!android: target.path = /opt/$${TARGET}/bin
-!isEmpty(target.path): INSTALLS += target
-
 RESOURCES += \
     audio.qrc \
     resources.qrc
+
+
+unix:!macx {
+    # Include the-libs build tools
+    include(/usr/share/the-libs/pri/buildmaster.pri)
+
+    QT += thelib
+    TARGET = entertaining-mines
+
+    target.path = /usr/bin
+
+#    desktop.path = /usr/share/applications
+#    desktop.files = com.vicr123.entertaining.mines.desktop
+
+#    icon.path = /usr/share/icons/hicolor/scalable/apps/
+#    icon.files = icons/theslate.svg
+
+    INSTALLS += target # desktop icon
+}
+
+win32 {
+    # Include the-libs build tools
+    include(C:/Program Files/thelibs/pri/buildmaster.pri)
+
+    QT += thelib
+    INCLUDEPATH += "C:/Program Files/thelibs/include" "C:/Program Files (x86)/libentertaining/include"
+    LIBS += -L"C:/Program Files/thelibs/lib" -lthe-libs -L"C:/Program Files (x86)/libentertaining/lib" -lentertaining
+    RC_FILE = icon.rc
+    DEFINES += "THESLATE_END_OF_LINE=2"
+    TARGET = theSlate
+}
+
+macx {
+    # Include the-libs build tools
+    include(/usr/local/share/the-libs/pri/buildmaster.pri)
+
+    QT += macextras
+    LIBS += -framework CoreFoundation -framework AppKit
+
+    blueprint {
+        TARGET = "Entertaining Mines Blueprint"
+#        ICON = icon-bp.icns
+    } else {
+        TARGET = "Entertaining Mines"
+#        ICON = icon.icns
+    }
+
+    INCLUDEPATH += "/usr/local/include/the-libs" "/usr/local/include/libentertaining"
+    LIBS += -L/usr/local/lib -lthe-libs -lentertaining
+
+#    QMAKE_POST_LINK += $$quote(cp $${PWD}/dmgicon.icns $${PWD}/app-dmg-background.png $${PWD}/node-appdmg-config*.json $${OUT_PWD}/..)
+}
