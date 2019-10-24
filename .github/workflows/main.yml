@@ -10,6 +10,7 @@ jobs:
     runs-on: ubuntu-16.04
     steps:
     - uses: vicr123/the-libs/bootstrap@actions
+      name: "Bootstrap Build"
       with:
         extra-deps-linux: "qt512gamepad"
     - name: Build libentertaining
@@ -31,12 +32,14 @@ jobs:
         cd ..
     - uses: actions/checkout@v1
     - uses: vicr123/the-libs/build@actions
+      name: "Build Project"
     - uses: vicr123/the-libs/image@actions
+      name: "Package Project"
       id: image
       with:
         extra-plugins-linux: "styles/libContemporary.so"
         image-name-linux: entertaining-mines-linux.AppImage
-    - name: Deploy AppImage
+    - name: Deploy Project
       run: |
         export RELEASE_NAME="continuous"
         export RELEASE_TITLE="Continuous build"
