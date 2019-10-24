@@ -39,18 +39,15 @@ jobs:
         make
         make install INSTALL_ROOT=~/appdir
     - name: Create AppImage
-      if: github.event === 'push'
       run: |
         wget -c -nv "https://github.com/probonopd/linuxdeployqt/releases/download/continuous/linuxdeployqt-continuous-x86_64.AppImage"
         chmod a+x linuxdeployqt-continuous-x86_64.AppImage
         ./linuxdeployqt-continuous-x86_64.AppImage ~/appdir/usr/share/applications/*.desktop -appimage -extra-plugins=iconengines/libqsvgicon.so,imageformats/libqsvg.so
     - name: Prepare AppImage
-      if: github.event === 'push'
       run: |
         cp entertaining-mines*.AppImage entertaining-mines-linux.AppImage
         cp entertaining-mines*.AppImage.zsync entertaining-mines-linux.AppImage.zsync
     - name: Deploy AppImage
-      if: github.event === 'push'
       run: |
         export RELEASE_NAME="continuous"
         export RELEASE_TITLE="Continuous build"
