@@ -21,6 +21,7 @@ SOURCES += \
     game/gametile.cpp \
     main.cpp \
     gamewindow.cpp \
+    screens/customgamescreen.cpp \
     screens/gamescreen.cpp \
     screens/mainscreen.cpp \
     screens/pausescreen.cpp
@@ -28,12 +29,14 @@ SOURCES += \
 HEADERS += \
     game/gametile.h \
     gamewindow.h \
+    screens/customgamescreen.h \
     screens/gamescreen.h \
     screens/mainscreen.h \
     screens/pausescreen.h
 
 FORMS += \
     gamewindow.ui \
+    screens/customgamescreen.ui \
     screens/gamescreen.ui \
     screens/mainscreen.ui \
     screens/pausescreen.ui

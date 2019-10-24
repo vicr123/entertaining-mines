@@ -21,6 +21,7 @@
 #include "ui_gamewindow.h"
 
 #include <focuspointer.h>
+#include <textinputoverlay.h>
 
 GameWindow::GameWindow(QWidget *parent)
     : QMainWindow(parent)

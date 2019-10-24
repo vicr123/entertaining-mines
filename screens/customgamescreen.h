@@ -17,40 +17,25 @@
  *   along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
  * *************************************/
-#ifndef MAINSCREEN_H
-#define MAINSCREEN_H
+#ifndef CUSTOMGAMESCREEN_H
+#define CUSTOMGAMESCREEN_H
 
 #include <QWidget>
 
 namespace Ui {
-    class MainScreen;
+    class CustomGameScreen;
 }
 
-class MainScreen : public QWidget
+class CustomGameScreen : public QWidget
 {
         Q_OBJECT
 
     public:
-        explicit MainScreen(QWidget *parent = nullptr);
-        ~MainScreen();
-
-    signals:
-        void startGame(int width, int height, int mines);
-
-    private slots:
-        void on_startEasy_clicked();
-
-        void on_startIntermediate_clicked();
-
-        void on_startDifficult_clicked();
-
-        void on_exitButton_clicked();
-
-        void on_startCustom_clicked();
+        explicit CustomGameScreen(QWidget *parent = nullptr);
+        ~CustomGameScreen();
 
     private:
-        Ui::MainScreen *ui;
-        void resizeEvent(QResizeEvent* event);
+        Ui::CustomGameScreen *ui;
 };
 
-#endif // MAINSCREEN_H
+#endif // CUSTOMGAMESCREEN_H

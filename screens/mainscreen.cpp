@@ -64,32 +64,42 @@ void MainScreen::resizeEvent(QResizeEvent*event)
 
 void MainScreen::on_startEasy_clicked()
 {
-    bool canceled;
-    TextInputOverlay::getText(this, tr("What is your name?"), &canceled);
-    if (!canceled) {
-        emit startGame(9, 9, 10);
-    }
+    emit startGame(9, 9, 10);
 }
 
 void MainScreen::on_startIntermediate_clicked()
 {
-    bool canceled;
-    TextInputOverlay::getText(this, tr("What is your name?"), &canceled);
-    if (!canceled) {
-        emit startGame(16, 16, 40);
-    }
+    emit startGame(16, 16, 40);
 }
 
 void MainScreen::on_startDifficult_clicked()
 {
-    bool canceled;
-    TextInputOverlay::getText(this, tr("What is your name?"), &canceled);
-    if (!canceled) {
-        emit startGame(30, 16, 99);
-    }
+    emit startGame(30, 16, 99);
 }
 
 void MainScreen::on_exitButton_clicked()
 {
     QApplication::exit();
+}
+
+void MainScreen::on_startCustom_clicked()
+{
+    bool canceled;
+
+    int width = 15;
+    int height = 15;
+    int mines = 60;
+
+    askWidth:
+    width = TextInputOverlay::getInt(this, tr("How wide is the board?"), &canceled, width, 5, 99);
+    if (canceled) return;
+
+    askHeight:
+    height = TextInputOverlay::getInt(this, tr("How high is the board?"), &canceled, height, 5, 99);
+    if (canceled) goto askWidth;
+
+    mines = TextInputOverlay::getInt(this, tr("How many mines are on this board?"), &canceled, mines, 1, static_cast<int>(width * height * 0.9) - 1);
+    if (canceled) goto askHeight;
+
+    emit startGame(width, height, mines);
 }
