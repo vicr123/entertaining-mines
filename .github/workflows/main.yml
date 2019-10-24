@@ -9,9 +9,9 @@ jobs:
   build-linux:
     runs-on: ubuntu-16.04
     steps:
-    - uses: vicr123/the-libs/actions/install@blueprint
-    - name: Install additional dependencies
-      run: sudo apt-get install qt512gamepad
+    - uses: vicr123/the-libs/bootstrap@actions
+      with:
+        extra-deps-linux: "qt512gamepad"
     - name: Build libentertaining
       run: |
         source /opt/qt512/bin/qt512-env.sh || true
@@ -30,21 +30,12 @@ jobs:
         sudo make install INSTALL_ROOT=/
         cd ..
     - uses: actions/checkout@v1
-    - name: Build Entertaining Mines
-      run: |
-        source /opt/qt512/bin/qt512-env.sh || true
-        qmake
-        make
-        make install INSTALL_ROOT=~/appdir
-    - name: Create AppImage
-      run: |
-        source /opt/qt512/bin/qt512-env.sh || true
-        wget -c -nv "https://github.com/probonopd/linuxdeployqt/releases/download/continuous/linuxdeployqt-continuous-x86_64.AppImage"
-        chmod a+x linuxdeployqt-continuous-x86_64.AppImage
-        ./linuxdeployqt-continuous-x86_64.AppImage ~/appdir/usr/share/applications/*.desktop -appimage -extra-plugins=iconengines/libqsvgicon.so,imageformats/libqsvg.so,styles/libContemporary.so
-    - name: Prepare AppImage
-      run: |
-        cp Entertaining_Mines*.AppImage entertaining-mines-linux.AppImage
+    - uses: vicr123/the-libs/build@actions
+    - uses: vicr123/the-libs/image@actions
+      id: image
+      with:
+        extra-plugins-linux: "styles/libContemporary.so"
+        image-name-linux: entertaining-mines-linux.AppImage
     - name: Deploy AppImage
       run: |
         export RELEASE_NAME="continuous"
@@ -55,4 +46,4 @@ jobs:
         export TRAVIS_COMMIT=$GITHUB_SHA
         export GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }}
         wget -c https://github.com/probonopd/uploadtool/raw/master/upload.sh
-        bash upload.sh entertaining-mines-linux.AppImage*
+        bash upload.sh ${{ steps.image.outputs.image-path }}
