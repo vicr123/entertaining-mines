@@ -31,6 +31,15 @@ jobs:
         qmake
         make
         sudo make install INSTALL_ROOT=/
+    - name: Build Contemporary
+      run: |
+        source /opt/qt512/bin/qt512-env.sh || true
+        git clone https://github.com/vicr123/contemporary-theme.git
+        cd contemporary-theme
+        qmake
+        make
+        sudo make install INSTALL_ROOT=/
+        cd ..
     - uses: actions/checkout@v1
     - name: Build Entertaining Mines
       run: |
@@ -43,11 +52,10 @@ jobs:
         source /opt/qt512/bin/qt512-env.sh || true
         wget -c -nv "https://github.com/probonopd/linuxdeployqt/releases/download/continuous/linuxdeployqt-continuous-x86_64.AppImage"
         chmod a+x linuxdeployqt-continuous-x86_64.AppImage
-        ./linuxdeployqt-continuous-x86_64.AppImage ~/appdir/usr/share/applications/*.desktop -appimage -extra-plugins=iconengines/libqsvgicon.so,imageformats/libqsvg.so
+        ./linuxdeployqt-continuous-x86_64.AppImage ~/appdir/usr/share/applications/*.desktop -appimage -extra-plugins=iconengines/libqsvgicon.so,imageformats/libqsvg.so,styles/libContemporary.so
     - name: Prepare AppImage
       run: |
         cp Entertaining_Mines*.AppImage entertaining-mines-linux.AppImage
-        cp Entertaining_Mines*.AppImage.zsync entertaining-mines-linux.AppImage.zsync
     - name: Deploy AppImage
       run: |
         export RELEASE_NAME="continuous"
@@ -55,5 +63,6 @@ jobs:
         export is_prerelease="true"
         export TRAVIS_BRANCH="master"
         export TRAVIS_COMMIT=$GITHUB_SHA
+        export GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }}
         wget -c https://github.com/probonopd/uploadtool/raw/master/upload.sh
         bash upload.sh entertaining-mines-linux.AppImage*
