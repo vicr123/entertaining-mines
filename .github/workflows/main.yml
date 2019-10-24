@@ -31,6 +31,7 @@ jobs:
         qmake
         make
         sudo make install INSTALL_ROOT=/
+    - uses: actions/checkout@v1
     - name: Build Entertaining Mines
       run: |
         source /opt/qt512/bin/qt512-env.sh || true
