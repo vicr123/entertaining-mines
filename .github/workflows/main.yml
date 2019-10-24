@@ -16,7 +16,7 @@ jobs:
         sudo apt-get install qt512-meta-minimal qt512x11extras qt512tools qt512translations qt512svg qt512multimedia
     - name: Build and install the-libs
       run: |
-        /opt/qt512/bin/qt512-env.sh
+        source /opt/qt512/bin/qt512-env.sh || true
         git clone https://github.com/vicr123/the-libs.git
         cd the-libs
         git checkout blueprint
@@ -25,7 +25,7 @@ jobs:
         sudo make install INSTALL_ROOT=/
     - name: Build libentertaining
       run: |
-        /opt/qt512/bin/qt512-env.sh
+        source /opt/qt512/bin/qt512-env.sh || true
         git clone https://github.com/vicr123/libentertaining.git
         cd libentertaining
         git checkout blueprint
@@ -34,7 +34,7 @@ jobs:
         sudo make install INSTALL_ROOT=/
     - name: Build Entertaining Mines
       run: |
-        /opt/qt512/bin/qt512-env.sh
+        source /opt/qt512/bin/qt512-env.sh || true
         qmake
         make
         make install INSTALL_ROOT=~/appdir
