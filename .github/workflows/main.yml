@@ -9,20 +9,9 @@ jobs:
   build-linux:
     runs-on: ubuntu-16.04
     steps:
-    - name: Install Dependencies
-      run: |
-        sudo add-apt-repository -y ppa:beineri/opt-qt-5.12.3-xenial
-        sudo apt-get update -qq
-        sudo apt-get install qt512-meta-minimal qt512x11extras qt512tools qt512translations qt512svg qt512multimedia qt512gamepad libgl1-mesa-dev
-    - name: Build and install the-libs
-      run: |
-        source /opt/qt512/bin/qt512-env.sh || true
-        git clone https://github.com/vicr123/the-libs.git
-        cd the-libs
-        git checkout blueprint
-        qmake
-        make
-        sudo make install INSTALL_ROOT=/
+    - uses: vicr123/the-libs/actions/install@blueprint
+    - name: Install additional dependencies
+      run: sudo apt-get install qt512gamepad
     - name: Build libentertaining
       run: |
         source /opt/qt512/bin/qt512-env.sh || true
