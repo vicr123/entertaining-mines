@@ -42,11 +42,15 @@ class GameScreen : public QWidget
         QSize gameArea();
 
         GameTile* tileAt(QPoint location);
+        GameTile* currentTile();
 
     public slots:
         void startGame(int width, int height, int mines);
         void distributeMines(QPoint clickLocation);
         void performGameOver();
+
+    private slots:
+        void currentTileChanged();
 
     signals:
         void boardResized();

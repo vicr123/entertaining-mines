@@ -106,6 +106,11 @@ bool GameTile::isFlagged()
     return d->state == Flagged;
 }
 
+GameTile::State GameTile::state()
+{
+    return d->state;
+}
+
 void GameTile::reveal()
 {
     if (d->state == Idle) {
@@ -128,6 +133,7 @@ void GameTile::reveal()
         }
 
         this->update();
+        currentTileChanged();
     }
 }
 
@@ -149,6 +155,7 @@ void GameTile::toggleFlagStatus()
             break;
     }
     this->update();
+    currentTileChanged();
 }
 
 void GameTile::sweep()
@@ -168,6 +175,18 @@ void GameTile::sweep()
         for (GameTile* tile : tilesToSweep) {
             tile->reveal();
         }
+    }
+    currentTileChanged();
+}
+
+void GameTile::revealOrSweep()
+{
+    if (d->state == Revealed) {
+        //Sweep this tile
+        this->sweep();
+    } else {
+        //Reveal this tile
+        this->reveal();
     }
 }
 
@@ -293,13 +312,8 @@ void GameTile::keyPressEvent(QKeyEvent*event)
             break;
         case Qt::Key_Enter:
         case Qt::Key_Return:
-            if (d->state == Revealed) {
-                //Sweep this tile
-                this->sweep();
-            } else {
-                //Reveal this tile
-                this->reveal();
-            }
+            //Reveal or sweep this tile
+            this->revealOrSweep();
             break;
         case Qt::Key_Space:
         case Qt::Key_Z:
@@ -353,4 +367,9 @@ void GameTile::mouseReleaseEvent(QMouseEvent*event)
                 break;
         }
     }
+}
+
+void GameTile::focusInEvent(QFocusEvent*event)
+{
+    emit currentTileChanged();
 }

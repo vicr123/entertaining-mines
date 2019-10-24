@@ -1,5 +1,6 @@
 QT       += core gui svg gamepad
 TARGET   = entertaining-mines
+SHARE_APP_NAME = entertaining-mines
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -45,7 +46,7 @@ unix:!macx {
     # Include the-libs build tools
     include(/usr/share/the-libs/pri/buildmaster.pri)
 
-    QT += thelib
+    QT += thelib entertaining
     TARGET = entertaining-mines
 
     target.path = /usr/bin
@@ -67,8 +68,6 @@ win32 {
     INCLUDEPATH += "C:/Program Files/thelibs/include" "C:/Program Files (x86)/libentertaining/include"
     LIBS += -L"C:/Program Files/thelibs/lib" -lthe-libs -L"C:/Program Files (x86)/libentertaining/lib" -lentertaining
     RC_FILE = icon.rc
-    DEFINES += "THESLATE_END_OF_LINE=2"
-    TARGET = theSlate
 }
 
 macx {

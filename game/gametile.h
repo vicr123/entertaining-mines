@@ -46,12 +46,16 @@ class GameTile : public QWidget
 
         bool isFlagged();
 
+        State state();
+
     signals:
+        void currentTileChanged();
 
     public slots:
         void reveal();
         void toggleFlagStatus();
         void sweep();
+        void revealOrSweep();
 
     private:
         GameTilePrivate* d;
@@ -67,6 +71,8 @@ class GameTile : public QWidget
         void mousePressEvent(QMouseEvent* event);
         void mouseMoveEvent(QMouseEvent* event);
         void mouseReleaseEvent(QMouseEvent* event);
+
+        void focusInEvent(QFocusEvent* event);
 };
 
 #endif // GAMETILE_H

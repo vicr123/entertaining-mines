@@ -48,6 +48,9 @@ PauseScreen::PauseScreen(QWidget *parent) :
     ui->gamepadHud->setButtonAction(QGamepadManager::ButtonB, [=] {
         ui->resumeButton->click();
     });
+    ui->gamepadHud->setButtonAction(QGamepadManager::ButtonStart, [=] {
+        ui->resumeButton->click();
+    });
 
     ui->mainMenuButton->setProperty("type", "destructive");
 

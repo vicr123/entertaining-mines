@@ -56,6 +56,18 @@ GameScreen::GameScreen(QWidget *parent) :
     ui->gamepadHud->setButtonText(QGamepadManager::ButtonA, tr("Reveal"));
     ui->gamepadHud->setButtonText(QGamepadManager::ButtonX, tr("Flag"));
 
+    ui->gamepadHud->setButtonAction(QGamepadManager::ButtonStart, [=] {
+        ui->menuButton->click();
+    });
+    ui->gamepadHud->setButtonAction(QGamepadManager::ButtonA, [=] {
+        GameTile* currentTile = this->currentTile();
+        if (currentTile != nullptr) currentTile->revealOrSweep();
+    });
+    ui->gamepadHud->setButtonAction(QGamepadManager::ButtonX, [=] {
+        GameTile* currentTile = this->currentTile();
+        if (currentTile != nullptr) currentTile->toggleFlagStatus();
+    });
+
     d->dialogue = new DialogueOverlay(this);
     connect(d->dialogue, QOverload<QString>::of(&DialogueOverlay::progressDialogue), this, [=](QString selectedOption) {
         if (selectedOption == "mainmenu") {
@@ -97,6 +109,14 @@ QSize GameScreen::gameArea()
 GameTile*GameScreen::tileAt(QPoint location)
 {
     return d->tiles.at(pointToIndex(location));
+}
+
+GameTile*GameScreen::currentTile()
+{
+    for (GameTile* tile : d->tiles) {
+        if (tile->hasFocus()) return tile;
+    }
+    return nullptr;
 }
 
 QSize GameScreen::boardDimensions()
@@ -170,6 +190,7 @@ void GameScreen::startGame(int width, int height, int mines)
             GameTile* tile = new GameTile(this, x, y);
             ui->gameGrid->addWidget(tile, y, x);
             d->tiles.append(tile);
+            connect(tile, &GameTile::currentTileChanged, this, &GameScreen::currentTileChanged);
         }
     }
 
@@ -235,6 +256,43 @@ void GameScreen::performGameOver()
 
     for (GameTile* tile : d->tiles) {
         tile->update();
+    }
+}
+
+void GameScreen::currentTileChanged()
+{
+    GameTile* tile = this->currentTile();
+    if (tile != nullptr) {
+        //Update button text accordingly
+        QString buttonA = "";
+        QString buttonX = "";
+
+        switch (tile->state()) {
+            case GameTile::Idle:
+                buttonA = tr("Reveal");
+                buttonX = tr("Flag");
+                break;
+            case GameTile::Flagged:
+                buttonX = tr("Unflag");
+                break;
+            case GameTile::Marked:
+                buttonX = tr("Unflag");
+                break;
+            case GameTile::Revealed:
+                buttonA = tr("Sweep");
+        }
+
+        if (buttonA == "") {
+            ui->gamepadHud->removeText(QGamepadManager::ButtonA);
+        } else {
+            ui->gamepadHud->setButtonText(QGamepadManager::ButtonA, buttonA);
+        }
+
+        if (buttonX == "") {
+            ui->gamepadHud->removeText(QGamepadManager::ButtonX);
+        } else {
+            ui->gamepadHud->setButtonText(QGamepadManager::ButtonX, buttonX);
+        }
     }
 }
 
