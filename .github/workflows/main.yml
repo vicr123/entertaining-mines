@@ -46,8 +46,8 @@ jobs:
         ./linuxdeployqt-continuous-x86_64.AppImage ~/appdir/usr/share/applications/*.desktop -appimage -extra-plugins=iconengines/libqsvgicon.so,imageformats/libqsvg.so
     - name: Prepare AppImage
       run: |
-        cp entertaining-mines*.AppImage entertaining-mines-linux.AppImage
-        cp entertaining-mines*.AppImage.zsync entertaining-mines-linux.AppImage.zsync
+        cp com.vicr123.entertaining.mines*.AppImage entertaining-mines-linux.AppImage
+        cp com.vicr123.entertaining.mines*.AppImage.zsync entertaining-mines-linux.AppImage.zsync
     - name: Deploy AppImage
       run: |
         export RELEASE_NAME="continuous"
