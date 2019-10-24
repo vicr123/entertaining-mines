@@ -61,6 +61,7 @@ jobs:
         export RELEASE_NAME="continuous"
         export RELEASE_TITLE="Continuous build"
         export is_prerelease="true"
+        export REPO_SLUG=$GITHUB_REPOSITORY
         export TRAVIS_BRANCH="master"
         export TRAVIS_COMMIT=$GITHUB_SHA
         export GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }}
