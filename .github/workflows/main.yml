@@ -28,7 +28,6 @@ jobs:
         source /opt/qt512/bin/qt512-env.sh || true
         git clone https://github.com/vicr123/libentertaining.git
         cd libentertaining
-        git checkout blueprint
         qmake
         make
         sudo make install INSTALL_ROOT=/
