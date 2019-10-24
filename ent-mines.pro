@@ -54,13 +54,13 @@ unix:!macx {
 
     target.path = /usr/bin
 
-#    desktop.path = /usr/share/applications
-#    desktop.files = com.vicr123.entertaining.mines.desktop
+    desktop.path = /usr/share/applications
+    desktop.files = com.vicr123.entertaining.mines.desktop
 
-#    icon.path = /usr/share/icons/hicolor/scalable/apps/
-#    icon.files = icons/theslate.svg
+    icon.path = /usr/share/icons/hicolor/scalable/apps/
+    icon.files = icons/entertaining-mines.svg
 
-    INSTALLS += target # desktop icon
+    INSTALLS += target desktop icon
 }
 
 win32 {

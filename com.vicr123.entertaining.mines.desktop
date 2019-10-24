@@ -1,0 +1,11 @@
+#!/usr/bin/env xdg-open
+[Desktop Entry]
+Type=Application
+Version=1.0
+Name=Entertaining Mines
+Name[vi]=Mìn giải trí
+GenericName=Minesweeper
+GenericName[vi]=Gỡ mìn
+Exec=entertaining-mines
+Icon=entertaining-mines
+Categories=Game;LogicGame;
