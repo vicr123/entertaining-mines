@@ -13,14 +13,8 @@ jobs:
       name: "Bootstrap Build"
       with:
         extra-deps-linux: "qt512gamepad"
-    - name: Build libentertaining
-      run: |
-        source /opt/qt512/bin/qt512-env.sh || true
-        git clone https://github.com/vicr123/libentertaining.git
-        cd libentertaining
-        qmake
-        make
-        sudo make install INSTALL_ROOT=/
+    - uses: vicr123/libentertaining/actions/build@master
+      name: Build libentertaining
     - name: Build Contemporary
       run: |
         source /opt/qt512/bin/qt512-env.sh || true
