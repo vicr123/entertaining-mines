@@ -1,6 +1,9 @@
 name: CI
 
-on: [push]
+on:
+  push:
+    branches: 
+      - master
 
 jobs:
   build-linux:
@@ -52,7 +55,7 @@ jobs:
         export RELEASE_NAME="continuous"
         export RELEASE_TITLE="Continuous build"
         export is_prerelease="true"
-        export TRAVIS_BRANCH="blueprint"
+        export TRAVIS_BRANCH="master"
         export TRAVIS_COMMIT=$GITHUB_SHA
         wget -c https://github.com/probonopd/uploadtool/raw/master/upload.sh
         bash upload.sh entertaining-mines-linux.AppImage*
