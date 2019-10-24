@@ -1,0 +1,58 @@
+name: CI
+
+on: [push]
+
+jobs:
+  build-linux:
+    runs-on: ubuntu-16.04
+    steps:
+    - name: Install Dependencies
+      run: |
+        sudo add-apt-repository -y ppa:beineri/opt-qt-5.12.3-xenial
+        sudo apt-get update -qq
+        sudo apt-get install qt512-meta-minimal qt512x11extras qt512tools qt512translations qt512svg qt512websockets qt512multimedia qt512webengine
+    - name: Build and install the-libs
+      run: |
+        source /opt/qt512/bin/qt512-env.sh
+        git clone https://github.com/vicr123/the-libs.git
+        cd the-libs
+        git checkout blueprint
+        qmake
+        make
+        sudo make install INSTALL_ROOT=/
+    - name: Build libentertaining
+      run: |
+        source /opt/qt512/bin/qt512-env.sh
+        git clone https://github.com/vicr123/libentertaining.git
+        cd libentertaining
+        git checkout blueprint
+        qmake
+        make
+        sudo make install INSTALL_ROOT=/
+    - name: Build Entertaining Mines
+      run: |
+        source /opt/qt512/bin/qt512-env.sh
+        qmake
+        make
+        make install INSTALL_ROOT=~/appdir
+    - name: Create AppImage
+      if: github.event === 'push'
+      run: |
+        wget -c -nv "https://github.com/probonopd/linuxdeployqt/releases/download/continuous/linuxdeployqt-continuous-x86_64.AppImage"
+        chmod a+x linuxdeployqt-continuous-x86_64.AppImage
+        ./linuxdeployqt-continuous-x86_64.AppImage ~/appdir/usr/share/applications/*.desktop -appimage -extra-plugins=iconengines/libqsvgicon.so,imageformats/libqsvg.so
+    - name: Prepare AppImage
+      if: github.event === 'push'
+      run: |
+        cp entertaining-mines*.AppImage entertaining-mines-linux.AppImage
+        cp entertaining-mines*.AppImage.zsync entertaining-mines-linux.AppImage.zsync
+    - name: Deploy AppImage
+      if: github.event === 'push'
+      run: |
+        export RELEASE_NAME="continuous"
+        export RELEASE_TITLE="Continuous build"
+        export is_prerelease="true"
+        export TRAVIS_BRANCH="blueprint"
+        export TRAVIS_COMMIT=$GITHUB_SHA
+        wget -c https://github.com/probonopd/uploadtool/raw/master/upload.sh
+        bash upload.sh entertaining-mines-linux.AppImage*
