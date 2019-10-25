@@ -85,11 +85,11 @@ macx {
 #        ICON = icon-bp.icns
     } else {
         TARGET = "Entertaining Mines"
-#        ICON = icon.icns
+        ICON = icon.icns
     }
 
     INCLUDEPATH += "/usr/local/include/the-libs" "/usr/local/include/libentertaining"
     LIBS += -L/usr/local/lib -lthe-libs -lentertaining
 
-#    QMAKE_POST_LINK += $$quote(cp $${PWD}/dmgicon.icns $${PWD}/app-dmg-background.png $${PWD}/node-appdmg-config*.json $${OUT_PWD}/..)
+    QMAKE_POST_LINK += $$quote(cp $${PWD}/dmgicon.icns $${PWD}/app-dmg-background.png $${PWD}/node-appdmg-config*.json $${OUT_PWD}/..)
 }

@@ -6,5 +6,6 @@
         <file>tiles/flag.svg</file>
         <file>tiles/mine.svg</file>
         <file>tiles/flagNot.svg</file>
+        <file>icons/entertaining-mines.svg</file>
     </qresource>
 </RCC>

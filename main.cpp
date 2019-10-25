@@ -37,7 +37,7 @@ int main(int argc, char *argv[])
 
     a.setOrganizationName("theSuite");
     a.setOrganizationDomain("");
-    a.setApplicationIcon(QIcon::fromTheme("entertaining-mines", QIcon(":/icons/icon.svg")));
+    a.setApplicationIcon(QIcon::fromTheme("entertaining-mines", QIcon(":/icons/entertaining-mines.svg")));
     a.setApplicationVersion("0.1");
     a.setGenericName(QApplication::translate("main", "Minesweeper"));
 //    a.setAboutDialogSplashGraphic(a.aboutDialogSplashGraphicFromSvg(":/icons/aboutsplash.svg"));
