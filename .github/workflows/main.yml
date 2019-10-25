@@ -22,6 +22,10 @@ jobs:
     - uses: vicr123/contemporary-theme/actions/build@master
       name: Build Contemporary
     - uses: actions/checkout@v1
+    - name: Link Libraries
+      run: |
+        sudo ln -s /usr/local/lib/libthe-libs* /usr/lib
+        sudo ln -s /usr/local/lib/libentertaining* /usr/lib
     - uses: vicr123/the-libs/build@actions
       name: "Build Project"
     - uses: vicr123/the-libs/image@actions
@@ -40,6 +44,7 @@ jobs:
         path: build
     - uses: vicr123/create-release@delete-old-release
       name: "Create Release"
+      id: create_release
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
@@ -52,7 +57,7 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
-        upload_url: ${{ steps.image.outputs.image-path }}
-        asset_path: ${{ steps.image.outputs.asset-path }}
+        upload_url: ${{ steps.create_release.outputs.upload_url }}
+        asset_path: ${{ steps.image.outputs.image-path }}
         asset_name: ${{ steps.image.outputs.asset-name }}
         asset_content_type: ${{ steps.image.outputs.asset-content-type }}
