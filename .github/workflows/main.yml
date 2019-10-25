@@ -22,13 +22,12 @@ jobs:
     - uses: vicr123/contemporary-theme/actions/build@master
       name: Build Contemporary
     - uses: actions/checkout@v1
-    - name: Link Libraries
-      if: matrix.os == 'macOS-10.14'
-      run: |
-        sudo ln -s /usr/local/lib/libthe-libs* /usr/lib
-        sudo ln -s /usr/local/lib/libentertaining* /usr/lib
     - uses: vicr123/the-libs/build@actions
       name: "Build Project"
+    - name: Add to rpath
+      if: matrix.os == 'macOS-10.14'
+      run: |
+        install_name_tool -add_rpath "/usr/local/lib" "build/Entertaining Mines.app/Contents/MacOS/Entertaining Mines"
     - uses: vicr123/the-libs/image@actions
       name: "Package Project"
       id: image
