@@ -23,6 +23,7 @@ jobs:
       name: Build Contemporary
     - uses: actions/checkout@v1
     - name: Link Libraries
+      if: matrix.os == 'macOS-10.14'
       run: |
         sudo ln -s /usr/local/lib/libthe-libs* /usr/lib
         sudo ln -s /usr/local/lib/libentertaining* /usr/lib
