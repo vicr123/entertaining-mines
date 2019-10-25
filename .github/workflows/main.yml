@@ -39,13 +39,13 @@ jobs:
     - name: Zip
       if: matrix.os == 'macOS-10.14'
       run: |
-        zip z.zip build
+        tar -zcf z.tar build
     - name: Archive code coverage results
       uses: actions/upload-artifact@v1
       if: matrix.os == 'macOS-10.14'
       with:
-        name: mac-testing
-        path: z.zip
+        name: mac-testing.tar
+        path: z.tar
     - uses: vicr123/create-release@delete-old-release
       name: "Create Release"
       if: matrix.os != 'macOS-10.14'
