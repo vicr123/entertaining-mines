@@ -6,8 +6,11 @@ on:
       - master
 
 jobs:
-  build-linux:
-    runs-on: ubuntu-16.04
+  build:
+    strategy:
+      matrix:
+        os: [ubuntu-16.04, macOS-10.14]
+    runs-on: ${{ matrix.os }}
     steps:
     - uses: vicr123/the-libs/bootstrap@actions
       name: "Bootstrap Build"
@@ -26,14 +29,21 @@ jobs:
       with:
         extra-plugins-linux: "styles/libContemporary.so"
         image-name-linux: entertaining-mines-linux.AppImage
-    - name: Deploy Project
-      run: |
-        export RELEASE_NAME="continuous"
-        export RELEASE_TITLE="Continuous build"
-        export is_prerelease="true"
-        export REPO_SLUG=$GITHUB_REPOSITORY
-        export TRAVIS_BRANCH="master"
-        export TRAVIS_COMMIT=$GITHUB_SHA
-        export GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }}
-        wget -c https://github.com/probonopd/uploadtool/raw/master/upload.sh
-        bash upload.sh ${{ steps.image.outputs.image-path }}
+    - uses: vicr123/create-release@delete-old-release
+      name: "Create Release"
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        tag_name: continuous
+        release_name: Continuous Build
+        replace_old_tag: true
+        prerelease: true
+    - uses: actions/upload-release-asset
+      name: "Upload Release"
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        upload_url: ${{ steps.image.outputs.image-path }}
+        asset_path: ${{ steps.image.outputs.asset-path }}
+        asset_name: ${{ steps.image.outputs.asset-name }}
+        asset_content_type: ${{ steps.image.outputs.asset-content-type }}
