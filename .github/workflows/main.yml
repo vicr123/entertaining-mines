@@ -30,6 +30,14 @@ jobs:
       with:
         extra-plugins-linux: "styles/libContemporary.so"
         image-name-linux: entertaining-mines-linux.AppImage
+        app-bundle-mac: "Entertaining Mines.app"
+        embed-libraries-mac: "entertaining"
+    - name: Archive code coverage results
+      uses: actions/upload-artifact@v1
+      if: ${{ matrix.os == 'macOS-10.14' }}
+      with:
+        name: mac-testing
+        path: build
     - uses: vicr123/create-release@delete-old-release
       name: "Create Release"
       env:
