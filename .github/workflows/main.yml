@@ -24,10 +24,6 @@ jobs:
     - uses: actions/checkout@v1
     - uses: vicr123/the-libs/build@actions
       name: "Build Project"
-    - name: Add to rpath
-      if: matrix.os == 'macOS-10.14'
-      run: |
-        install_name_tool -add_rpath "/usr/local/lib" "build/Entertaining Mines.app/Contents/MacOS/Entertaining Mines"
     - uses: vicr123/the-libs/image@actions
       name: "Package Project"
       id: image
@@ -36,19 +32,8 @@ jobs:
         image-name-linux: entertaining-mines-linux.AppImage
         app-bundle-mac: "Entertaining Mines.app"
         embed-libraries-mac: "entertaining"
-    - name: Zip
-      if: matrix.os == 'macOS-10.14'
-      run: |
-        tar -zcf z.tar build
-    - name: Archive code coverage results
-      uses: actions/upload-artifact@v1
-      if: matrix.os == 'macOS-10.14'
-      with:
-        name: mac-testing.tar
-        path: z.tar
     - uses: vicr123/create-release@delete-old-release
       name: "Create Release"
-      if: matrix.os != 'macOS-10.14'
       id: create_release
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
