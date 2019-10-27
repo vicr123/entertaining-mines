@@ -54,6 +54,7 @@ class MainScreen : public QWidget
     private:
         Ui::MainScreen *ui;
         void resizeEvent(QResizeEvent* event);
+        void paintEvent(QPaintEvent* event);
 };
 
 #endif // MAINSCREEN_H

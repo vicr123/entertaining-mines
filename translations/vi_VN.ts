@@ -175,27 +175,27 @@
         <translation>Thoát mìn giải trí</translation>
     </message>
     <message>
-        <location filename="../screens/mainscreen.cpp" line="40"/>
+        <location filename="../screens/mainscreen.cpp" line="43"/>
         <source>Select</source>
         <translation>Chọn</translation>
     </message>
     <message>
-        <location filename="../screens/mainscreen.cpp" line="41"/>
+        <location filename="../screens/mainscreen.cpp" line="44"/>
         <source>Exit</source>
         <translation>Thoát</translation>
     </message>
     <message>
-        <location filename="../screens/mainscreen.cpp" line="99"/>
+        <location filename="../screens/mainscreen.cpp" line="124"/>
         <source>How wide is the board?</source>
         <translation>Bảng này rộng bao nhiêu?</translation>
     </message>
     <message>
-        <location filename="../screens/mainscreen.cpp" line="103"/>
+        <location filename="../screens/mainscreen.cpp" line="128"/>
         <source>How high is the board?</source>
         <translation>Bảng này cao bao nhiêu?</translation>
     </message>
     <message>
-        <location filename="../screens/mainscreen.cpp" line="106"/>
+        <location filename="../screens/mainscreen.cpp" line="131"/>
         <source>How many mines are on this board?</source>
         <translation>Bảng này có mấy mìn?</translation>
     </message>

@@ -27,6 +27,9 @@
 #include <pauseoverlay.h>
 #include <loadoverlay.h>
 #include <musicengine.h>
+#include <QSvgRenderer>
+#include <QPainter>
+#include <the-libs_global.h>
 
 MainScreen::MainScreen(QWidget *parent) :
     QWidget(parent),
@@ -63,6 +66,28 @@ void MainScreen::resizeEvent(QResizeEvent*event)
 {
     ui->leftSpacing->changeSize(this->width() * 0.4, 0, QSizePolicy::Fixed, QSizePolicy::Fixed);
     this->layout()->invalidate();
+}
+
+void MainScreen::paintEvent(QPaintEvent*event)
+{
+    QPainter painter(this);
+    QSvgRenderer renderer(QStringLiteral(":/icons/background.svg"));
+
+    QSize size = renderer.defaultSize();
+    size.scale(this->size(), Qt::KeepAspectRatioByExpanding);
+
+    QRect geometry;
+    geometry.setSize(size);
+    geometry.moveCenter(QPoint(this->width() / 2, this->height() / 2));
+    renderer.render(&painter, geometry);
+
+    QLinearGradient grad(QPoint(0, this->height()), QPoint(0, this->height() - SC_DPI(50)));
+    grad.setColorAt(0, QColor(0, 0, 0, 127));
+    grad.setColorAt(1, QColor(0, 0, 0, 0));
+
+    painter.setBrush(grad);
+    painter.setPen(Qt::transparent);
+    painter.drawRect(0, 0, this->width(), this->height());
 }
 
 void MainScreen::on_startEasy_clicked()
