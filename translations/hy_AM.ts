@@ -170,27 +170,27 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../screens/mainscreen.cpp" line="37"/>
+        <location filename="../screens/mainscreen.cpp" line="38"/>
         <source>Select</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../screens/mainscreen.cpp" line="38"/>
+        <location filename="../screens/mainscreen.cpp" line="39"/>
         <source>Exit</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../screens/mainscreen.cpp" line="94"/>
+        <location filename="../screens/mainscreen.cpp" line="97"/>
         <source>How wide is the board?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../screens/mainscreen.cpp" line="98"/>
+        <location filename="../screens/mainscreen.cpp" line="101"/>
         <source>How high is the board?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../screens/mainscreen.cpp" line="101"/>
+        <location filename="../screens/mainscreen.cpp" line="104"/>
         <source>How many mines are on this board?</source>
         <translation type="unfinished"></translation>
     </message>
@@ -247,17 +247,17 @@
 <context>
     <name>main</name>
     <message>
-        <location filename="../main.cpp" line="42"/>
+        <location filename="../main.cpp" line="41"/>
         <source>Minesweeper</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="48"/>
+        <location filename="../main.cpp" line="47"/>
         <source>Entertaining Mines Blueprint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="50"/>
+        <location filename="../main.cpp" line="49"/>
         <source>Entertaining Mines</source>
         <translation type="unfinished"></translation>
     </message>

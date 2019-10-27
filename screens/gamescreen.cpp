@@ -302,21 +302,22 @@ void GameScreen::on_menuButton_clicked()
     MusicEngine::playSoundEffect(MusicEngine::Pause);
 
     PauseScreen* screen = new PauseScreen();
-    PauseOverlay* overlay = new PauseOverlay(screen);
-    overlay->showOverlay(this);
+    PauseOverlay* overlay = new PauseOverlay(this);
+    overlay->pushOverlayWidget(screen);
     connect(screen, &PauseScreen::resume, this, [=] {
         MusicEngine::playSoundEffect(MusicEngine::Backstep);
         MusicEngine::playBackgroundMusic();
-        overlay->hideOverlay();
-        overlay->deleteLater();
-        screen->deleteLater();
+        overlay->popOverlayWidget([=] {
+            screen->deleteLater();
+            d->tiles.first()->setFocus();
+        });
     });
     connect(screen, &PauseScreen::mainMenu, this, [=] {
         emit returnToMainMenu();
         MusicEngine::playSoundEffect(MusicEngine::Selection);
-        overlay->hideOverlay();
-        overlay->deleteLater();
-        screen->deleteLater();
+        overlay->popOverlayWidget([=] {
+            screen->deleteLater();
+        });
     });
 
     screen->setFocus();

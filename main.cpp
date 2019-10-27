@@ -20,7 +20,6 @@
 #include "gamewindow.h"
 
 #include <tapplication.h>
-#include <QStyleFactory>
 #include <QDir>
 #include <entertaining.h>
 
@@ -49,9 +48,6 @@ int main(int argc, char *argv[])
     #else
         a.setApplicationName(QApplication::translate("main", "Entertaining Mines"));
     #endif
-
-    a.setStyle(QStyleFactory::create("contemporary"));
-
     Entertaining::initialize();
 
     GameWindow w;
