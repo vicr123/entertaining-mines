@@ -210,6 +210,78 @@ void GameScreen::startGame(int width, int height, int mines)
     d->tiles.first()->setFocus();
 }
 
+void GameScreen::loadGame(QDataStream*stream)
+{
+    //Clear out the tiles
+    for (GameTile* tile : d->tiles) {
+        ui->gameGrid->removeWidget(tile);
+        tile->deleteLater();
+    }
+    d->tiles.clear();
+    d->gameStarted = true;
+    d->gameIsOver = false;
+
+    //Start loading in data
+    *stream >> d->width;
+    *stream >> d->remainingTileCount;
+    *stream >> d->mines;
+
+    //Create new tiles
+    int tileCount;
+    *stream >> tileCount;
+
+    d->minesRemaining = d->mines;
+
+    int x = 0;
+    int y = 0;
+    for (int i = 0; i < tileCount; i++) {
+        GameTile* tile = new GameTile(this, x, y);
+        ui->gameGrid->addWidget(tile, y, x);
+        d->tiles.append(tile);
+        connect(tile, &GameTile::currentTileChanged, this, &GameScreen::currentTileChanged);
+
+        char* bytes;
+        uint len;
+        stream->readBytes(bytes, len);
+
+        QByteArray ba(bytes, static_cast<int>(len));
+        tile->fromByteArray(ba);
+
+        delete[] bytes;
+
+        if (tile->isFlagged()) d->minesRemaining--;
+
+        x++;
+        if (x == d->width) {
+            x = 0;
+            y++;
+        }
+    }
+
+    ui->minesRemainingLabel->setText(QString::number(d->minesRemaining));
+
+    //Tell all the tiles to update themselves
+    for (GameTile* tile : d->tiles) {
+        tile->afterLoadComplete();
+    }
+
+    this->setFocusProxy(d->tiles.first());
+    d->tiles.first()->setFocus();
+}
+
+void GameScreen::saveGame(QDataStream*stream)
+{
+    *stream << d->width;
+    *stream << d->remainingTileCount;
+    *stream << d->mines;
+
+    *stream << d->tiles.count();
+    for (GameTile* tile : d->tiles) {
+        QByteArray ba = tile->toByteArray();
+        stream->writeBytes(ba.constData(), static_cast<uint>(ba.length()));
+    }
+}
+
 void GameScreen::distributeMines(QPoint clickLocation)
 {
     Q_ASSERT(!d->gameStarted);
@@ -301,24 +373,21 @@ void GameScreen::on_menuButton_clicked()
     MusicEngine::pauseBackgroundMusic();
     MusicEngine::playSoundEffect(MusicEngine::Pause);
 
-    PauseScreen* screen = new PauseScreen();
-    PauseOverlay* overlay = new PauseOverlay(this);
-    overlay->pushOverlayWidget(screen);
+    PauseScreen* screen = new PauseScreen(this);
     connect(screen, &PauseScreen::resume, this, [=] {
-        MusicEngine::playSoundEffect(MusicEngine::Backstep);
-        MusicEngine::playBackgroundMusic();
-        overlay->popOverlayWidget([=] {
-            screen->deleteLater();
-            d->tiles.first()->setFocus();
-        });
+        screen->deleteLater();
+        d->tiles.first()->setFocus();
     });
     connect(screen, &PauseScreen::mainMenu, this, [=] {
+        screen->deleteLater();
         emit returnToMainMenu();
-        MusicEngine::playSoundEffect(MusicEngine::Selection);
-        overlay->popOverlayWidget([=] {
-            screen->deleteLater();
-        });
     });
+    connect(screen, &PauseScreen::provideMetadata, this, [=](QVariantMap* metadata) {
+        //TODO
+        metadata->insert("description", tr("Minesweeper Game"));
+    });
+    connect(screen, &PauseScreen::provideSaveData, this, &GameScreen::saveGame);
+    screen->show();
 
     screen->setFocus();
 }

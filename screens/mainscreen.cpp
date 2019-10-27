@@ -25,6 +25,7 @@
 #include <gamepadbuttons.h>
 #include <textinputoverlay.h>
 #include <pauseoverlay.h>
+#include <loadoverlay.h>
 
 MainScreen::MainScreen(QWidget *parent) :
     QWidget(parent),
@@ -105,4 +106,25 @@ void MainScreen::on_startCustom_clicked()
     if (canceled) goto askHeight;
 
     emit startGame(width, height, mines);
+}
+
+void MainScreen::on_loadButton_clicked()
+{
+//    QFile* f = new QFile("/home/victor/.local/share/theSuite/Entertaining Mines/saves/coolsave");
+//    f->open(QFile::ReadWrite);
+//    QDataStream str(f);
+//    int magic;
+//    QString string;
+//    str >> magic >> magic;
+//    str >> string;
+//    QVariantMap meta;
+//    str >> meta;
+
+//    emit loadGame(&str);
+
+    LoadOverlay* load = new LoadOverlay(this);
+    connect(load, &LoadOverlay::loadData, this, [=](QDataStream* stream) {
+        loadGame(stream);
+    });
+    load->load();
 }

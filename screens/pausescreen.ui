@@ -101,6 +101,16 @@
         </widget>
        </item>
        <item>
+        <widget class="QCommandLinkButton" name="saveButton">
+         <property name="text">
+          <string>Save</string>
+         </property>
+         <property name="description">
+          <string>Save this game so you can resume it later</string>
+         </property>
+        </widget>
+       </item>
+       <item>
         <spacer name="verticalSpacer">
          <property name="orientation">
           <enum>Qt::Vertical</enum>
@@ -117,7 +127,7 @@
         </spacer>
        </item>
        <item>
-        <widget class="QCommandLinkButton" name="commandLinkButton_2">
+        <widget class="QCommandLinkButton" name="settingsButton">
          <property name="text">
           <string>Settings</string>
          </property>

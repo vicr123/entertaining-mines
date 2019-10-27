@@ -23,12 +23,23 @@
 #include <QShortcut>
 #include <gamepadbuttons.h>
 #include <QKeyEvent>
+#include <pauseoverlay.h>
+#include <musicengine.h>
+#include <saveoverlay.h>
+
+struct PauseScreenPrivate {
+    PauseOverlay* overlay;
+};
 
 PauseScreen::PauseScreen(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::PauseScreen)
 {
     ui->setupUi(this);
+    d = new PauseScreenPrivate();
+
+    d->overlay = new PauseOverlay(parent);
+    d->overlay->pushOverlayWidget(this);
 
     this->setFocusProxy(ui->resumeButton);
 
@@ -62,12 +73,22 @@ PauseScreen::PauseScreen(QWidget *parent) :
 
 PauseScreen::~PauseScreen()
 {
+    delete d;
     delete ui;
+}
+
+void PauseScreen::show()
+{
+
 }
 
 void PauseScreen::on_resumeButton_clicked()
 {
-    emit resume();
+    MusicEngine::playSoundEffect(MusicEngine::Backstep);
+    MusicEngine::playBackgroundMusic();
+    d->overlay->popOverlayWidget([=] {
+        emit resume();
+    });
 }
 
 void PauseScreen::resizeEvent(QResizeEvent*event)
@@ -78,5 +99,18 @@ void PauseScreen::resizeEvent(QResizeEvent*event)
 
 void PauseScreen::on_mainMenuButton_clicked()
 {
-    emit mainMenu();
+    MusicEngine::playSoundEffect(MusicEngine::Selection);
+    d->overlay->popOverlayWidget([=] {
+        emit mainMenu();
+    });
+}
+
+void PauseScreen::on_saveButton_clicked()
+{
+    SaveOverlay* save = new SaveOverlay(this, d->overlay);
+    connect(save, &SaveOverlay::provideMetadata, this, &PauseScreen::provideMetadata);
+    connect(save, &SaveOverlay::provideSaveData, this, [=](QDataStream* stream) {
+        emit provideSaveData(stream);
+    });
+    save->save();
 }

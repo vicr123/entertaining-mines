@@ -36,6 +36,11 @@ GameWindow::GameWindow(QWidget *parent)
         ui->stackedWidget->setCurrentWidget(ui->gameScreen);
         ui->gameScreen->setFocus();
     });
+    connect(ui->mainScreen, &MainScreen::loadGame, this, [=](QDataStream* stream) {
+        ui->stackedWidget->setCurrentWidget(ui->gameScreen);
+        ui->gameScreen->loadGame(stream);
+        ui->gameScreen->setFocus();
+    });
 
     connect(ui->gameScreen, &GameScreen::returnToMainMenu, this, [=] {
         ui->stackedWidget->setCurrentWidget(ui->mainScreen);

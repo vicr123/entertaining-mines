@@ -23,59 +23,64 @@
     </message>
     <message>
         <location filename="../screens/gamescreen.cpp" line="56"/>
-        <location filename="../screens/gamescreen.cpp" line="272"/>
+        <location filename="../screens/gamescreen.cpp" line="344"/>
         <source>Reveal</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../screens/gamescreen.cpp" line="57"/>
-        <location filename="../screens/gamescreen.cpp" line="273"/>
+        <location filename="../screens/gamescreen.cpp" line="345"/>
         <source>Flag</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../screens/gamescreen.cpp" line="239"/>
+        <location filename="../screens/gamescreen.cpp" line="311"/>
         <source>Congratulations! You won!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../screens/gamescreen.cpp" line="240"/>
-        <location filename="../screens/gamescreen.cpp" line="249"/>
+        <location filename="../screens/gamescreen.cpp" line="312"/>
+        <location filename="../screens/gamescreen.cpp" line="321"/>
         <source>What do you want to do now?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../screens/gamescreen.cpp" line="242"/>
-        <location filename="../screens/gamescreen.cpp" line="251"/>
+        <location filename="../screens/gamescreen.cpp" line="314"/>
+        <location filename="../screens/gamescreen.cpp" line="323"/>
         <source>Review the game</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../screens/gamescreen.cpp" line="243"/>
-        <location filename="../screens/gamescreen.cpp" line="252"/>
+        <location filename="../screens/gamescreen.cpp" line="315"/>
+        <location filename="../screens/gamescreen.cpp" line="324"/>
         <source>Start a new game</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../screens/gamescreen.cpp" line="244"/>
-        <location filename="../screens/gamescreen.cpp" line="253"/>
+        <location filename="../screens/gamescreen.cpp" line="316"/>
+        <location filename="../screens/gamescreen.cpp" line="325"/>
         <source>Return to the Main Menu</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../screens/gamescreen.cpp" line="248"/>
+        <location filename="../screens/gamescreen.cpp" line="320"/>
         <source>You stepped on a mine</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../screens/gamescreen.cpp" line="276"/>
-        <location filename="../screens/gamescreen.cpp" line="279"/>
+        <location filename="../screens/gamescreen.cpp" line="348"/>
+        <location filename="../screens/gamescreen.cpp" line="351"/>
         <source>Unflag</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../screens/gamescreen.cpp" line="282"/>
+        <location filename="../screens/gamescreen.cpp" line="354"/>
         <source>Sweep</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../screens/gamescreen.cpp" line="387"/>
+        <source>Minesweeper Game</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -170,27 +175,27 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../screens/mainscreen.cpp" line="38"/>
+        <location filename="../screens/mainscreen.cpp" line="39"/>
         <source>Select</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../screens/mainscreen.cpp" line="39"/>
+        <location filename="../screens/mainscreen.cpp" line="40"/>
         <source>Exit</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../screens/mainscreen.cpp" line="97"/>
+        <location filename="../screens/mainscreen.cpp" line="98"/>
         <source>How wide is the board?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../screens/mainscreen.cpp" line="101"/>
+        <location filename="../screens/mainscreen.cpp" line="102"/>
         <source>How high is the board?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../screens/mainscreen.cpp" line="104"/>
+        <location filename="../screens/mainscreen.cpp" line="105"/>
         <source>How many mines are on this board?</source>
         <translation type="unfinished"></translation>
     </message>
@@ -209,7 +214,7 @@
     </message>
     <message>
         <location filename="../screens/pausescreen.ui" line="96"/>
-        <location filename="../screens/pausescreen.cpp" line="39"/>
+        <location filename="../screens/pausescreen.cpp" line="50"/>
         <source>Resume</source>
         <translation type="unfinished"></translation>
     </message>
@@ -219,27 +224,37 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../screens/pausescreen.ui" line="122"/>
-        <source>Settings</source>
+        <location filename="../screens/pausescreen.ui" line="106"/>
+        <source>Save</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../screens/pausescreen.ui" line="125"/>
-        <source>Go to Settings</source>
+        <location filename="../screens/pausescreen.ui" line="109"/>
+        <source>Save this game so you can resume it later</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../screens/pausescreen.ui" line="132"/>
-        <source>Main Menu</source>
+        <source>Settings</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../screens/pausescreen.ui" line="135"/>
+        <source>Go to Settings</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../screens/pausescreen.ui" line="142"/>
+        <source>Main Menu</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../screens/pausescreen.ui" line="145"/>
         <source>Abandon this game</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../screens/pausescreen.cpp" line="38"/>
+        <location filename="../screens/pausescreen.cpp" line="49"/>
         <source>Select</source>
         <translation type="unfinished"></translation>
     </message>

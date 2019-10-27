@@ -111,6 +111,37 @@ GameTile::State GameTile::state()
     return d->state;
 }
 
+QByteArray GameTile::toByteArray()
+{
+    QByteArray ba;
+    QDataStream stream(&ba, QIODevice::ReadWrite);
+
+    stream << static_cast<int>(d->state);
+    stream << d->isMine;
+
+    return ba;
+}
+
+void GameTile::fromByteArray(QByteArray ba)
+{
+    QDataStream stream(ba);
+
+    int state;
+    stream >> state;
+    stream >> d->isMine;
+
+    d->state = static_cast<State>(state);
+}
+
+void GameTile::afterLoadComplete()
+{
+    if (this->state() == Revealed) {
+        this->minesAdjacent();
+    }
+
+    this->update();
+}
+
 void GameTile::reveal()
 {
     if (d->state == Idle) {

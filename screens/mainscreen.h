@@ -36,6 +36,7 @@ class MainScreen : public QWidget
 
     signals:
         void startGame(int width, int height, int mines);
+        void loadGame(QDataStream* stream);
 
     private slots:
         void on_startEasy_clicked();
@@ -47,6 +48,8 @@ class MainScreen : public QWidget
         void on_exitButton_clicked();
 
         void on_startCustom_clicked();
+
+        void on_loadButton_clicked();
 
     private:
         Ui::MainScreen *ui;

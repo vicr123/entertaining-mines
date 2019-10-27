@@ -26,6 +26,7 @@ namespace Ui {
     class PauseScreen;
 }
 
+struct PauseScreenPrivate;
 class PauseScreen : public QWidget
 {
         Q_OBJECT
@@ -37,15 +38,24 @@ class PauseScreen : public QWidget
     signals:
         void resume();
         void mainMenu();
+        void provideMetadata(QVariantMap* metadata);
+        void provideSaveData(QDataStream* data);
+
+    public slots:
+        void show();
 
     private slots:
         void on_resumeButton_clicked();
 
         void on_mainMenuButton_clicked();
 
+        void on_saveButton_clicked();
+
     private:
         Ui::PauseScreen *ui;
         void resizeEvent(QResizeEvent* event);
+
+        PauseScreenPrivate* d;
 };
 
 #endif // PAUSESCREEN_H

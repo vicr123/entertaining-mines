@@ -29,10 +29,10 @@ class GameTile : public QWidget
         Q_OBJECT
     public:
         enum State {
-            Idle,
-            Revealed,
-            Flagged,
-            Marked
+            Idle = 0,
+            Revealed = 1,
+            Flagged = 2,
+            Marked = 3
         };
 
         explicit GameTile(GameScreen *parent, int x, int y);
@@ -47,6 +47,10 @@ class GameTile : public QWidget
         bool isFlagged();
 
         State state();
+
+        QByteArray toByteArray();
+        void fromByteArray(QByteArray ba);
+        void afterLoadComplete();
 
     signals:
         void currentTileChanged();

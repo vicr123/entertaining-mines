@@ -147,7 +147,7 @@
         </spacer>
        </item>
        <item>
-        <widget class="QCommandLinkButton" name="commandLinkButton">
+        <widget class="QCommandLinkButton" name="loadButton">
          <property name="text">
           <string>Load Game</string>
          </property>
@@ -207,15 +207,15 @@
  </widget>
  <customwidgets>
   <customwidget>
+   <class>FocusBarrier</class>
+   <extends>QPushButton</extends>
+   <header location="global">focusbarrier.h</header>
+  </customwidget>
+  <customwidget>
    <class>GamepadHud</class>
    <extends>QWidget</extends>
    <header location="global">gamepadhud.h</header>
    <container>1</container>
-  </customwidget>
-  <customwidget>
-   <class>FocusBarrier</class>
-   <extends>QPushButton</extends>
-   <header location="global">focusbarrier.h</header>
   </customwidget>
  </customwidgets>
  <resources/>
