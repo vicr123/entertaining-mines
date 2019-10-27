@@ -107,6 +107,8 @@ void PauseScreen::on_mainMenuButton_clicked()
 
 void PauseScreen::on_saveButton_clicked()
 {
+    MusicEngine::playSoundEffect(MusicEngine::Selection);
+
     SaveOverlay* save = new SaveOverlay(this, d->overlay);
     connect(save, &SaveOverlay::provideMetadata, this, &PauseScreen::provideMetadata);
     connect(save, &SaveOverlay::provideSaveData, this, [=](QDataStream* stream) {

@@ -70,13 +70,13 @@ GameScreen::GameScreen(QWidget *parent) :
 
     d->dialogue = new DialogueOverlay(this);
     connect(d->dialogue, QOverload<QString>::of(&DialogueOverlay::progressDialogue), this, [=](QString selectedOption) {
+        d->dialogue->dismiss();
         if (selectedOption == "mainmenu") {
             MusicEngine::pauseBackgroundMusic();
             emit returnToMainMenu();
         } else if (selectedOption == "newgame") {
             startGame(d->width, boardDimensions().height(), d->mines);
         }
-        d->dialogue->dismiss();
     });
 
     QShortcut* pauseShortcut = new QShortcut(QKeySequence(Qt::Key_Escape), this);
@@ -206,8 +206,8 @@ void GameScreen::startGame(int width, int height, int mines)
 
     MusicEngine::playSoundEffect(MusicEngine::Selection);
 
-    this->setFocusProxy(d->tiles.first());
     d->tiles.first()->setFocus();
+    this->setFocusProxy(d->tiles.first());
 }
 
 void GameScreen::loadGame(QDataStream*stream)
@@ -218,13 +218,13 @@ void GameScreen::loadGame(QDataStream*stream)
         tile->deleteLater();
     }
     d->tiles.clear();
-    d->gameStarted = true;
-    d->gameIsOver = false;
 
     //Start loading in data
     *stream >> d->width;
     *stream >> d->remainingTileCount;
     *stream >> d->mines;
+    *stream >> d->gameStarted;
+    *stream >> d->gameIsOver;
 
     //Create new tiles
     int tileCount;
@@ -265,8 +265,11 @@ void GameScreen::loadGame(QDataStream*stream)
         tile->afterLoadComplete();
     }
 
-    this->setFocusProxy(d->tiles.first());
+    MusicEngine::setBackgroundMusic(QUrl("qrc:/audio/crypto.ogg"));
+    MusicEngine::playBackgroundMusic();
+
     d->tiles.first()->setFocus();
+    this->setFocusProxy(d->tiles.first());
 }
 
 void GameScreen::saveGame(QDataStream*stream)
@@ -274,6 +277,8 @@ void GameScreen::saveGame(QDataStream*stream)
     *stream << d->width;
     *stream << d->remainingTileCount;
     *stream << d->mines;
+    *stream << d->gameStarted;
+    *stream << d->gameIsOver;
 
     *stream << d->tiles.count();
     for (GameTile* tile : d->tiles) {
@@ -388,6 +393,4 @@ void GameScreen::on_menuButton_clicked()
     });
     connect(screen, &PauseScreen::provideSaveData, this, &GameScreen::saveGame);
     screen->show();
-
-    screen->setFocus();
 }

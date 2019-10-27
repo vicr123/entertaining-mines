@@ -23,63 +23,63 @@
     </message>
     <message>
         <location filename="../screens/gamescreen.cpp" line="56"/>
-        <location filename="../screens/gamescreen.cpp" line="344"/>
+        <location filename="../screens/gamescreen.cpp" line="349"/>
         <source>Reveal</source>
         <translation>Mở</translation>
     </message>
     <message>
         <location filename="../screens/gamescreen.cpp" line="57"/>
-        <location filename="../screens/gamescreen.cpp" line="345"/>
+        <location filename="../screens/gamescreen.cpp" line="350"/>
         <source>Flag</source>
         <translation>Đặt cờ</translation>
     </message>
     <message>
-        <location filename="../screens/gamescreen.cpp" line="311"/>
+        <location filename="../screens/gamescreen.cpp" line="316"/>
         <source>Congratulations! You won!</source>
         <translation>Chúc mừng bạn! Bạn đã thắng!</translation>
     </message>
     <message>
-        <location filename="../screens/gamescreen.cpp" line="312"/>
-        <location filename="../screens/gamescreen.cpp" line="321"/>
+        <location filename="../screens/gamescreen.cpp" line="317"/>
+        <location filename="../screens/gamescreen.cpp" line="326"/>
         <source>What do you want to do now?</source>
         <translation>Bạn muốn làm gì bây giờ?</translation>
     </message>
     <message>
-        <location filename="../screens/gamescreen.cpp" line="314"/>
-        <location filename="../screens/gamescreen.cpp" line="323"/>
+        <location filename="../screens/gamescreen.cpp" line="319"/>
+        <location filename="../screens/gamescreen.cpp" line="328"/>
         <source>Review the game</source>
         <translation>Xem lại phiên chơi</translation>
     </message>
     <message>
-        <location filename="../screens/gamescreen.cpp" line="315"/>
-        <location filename="../screens/gamescreen.cpp" line="324"/>
+        <location filename="../screens/gamescreen.cpp" line="320"/>
+        <location filename="../screens/gamescreen.cpp" line="329"/>
         <source>Start a new game</source>
         <translation>Bắt đầu phiên chơi mới</translation>
     </message>
     <message>
-        <location filename="../screens/gamescreen.cpp" line="316"/>
-        <location filename="../screens/gamescreen.cpp" line="325"/>
+        <location filename="../screens/gamescreen.cpp" line="321"/>
+        <location filename="../screens/gamescreen.cpp" line="330"/>
         <source>Return to the Main Menu</source>
         <translation>Trở lại trang chủ</translation>
     </message>
     <message>
-        <location filename="../screens/gamescreen.cpp" line="320"/>
+        <location filename="../screens/gamescreen.cpp" line="325"/>
         <source>You stepped on a mine</source>
         <translation>Bạn bước lên mỏ</translation>
     </message>
     <message>
-        <location filename="../screens/gamescreen.cpp" line="348"/>
-        <location filename="../screens/gamescreen.cpp" line="351"/>
+        <location filename="../screens/gamescreen.cpp" line="353"/>
+        <location filename="../screens/gamescreen.cpp" line="356"/>
         <source>Unflag</source>
         <translation>Gỡ cờ</translation>
     </message>
     <message>
-        <location filename="../screens/gamescreen.cpp" line="354"/>
+        <location filename="../screens/gamescreen.cpp" line="359"/>
         <source>Sweep</source>
         <translation>Quét</translation>
     </message>
     <message>
-        <location filename="../screens/gamescreen.cpp" line="387"/>
+        <location filename="../screens/gamescreen.cpp" line="392"/>
         <source>Minesweeper Game</source>
         <translation type="unfinished"></translation>
     </message>
@@ -175,27 +175,27 @@
         <translation>Thoát mìn giải trí</translation>
     </message>
     <message>
-        <location filename="../screens/mainscreen.cpp" line="39"/>
+        <location filename="../screens/mainscreen.cpp" line="40"/>
         <source>Select</source>
         <translation>Chọn</translation>
     </message>
     <message>
-        <location filename="../screens/mainscreen.cpp" line="40"/>
+        <location filename="../screens/mainscreen.cpp" line="41"/>
         <source>Exit</source>
         <translation>Thoát</translation>
     </message>
     <message>
-        <location filename="../screens/mainscreen.cpp" line="98"/>
+        <location filename="../screens/mainscreen.cpp" line="99"/>
         <source>How wide is the board?</source>
         <translation>Bảng này rộng bao nhiêu?</translation>
     </message>
     <message>
-        <location filename="../screens/mainscreen.cpp" line="102"/>
+        <location filename="../screens/mainscreen.cpp" line="103"/>
         <source>How high is the board?</source>
         <translation>Bảng này cao bao nhiêu?</translation>
     </message>
     <message>
-        <location filename="../screens/mainscreen.cpp" line="105"/>
+        <location filename="../screens/mainscreen.cpp" line="106"/>
         <source>How many mines are on this board?</source>
         <translation>Bảng này có mấy mìn?</translation>
     </message>

@@ -26,6 +26,7 @@
 #include <textinputoverlay.h>
 #include <pauseoverlay.h>
 #include <loadoverlay.h>
+#include <musicengine.h>
 
 MainScreen::MainScreen(QWidget *parent) :
     QWidget(parent),
@@ -122,6 +123,7 @@ void MainScreen::on_loadButton_clicked()
 
 //    emit loadGame(&str);
 
+    MusicEngine::playSoundEffect(MusicEngine::Selection);
     LoadOverlay* load = new LoadOverlay(this);
     connect(load, &LoadOverlay::loadData, this, [=](QDataStream* stream) {
         loadGame(stream);
