@@ -79,8 +79,28 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../screens/gamescreen.cpp" line="392"/>
-        <source>Minesweeper Game</source>
+        <location filename="../screens/gamescreen.cpp" line="393"/>
+        <source>%1 × %2 board</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../screens/gamescreen.cpp" line="394"/>
+        <source>%1 mines</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../screens/gamescreen.cpp" line="395"/>
+        <source>%1 flagged</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../screens/gamescreen.cpp" line="396"/>
+        <source>%1 mines to go</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../screens/gamescreen.cpp" line="397"/>
+        <source>%1% cleared</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

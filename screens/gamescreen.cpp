@@ -389,7 +389,14 @@ void GameScreen::on_menuButton_clicked()
     });
     connect(screen, &PauseScreen::provideMetadata, this, [=](QVariantMap* metadata) {
         //TODO
-        metadata->insert("description", tr("Minesweeper Game"));
+        QStringList description;
+        description.append(tr("%1 × %2 board").arg(d->width).arg(boardDimensions().height()));
+        description.append(tr("%1 mines").arg(d->mines));
+        description.append(tr("%1 flagged").arg(d->mines - d->minesRemaining));
+        description.append(tr("%1 mines to go").arg(d->minesRemaining));
+        description.append(tr("%1% cleared").arg(static_cast<int>(static_cast<float>(d->remainingTileCount) / d->tiles.count() * 100)));
+
+        metadata->insert("description", description.join(" ∙ "));
     });
     connect(screen, &PauseScreen::provideSaveData, this, &GameScreen::saveGame);
     screen->show();
