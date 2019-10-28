@@ -33,6 +33,7 @@
 #include <QShortcut>
 #include <tpromise.h>
 #include <focusbarrier.h>
+#include <discordintegration.h>
 
 struct GameScreenPrivate {
     QVector<GameTile*> tiles;
@@ -188,6 +189,33 @@ void GameScreen::resizeEvent(QResizeEvent*event)
     emit boardResized();
 }
 
+void GameScreen::setup()
+{
+    //Clear out the tiles
+    for (GameTile* tile : d->tiles) {
+        ui->gameGrid->removeWidget(tile);
+        tile->deleteLater();
+    }
+    d->tiles.clear();
+
+    MusicEngine::setBackgroundMusic("crypto");
+    MusicEngine::playBackgroundMusic();
+}
+
+void GameScreen::finishSetup()
+{
+    ui->minesRemainingLabel->setText(QString::number(d->minesRemaining));
+
+    d->tiles.first()->setFocus();
+    this->setFocusProxy(d->tiles.first());
+
+    DiscordIntegration::RichPresence presence;
+    presence.state = tr("In Game");
+    presence.details = tr("%1×%2 board with %3 mines").arg(d->width).arg(boardDimensions().height()).arg(d->mines);
+    presence.startTimestamp = QDateTime::currentDateTime();
+    DiscordIntegration::instance()->setPresence(presence);
+}
+
 void GameScreen::startGame(int width, int height, int mines)
 {
     d->width = width;
@@ -196,12 +224,7 @@ void GameScreen::startGame(int width, int height, int mines)
     //Ensure that the number of mines is valid for this game
     if (mines > width * height - 1) mines = width * height - 1;
 
-    //Clear out the tiles
-    for (GameTile* tile : d->tiles) {
-        ui->gameGrid->removeWidget(tile);
-        tile->deleteLater();
-    }
-    d->tiles.clear();
+    setup();
 
     //Create new tiles
     for (int y = 0; y < height; y++) {
@@ -220,23 +243,14 @@ void GameScreen::startGame(int width, int height, int mines)
     d->minesRemaining = mines + 1;
     flagChanged(true);
 
-    MusicEngine::setBackgroundMusic("crypto");
-    MusicEngine::playBackgroundMusic();
-
     MusicEngine::playSoundEffect(MusicEngine::Selection);
 
-    d->tiles.first()->setFocus();
-    this->setFocusProxy(d->tiles.first());
+    finishSetup();
 }
 
 void GameScreen::loadGame(QDataStream*stream)
 {
-    //Clear out the tiles
-    for (GameTile* tile : d->tiles) {
-        ui->gameGrid->removeWidget(tile);
-        tile->deleteLater();
-    }
-    d->tiles.clear();
+    setup();
 
     //Start loading in data
     *stream >> d->width;
@@ -277,18 +291,11 @@ void GameScreen::loadGame(QDataStream*stream)
         }
     }
 
-    ui->minesRemainingLabel->setText(QString::number(d->minesRemaining));
-
     //Tell all the tiles to update themselves
     for (GameTile* tile : d->tiles) {
         tile->afterLoadComplete();
     }
-
-    MusicEngine::setBackgroundMusic("crypto");
-    MusicEngine::playBackgroundMusic();
-
-    d->tiles.first()->setFocus();
-    this->setFocusProxy(d->tiles.first());
+    finishSetup();
 }
 
 void GameScreen::saveGame(QDataStream*stream)

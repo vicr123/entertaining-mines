@@ -203,6 +203,7 @@ void GameTile::toggleFlagStatus()
         case Idle:
             d->state = Flagged;
             d->parent->flagChanged(true);
+            MusicEngine::playSoundEffect("dig");
             break;
         case Flagged:
             d->state = Marked;

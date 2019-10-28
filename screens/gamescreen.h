@@ -76,6 +76,9 @@ class GameScreen : public QWidget
         int pointToIndex(QPoint point);
 
         void resizeEvent(QResizeEvent* event);
+
+        void setup();
+        void finishSetup();
 };
 
 #endif // GAMESCREEN_H

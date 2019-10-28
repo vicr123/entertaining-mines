@@ -71,79 +71,89 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../screens/gamescreen.cpp" line="61"/>
-        <location filename="../screens/gamescreen.cpp" line="407"/>
+        <location filename="../screens/gamescreen.cpp" line="62"/>
+        <location filename="../screens/gamescreen.cpp" line="414"/>
         <source>Reveal</source>
         <translation>Mở</translation>
     </message>
     <message>
-        <location filename="../screens/gamescreen.cpp" line="62"/>
-        <location filename="../screens/gamescreen.cpp" line="408"/>
+        <location filename="../screens/gamescreen.cpp" line="63"/>
+        <location filename="../screens/gamescreen.cpp" line="415"/>
         <source>Flag</source>
         <translation>Đặt cờ</translation>
     </message>
     <message>
-        <location filename="../screens/gamescreen.cpp" line="344"/>
+        <location filename="../screens/gamescreen.cpp" line="213"/>
+        <source>In Game</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../screens/gamescreen.cpp" line="214"/>
+        <source>%1×%2 board with %3 mines</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../screens/gamescreen.cpp" line="351"/>
         <source>Congratulations! You won!</source>
         <translation>Chúc mừng bạn! Bạn đã thắng!</translation>
     </message>
     <message>
-        <location filename="../screens/gamescreen.cpp" line="345"/>
+        <location filename="../screens/gamescreen.cpp" line="352"/>
         <source>What do you want to do now?</source>
         <translation>Bạn muốn làm gì bây giờ?</translation>
     </message>
     <message>
-        <location filename="../screens/gamescreen.cpp" line="347"/>
+        <location filename="../screens/gamescreen.cpp" line="354"/>
         <source>Review the game</source>
         <translation>Xem lại phiên chơi</translation>
     </message>
     <message>
-        <location filename="../screens/gamescreen.cpp" line="348"/>
+        <location filename="../screens/gamescreen.cpp" line="355"/>
         <source>Start a new game</source>
         <translation>Bắt đầu phiên chơi mới</translation>
     </message>
     <message>
-        <location filename="../screens/gamescreen.cpp" line="349"/>
+        <location filename="../screens/gamescreen.cpp" line="356"/>
         <source>Return to the Main Menu</source>
         <translation>Trở lại trang chủ</translation>
     </message>
     <message>
-        <location filename="../screens/gamescreen.cpp" line="411"/>
+        <location filename="../screens/gamescreen.cpp" line="418"/>
         <source>Mark</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../screens/gamescreen.cpp" line="414"/>
+        <location filename="../screens/gamescreen.cpp" line="421"/>
         <source>Unflag</source>
         <translation>Gỡ cờ</translation>
     </message>
     <message>
-        <location filename="../screens/gamescreen.cpp" line="417"/>
+        <location filename="../screens/gamescreen.cpp" line="424"/>
         <source>Sweep</source>
         <translation>Quét</translation>
     </message>
     <message>
-        <location filename="../screens/gamescreen.cpp" line="451"/>
+        <location filename="../screens/gamescreen.cpp" line="458"/>
         <source>%1 × %2 board</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../screens/gamescreen.cpp" line="452"/>
+        <location filename="../screens/gamescreen.cpp" line="459"/>
         <source>%1 mines</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../screens/gamescreen.cpp" line="453"/>
+        <location filename="../screens/gamescreen.cpp" line="460"/>
         <source>%1 flagged</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../screens/gamescreen.cpp" line="454"/>
+        <location filename="../screens/gamescreen.cpp" line="461"/>
         <source>%1 mines to go</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../screens/gamescreen.cpp" line="455"/>
+        <location filename="../screens/gamescreen.cpp" line="462"/>
         <source>%1% cleared</source>
         <translation type="unfinished"></translation>
     </message>
@@ -154,6 +164,16 @@
         <location filename="../gamewindow.ui" line="14"/>
         <source>Entertaining Mines</source>
         <translation>Mìn giải trí</translation>
+    </message>
+    <message>
+        <location filename="../gamewindow.cpp" line="50"/>
+        <source>Idle</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../gamewindow.cpp" line="51"/>
+        <source>Main Menu</source>
+        <translation type="unfinished">Trang chủ</translation>
     </message>
 </context>
 <context>
@@ -326,17 +346,17 @@
 <context>
     <name>main</name>
     <message>
-        <location filename="../main.cpp" line="41"/>
+        <location filename="../main.cpp" line="42"/>
         <source>Minesweeper</source>
         <translation>Gỡ mìn</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="47"/>
+        <location filename="../main.cpp" line="48"/>
         <source>Entertaining Mines Blueprint</source>
         <translation>Mìn giải trí (Blueprint)</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="49"/>
+        <location filename="../main.cpp" line="50"/>
         <source>Entertaining Mines</source>
         <translation>Mìn giải trí</translation>
     </message>

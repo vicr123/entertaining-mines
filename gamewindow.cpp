@@ -22,6 +22,7 @@
 
 #include <focuspointer.h>
 #include <textinputoverlay.h>
+#include <discordintegration.h>
 
 GameWindow::GameWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -44,6 +45,11 @@ GameWindow::GameWindow(QWidget *parent)
 
     connect(ui->gameScreen, &GameScreen::returnToMainMenu, this, [=] {
         ui->stackedWidget->setCurrentWidget(ui->mainScreen);
+
+        DiscordIntegration::RichPresence presence;
+        presence.state = tr("Idle");
+        presence.details = tr("Main Menu");
+        DiscordIntegration::instance()->setPresence(presence);
     });
 
     FocusPointer::enableAutomaticFocusPointer();

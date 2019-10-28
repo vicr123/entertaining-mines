@@ -22,6 +22,7 @@
 #include <tapplication.h>
 #include <QDir>
 #include <entertaining.h>
+#include <discordintegration.h>
 
 int main(int argc, char *argv[])
 {
@@ -48,7 +49,9 @@ int main(int argc, char *argv[])
     #else
         a.setApplicationName(QApplication::translate("main", "Entertaining Mines"));
     #endif
+
     Entertaining::initialize();
+    DiscordIntegration::makeInstance("638385511530102794", "");
 
     GameWindow w;
     w.show();
