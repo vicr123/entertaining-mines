@@ -209,11 +209,11 @@ void GameScreen::finishSetup()
     d->tiles.first()->setFocus();
     this->setFocusProxy(d->tiles.first());
 
-    DiscordIntegration::RichPresence presence;
-    presence.state = tr("In Game");
-    presence.details = tr("%1×%2 board with %3 mines").arg(d->width).arg(boardDimensions().height()).arg(d->mines);
-    presence.startTimestamp = QDateTime::currentDateTime();
-    DiscordIntegration::instance()->setPresence(presence);
+    DiscordIntegration::instance()->setPresence({
+        {"state", tr("In Game")},
+        {"details", tr("%1×%2 board with %3 mines").arg(d->width).arg(boardDimensions().height()).arg(d->mines)},
+        {"startTimestamp", QDateTime::currentDateTimeUtc()}
+    });
 }
 
 void GameScreen::startGame(int width, int height, int mines)

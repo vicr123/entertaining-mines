@@ -46,10 +46,10 @@ GameWindow::GameWindow(QWidget *parent)
     connect(ui->gameScreen, &GameScreen::returnToMainMenu, this, [=] {
         ui->stackedWidget->setCurrentWidget(ui->mainScreen);
 
-        DiscordIntegration::RichPresence presence;
-        presence.state = tr("Idle");
-        presence.details = tr("Main Menu");
-        DiscordIntegration::instance()->setPresence(presence);
+        DiscordIntegration::instance()->setPresence({
+            {"state", tr("Idle")},
+            {"details", tr("Main Menu")}
+        });
     });
 
     FocusPointer::enableAutomaticFocusPointer();
