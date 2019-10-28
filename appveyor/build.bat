@@ -43,4 +43,4 @@ copy translations\*.qm deploy\translations
 copy "C:\Program Files\thelibs\lib\the-libs.dll" deploy
 copy "C:\Program Files\libentertaining\lib\entertaining.dll" deploy
 cd deploy
-windeployqt entertaining-mines.exe -network -quickwidgets -gamepad -svg
+windeployqt entertaining-mines.exe -network -quickwidgets -gamepad -svg -multimedia
