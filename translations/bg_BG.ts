@@ -15,6 +15,55 @@
     </message>
 </context>
 <context>
+    <name>GameOver</name>
+    <message>
+        <location filename="../game/gameover.ui" line="14"/>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../game/gameover.ui" line="79"/>
+        <source>Game Over</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../game/gameover.ui" line="96"/>
+        <source>Play Again</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../game/gameover.ui" line="99"/>
+        <source>Play a new board with the same parameters</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../game/gameover.ui" line="106"/>
+        <source>Review</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../game/gameover.ui" line="109"/>
+        <source>See the board</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../game/gameover.ui" line="132"/>
+        <location filename="../game/gameover.cpp" line="28"/>
+        <source>Main Menu</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../game/gameover.ui" line="135"/>
+        <source>Return to the Main Menu</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../game/gameover.cpp" line="27"/>
+        <source>Select</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>GameScreen</name>
     <message>
         <location filename="../screens/gamescreen.ui" line="14"/>
@@ -22,84 +71,79 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../screens/gamescreen.cpp" line="56"/>
-        <location filename="../screens/gamescreen.cpp" line="349"/>
+        <location filename="../screens/gamescreen.cpp" line="61"/>
+        <location filename="../screens/gamescreen.cpp" line="407"/>
         <source>Reveal</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../screens/gamescreen.cpp" line="57"/>
-        <location filename="../screens/gamescreen.cpp" line="350"/>
+        <location filename="../screens/gamescreen.cpp" line="62"/>
+        <location filename="../screens/gamescreen.cpp" line="408"/>
         <source>Flag</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../screens/gamescreen.cpp" line="316"/>
+        <location filename="../screens/gamescreen.cpp" line="344"/>
         <source>Congratulations! You won!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../screens/gamescreen.cpp" line="317"/>
-        <location filename="../screens/gamescreen.cpp" line="326"/>
+        <location filename="../screens/gamescreen.cpp" line="345"/>
         <source>What do you want to do now?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../screens/gamescreen.cpp" line="319"/>
-        <location filename="../screens/gamescreen.cpp" line="328"/>
+        <location filename="../screens/gamescreen.cpp" line="347"/>
         <source>Review the game</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../screens/gamescreen.cpp" line="320"/>
-        <location filename="../screens/gamescreen.cpp" line="329"/>
+        <location filename="../screens/gamescreen.cpp" line="348"/>
         <source>Start a new game</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../screens/gamescreen.cpp" line="321"/>
-        <location filename="../screens/gamescreen.cpp" line="330"/>
+        <location filename="../screens/gamescreen.cpp" line="349"/>
         <source>Return to the Main Menu</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../screens/gamescreen.cpp" line="325"/>
-        <source>You stepped on a mine</source>
+        <location filename="../screens/gamescreen.cpp" line="411"/>
+        <source>Mark</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../screens/gamescreen.cpp" line="353"/>
-        <location filename="../screens/gamescreen.cpp" line="356"/>
+        <location filename="../screens/gamescreen.cpp" line="414"/>
         <source>Unflag</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../screens/gamescreen.cpp" line="359"/>
+        <location filename="../screens/gamescreen.cpp" line="417"/>
         <source>Sweep</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../screens/gamescreen.cpp" line="393"/>
+        <location filename="../screens/gamescreen.cpp" line="451"/>
         <source>%1 × %2 board</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../screens/gamescreen.cpp" line="394"/>
+        <location filename="../screens/gamescreen.cpp" line="452"/>
         <source>%1 mines</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../screens/gamescreen.cpp" line="395"/>
+        <location filename="../screens/gamescreen.cpp" line="453"/>
         <source>%1 flagged</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../screens/gamescreen.cpp" line="396"/>
+        <location filename="../screens/gamescreen.cpp" line="454"/>
         <source>%1 mines to go</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../screens/gamescreen.cpp" line="397"/>
+        <location filename="../screens/gamescreen.cpp" line="455"/>
         <source>%1% cleared</source>
         <translation type="unfinished"></translation>
     </message>

@@ -8,5 +8,9 @@
         <file>tiles/flagNot.svg</file>
         <file>icons/entertaining-mines.svg</file>
         <file>icons/background.svg</file>
+        <file>tiles/backgroundMine.svg</file>
+        <file>tiles/backgroundFlag.svg</file>
+        <file>tiles/backgroundMark.svg</file>
+        <file>tiles/mark.svg</file>
     </qresource>
 </RCC>

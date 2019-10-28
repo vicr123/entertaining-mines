@@ -24,12 +24,15 @@
 #include <QIcon>
 #include <QRandomGenerator>
 #include "game/gametile.h"
+#include "game/gameover.h"
 #include <pauseoverlay.h>
 #include "pausescreen.h"
 #include "dialogueoverlay.h"
 #include <musicengine.h>
 #include <QUrl>
 #include <QShortcut>
+#include <tpromise.h>
+#include <focusbarrier.h>
 
 struct GameScreenPrivate {
     QVector<GameTile*> tiles;
@@ -44,6 +47,8 @@ struct GameScreenPrivate {
     bool gameIsOver = false;
 
     DialogueOverlay* dialogue;
+
+    QPushButton* focusPreventer;
 };
 
 GameScreen::GameScreen(QWidget *parent) :
@@ -83,6 +88,20 @@ GameScreen::GameScreen(QWidget *parent) :
     connect(pauseShortcut, &QShortcut::activated, this, [=] {
         ui->menuButton->click();
     });
+
+    QBoxLayout* layout = new QBoxLayout(QBoxLayout::TopToBottom, this);
+    FocusBarrier* bar1 = new FocusBarrier(this);
+    FocusBarrier* bar2 = new FocusBarrier(this);
+    d->focusPreventer = new QPushButton();
+    bar1->setBounceWidget(d->focusPreventer);
+    bar2->setBounceWidget(d->focusPreventer);
+    layout->addWidget(bar1);
+    layout->addWidget(d->focusPreventer);
+    layout->addWidget(bar2);
+    layout->setGeometry(QRect(-50, -50, 5, 5));
+    bar1->setVisible(true);
+    d->focusPreventer->setVisible(true);
+    bar2->setVisible(true);
 }
 
 GameScreen::~GameScreen()
@@ -296,10 +315,18 @@ void GameScreen::distributeMines(QPoint clickLocation)
         int tileNumber = QRandomGenerator::global()->bounded(d->tiles.count());
 
         QPoint location = indexToPoint(tileNumber);
-        if (location == clickLocation) continue; //Never spawn a mine on the user's click point
+        if (location == clickLocation) {
+            //Never spawn a mine on the user's click point
+            i--;
+            continue;
+        }
 
         GameTile* tile = d->tiles.at(tileNumber);
-        if (tile->isMine()) continue; //This tile is already a mine
+        if (tile->isMine()) {
+            //This tile is already a mine
+            i--;
+            continue;
+        }
 
         //Set this tile as a mine
         tile->setIsMine(true);
@@ -310,6 +337,7 @@ void GameScreen::distributeMines(QPoint clickLocation)
 void GameScreen::performGameOver()
 {
     d->gameIsOver = true;
+    d->focusPreventer->setFocus();
 
     if (d->remainingTileCount == 0) {
         d->dialogue->setMultiDialogue({
@@ -321,14 +349,44 @@ void GameScreen::performGameOver()
             {"mainmenu", tr("Return to the Main Menu")},
         });
     } else {
-        d->dialogue->setMultiDialogue({
-            tr("You stepped on a mine"),
-            tr("What do you want to do now?")
-        }, {
-            {"review", tr("Review the game")},
-            {"newgame", tr("Start a new game")},
-            {"mainmenu", tr("Return to the Main Menu")},
+        MusicEngine::pauseBackgroundMusic();
+        (new tPromise<void>([=](QString error) {
+            for (int i = 0; i < d->tiles.count(); i++) {
+                d->tiles.at(i)->metaObject()->invokeMethod(d->tiles.at(i), "performGameOver", Qt::QueuedConnection);
+
+                if (i < 100) {
+                    QThread::msleep(20);
+                } else if (i < 200) {
+                    QThread::msleep(10);
+                } else {
+                    QThread::msleep(5);
+                }
+
+            }
+            QThread::sleep(1);
+        }))->then([=] {
+            GameOver* go = new GameOver(this);
+            connect(go, &GameOver::playAgain, this, [=] {
+                go->deleteLater();
+                startGame(d->width, boardDimensions().height(), d->mines);
+            });
+            connect(go, &GameOver::mainMenu, this, [=] {
+                go->deleteLater();
+                emit returnToMainMenu();
+            });
+            connect(go, &GameOver::review, this, [=] {
+                go->deleteLater();
+            });
         });
+
+//        d->dialogue->setMultiDialogue({
+//            tr("You stepped on a mine"),
+//            tr("What do you want to do now?")
+//        }, {
+//            {"review", tr("Review the game")},
+//            {"newgame", tr("Start a new game")},
+//            {"mainmenu", tr("Return to the Main Menu")},
+//        });
     }
 
     for (GameTile* tile : d->tiles) {
@@ -350,7 +408,7 @@ void GameScreen::currentTileChanged()
                 buttonX = tr("Flag");
                 break;
             case GameTile::Flagged:
-                buttonX = tr("Unflag");
+                buttonX = tr("Mark");
                 break;
             case GameTile::Marked:
                 buttonX = tr("Unflag");

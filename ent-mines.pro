@@ -18,6 +18,7 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    game/gameover.cpp \
     game/gametile.cpp \
     main.cpp \
     gamewindow.cpp \
@@ -27,6 +28,7 @@ SOURCES += \
     screens/pausescreen.cpp
 
 HEADERS += \
+    game/gameover.h \
     game/gametile.h \
     gamewindow.h \
     screens/customgamescreen.h \
@@ -35,6 +37,7 @@ HEADERS += \
     screens/pausescreen.h
 
 FORMS += \
+    game/gameover.ui \
     gamewindow.ui \
     screens/customgamescreen.ui \
     screens/gamescreen.ui \

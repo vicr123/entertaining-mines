@@ -61,6 +61,8 @@ class GameTile : public QWidget
         void sweep();
         void revealOrSweep();
 
+        void performGameOver();
+
     private:
         GameTilePrivate* d;
 
@@ -77,6 +79,8 @@ class GameTile : public QWidget
         void mouseReleaseEvent(QMouseEvent* event);
 
         void focusInEvent(QFocusEvent* event);
+
+        void flash();
 };
 
 #endif // GAMETILE_H
