@@ -32,7 +32,7 @@ qmake Contemporary.pro "CONFIG+=release"
 nmake release
 cd ..
 
-qmake entertaining-mines.pro "CONFIG+=release"
+qmake ent-mines.pro "CONFIG+=release"
 nmake release
 mkdir deploy
 mkdir deploy\styles
