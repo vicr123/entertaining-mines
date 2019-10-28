@@ -37,9 +37,11 @@ nmake release
 mkdir deploy
 mkdir deploy\styles
 mkdir deploy\translations
+mkdir deploy\audio
 copy "contemporary-theme\release\Contemporary.dll" deploy\styles
 copy release\entertaining-mines.exe deploy
 copy translations\*.qm deploy\translations
+copy audio\* deploy\audio
 copy "C:\Program Files\thelibs\lib\the-libs.dll" deploy
 copy "C:\Program Files\libentertaining\lib\entertaining.dll" deploy
 cd deploy

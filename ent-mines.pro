@@ -41,7 +41,6 @@ FORMS += \
     screens/mainscreen.ui \
     screens/pausescreen.ui
 RESOURCES += \
-    audio.qrc \
     resources.qrc
 
 
@@ -60,7 +59,10 @@ unix:!macx {
     icon.path = /usr/share/icons/hicolor/scalable/apps/
     icon.files = icons/entertaining-mines.svg
 
-    INSTALLS += target desktop icon
+    audio.path = /usr/share/entertaining-mines/audio
+    audio.files = audio/*
+
+    INSTALLS += target desktop icon audio
 }
 
 win32 {
@@ -86,6 +88,11 @@ macx {
         TARGET = "Entertaining Mines"
         ICON = icon.icns
     }
+
+    audio.files = audio/
+    audio.path = Contents/audio
+
+    QMAKE_BUNDLE_DATA += audio
 
     INCLUDEPATH += "/usr/local/include/the-libs" "/usr/local/include/libentertaining"
     LIBS += -L/usr/local/lib -lthe-libs -lentertaining

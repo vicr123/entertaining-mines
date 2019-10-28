@@ -201,7 +201,7 @@ void GameScreen::startGame(int width, int height, int mines)
     d->minesRemaining = mines + 1;
     flagChanged(true);
 
-    MusicEngine::setBackgroundMusic(QUrl("qrc:/audio/crypto.ogg"));
+    MusicEngine::setBackgroundMusic("crypto");
     MusicEngine::playBackgroundMusic();
 
     MusicEngine::playSoundEffect(MusicEngine::Selection);
@@ -265,7 +265,7 @@ void GameScreen::loadGame(QDataStream*stream)
         tile->afterLoadComplete();
     }
 
-    MusicEngine::setBackgroundMusic(QUrl("qrc:/audio/crypto.ogg"));
+    MusicEngine::setBackgroundMusic("crypto");
     MusicEngine::playBackgroundMusic();
 
     d->tiles.first()->setFocus();
