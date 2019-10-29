@@ -2,12 +2,51 @@
 <!DOCTYPE TS>
 <TS version="2.1" sourcelanguage="en_US">
 <context>
-    <name>CustomGameScreen</name>
+    <name>Congratulation</name>
     <message>
-        <location filename="../screens/customgamescreen.ui" line="14"/>
-        <source>Form</source>
+        <location filename="../game/congratulation.ui" line="79"/>
+        <source>Congratulations!</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <location filename="../game/congratulation.ui" line="96"/>
+        <source>Play Again</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../game/congratulation.ui" line="103"/>
+        <source>Play a new board with the same parameters</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../game/congratulation.ui" line="110"/>
+        <source>Review</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../game/congratulation.ui" line="117"/>
+        <source>See the board</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../game/congratulation.ui" line="140"/>
+        <location filename="../game/congratulation.cpp" line="28"/>
+        <source>Main Menu</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../game/congratulation.ui" line="147"/>
+        <source>Return to the Main Menu</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../game/congratulation.cpp" line="27"/>
+        <source>Select</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>CustomGameScreen</name>
     <message>
         <location filename="../screens/customgamescreen.ui" line="60"/>
         <source>Title</source>
@@ -16,11 +55,6 @@
 </context>
 <context>
     <name>GameOver</name>
-    <message>
-        <location filename="../game/gameover.ui" line="14"/>
-        <source>Form</source>
-        <translation type="unfinished"></translation>
-    </message>
     <message>
         <location filename="../game/gameover.ui" line="79"/>
         <source>Game Over</source>
@@ -32,28 +66,28 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../game/gameover.ui" line="99"/>
+        <location filename="../game/gameover.ui" line="103"/>
         <source>Play a new board with the same parameters</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../game/gameover.ui" line="106"/>
+        <location filename="../game/gameover.ui" line="110"/>
         <source>Review</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../game/gameover.ui" line="109"/>
+        <location filename="../game/gameover.ui" line="117"/>
         <source>See the board</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../game/gameover.ui" line="132"/>
+        <location filename="../game/gameover.ui" line="140"/>
         <location filename="../game/gameover.cpp" line="28"/>
         <source>Main Menu</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../game/gameover.ui" line="135"/>
+        <location filename="../game/gameover.ui" line="147"/>
         <source>Return to the Main Menu</source>
         <translation type="unfinished"></translation>
     </message>
@@ -66,19 +100,24 @@
 <context>
     <name>GameScreen</name>
     <message>
-        <location filename="../screens/gamescreen.ui" line="14"/>
-        <source>Form</source>
+        <location filename="../screens/gamescreen.ui" line="97"/>
+        <source>TextLabel</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../screens/gamescreen.cpp" line="62"/>
-        <location filename="../screens/gamescreen.cpp" line="414"/>
+        <location filename="../screens/gamescreen.ui" line="104"/>
+        <source>005</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../screens/gamescreen.cpp" line="66"/>
+        <location filename="../screens/gamescreen.cpp" line="417"/>
         <source>Reveal</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../screens/gamescreen.cpp" line="63"/>
-        <location filename="../screens/gamescreen.cpp" line="415"/>
+        <location filename="../screens/gamescreen.cpp" line="67"/>
+        <location filename="../screens/gamescreen.cpp" line="418"/>
         <source>Flag</source>
         <translation type="unfinished"></translation>
     </message>
@@ -93,67 +132,52 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../screens/gamescreen.cpp" line="351"/>
-        <source>Congratulations! You won!</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../screens/gamescreen.cpp" line="352"/>
-        <source>What do you want to do now?</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../screens/gamescreen.cpp" line="354"/>
-        <source>Review the game</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../screens/gamescreen.cpp" line="355"/>
-        <source>Start a new game</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../screens/gamescreen.cpp" line="356"/>
-        <source>Return to the Main Menu</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../screens/gamescreen.cpp" line="418"/>
-        <source>Mark</source>
+        <location filename="../screens/gamescreen.cpp" line="300"/>
+        <source>Loading a save invalidates the timer.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../screens/gamescreen.cpp" line="421"/>
-        <source>Unflag</source>
+        <source>Mark</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../screens/gamescreen.cpp" line="424"/>
+        <source>Unflag</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../screens/gamescreen.cpp" line="427"/>
         <source>Sweep</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../screens/gamescreen.cpp" line="458"/>
+        <location filename="../screens/gamescreen.cpp" line="459"/>
+        <source>Pausing invalidates the timer.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../screens/gamescreen.cpp" line="477"/>
         <source>%1 × %2 board</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../screens/gamescreen.cpp" line="459"/>
+        <location filename="../screens/gamescreen.cpp" line="478"/>
         <source>%1 mines</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../screens/gamescreen.cpp" line="460"/>
+        <location filename="../screens/gamescreen.cpp" line="479"/>
         <source>%1 flagged</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../screens/gamescreen.cpp" line="461"/>
+        <location filename="../screens/gamescreen.cpp" line="480"/>
         <source>%1 mines to go</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../screens/gamescreen.cpp" line="462"/>
+        <location filename="../screens/gamescreen.cpp" line="481"/>
         <source>%1% cleared</source>
         <translation type="unfinished"></translation>
     </message>
@@ -179,11 +203,6 @@
 <context>
     <name>MainScreen</name>
     <message>
-        <location filename="../screens/mainscreen.ui" line="14"/>
-        <source>Form</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../screens/mainscreen.ui" line="79"/>
         <source>Entertaining Mines</source>
         <translation type="unfinished"></translation>
@@ -194,67 +213,67 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../screens/mainscreen.ui" line="99"/>
+        <location filename="../screens/mainscreen.ui" line="103"/>
         <source>Start a 9×9 game with 10 mines</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../screens/mainscreen.ui" line="106"/>
+        <location filename="../screens/mainscreen.ui" line="110"/>
         <source>Intermediate Game</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../screens/mainscreen.ui" line="109"/>
+        <location filename="../screens/mainscreen.ui" line="117"/>
         <source>Start a 16×16 game with 40 mines</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../screens/mainscreen.ui" line="116"/>
+        <location filename="../screens/mainscreen.ui" line="124"/>
         <source>Difficult Game</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../screens/mainscreen.ui" line="119"/>
+        <location filename="../screens/mainscreen.ui" line="131"/>
         <source>Start a 30×16 game with 99 mines</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../screens/mainscreen.ui" line="126"/>
+        <location filename="../screens/mainscreen.ui" line="138"/>
         <source>Custom Game</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../screens/mainscreen.ui" line="129"/>
+        <location filename="../screens/mainscreen.ui" line="145"/>
         <source>Select the board size and number of mines to play with</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../screens/mainscreen.ui" line="152"/>
+        <location filename="../screens/mainscreen.ui" line="168"/>
         <source>Load Game</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../screens/mainscreen.ui" line="155"/>
+        <location filename="../screens/mainscreen.ui" line="175"/>
         <source>Open a game that you have saved</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../screens/mainscreen.ui" line="162"/>
+        <location filename="../screens/mainscreen.ui" line="182"/>
         <source>Settings</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../screens/mainscreen.ui" line="165"/>
+        <location filename="../screens/mainscreen.ui" line="189"/>
         <source>Go to Settings</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../screens/mainscreen.ui" line="172"/>
+        <location filename="../screens/mainscreen.ui" line="196"/>
         <source>Exit to Desktop</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../screens/mainscreen.ui" line="175"/>
+        <location filename="../screens/mainscreen.ui" line="203"/>
         <source>Leave Entertaining Mines</source>
         <translation type="unfinished"></translation>
     </message>
@@ -286,11 +305,6 @@
 </context>
 <context>
     <name>PauseScreen</name>
-    <message>
-        <location filename="../screens/pausescreen.ui" line="14"/>
-        <source>Form</source>
-        <translation type="unfinished"></translation>
-    </message>
     <message>
         <location filename="../screens/pausescreen.ui" line="79"/>
         <source>Pause</source>
@@ -345,11 +359,6 @@
 </context>
 <context>
     <name>SettingsScreen</name>
-    <message>
-        <location filename="../screens/settingsscreen.ui" line="14"/>
-        <source>Form</source>
-        <translation type="unfinished"></translation>
-    </message>
     <message>
         <location filename="../screens/settingsscreen.ui" line="71"/>
         <source>Settings</source>

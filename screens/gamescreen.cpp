@@ -25,9 +25,9 @@
 #include <QRandomGenerator>
 #include "game/gametile.h"
 #include "game/gameover.h"
+#include "game/congratulation.h"
 #include <pauseoverlay.h>
 #include "pausescreen.h"
-#include "dialogueoverlay.h"
 #include <musicengine.h>
 #include <QUrl>
 #include <QShortcut>
@@ -47,7 +47,11 @@ struct GameScreenPrivate {
     bool gameStarted = false;
     bool gameIsOver = false;
 
-    DialogueOverlay* dialogue;
+    bool showDateTime = false;
+    QString dateTimeNotShownReason;
+
+    QDateTime startDateTime;
+    QTimer* dateTimeTimer;
 
     QPushButton* focusPreventer;
 };
@@ -74,21 +78,15 @@ GameScreen::GameScreen(QWidget *parent) :
         if (currentTile != nullptr) currentTile->toggleFlagStatus();
     });
 
-    d->dialogue = new DialogueOverlay(this);
-    connect(d->dialogue, QOverload<QString>::of(&DialogueOverlay::progressDialogue), this, [=](QString selectedOption) {
-        d->dialogue->dismiss();
-        if (selectedOption == "mainmenu") {
-            MusicEngine::pauseBackgroundMusic();
-            emit returnToMainMenu();
-        } else if (selectedOption == "newgame") {
-            startGame(d->width, boardDimensions().height(), d->mines);
-        }
-    });
-
     QShortcut* pauseShortcut = new QShortcut(QKeySequence(Qt::Key_Escape), this);
     connect(pauseShortcut, &QShortcut::activated, this, [=] {
         ui->menuButton->click();
     });
+
+    d->dateTimeTimer = new QTimer();
+    d->dateTimeTimer->setInterval(1000);
+    connect(d->dateTimeTimer, &QTimer::timeout, this, &GameScreen::updateTimer);
+    d->dateTimeTimer->start();
 
     QBoxLayout* layout = new QBoxLayout(QBoxLayout::TopToBottom, this);
     FocusBarrier* bar1 = new FocusBarrier(this);
@@ -100,9 +98,10 @@ GameScreen::GameScreen(QWidget *parent) :
     layout->addWidget(d->focusPreventer);
     layout->addWidget(bar2);
     layout->setGeometry(QRect(-50, -50, 5, 5));
-    bar1->setVisible(true);
-    d->focusPreventer->setVisible(true);
-    bar2->setVisible(true);
+//    bar1->setVisible(true);
+//    d->focusPreventer->setVisible(true);
+//    bar2->setVisible(true);
+    layout->setParent(this);
 }
 
 GameScreen::~GameScreen()
@@ -185,6 +184,7 @@ void GameScreen::resizeEvent(QResizeEvent*event)
     QSize iconSize(fontHeight, fontHeight);
     ui->menuButton->setIconSize(iconSize);
     ui->mineIcon->setPixmap(QIcon(":/tiles/mine.svg").pixmap(iconSize));
+    ui->timeIcon->setPixmap(QIcon(":/tiles/clock.svg").pixmap(iconSize));
 
     emit boardResized();
 }
@@ -214,6 +214,8 @@ void GameScreen::finishSetup()
         {"details", tr("%1×%2 board with %3 mines").arg(d->width).arg(boardDimensions().height()).arg(d->mines)},
         {"startTimestamp", QDateTime::currentDateTimeUtc()}
     });
+
+    updateTimer();
 }
 
 void GameScreen::startGame(int width, int height, int mines)
@@ -238,6 +240,8 @@ void GameScreen::startGame(int width, int height, int mines)
 
     d->gameStarted = false;
     d->gameIsOver = false;
+    d->showDateTime = true;
+    d->startDateTime = QDateTime::currentDateTimeUtc();
 
     d->remainingTileCount = width * height - mines;
     d->minesRemaining = mines + 1;
@@ -290,6 +294,10 @@ void GameScreen::loadGame(QDataStream*stream)
             y++;
         }
     }
+
+    //Disable the time counting as it is now inaccurate
+    d->showDateTime = false;
+    d->dateTimeNotShownReason = tr("Loading a save invalidates the timer.");
 
     //Tell all the tiles to update themselves
     for (GameTile* tile : d->tiles) {
@@ -347,13 +355,17 @@ void GameScreen::performGameOver()
     d->focusPreventer->setFocus();
 
     if (d->remainingTileCount == 0) {
-        d->dialogue->setMultiDialogue({
-            tr("Congratulations! You won!"),
-            tr("What do you want to do now?")
-        }, {
-            {"review", tr("Review the game")},
-            {"newgame", tr("Start a new game")},
-            {"mainmenu", tr("Return to the Main Menu")},
+        Congratulation* go = new Congratulation(this);
+        connect(go, &Congratulation::playAgain, this, [=] {
+            go->deleteLater();
+            startGame(d->width, boardDimensions().height(), d->mines);
+        });
+        connect(go, &Congratulation::mainMenu, this, [=] {
+            go->deleteLater();
+            emit returnToMainMenu();
+        });
+        connect(go, &Congratulation::review, this, [=] {
+            go->deleteLater();
         });
     } else {
         MusicEngine::pauseBackgroundMusic();
@@ -385,15 +397,6 @@ void GameScreen::performGameOver()
                 go->deleteLater();
             });
         });
-
-//        d->dialogue->setMultiDialogue({
-//            tr("You stepped on a mine"),
-//            tr("What do you want to do now?")
-//        }, {
-//            {"review", tr("Review the game")},
-//            {"newgame", tr("Start a new game")},
-//            {"mainmenu", tr("Return to the Main Menu")},
-//        });
     }
 
     for (GameTile* tile : d->tiles) {
@@ -438,8 +441,24 @@ void GameScreen::currentTileChanged()
     }
 }
 
+void GameScreen::updateTimer()
+{
+    if (d->showDateTime) {
+        QString seconds = QString::number(d->startDateTime.secsTo(QDateTime::currentDateTimeUtc()));
+        QString display = seconds.rightJustified(3, QLatin1Char('0'), true);
+        ui->timeLabel->setText(display);
+    } else {
+        ui->timeLabel->setText("XXX");
+    }
+}
+
 void GameScreen::on_menuButton_clicked()
 {
+    //Disable the time counting as it is now inaccurate
+    d->showDateTime = false;
+    d->dateTimeNotShownReason = tr("Pausing invalidates the timer.");
+    updateTimer();
+
     MusicEngine::pauseBackgroundMusic();
     MusicEngine::playSoundEffect(MusicEngine::Pause);
 

@@ -53,6 +53,7 @@ class GameScreen : public QWidget
 
     private slots:
         void currentTileChanged();
+        void updateTimer();
 
     signals:
         void boardResized();

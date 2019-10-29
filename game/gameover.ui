@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Form</string>
+   <string notr="true">Form</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout_2">
    <property name="spacing">
@@ -95,6 +95,10 @@
          <property name="text">
           <string>Play Again</string>
          </property>
+         <property name="icon">
+          <iconset resource="../resources.qrc">
+           <normaloff>:/icons/go-next.svg</normaloff>:/icons/go-next.svg</iconset>
+         </property>
          <property name="description">
           <string>Play a new board with the same parameters</string>
          </property>
@@ -104,6 +108,10 @@
         <widget class="QCommandLinkButton" name="saveButton">
          <property name="text">
           <string>Review</string>
+         </property>
+         <property name="icon">
+          <iconset resource="../resources.qrc">
+           <normaloff>:/icons/go-next.svg</normaloff>:/icons/go-next.svg</iconset>
          </property>
          <property name="description">
           <string>See the board</string>
@@ -130,6 +138,10 @@
         <widget class="QCommandLinkButton" name="mainMenuButton">
          <property name="text">
           <string>Main Menu</string>
+         </property>
+         <property name="icon">
+          <iconset resource="../resources.qrc">
+           <normaloff>:/icons/go-next.svg</normaloff>:/icons/go-next.svg</iconset>
          </property>
          <property name="description">
           <string>Return to the Main Menu</string>
@@ -178,6 +190,8 @@
    <container>1</container>
   </customwidget>
  </customwidgets>
- <resources/>
+ <resources>
+  <include location="../resources.qrc"/>
+ </resources>
  <connections/>
 </ui>

@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Form</string>
+   <string notr="true">Form</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout_2">
    <property name="spacing">
@@ -95,6 +95,10 @@
          <property name="text">
           <string>Easy Game</string>
          </property>
+         <property name="icon">
+          <iconset resource="../resources.qrc">
+           <normaloff>:/icons/go-next.svg</normaloff>:/icons/go-next.svg</iconset>
+         </property>
          <property name="description">
           <string>Start a 9×9 game with 10 mines</string>
          </property>
@@ -104,6 +108,10 @@
         <widget class="QCommandLinkButton" name="startIntermediate">
          <property name="text">
           <string>Intermediate Game</string>
+         </property>
+         <property name="icon">
+          <iconset resource="../resources.qrc">
+           <normaloff>:/icons/go-next.svg</normaloff>:/icons/go-next.svg</iconset>
          </property>
          <property name="description">
           <string>Start a 16×16 game with 40 mines</string>
@@ -115,6 +123,10 @@
          <property name="text">
           <string>Difficult Game</string>
          </property>
+         <property name="icon">
+          <iconset resource="../resources.qrc">
+           <normaloff>:/icons/go-next.svg</normaloff>:/icons/go-next.svg</iconset>
+         </property>
          <property name="description">
           <string>Start a 30×16 game with 99 mines</string>
          </property>
@@ -124,6 +136,10 @@
         <widget class="QCommandLinkButton" name="startCustom">
          <property name="text">
           <string>Custom Game</string>
+         </property>
+         <property name="icon">
+          <iconset resource="../resources.qrc">
+           <normaloff>:/icons/go-next.svg</normaloff>:/icons/go-next.svg</iconset>
          </property>
          <property name="description">
           <string>Select the board size and number of mines to play with</string>
@@ -151,6 +167,10 @@
          <property name="text">
           <string>Load Game</string>
          </property>
+         <property name="icon">
+          <iconset resource="../resources.qrc">
+           <normaloff>:/icons/go-next.svg</normaloff>:/icons/go-next.svg</iconset>
+         </property>
          <property name="description">
           <string>Open a game that you have saved</string>
          </property>
@@ -161,6 +181,10 @@
          <property name="text">
           <string>Settings</string>
          </property>
+         <property name="icon">
+          <iconset resource="../resources.qrc">
+           <normaloff>:/icons/go-next.svg</normaloff>:/icons/go-next.svg</iconset>
+         </property>
          <property name="description">
           <string>Go to Settings</string>
          </property>
@@ -170,6 +194,10 @@
         <widget class="QCommandLinkButton" name="exitButton">
          <property name="text">
           <string>Exit to Desktop</string>
+         </property>
+         <property name="icon">
+          <iconset resource="../resources.qrc">
+           <normaloff>:/icons/go-next.svg</normaloff>:/icons/go-next.svg</iconset>
          </property>
          <property name="description">
           <string>Leave Entertaining Mines</string>
@@ -218,6 +246,8 @@
    <container>1</container>
   </customwidget>
  </customwidgets>
- <resources/>
+ <resources>
+  <include location="../resources.qrc"/>
+ </resources>
  <connections/>
 </ui>

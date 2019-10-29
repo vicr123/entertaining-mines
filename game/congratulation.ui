@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Congratulation</class>
+ <widget class="QWidget" name="Congratulation">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>533</width>
+    <height>470</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string notr="true">Form</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout_2">
+   <property name="spacing">
+    <number>0</number>
+   </property>
+   <property name="leftMargin">
+    <number>0</number>
+   </property>
+   <property name="topMargin">
+    <number>0</number>
+   </property>
+   <property name="rightMargin">
+    <number>0</number>
+   </property>
+   <property name="bottomMargin">
+    <number>0</number>
+   </property>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout_2">
+     <item>
+      <spacer name="leftSpacing">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeType">
+        <enum>QSizePolicy::Fixed</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>20</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <layout class="QVBoxLayout" name="verticalLayout">
+       <property name="spacing">
+        <number>0</number>
+       </property>
+       <item>
+        <spacer name="verticalSpacer_3">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeType">
+          <enum>QSizePolicy::Fixed</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>40</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item>
+        <widget class="QLabel" name="label">
+         <property name="font">
+          <font>
+           <pointsize>30</pointsize>
+          </font>
+         </property>
+         <property name="text">
+          <string>Congratulations!</string>
+         </property>
+         <property name="margin">
+          <number>9</number>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="FocusBarrier" name="focusBarrierTop">
+         <property name="text">
+          <string notr="true">Barrier</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QCommandLinkButton" name="playAgainButton">
+         <property name="text">
+          <string>Play Again</string>
+         </property>
+         <property name="icon">
+          <iconset resource="../resources.qrc">
+           <normaloff>:/icons/go-next.svg</normaloff>:/icons/go-next.svg</iconset>
+         </property>
+         <property name="description">
+          <string>Play a new board with the same parameters</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QCommandLinkButton" name="saveButton">
+         <property name="text">
+          <string>Review</string>
+         </property>
+         <property name="icon">
+          <iconset resource="../resources.qrc">
+           <normaloff>:/icons/go-next.svg</normaloff>:/icons/go-next.svg</iconset>
+         </property>
+         <property name="description">
+          <string>See the board</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <spacer name="verticalSpacer">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeType">
+          <enum>QSizePolicy::Fixed</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>40</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item>
+        <widget class="QCommandLinkButton" name="mainMenuButton">
+         <property name="text">
+          <string>Main Menu</string>
+         </property>
+         <property name="icon">
+          <iconset resource="../resources.qrc">
+           <normaloff>:/icons/go-next.svg</normaloff>:/icons/go-next.svg</iconset>
+         </property>
+         <property name="description">
+          <string>Return to the Main Menu</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="FocusBarrier" name="focusBarrierBottom">
+         <property name="text">
+          <string notr="true">Barrier</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <spacer name="verticalSpacer_2">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>40</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+      </layout>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <widget class="GamepadHud" name="gamepadHud" native="true"/>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>FocusBarrier</class>
+   <extends>QPushButton</extends>
+   <header location="global">focusbarrier.h</header>
+  </customwidget>
+  <customwidget>
+   <class>GamepadHud</class>
+   <extends>QWidget</extends>
+   <header location="global">gamepadhud.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <resources>
+  <include location="../resources.qrc"/>
+ </resources>
+ <connections/>
+</ui>

@@ -45,6 +45,7 @@ struct GameTilePrivate {
     bool paintIsGameOver = false;
 
     tVariantAnimation* flashAnim;
+    QSettings settings;
 };
 
 GameTile::GameTile(GameScreen* parent, int x, int y) : QWidget(parent)
@@ -206,9 +207,14 @@ void GameTile::toggleFlagStatus()
             MusicEngine::playSoundEffect("dig");
             break;
         case Flagged:
-            d->state = Marked;
-            d->parent->flagChanged(false);
-            break;
+            if (d->settings.value("behaviour/marks", true).toBool()) {
+                d->state = Marked;
+                d->parent->flagChanged(false);
+                MusicEngine::playSoundEffect("question");
+                break;
+            }
+
+            //Fall through
         case Marked:
             d->state = Idle;
             break;

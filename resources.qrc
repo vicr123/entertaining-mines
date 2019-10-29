@@ -14,5 +14,7 @@
         <file>tiles/mark.svg</file>
         <file>icons/go-next.svg</file>
         <file>icons/go-previous.svg</file>
+        <file>tiles/clock.svg</file>
+        <file>icons/application-menu.svg</file>
     </qresource>
 </RCC>

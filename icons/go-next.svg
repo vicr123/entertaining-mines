@@ -7,12 +7,12 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   height="16"
-   width="16"
-   id="svg2"
+   sodipodi:docname="go-next.svg"
+   inkscape:version="1.0beta1 (32d4812, 2019-09-19)"
    version="1.1"
-   inkscape:version="0.91 r13725"
-   sodipodi:docname="go-next.svg">
+   id="svg2"
+   width="16"
+   height="16">
   <metadata
      id="metadata9">
     <rdf:RDF>
@@ -21,39 +21,40 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
   <defs
      id="defs7" />
   <sodipodi:namedview
-     id="namedview1"
-     showgrid="true"
-     inkscape:zoom="20.85965"
-     inkscape:cx="7.1469269"
-     inkscape:cy="7.3152493"
-     inkscape:window-width="1680"
-     inkscape:window-height="1016"
+     inkscape:document-rotation="0"
+     inkscape:current-layer="svg2"
+     inkscape:window-maximized="0"
+     inkscape:window-y="23"
      inkscape:window-x="0"
-     inkscape:window-y="0"
-     inkscape:window-maximized="1"
-     inkscape:current-layer="svg2">
+     inkscape:window-height="907"
+     inkscape:window-width="1666"
+     inkscape:cy="7.3152493"
+     inkscape:cx="-2.0814159"
+     inkscape:zoom="20.85965"
+     showgrid="true"
+     id="namedview1">
     <inkscape:grid
-       type="xygrid"
+       empspacing="4"
        id="grid1px"
-       empspacing="4" />
+       type="xygrid" />
     <inkscape:grid
-       type="xygrid"
-       id="grid1pxdot"
-       empspacing="1"
-       dotted="true"
+       originx="0.5"
        originy="0.5"
-       originx="0.5" />
+       dotted="true"
+       empspacing="1"
+       id="grid1pxdot"
+       type="xygrid" />
   </sodipodi:namedview>
   <path
-     style="opacity:0.98999999;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-     d="M 4.7500104,1.5000003 4.7500104,14.5 11.25001,8.0000003 Z"
+     inkscape:connector-curvature="0"
      id="path4137"
-     inkscape:connector-curvature="0" />
+     d="M 4.7500104,1.5000003 4.7500104,14.5 11.25001,8.0000003 Z"
+     style="opacity:0.98999999;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:#ffffff;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
 </svg>
