@@ -44,6 +44,10 @@ struct GameTilePrivate {
     bool isMine = false;
     bool paintIsGameOver = false;
 
+    bool paintHighlighted = false;
+
+    bool middleClicked = false;
+
     tVariantAnimation* flashAnim;
     QSettings settings;
 };
@@ -164,6 +168,12 @@ void GameTile::afterLoadComplete()
         this->minesAdjacent();
     }
 
+    this->update();
+}
+
+void GameTile::setHighlighted(bool highlighted)
+{
+    d->paintHighlighted = highlighted;
     this->update();
 }
 
@@ -293,15 +303,7 @@ void GameTile::paintEvent(QPaintEvent*event)
     //Paint the background
     switch (d->state) {
         case Idle:
-            if ((!FocusPointer::isEnabled() && this->underMouse()) || (FocusPointer::isEnabled() && this->hasFocus())) {
-                if (d->drawMouseIsPressed) {
-                    paintSvg(&painter, ":/tiles/backgroundRev.svg");
-                } else {
-                    paintSvg(&painter, ":/tiles/backgroundHov.svg");
-                }
-            } else {
-                paintSvg(&painter, ":/tiles/background.svg");
-            }
+            paintSvg(&painter, ":/tiles/background.svg");
             break;
         case Flagged:
             paintSvg(&painter, ":/tiles/backgroundFlag.svg");
@@ -315,6 +317,20 @@ void GameTile::paintEvent(QPaintEvent*event)
             } else {
                 paintSvg(&painter, ":/tiles/backgroundRev.svg");
             }
+    }
+
+    if (d->state != Revealed && ((!FocusPointer::isEnabled() && this->underMouse()) || (FocusPointer::isEnabled() && this->hasFocus()))) {
+        if (d->drawMouseIsPressed) {
+            painter.setBrush(QColor(0, 0, 0, 50));
+        } else {
+            painter.setBrush(QColor(255, 255, 255, 50));
+        }
+        painter.setPen(Qt::transparent);
+        painter.drawRect(0, 0, this->width(), this->height());
+    } else if (d->state == Idle && d->paintHighlighted) {
+        painter.setBrush(QColor(0, 100, 0, 50));
+        painter.setPen(Qt::transparent);
+        painter.drawRect(0, 0, this->width(), this->height());
     }
 
     //Paint the tile
@@ -419,10 +435,14 @@ void GameTile::keyPressEvent(QKeyEvent*event)
 void GameTile::mousePressEvent(QMouseEvent*event)
 {
     d->mouseIsPressed = true;
-    if (event->button() == Qt::LeftButton) {
+    if (event->buttons() == (Qt::LeftButton | Qt::RightButton) || event->buttons() == Qt::MiddleButton) {
+        d->middleClicked = true;
+        d->drawMouseIsPressed = false;
+        for (GameTile* tile : this->adjacentTiles()) {
+            tile->setHighlighted(true);
+        }
+    } else if (event->button() == Qt::LeftButton) {
         d->drawMouseIsPressed = true;
-    } else if (event->button() == Qt::MiddleButton) {
-
     }
     this->update();
 }
@@ -434,31 +454,45 @@ void GameTile::mouseMoveEvent(QMouseEvent*event)
 
 void GameTile::mouseReleaseEvent(QMouseEvent*event)
 {
-    d->mouseIsPressed = false;
     if (event->button() == Qt::LeftButton) {
         d->drawMouseIsPressed = false;
     }
     this->update();
 
-    if (this->underMouse()) {
-        //Do cool stuff
-        switch (event->button()) {
-            case Qt::LeftButton:
-                //Reveal this tile
-                this->reveal();
-                break;
-            case Qt::RightButton:
-                //Flag this tile
-                this->toggleFlagStatus();
-                break;
-            case Qt::MiddleButton:
-                //Sweep this tile
-                this->sweep();
-                break;
-            default:
-                //Do nothing
-                break;
+    for (GameTile* tile : this->adjacentTiles()) {
+        tile->setHighlighted(false);
+    }
+
+
+    QRect globalGeometry;
+    globalGeometry.setSize(this->size());
+    globalGeometry.moveTopLeft(this->mapToGlobal(QPoint(0, 0)));
+    if (globalGeometry.contains(event->globalPos()) && event->buttons() == Qt::NoButton) {
+        //Perform an action
+        if (d->middleClicked) {
+            //Handle middle click seperately for left + right click
+            //Sweep this tile
+            this->sweep();
+        } else {
+            switch (event->button()) {
+                case Qt::LeftButton:
+                    //Reveal this tile
+                    this->reveal();
+                    break;
+                case Qt::RightButton:
+                    //Flag this tile
+                    this->toggleFlagStatus();
+                    break;
+                default:
+                    //Do nothing
+                    break;
+            }
         }
+    }
+
+    if (event->buttons() == Qt::NoButton) {
+        d->mouseIsPressed = false;
+        d->middleClicked = false;
     }
 }
 

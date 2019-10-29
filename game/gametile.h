@@ -52,6 +52,8 @@ class GameTile : public QWidget
         void fromByteArray(QByteArray ba);
         void afterLoadComplete();
 
+        void setHighlighted(bool highlighted);
+
     signals:
         void currentTileChanged();
 
