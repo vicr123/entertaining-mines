@@ -56,8 +56,8 @@ int main(int argc, char *argv[])
     DiscordIntegration::makeInstance("638385511530102794", "");
 
     QSettings settings;
-    MusicEngine::setMuteMusic(!settings.value("audio/background").toBool());
-    MusicEngine::setMuteEffects(!settings.value("audio/effects").toBool());
+    MusicEngine::setMuteMusic(!settings.value("audio/background", true).toBool());
+    MusicEngine::setMuteEffects(!settings.value("audio/effects", true).toBool());
 
     GameWindow w;
     w.show();
