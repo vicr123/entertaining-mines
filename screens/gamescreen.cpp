@@ -211,7 +211,7 @@ void GameScreen::finishSetup()
 
     DiscordIntegration::instance()->setPresence({
         {"state", tr("In Game")},
-        {"details", tr("%1×%2 board with %3 mines").arg(d->width).arg(boardDimensions().height()).arg(d->mines)},
+        {"details", tr("%1×%2 board with %n mines", nullptr, d->mines).arg(d->width).arg(boardDimensions().height())},
         {"startTimestamp", QDateTime::currentDateTimeUtc()}
     });
 
@@ -297,7 +297,7 @@ void GameScreen::loadGame(QDataStream*stream)
 
     //Disable the time counting as it is now inaccurate
     d->showDateTime = false;
-    d->dateTimeNotShownReason = tr("Loading a save invalidates the timer.");
+    d->dateTimeNotShownReason = tr("Your time was not recorded because loading a save invalidates the timer.");
 
     //Tell all the tiles to update themselves
     for (GameTile* tile : d->tiles) {
@@ -355,7 +355,22 @@ void GameScreen::performGameOver()
     d->focusPreventer->setFocus();
 
     if (d->remainingTileCount == 0) {
+        QString information;
+        if (d->showDateTime) {
+            QTime time(0, 0);
+            time = time.addSecs(d->startDateTime.secsTo(QDateTime::currentDateTimeUtc()));
+            information = tr("You completed a %1×%2 board with %n mines in %4. Divine!", nullptr, d->mines)
+                          .arg(d->width)
+                          .arg(boardDimensions().height())
+                          .arg(time.toString("mm:ss"));
+        } else {
+            information = tr("You completed a %1×%2 board with %n mines.", nullptr, d->mines)
+                          .arg(d->width)
+                          .arg(boardDimensions().height());
+            information.append("\n\n").append(d->dateTimeNotShownReason);
+        }
         Congratulation* go = new Congratulation(this);
+        go->setInformation(information);
         connect(go, &Congratulation::playAgain, this, [=] {
             go->deleteLater();
             startGame(d->width, boardDimensions().height(), d->mines);
@@ -456,7 +471,7 @@ void GameScreen::on_menuButton_clicked()
 {
     //Disable the time counting as it is now inaccurate
     d->showDateTime = false;
-    d->dateTimeNotShownReason = tr("Pausing invalidates the timer.");
+    d->dateTimeNotShownReason = tr("Your time was not recorded because pausing the game invalidates the timer.");
     updateTimer();
 
     MusicEngine::pauseBackgroundMusic();

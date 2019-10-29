@@ -16,6 +16,8 @@ class Congratulation : public QWidget
         explicit Congratulation(QWidget *parent = nullptr);
         ~Congratulation();
 
+        void setInformation(QString information);
+
     signals:
         void mainMenu();
         void playAgain();

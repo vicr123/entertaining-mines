@@ -50,6 +50,11 @@ Congratulation::~Congratulation()
     delete ui;
 }
 
+void Congratulation::setInformation(QString information)
+{
+    ui->informationLabel->setText(information);
+}
+
 void Congratulation::on_mainMenuButton_clicked()
 {
     MusicEngine::pauseBackgroundMusic();

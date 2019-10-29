@@ -84,6 +84,16 @@
         </widget>
        </item>
        <item>
+        <widget class="QLabel" name="informationLabel">
+         <property name="text">
+          <string>TextLabel</string>
+         </property>
+         <property name="margin">
+          <number>9</number>
+         </property>
+        </widget>
+       </item>
+       <item>
         <widget class="FocusBarrier" name="focusBarrierTop">
          <property name="text">
           <string notr="true">Barrier</string>
