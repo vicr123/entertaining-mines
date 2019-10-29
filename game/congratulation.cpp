@@ -1,5 +1,5 @@
-#include "Congratulation.h"
-#include "ui_Congratulation.h"
+#include "congratulation.h"
+#include "ui_congratulation.h"
 
 #include <pauseoverlay.h>
 #include <musicengine.h>
