@@ -32,10 +32,14 @@ jobs:
         image-name-linux: entertaining-mines-linux.AppImage
         app-bundle-mac: "Entertaining Mines.app"
         embed-libraries-mac: "entertaining"
+    - uses: actions/upload-artifact@v1
+      name: Upload Artifact to GitHub Actions
+      with:
+        name: ${{ steps.image.outputs.asset-name }}
+        path: ${{ steps.image.outputs.image-path }}
     - uses: vicr123/create-release@delete-old-release
       name: "Create Release"
       id: create_release
-      continue-on-error: true
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
