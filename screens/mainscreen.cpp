@@ -110,7 +110,6 @@ void MainScreen::on_exitButton_clicked()
     QApplication::exit();
 }
 
-#include <QGraphicsBlurEffect>
 void MainScreen::on_startCustom_clicked()
 {
     QScopedPointer<PauseOverlay> overlay(new PauseOverlay(this));
@@ -154,4 +153,10 @@ void MainScreen::on_loadButton_clicked()
         loadGame(stream);
     });
     load->load();
+}
+
+
+void MainScreen::on_settingsButton_clicked()
+{
+    emit openSettings();
 }

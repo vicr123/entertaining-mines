@@ -157,7 +157,7 @@
         </widget>
        </item>
        <item>
-        <widget class="QCommandLinkButton" name="commandLinkButton_2">
+        <widget class="QCommandLinkButton" name="settingsButton">
          <property name="text">
           <string>Settings</string>
          </property>

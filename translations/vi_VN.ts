@@ -166,12 +166,12 @@
         <translation>Mìn giải trí</translation>
     </message>
     <message>
-        <location filename="../gamewindow.cpp" line="50"/>
+        <location filename="../gamewindow.cpp" line="59"/>
         <source>Idle</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gamewindow.cpp" line="51"/>
+        <location filename="../gamewindow.cpp" line="60"/>
         <source>Main Menu</source>
         <translation type="unfinished">Trang chủ</translation>
     </message>
@@ -269,17 +269,17 @@
         <translation>Thoát</translation>
     </message>
     <message>
-        <location filename="../screens/mainscreen.cpp" line="124"/>
+        <location filename="../screens/mainscreen.cpp" line="123"/>
         <source>How wide is the board?</source>
         <translation>Bảng này rộng bao nhiêu?</translation>
     </message>
     <message>
-        <location filename="../screens/mainscreen.cpp" line="128"/>
+        <location filename="../screens/mainscreen.cpp" line="127"/>
         <source>How high is the board?</source>
         <translation>Bảng này cao bao nhiêu?</translation>
     </message>
     <message>
-        <location filename="../screens/mainscreen.cpp" line="131"/>
+        <location filename="../screens/mainscreen.cpp" line="130"/>
         <source>How many mines are on this board?</source>
         <translation>Bảng này có mấy mìn?</translation>
     </message>
@@ -344,19 +344,72 @@
     </message>
 </context>
 <context>
+    <name>SettingsScreen</name>
+    <message>
+        <location filename="../screens/settingsscreen.ui" line="14"/>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../screens/settingsscreen.ui" line="71"/>
+        <source>Settings</source>
+        <translation type="unfinished">Cài đặt</translation>
+    </message>
+    <message>
+        <location filename="../screens/settingsscreen.cpp" line="50"/>
+        <source>Audio</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../screens/settingsscreen.cpp" line="40"/>
+        <source>Background Music</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../screens/settingsscreen.cpp" line="41"/>
+        <source>Sound Effects</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../screens/settingsscreen.cpp" line="53"/>
+        <source>Behaviour</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../screens/settingsscreen.cpp" line="54"/>
+        <source>Marks</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../screens/settingsscreen.cpp" line="55"/>
+        <source>When this is enabled, right clicking a flag will change it into the marked state first.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../screens/settingsscreen.cpp" line="77"/>
+        <source>Select</source>
+        <translation type="unfinished">Chọn</translation>
+    </message>
+    <message>
+        <location filename="../screens/settingsscreen.cpp" line="78"/>
+        <source>Back</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>main</name>
     <message>
-        <location filename="../main.cpp" line="42"/>
+        <location filename="../main.cpp" line="44"/>
         <source>Minesweeper</source>
         <translation>Gỡ mìn</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="48"/>
+        <location filename="../main.cpp" line="50"/>
         <source>Entertaining Mines Blueprint</source>
         <translation>Mìn giải trí (Blueprint)</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="50"/>
+        <location filename="../main.cpp" line="52"/>
         <source>Entertaining Mines</source>
         <translation>Mìn giải trí</translation>
     </message>

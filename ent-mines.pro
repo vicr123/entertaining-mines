@@ -25,7 +25,8 @@ SOURCES += \
     screens/customgamescreen.cpp \
     screens/gamescreen.cpp \
     screens/mainscreen.cpp \
-    screens/pausescreen.cpp
+    screens/pausescreen.cpp \
+    screens/settingsscreen.cpp
 
 HEADERS += \
     game/gameover.h \
@@ -34,7 +35,8 @@ HEADERS += \
     screens/customgamescreen.h \
     screens/gamescreen.h \
     screens/mainscreen.h \
-    screens/pausescreen.h
+    screens/pausescreen.h \
+    screens/settingsscreen.h
 
 FORMS += \
     game/gameover.ui \
@@ -42,7 +44,8 @@ FORMS += \
     screens/customgamescreen.ui \
     screens/gamescreen.ui \
     screens/mainscreen.ui \
-    screens/pausescreen.ui
+    screens/pausescreen.ui \
+    screens/settingsscreen.ui
 RESOURCES += \
     resources.qrc
 

@@ -47,6 +47,7 @@
       </property>
       <widget class="MainScreen" name="mainScreen"/>
       <widget class="GameScreen" name="gameScreen"/>
+      <widget class="SettingsScreen" name="settingsScreen"/>
      </widget>
     </item>
    </layout>
@@ -73,6 +74,12 @@
    <class>GameScreen</class>
    <extends>QWidget</extends>
    <header>screens/gamescreen.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>SettingsScreen</class>
+   <extends>QWidget</extends>
+   <header>screens/settingsscreen.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>

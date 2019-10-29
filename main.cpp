@@ -23,6 +23,8 @@
 #include <QDir>
 #include <entertaining.h>
 #include <discordintegration.h>
+#include <musicengine.h>
+#include <QSettings>
 
 int main(int argc, char *argv[])
 {
@@ -52,6 +54,10 @@ int main(int argc, char *argv[])
 
     Entertaining::initialize();
     DiscordIntegration::makeInstance("638385511530102794", "");
+
+    QSettings settings;
+    MusicEngine::setMuteMusic(!settings.value("audio/background").toBool());
+    MusicEngine::setMuteEffects(!settings.value("audio/effects").toBool());
 
     GameWindow w;
     w.show();

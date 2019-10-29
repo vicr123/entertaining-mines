@@ -12,5 +12,7 @@
         <file>tiles/backgroundFlag.svg</file>
         <file>tiles/backgroundMark.svg</file>
         <file>tiles/mark.svg</file>
+        <file>icons/go-next.svg</file>
+        <file>icons/go-previous.svg</file>
     </qresource>
 </RCC>

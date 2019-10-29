@@ -42,6 +42,15 @@ GameWindow::GameWindow(QWidget *parent)
         ui->gameScreen->loadGame(stream);
         ui->gameScreen->setFocus();
     });
+    connect(ui->mainScreen, &MainScreen::openSettings, this, [=] {
+        ui->settingsScreen->updateSettings();
+        ui->stackedWidget->setCurrentWidget(ui->settingsScreen);
+        ui->settingsScreen->setFocus();
+    });
+
+    connect(ui->settingsScreen, &SettingsScreen::goBack, this, [=] {
+        ui->stackedWidget->setCurrentWidget(ui->mainScreen);
+    });
 
     connect(ui->gameScreen, &GameScreen::returnToMainMenu, this, [=] {
         ui->stackedWidget->setCurrentWidget(ui->mainScreen);
