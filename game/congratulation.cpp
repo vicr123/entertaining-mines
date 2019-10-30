@@ -6,7 +6,7 @@
 #include <QKeyEvent>
 
 struct CongratulationPrivate {
-    PauseOverlay* overlay;
+
 };
 
 Congratulation::Congratulation(QWidget *parent) :
@@ -38,8 +38,7 @@ Congratulation::Congratulation(QWidget *parent) :
         ui->mainMenuButton->click();
     });
 
-    d->overlay = new PauseOverlay(parent);
-    d->overlay->pushOverlayWidget(this);
+    PauseOverlay::overlayForWindow(parent)->pushOverlayWidget(this);
 
     ui->mainMenuButton->setProperty("type", "destructive");
 }
@@ -58,21 +57,21 @@ void Congratulation::setInformation(QString information)
 void Congratulation::on_mainMenuButton_clicked()
 {
     MusicEngine::pauseBackgroundMusic();
-    d->overlay->popOverlayWidget([=] {
+    PauseOverlay::overlayForWindow(this->parentWidget())->popOverlayWidget([=] {
         emit mainMenu();
     });
 }
 
 void Congratulation::on_playAgainButton_clicked()
 {
-    d->overlay->popOverlayWidget([=] {
+    PauseOverlay::overlayForWindow(this->parentWidget())->popOverlayWidget([=] {
         emit playAgain();
     });
 }
 
 void Congratulation::on_saveButton_clicked()
 {
-    d->overlay->popOverlayWidget([=] {
+    PauseOverlay::overlayForWindow(this->parentWidget())->popOverlayWidget([=] {
         emit review();
     });
 }

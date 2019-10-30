@@ -25,7 +25,7 @@
 #include <pauseoverlay.h>
 
 struct CreditsScreenPrivate {
-    PauseOverlay* overlay;
+
 };
 
 CreditsScreen::CreditsScreen(QWidget *parent) :
@@ -35,8 +35,7 @@ CreditsScreen::CreditsScreen(QWidget *parent) :
     ui->setupUi(this);
 
     d = new CreditsScreenPrivate();
-    d->overlay = new PauseOverlay(parent);
-    d->overlay->pushOverlayWidget(this);
+    PauseOverlay::overlayForWindow(this->parentWidget())->pushOverlayWidget(this);
 
     QPalette pal = ui->scrollArea->palette();
     pal.setColor(QPalette::Window, Qt::transparent);
@@ -63,7 +62,7 @@ CreditsScreen::~CreditsScreen()
 
 void CreditsScreen::on_backButton_clicked()
 {
-    d->overlay->popOverlayWidget([=] {
+    PauseOverlay::overlayForWindow(this->parentWidget())->popOverlayWidget([=] {
         emit done();
     });
 }

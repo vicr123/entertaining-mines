@@ -98,7 +98,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../information/creditsscreen.cpp" line="45"/>
+        <location filename="../information/creditsscreen.cpp" line="44"/>
         <source>Back</source>
         <translation type="unfinished"></translation>
     </message>
@@ -279,12 +279,12 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gamewindow.cpp" line="59"/>
+        <location filename="../gamewindow.cpp" line="62"/>
         <source>Idle</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gamewindow.cpp" line="60"/>
+        <location filename="../gamewindow.cpp" line="63"/>
         <source>Main Menu</source>
         <translation type="unfinished"></translation>
     </message>
@@ -408,27 +408,27 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../screens/mainscreen.cpp" line="49"/>
+        <location filename="../screens/mainscreen.cpp" line="48"/>
         <source>Select</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../screens/mainscreen.cpp" line="50"/>
+        <location filename="../screens/mainscreen.cpp" line="49"/>
         <source>Exit</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../screens/mainscreen.cpp" line="137"/>
+        <location filename="../screens/mainscreen.cpp" line="135"/>
         <source>How wide is the board?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../screens/mainscreen.cpp" line="141"/>
+        <location filename="../screens/mainscreen.cpp" line="139"/>
         <source>How high is the board?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../screens/mainscreen.cpp" line="144"/>
+        <location filename="../screens/mainscreen.cpp" line="142"/>
         <source>How many mines are on this board?</source>
         <translation type="unfinished"></translation>
     </message>
@@ -442,7 +442,7 @@
     </message>
     <message>
         <location filename="../screens/pausescreen.ui" line="96"/>
-        <location filename="../screens/pausescreen.cpp" line="50"/>
+        <location filename="../screens/pausescreen.cpp" line="49"/>
         <source>Resume</source>
         <translation type="unfinished"></translation>
     </message>
@@ -482,7 +482,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../screens/pausescreen.cpp" line="49"/>
+        <location filename="../screens/pausescreen.cpp" line="48"/>
         <source>Select</source>
         <translation type="unfinished"></translation>
     </message>

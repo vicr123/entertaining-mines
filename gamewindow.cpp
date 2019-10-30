@@ -23,6 +23,7 @@
 #include <focuspointer.h>
 #include <textinputoverlay.h>
 #include <discordintegration.h>
+#include <pauseoverlay.h>
 
 GameWindow::GameWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -31,6 +32,8 @@ GameWindow::GameWindow(QWidget *parent)
     ui->setupUi(this);
 
     ui->menubar->setVisible(false);
+
+    PauseOverlay::registerOverlayForWindow(this, ui->centralwidget);
 
     connect(ui->mainScreen, &MainScreen::startGame, ui->gameScreen, &GameScreen::startGame);
     connect(ui->mainScreen, &MainScreen::startGame, this, [=] {

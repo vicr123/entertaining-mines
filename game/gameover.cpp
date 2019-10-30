@@ -6,7 +6,7 @@
 #include <QKeyEvent>
 
 struct GameOverPrivate {
-    PauseOverlay* overlay;
+
 };
 
 GameOver::GameOver(QWidget *parent) :
@@ -38,8 +38,7 @@ GameOver::GameOver(QWidget *parent) :
         ui->mainMenuButton->click();
     });
 
-    d->overlay = new PauseOverlay(parent);
-    d->overlay->pushOverlayWidget(this);
+    PauseOverlay::overlayForWindow(this->parentWidget())->pushOverlayWidget(this);
 
     ui->mainMenuButton->setProperty("type", "destructive");
 }
@@ -53,21 +52,21 @@ GameOver::~GameOver()
 void GameOver::on_mainMenuButton_clicked()
 {
     MusicEngine::pauseBackgroundMusic();
-    d->overlay->popOverlayWidget([=] {
+    PauseOverlay::overlayForWindow(this->parentWidget())->popOverlayWidget([=] {
         emit mainMenu();
     });
 }
 
 void GameOver::on_playAgainButton_clicked()
 {
-    d->overlay->popOverlayWidget([=] {
+    PauseOverlay::overlayForWindow(this->parentWidget())->popOverlayWidget([=] {
         emit playAgain();
     });
 }
 
 void GameOver::on_saveButton_clicked()
 {
-    d->overlay->popOverlayWidget([=] {
+    PauseOverlay::overlayForWindow(this->parentWidget())->popOverlayWidget([=] {
         emit review();
     });
 }

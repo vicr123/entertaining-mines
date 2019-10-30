@@ -24,7 +24,6 @@
 #include <QKeyEvent>
 #include <gamepadbuttons.h>
 #include <textinputoverlay.h>
-#include <pauseoverlay.h>
 #include <loadoverlay.h>
 #include <musicengine.h>
 #include <QSvgRenderer>
@@ -126,7 +125,6 @@ void MainScreen::on_exitButton_clicked()
 
 void MainScreen::on_startCustom_clicked()
 {
-    QScopedPointer<PauseOverlay> overlay(new PauseOverlay(this));
     bool canceled;
 
     int width = 15;
@@ -134,14 +132,14 @@ void MainScreen::on_startCustom_clicked()
     int mines = 60;
 
     askWidth:
-    width = TextInputOverlay::getInt(this, tr("How wide is the board?"), &canceled, width, 5, 99, QLineEdit::Normal, overlay.data());
+    width = TextInputOverlay::getInt(this, tr("How wide is the board?"), &canceled, width, 5, 99, QLineEdit::Normal);
     if (canceled) return;
 
     askHeight:
-    height = TextInputOverlay::getInt(this, tr("How high is the board?"), &canceled, height, 5, 99, QLineEdit::Normal, overlay.data());
+    height = TextInputOverlay::getInt(this, tr("How high is the board?"), &canceled, height, 5, 99, QLineEdit::Normal);
     if (canceled) goto askWidth;
 
-    mines = TextInputOverlay::getInt(this, tr("How many mines are on this board?"), &canceled, mines, 1, static_cast<int>(width * height * 0.9) - 1, QLineEdit::Normal, overlay.data());
+    mines = TextInputOverlay::getInt(this, tr("How many mines are on this board?"), &canceled, mines, 1, static_cast<int>(width * height * 0.9) - 1, QLineEdit::Normal);
     if (canceled) goto askHeight;
 
     emit startGame(width, height, mines);
