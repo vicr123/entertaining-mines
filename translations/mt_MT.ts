@@ -564,15 +564,5 @@
         <source>Minesweeper</source>
         <translation type="unfinished"></translation>
     </message>
-    <message>
-        <location filename="../main.cpp" line="50"/>
-        <source>Entertaining Mines Blueprint</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../main.cpp" line="52"/>
-        <source>Entertaining Mines</source>
-        <translation type="unfinished"></translation>
-    </message>
 </context>
 </TS>

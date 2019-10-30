@@ -555,15 +555,5 @@
         <source>Minesweeper</source>
         <translation>Gỡ mìn</translation>
     </message>
-    <message>
-        <location filename="../main.cpp" line="50"/>
-        <source>Entertaining Mines Blueprint</source>
-        <translation>Mìn giải trí (Blueprint)</translation>
-    </message>
-    <message>
-        <location filename="../main.cpp" line="52"/>
-        <source>Entertaining Mines</source>
-        <translation>Mìn giải trí</translation>
-    </message>
 </context>
 </TS>

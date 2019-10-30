@@ -46,10 +46,11 @@ int main(int argc, char *argv[])
     a.setApplicationLicense(tApplication::Gpl3OrLater);
     a.setCopyrightHolder("Victor Tran");
     a.setCopyrightYear("2019");
+    a.setDesktopFileName("com.vicr123.entertaining.mines");
     #ifdef T_BLUEPRINT_BUILD
-        a.setApplicationName(QApplication::translate("main", "Entertaining Mines Blueprint"));
+        a.setApplicationName("Entertaining Mines Blueprint");
     #else
-        a.setApplicationName(QApplication::translate("main", "Entertaining Mines"));
+        a.setApplicationName("Entertaining Mines");
     #endif
 
     Entertaining::initialize();
