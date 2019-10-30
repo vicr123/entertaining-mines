@@ -22,6 +22,7 @@ SOURCES += \
     game/gameover.cpp \
     game/gametile.cpp \
     information/creditsscreen.cpp \
+    information/helpscreen.cpp \
     main.cpp \
     gamewindow.cpp \
     screens/customgamescreen.cpp \
@@ -36,6 +37,7 @@ HEADERS += \
     game/gametile.h \
     gamewindow.h \
     information/creditsscreen.h \
+    information/helpscreen.h \
     screens/customgamescreen.h \
     screens/gamescreen.h \
     screens/mainscreen.h \
@@ -47,12 +49,14 @@ FORMS += \
     game/gameover.ui \
     gamewindow.ui \
     information/creditsscreen.ui \
+    information/helpscreen.ui \
     screens/customgamescreen.ui \
     screens/gamescreen.ui \
     screens/mainscreen.ui \
     screens/pausescreen.ui \
     screens/settingsscreen.ui
 RESOURCES += \
+    help.qrc \
     resources.qrc
 
 

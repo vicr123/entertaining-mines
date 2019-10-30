@@ -264,14 +264,32 @@
         <translation>Mìn giải trí</translation>
     </message>
     <message>
-        <location filename="../gamewindow.cpp" line="62"/>
+        <location filename="../gamewindow.cpp" line="64"/>
         <source>Idle</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gamewindow.cpp" line="63"/>
+        <location filename="../gamewindow.cpp" line="65"/>
         <source>Main Menu</source>
         <translation type="unfinished">Trang chủ</translation>
+    </message>
+</context>
+<context>
+    <name>HelpScreen</name>
+    <message>
+        <location filename="../information/helpscreen.ui" line="14"/>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../information/helpscreen.ui" line="71"/>
+        <source>Help</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../information/helpscreen.cpp" line="38"/>
+        <source>Back</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -393,27 +411,27 @@
         <translation type="unfinished">Trở lại trang chủ</translation>
     </message>
     <message>
-        <location filename="../screens/mainscreen.cpp" line="48"/>
+        <location filename="../screens/mainscreen.cpp" line="49"/>
         <source>Select</source>
         <translation>Chọn</translation>
     </message>
     <message>
-        <location filename="../screens/mainscreen.cpp" line="49"/>
+        <location filename="../screens/mainscreen.cpp" line="50"/>
         <source>Exit</source>
         <translation>Thoát</translation>
     </message>
     <message>
-        <location filename="../screens/mainscreen.cpp" line="135"/>
+        <location filename="../screens/mainscreen.cpp" line="136"/>
         <source>How wide is the board?</source>
         <translation>Bảng này rộng bao nhiêu?</translation>
     </message>
     <message>
-        <location filename="../screens/mainscreen.cpp" line="139"/>
+        <location filename="../screens/mainscreen.cpp" line="140"/>
         <source>How high is the board?</source>
         <translation>Bảng này cao bao nhiêu?</translation>
     </message>
     <message>
-        <location filename="../screens/mainscreen.cpp" line="142"/>
+        <location filename="../screens/mainscreen.cpp" line="143"/>
         <source>How many mines are on this board?</source>
         <translation>Bảng này có mấy mìn?</translation>
     </message>

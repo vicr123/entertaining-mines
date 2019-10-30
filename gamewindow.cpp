@@ -35,6 +35,8 @@ GameWindow::GameWindow(QWidget *parent)
 
     PauseOverlay::registerOverlayForWindow(this, ui->centralwidget);
 
+    this->setMinimumSize(SC_DPI_T(QSize(600, 600), QSize));
+
     connect(ui->mainScreen, &MainScreen::startGame, ui->gameScreen, &GameScreen::startGame);
     connect(ui->mainScreen, &MainScreen::startGame, this, [=] {
         ui->stackedWidget->setCurrentWidget(ui->gameScreen);

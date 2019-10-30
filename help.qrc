@@ -1,0 +1,10 @@
+<RCC>
+    <qresource prefix="/">
+        <file>resources/help/en.html</file>
+        <file>resources/help/content/board.png</file>
+        <file>resources/help/content/minesaround.png</file>
+        <file>resources/help/content/sweepafter.png</file>
+        <file>resources/help/content/sweepbefore.png</file>
+        <file>resources/help/content/arrow.svg</file>
+    </qresource>
+</RCC>

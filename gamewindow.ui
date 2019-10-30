@@ -41,7 +41,7 @@
      <number>0</number>
     </property>
     <item>
-     <widget class="QStackedWidget" name="stackedWidget">
+     <widget class="tStackedWidget" name="stackedWidget">
       <property name="currentIndex">
        <number>0</number>
       </property>
@@ -64,6 +64,12 @@
   </widget>
  </widget>
  <customwidgets>
+  <customwidget>
+   <class>tStackedWidget</class>
+   <extends>QStackedWidget</extends>
+   <header location="global">tstackedwidget.h</header>
+   <container>1</container>
+  </customwidget>
   <customwidget>
    <class>MainScreen</class>
    <extends>QWidget</extends>

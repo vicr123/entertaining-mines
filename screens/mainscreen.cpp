@@ -30,6 +30,7 @@
 #include <QPainter>
 #include <the-libs_global.h>
 #include "information/creditsscreen.h"
+#include "information/helpscreen.h"
 
 MainScreen::MainScreen(QWidget *parent) :
     QWidget(parent),
@@ -187,4 +188,10 @@ void MainScreen::on_creditsButton_clicked()
 {
     CreditsScreen* cred = new CreditsScreen(this);
     connect(cred, &CreditsScreen::done, cred, &CreditsScreen::deleteLater);
+}
+
+void MainScreen::on_helpButton_clicked()
+{
+    HelpScreen* help = new HelpScreen(this);
+    connect(help, &HelpScreen::done, help, &HelpScreen::deleteLater);
 }

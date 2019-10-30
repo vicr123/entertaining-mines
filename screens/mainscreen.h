@@ -60,6 +60,8 @@ class MainScreen : public QWidget
 
         void on_creditsButton_clicked();
 
+        void on_helpButton_clicked();
+
     private:
         Ui::MainScreen *ui;
         void resizeEvent(QResizeEvent* event);

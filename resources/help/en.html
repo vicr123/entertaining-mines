@@ -1,0 +1,97 @@
+<h1>Entertaining Mines</h1>
+
+Welcome to Entertaining Mines!
+
+<h2>Goal of the game</h2>
+
+<center>
+<img src="content/board.png" align="middle" width="400">
+</center>
+
+<p>The board consists of a grid of tiles, with a predetermined amount of mines. Lying under any tile could be a mine, and your goal is to find all the mines.</p>
+
+<h2>Finding the mines</h2>
+<p>Every time you click on a tile, as long as the tile doesn't contain a mine, a number will appear in its place.</p>
+
+
+<center>
+<img src="content/minesaround.png" align="middle" width="400">
+</center>
+
+<p>The number inside a tile indicates how many mines are neighbouring that tile. For example, in this instance, there is one mine neighbouring this tile, so any one of the marked tiles could contain a mine.</p>
+
+<h2>Game controls</h2>
+Entertaining Mines can be controlled with a mouse, a keyboard or a gamepad.
+
+<h3>Using a mouse</h3>
+<p>Hover the mouse over a tile, and then perform one of the following actions:</p>
+<p>
+<b>LEFT CLICK</b> to reveal the number (or mine) under the tile<br />
+<b>RIGHT CLICK</b> to flag a tile if you think it contains a mine<br />
+<b>MIDDLE CLICK</b> on a already revealed tile to sweep around it. (More on this in the "Sweeping tiles" section)
+</p>
+
+<h3>Using a keyboard</h3>
+<p>Use the arrow keys to highlight a tile, and then press a key to perform one of the following actions:</p>
+<p>
+<b>ENTER</b> to reveal the number (or mine) under the tile<br />
+<b>SPACE</b> to flag a tile if you think it contains a mine<br />
+<b>ENTER</b> on a already revealed tile to sweep around it. (More on this in the "Sweeping tiles" section)
+</p>
+
+<h3>Using a gamepad</h3>
+<p>Use the left stick or the directional buttons to highlight a tile, and then press a button to perform one of the following actions:</p>
+<p>
+<img src="qrc:/libentertaining/icons/btnA" height="16"> to reveal the number (or mine) under the tile<br />
+<img src="qrc:/libentertaining/icons/btnX" height="16"> to flag a tile if you think it contains a mine<br />
+<img src="qrc:/libentertaining/icons/btnA" height="16"> on a already revealed tile to sweep around it. (More on this in the "Sweeping tiles" section)
+</p>
+
+<h2>Flagging tiles</h2>
+<p>After flagging a tile, a flag will appear in its place. Flag a tile if you think that a mine is situated on that tile.</p>
+
+<table border="white" width="100%">
+<tbody>
+<tr>
+<td style="background-color: rgb(0, 100, 255); padding: 3px;">
+<b>INFORMATION</b><br />
+You can't accidentally reveal a tile that you've flagged.
+</td>
+</tr>
+</tbody>
+</table>
+
+<p>By default, attempting to flag an already flagged tile will turn it into a marked tile. Marked tiles have a ? on them. You can use marked tiles if you are uncertain of where a mine is and you want to come back to it later.</p>
+
+<h2>Sweeping tiles</h2>
+<p>Once a particular tile is satisfied, you are able to sweep it.</p>
+
+<table border="white" width="100%">
+<tbody>
+<tr>
+<td style="background-color: rgb(0, 100, 255); padding: 3px;">
+<b>INFORMATION</b><br />
+A satisfied tile has exactly the same number of flags neighbouring it as the number on itself.
+</td>
+</tr>
+</tbody>
+</table>
+
+<p>Sweeping a tile opens all the neighbouring tiles, except for the flagged ones. This can be faster than manually opening all the neighbouring tiles.</p>
+
+<center>
+<img src="content/sweepbefore.png" align="middle" width="250">
+<img src="content/arrow.svg" align="middle" width="128">
+<img src="content/sweepafter.png" align="middle" width="250">
+</center>
+
+<table border="white" width="100%">
+<tbody>
+<tr>
+<td style="background-color: rgb(100, 0, 0); padding: 3px;">
+<b>DANGER</b><br />
+Be absolutely sure you've put the flags in the right places before you sweep because if any one flag is incorrectly placed, you will uncover a mine and lose the game.
+</td>
+</tr>
+</tbody>
+</table>
