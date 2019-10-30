@@ -207,18 +207,24 @@
     <message numerus="yes">
         <location filename="../screens/gamescreen.cpp" line="219"/>
         <source>%1×%2 board with %n mines</source>
-        <translation><numerusform>Bảng %1×%2 với %n só mìn</numerusform>
-        </translation></message>
+        <translation>
+            <numerusform>Bảng %1×%2 với %n só mìn</numerusform>
+        </translation>
+    </message>
     <message numerus="yes">
         <location filename="../screens/gamescreen.cpp" line="368"/>
         <source>You completed a %1×%2 board with %n mines in %4. Divine!</source>
-        <translation><numerusform>Bạn đã hoàn thành một bảng %1×%2 với %n só mìn trong %4. Làm tốt lắm!</numerusform>
-        </translation></message>
+        <translation>
+            <numerusform>Bạn đã hoàn thành một bảng %1×%2 với %n só mìn trong %4. Làm tốt lắm!</numerusform>
+        </translation>
+    </message>
     <message numerus="yes">
         <location filename="../screens/gamescreen.cpp" line="373"/>
         <source>You completed a %1×%2 board with %n mines.</source>
-        <translation><numerusform>Bạn đã hoàn thành một bảng %1×%2 với %n só mìn.</numerusform>
-        </translation></message>
+        <translation>
+            <numerusform>Bạn đã hoàn thành một bảng %1×%2 với %n só mìn.</numerusform>
+        </translation>
+    </message>
     <message>
         <location filename="../screens/gamescreen.cpp" line="480"/>
         <source>Your time was not recorded because pausing the game invalidates the timer.</source>
