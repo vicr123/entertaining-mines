@@ -169,43 +169,43 @@
     </message>
     <message>
         <location filename="../screens/gamescreen.cpp" line="66"/>
-        <location filename="../screens/gamescreen.cpp" line="432"/>
+        <location filename="../screens/gamescreen.cpp" line="438"/>
         <source>Reveal</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../screens/gamescreen.cpp" line="67"/>
-        <location filename="../screens/gamescreen.cpp" line="433"/>
+        <location filename="../screens/gamescreen.cpp" line="439"/>
         <source>Flag</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../screens/gamescreen.cpp" line="213"/>
+        <location filename="../screens/gamescreen.cpp" line="218"/>
         <source>In Game</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../screens/gamescreen.cpp" line="436"/>
+        <location filename="../screens/gamescreen.cpp" line="442"/>
         <source>Mark</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../screens/gamescreen.cpp" line="439"/>
+        <location filename="../screens/gamescreen.cpp" line="445"/>
         <source>Unflag</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../screens/gamescreen.cpp" line="442"/>
+        <location filename="../screens/gamescreen.cpp" line="448"/>
         <source>Sweep</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../screens/gamescreen.cpp" line="300"/>
+        <location filename="../screens/gamescreen.cpp" line="306"/>
         <source>Your time was not recorded because loading a save invalidates the timer.</source>
         <translation type="unfinished"></translation>
     </message>
     <message numerus="yes">
-        <location filename="../screens/gamescreen.cpp" line="214"/>
+        <location filename="../screens/gamescreen.cpp" line="219"/>
         <source>%1×%2 board with %n mines</source>
         <translation type="unfinished">
             <numerusform></numerusform>
@@ -217,7 +217,7 @@
         </translation>
     </message>
     <message numerus="yes">
-        <location filename="../screens/gamescreen.cpp" line="362"/>
+        <location filename="../screens/gamescreen.cpp" line="368"/>
         <source>You completed a %1×%2 board with %n mines in %4. Divine!</source>
         <translation type="unfinished">
             <numerusform></numerusform>
@@ -229,7 +229,7 @@
         </translation>
     </message>
     <message numerus="yes">
-        <location filename="../screens/gamescreen.cpp" line="367"/>
+        <location filename="../screens/gamescreen.cpp" line="373"/>
         <source>You completed a %1×%2 board with %n mines.</source>
         <translation type="unfinished">
             <numerusform></numerusform>
@@ -241,32 +241,32 @@
         </translation>
     </message>
     <message>
-        <location filename="../screens/gamescreen.cpp" line="474"/>
+        <location filename="../screens/gamescreen.cpp" line="480"/>
         <source>Your time was not recorded because pausing the game invalidates the timer.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../screens/gamescreen.cpp" line="492"/>
+        <location filename="../screens/gamescreen.cpp" line="502"/>
         <source>%1 × %2 board</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../screens/gamescreen.cpp" line="493"/>
+        <location filename="../screens/gamescreen.cpp" line="503"/>
         <source>%1 mines</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../screens/gamescreen.cpp" line="494"/>
+        <location filename="../screens/gamescreen.cpp" line="504"/>
         <source>%1 flagged</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../screens/gamescreen.cpp" line="495"/>
+        <location filename="../screens/gamescreen.cpp" line="505"/>
         <source>%1 mines to go</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../screens/gamescreen.cpp" line="496"/>
+        <location filename="../screens/gamescreen.cpp" line="506"/>
         <source>%1% cleared</source>
         <translation type="unfinished"></translation>
     </message>
@@ -447,37 +447,47 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../screens/pausescreen.ui" line="99"/>
+        <location filename="../screens/pausescreen.ui" line="103"/>
         <source>Resume the game</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../screens/pausescreen.ui" line="106"/>
+        <location filename="../screens/pausescreen.ui" line="110"/>
         <source>Save</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../screens/pausescreen.ui" line="109"/>
+        <location filename="../screens/pausescreen.ui" line="117"/>
         <source>Save this game so you can resume it later</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../screens/pausescreen.ui" line="132"/>
+        <location filename="../screens/pausescreen.ui" line="124"/>
+        <source>New Game</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../screens/pausescreen.ui" line="131"/>
+        <source>Abandon this game and start a new one with the same parameters</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../screens/pausescreen.ui" line="154"/>
         <source>Settings</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../screens/pausescreen.ui" line="135"/>
+        <location filename="../screens/pausescreen.ui" line="161"/>
         <source>Go to Settings</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../screens/pausescreen.ui" line="142"/>
+        <location filename="../screens/pausescreen.ui" line="168"/>
         <source>Main Menu</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../screens/pausescreen.ui" line="145"/>
+        <location filename="../screens/pausescreen.ui" line="175"/>
         <source>Abandon this game</source>
         <translation type="unfinished"></translation>
     </message>

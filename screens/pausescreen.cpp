@@ -115,3 +115,12 @@ void PauseScreen::on_saveButton_clicked()
     });
     save->save();
 }
+
+void PauseScreen::on_newGameButton_clicked()
+{
+    MusicEngine::playSoundEffect(MusicEngine::Selection);
+    MusicEngine::playBackgroundMusic();
+    PauseOverlay::overlayForWindow(this->parentWidget())->popOverlayWidget([=] {
+        emit newGame();
+    });
+}

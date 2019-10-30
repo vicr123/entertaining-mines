@@ -78,6 +78,8 @@ class GameScreen : public QWidget
 
         void resizeEvent(QResizeEvent* event);
 
+        void resizeTiles();
+
         void setup();
         void finishSetup();
 };

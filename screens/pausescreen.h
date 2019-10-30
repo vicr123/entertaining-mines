@@ -37,6 +37,7 @@ class PauseScreen : public QWidget
 
     signals:
         void resume();
+        void newGame();
         void mainMenu();
         void provideMetadata(QVariantMap* metadata);
         void provideSaveData(QDataStream* data);
@@ -50,6 +51,8 @@ class PauseScreen : public QWidget
         void on_mainMenuButton_clicked();
 
         void on_saveButton_clicked();
+
+        void on_newGameButton_clicked();
 
     private:
         Ui::PauseScreen *ui;

@@ -174,6 +174,11 @@ int GameScreen::pointToIndex(QPoint point)
 
 void GameScreen::resizeEvent(QResizeEvent*event)
 {
+    resizeTiles();
+}
+
+void GameScreen::resizeTiles()
+{
     int targetHeight = qMax(SC_DPI(50), static_cast<int>(this->height() * 0.05));
     int fontHeight = targetHeight - 18;
 
@@ -216,6 +221,7 @@ void GameScreen::finishSetup()
     });
 
     updateTimer();
+    resizeTiles();
 }
 
 void GameScreen::startGame(int width, int height, int mines)
@@ -481,6 +487,10 @@ void GameScreen::on_menuButton_clicked()
     connect(screen, &PauseScreen::resume, this, [=] {
         screen->deleteLater();
         d->tiles.first()->setFocus();
+    });
+    connect(screen, &PauseScreen::newGame, this, [=] {
+        screen->deleteLater();
+        startGame(d->width, boardDimensions().height(), d->mines);
     });
     connect(screen, &PauseScreen::mainMenu, this, [=] {
         screen->deleteLater();
