@@ -330,8 +330,8 @@ void GameScreen::distributeMines(QPoint clickLocation)
         int tileNumber = QRandomGenerator::global()->bounded(d->tiles.count());
 
         QPoint location = indexToPoint(tileNumber);
-        if (location == clickLocation) {
-            //Never spawn a mine on the user's click point
+        if (QRect(location - QPoint(1, 1), location + QPoint(1, 1)).contains(clickLocation)) {
+            //Never spawn a mine near the user's click point
             i--;
             continue;
         }
