@@ -21,6 +21,7 @@ SOURCES += \
     game/congratulation.cpp \
     game/gameover.cpp \
     game/gametile.cpp \
+    information/creditsscreen.cpp \
     main.cpp \
     gamewindow.cpp \
     screens/customgamescreen.cpp \
@@ -34,6 +35,7 @@ HEADERS += \
     game/gameover.h \
     game/gametile.h \
     gamewindow.h \
+    information/creditsscreen.h \
     screens/customgamescreen.h \
     screens/gamescreen.h \
     screens/mainscreen.h \
@@ -44,6 +46,7 @@ FORMS += \
     game/congratulation.ui \
     game/gameover.ui \
     gamewindow.ui \
+    information/creditsscreen.ui \
     screens/customgamescreen.ui \
     screens/gamescreen.ui \
     screens/mainscreen.ui \

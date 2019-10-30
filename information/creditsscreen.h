@@ -17,53 +17,35 @@
  *   along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
  * *************************************/
-#ifndef MAINSCREEN_H
-#define MAINSCREEN_H
+#ifndef CREDITSSCREEN_H
+#define CREDITSSCREEN_H
 
 #include <QWidget>
 
 namespace Ui {
-    class MainScreen;
+    class CreditsScreen;
 }
 
-class MainScreen : public QWidget
+struct CreditsScreenPrivate;
+class CreditsScreen : public QWidget
 {
         Q_OBJECT
 
     public:
-        explicit MainScreen(QWidget *parent = nullptr);
-        ~MainScreen();
+        explicit CreditsScreen(QWidget *parent = nullptr);
+        ~CreditsScreen();
 
     signals:
-        void startGame(int width, int height, int mines);
-        void loadGame(QDataStream* stream);
-        void openSettings();
+        void done();
 
     private slots:
-        void on_startEasy_clicked();
-
-        void on_startIntermediate_clicked();
-
-        void on_startDifficult_clicked();
-
-        void on_exitButton_clicked();
-
-        void on_startCustom_clicked();
-
-        void on_loadButton_clicked();
-
-        void on_settingsButton_clicked();
-
-        void on_infoButton_clicked();
-
-        void on_mainMenuButton_clicked();
-
-        void on_creditsButton_clicked();
+        void on_backButton_clicked();
 
     private:
-        Ui::MainScreen *ui;
+        Ui::CreditsScreen *ui;
+        CreditsScreenPrivate* d;
+
         void resizeEvent(QResizeEvent* event);
-        void paintEvent(QPaintEvent* event);
 };
 
-#endif // MAINSCREEN_H
+#endif // CREDITSSCREEN_H

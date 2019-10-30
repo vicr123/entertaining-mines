@@ -30,6 +30,7 @@
 #include <QSvgRenderer>
 #include <QPainter>
 #include <the-libs_global.h>
+#include "information/creditsscreen.h"
 
 MainScreen::MainScreen(QWidget *parent) :
     QWidget(parent),
@@ -37,8 +38,13 @@ MainScreen::MainScreen(QWidget *parent) :
 {
     ui->setupUi(this);
 
+    ui->stackedWidget->setCurrentAnimation(tStackedWidget::None);
+    ui->bottomSpacer->changeSize(0, 0, QSizePolicy::Preferred, QSizePolicy::Expanding);
+
     ui->focusBarrierTop->setBounceWidget(ui->startEasy);
     ui->focusBarrierBottom->setBounceWidget(ui->exitButton);
+    ui->focusBarrierInfoTop->setBounceWidget(ui->helpButton);
+    ui->focusBarrierInfoBottom->setBounceWidget(ui->mainMenuButton);
 
     ui->gamepadHud->setButtonText(QGamepadManager::ButtonA, tr("Select"));
     ui->gamepadHud->setButtonText(QGamepadManager::ButtonB, tr("Exit"));
@@ -51,10 +57,18 @@ MainScreen::MainScreen(QWidget *parent) :
         QApplication::sendEvent(QApplication::focusWidget(), &event2);
     });
     ui->gamepadHud->setButtonAction(QGamepadManager::ButtonB, [=] {
-        ui->exitButton->click();
+        if (ui->stackedWidget->currentWidget() == ui->infoScreen) {
+            ui->mainMenuButton->click();
+        } else {
+            ui->exitButton->click();
+        }
     });
 
     ui->exitButton->setProperty("type", "destructive");
+
+    QPalette pal = ui->stackedWidget->palette();
+    pal.setColor(QPalette::Window, Qt::transparent);
+    ui->stackedWidget->setPalette(pal);
 }
 
 MainScreen::~MainScreen()
@@ -159,4 +173,20 @@ void MainScreen::on_loadButton_clicked()
 void MainScreen::on_settingsButton_clicked()
 {
     emit openSettings();
+}
+
+void MainScreen::on_infoButton_clicked()
+{
+    ui->stackedWidget->setCurrentWidget(ui->infoScreen);
+}
+
+void MainScreen::on_mainMenuButton_clicked()
+{
+    ui->stackedWidget->setCurrentWidget(ui->mainPage);
+}
+
+void MainScreen::on_creditsButton_clicked()
+{
+    CreditsScreen* cred = new CreditsScreen(this);
+    connect(cred, &CreditsScreen::done, cred, &CreditsScreen::deleteLater);
 }

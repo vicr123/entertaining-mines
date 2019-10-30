@@ -51,6 +51,59 @@
     </message>
 </context>
 <context>
+    <name>CreditsScreen</name>
+    <message>
+        <location filename="../information/creditsscreen.ui" line="71"/>
+        <source>Credits</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../information/creditsscreen.ui" line="158"/>
+        <source>Entertaining Mines</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../information/creditsscreen.ui" line="180"/>
+        <source>DEVELOPED BY</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../information/creditsscreen.ui" line="233"/>
+        <source>MUSIC BY</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../information/creditsscreen.ui" line="264"/>
+        <source>Background Music - &quot;Crypto&quot;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../information/creditsscreen.ui" line="277"/>
+        <source>Defeat Music - &quot;Piano Between&quot;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../information/creditsscreen.ui" line="290"/>
+        <source>Victory Music - &quot;Disco Sting&quot;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../information/creditsscreen.ui" line="303"/>
+        <source>Music is licensed under Creative Commons: BY 4.0</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../information/creditsscreen.ui" line="332"/>
+        <source>Licensed under the terms of the GNU General Public License, version 3, or later.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../information/creditsscreen.cpp" line="45"/>
+        <source>Back</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>CustomGameScreen</name>
     <message>
         <location filename="../screens/customgamescreen.ui" line="60"/>
@@ -229,97 +282,138 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../screens/mainscreen.ui" line="96"/>
+        <location filename="../screens/mainscreen.ui" line="154"/>
         <source>Easy Game</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../screens/mainscreen.ui" line="103"/>
+        <location filename="../screens/mainscreen.ui" line="161"/>
         <source>Start a 9×9 game with 10 mines</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../screens/mainscreen.ui" line="110"/>
+        <location filename="../screens/mainscreen.ui" line="168"/>
         <source>Intermediate Game</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../screens/mainscreen.ui" line="117"/>
+        <location filename="../screens/mainscreen.ui" line="175"/>
         <source>Start a 16×16 game with 40 mines</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../screens/mainscreen.ui" line="124"/>
+        <location filename="../screens/mainscreen.ui" line="182"/>
         <source>Difficult Game</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../screens/mainscreen.ui" line="131"/>
+        <location filename="../screens/mainscreen.ui" line="189"/>
         <source>Start a 30×16 game with 99 mines</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../screens/mainscreen.ui" line="138"/>
+        <location filename="../screens/mainscreen.ui" line="196"/>
         <source>Custom Game</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../screens/mainscreen.ui" line="145"/>
+        <location filename="../screens/mainscreen.ui" line="203"/>
         <source>Select the board size and number of mines to play with</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../screens/mainscreen.ui" line="168"/>
+        <location filename="../screens/mainscreen.ui" line="226"/>
         <source>Load Game</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../screens/mainscreen.ui" line="175"/>
+        <location filename="../screens/mainscreen.ui" line="233"/>
         <source>Open a game that you have saved</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../screens/mainscreen.ui" line="182"/>
+        <location filename="../screens/mainscreen.ui" line="240"/>
         <source>Settings</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../screens/mainscreen.ui" line="189"/>
+        <location filename="../screens/mainscreen.ui" line="247"/>
         <source>Go to Settings</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../screens/mainscreen.ui" line="196"/>
+        <location filename="../screens/mainscreen.ui" line="254"/>
+        <location filename="../screens/mainscreen.ui" line="330"/>
+        <source>Information</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../screens/mainscreen.ui" line="261"/>
+        <source>Get help or view information about the game</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../screens/mainscreen.ui" line="268"/>
         <source>Exit to Desktop</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../screens/mainscreen.ui" line="203"/>
+        <location filename="../screens/mainscreen.ui" line="275"/>
         <source>Leave Entertaining Mines</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../screens/mainscreen.cpp" line="43"/>
+        <location filename="../screens/mainscreen.ui" line="347"/>
+        <source>Help</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../screens/mainscreen.ui" line="354"/>
+        <source>Get information about how to play</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../screens/mainscreen.ui" line="361"/>
+        <source>Credits</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../screens/mainscreen.ui" line="368"/>
+        <source>See who made the game</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../screens/mainscreen.ui" line="391"/>
+        <source>Main Menu</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../screens/mainscreen.ui" line="398"/>
+        <source>Return to the Main Menu</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../screens/mainscreen.cpp" line="49"/>
         <source>Select</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../screens/mainscreen.cpp" line="44"/>
+        <location filename="../screens/mainscreen.cpp" line="50"/>
         <source>Exit</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../screens/mainscreen.cpp" line="123"/>
+        <location filename="../screens/mainscreen.cpp" line="137"/>
         <source>How wide is the board?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../screens/mainscreen.cpp" line="127"/>
+        <location filename="../screens/mainscreen.cpp" line="141"/>
         <source>How high is the board?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../screens/mainscreen.cpp" line="130"/>
+        <location filename="../screens/mainscreen.cpp" line="144"/>
         <source>How many mines are on this board?</source>
         <translation type="unfinished"></translation>
     </message>
