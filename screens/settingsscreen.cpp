@@ -6,6 +6,7 @@
 #include <musicengine.h>
 #include <settingwidget.h>
 #include <focusbarrier.h>
+#include <gamepadconfigurationoverlay.h>
 
 #define SECTION_LABEL(text) ([=] { \
     QLabel* label = new QLabel(this); \
@@ -47,18 +48,28 @@ SettingsScreen::SettingsScreen(QWidget *parent) :
         MusicEngine::setMuteEffects(!value.toBool());
     });
 
+    QPushButton* gamepadSettingsButton = new QPushButton();
+    gamepadSettingsButton->setText(tr("Gamepad Settings"));
+    connect(gamepadSettingsButton, &QPushButton::clicked, this, [=] {
+        GamepadConfigurationOverlay* conf = new GamepadConfigurationOverlay(this);
+        connect(conf, &GamepadConfigurationOverlay::done, conf, &GamepadConfigurationOverlay::deleteLater);
+    });
+
     d->settings.append(SECTION_LABEL(tr("Audio")));
     d->settings.append(bgMusic);
     d->settings.append(effectMusic);
     d->settings.append(SECTION_LABEL(tr("Behaviour")));
     d->settings.append(new SettingWidget(this, SettingWidget::Boolean, tr("Marks"), "behaviour/marks", true));
     d->settings.append(DESCRIPTION_LABEL(tr("When this is enabled, right clicking a flag will change it into the marked state first.")));
+    d->settings.append(SECTION_LABEL(tr("Hardware")));
+    d->settings.append(gamepadSettingsButton);
 
     FocusBarrier* bar1 = new FocusBarrier(this);
     bar1->setBounceWidget(d->settings.at(1));
     FocusBarrier* bar2 = new FocusBarrier(this);
-    bar2->setBounceWidget(d->settings.at(d->settings.count() - 2));
+    bar2->setBounceWidget(d->settings.at(d->settings.count() - 1));
 
+    QWidget* previousWidget = bar1;
     ui->settingsLayout->addWidget(bar1);
     for (QWidget* w : d->settings) {
         SettingWidget* s = qobject_cast<SettingWidget*>(w);
@@ -67,8 +78,14 @@ SettingsScreen::SettingsScreen(QWidget *parent) :
         });
 
         ui->settingsLayout->addWidget(w);
+
+        if (!qobject_cast<QLabel*>(w)) {
+            QWidget::setTabOrder(previousWidget, w);
+            previousWidget = w;
+        }
     }
     ui->settingsLayout->addWidget(bar2);
+    QWidget::setTabOrder(previousWidget, bar2);
 
     ui->settingsLayout->addSpacerItem(new QSpacerItem(0, 0, QSizePolicy::Preferred, QSizePolicy::Expanding));
 

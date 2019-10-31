@@ -524,42 +524,52 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../screens/settingsscreen.cpp" line="50"/>
+        <location filename="../screens/settingsscreen.cpp" line="58"/>
         <source>Audio</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../screens/settingsscreen.cpp" line="40"/>
+        <location filename="../screens/settingsscreen.cpp" line="41"/>
         <source>Background Music</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../screens/settingsscreen.cpp" line="41"/>
+        <location filename="../screens/settingsscreen.cpp" line="42"/>
         <source>Sound Effects</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../screens/settingsscreen.cpp" line="53"/>
+        <location filename="../screens/settingsscreen.cpp" line="52"/>
+        <source>Gamepad Settings</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../screens/settingsscreen.cpp" line="61"/>
         <source>Behaviour</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../screens/settingsscreen.cpp" line="54"/>
+        <location filename="../screens/settingsscreen.cpp" line="62"/>
         <source>Marks</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../screens/settingsscreen.cpp" line="55"/>
+        <location filename="../screens/settingsscreen.cpp" line="63"/>
         <source>When this is enabled, right clicking a flag will change it into the marked state first.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../screens/settingsscreen.cpp" line="77"/>
+        <location filename="../screens/settingsscreen.cpp" line="64"/>
+        <source>Hardware</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../screens/settingsscreen.cpp" line="94"/>
         <source>Select</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../screens/settingsscreen.cpp" line="78"/>
+        <location filename="../screens/settingsscreen.cpp" line="95"/>
         <source>Back</source>
         <translation type="unfinished"></translation>
     </message>
