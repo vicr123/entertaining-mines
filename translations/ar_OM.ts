@@ -169,89 +169,89 @@
     </message>
     <message>
         <location filename="../screens/gamescreen.cpp" line="66"/>
-        <location filename="../screens/gamescreen.cpp" line="438"/>
+        <location filename="../screens/gamescreen.cpp" line="445"/>
         <source>Reveal</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../screens/gamescreen.cpp" line="67"/>
-        <location filename="../screens/gamescreen.cpp" line="439"/>
+        <location filename="../screens/gamescreen.cpp" line="446"/>
         <source>Flag</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../screens/gamescreen.cpp" line="218"/>
+        <location filename="../screens/gamescreen.cpp" line="216"/>
         <source>In Game</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../screens/gamescreen.cpp" line="442"/>
+        <location filename="../screens/gamescreen.cpp" line="449"/>
         <source>Mark</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../screens/gamescreen.cpp" line="445"/>
+        <location filename="../screens/gamescreen.cpp" line="452"/>
         <source>Unflag</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../screens/gamescreen.cpp" line="448"/>
+        <location filename="../screens/gamescreen.cpp" line="455"/>
         <source>Sweep</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../screens/gamescreen.cpp" line="306"/>
+        <location filename="../screens/gamescreen.cpp" line="311"/>
         <source>Your time was not recorded because loading a save invalidates the timer.</source>
         <translation type="unfinished"></translation>
     </message>
     <message numerus="yes">
-        <location filename="../screens/gamescreen.cpp" line="219"/>
+        <location filename="../screens/gamescreen.cpp" line="217"/>
         <source>%1×%2 board with %n mines</source>
         <translation type="unfinished">
             <numerusform></numerusform>
         </translation>
     </message>
     <message numerus="yes">
-        <location filename="../screens/gamescreen.cpp" line="368"/>
+        <location filename="../screens/gamescreen.cpp" line="375"/>
         <source>You completed a %1×%2 board with %n mines in %4. Divine!</source>
         <translation type="unfinished">
             <numerusform></numerusform>
         </translation>
     </message>
     <message numerus="yes">
-        <location filename="../screens/gamescreen.cpp" line="373"/>
+        <location filename="../screens/gamescreen.cpp" line="380"/>
         <source>You completed a %1×%2 board with %n mines.</source>
         <translation type="unfinished">
             <numerusform></numerusform>
         </translation>
     </message>
     <message>
-        <location filename="../screens/gamescreen.cpp" line="480"/>
+        <location filename="../screens/gamescreen.cpp" line="487"/>
         <source>Your time was not recorded because pausing the game invalidates the timer.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../screens/gamescreen.cpp" line="502"/>
+        <location filename="../screens/gamescreen.cpp" line="509"/>
         <source>%1 × %2 board</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../screens/gamescreen.cpp" line="503"/>
+        <location filename="../screens/gamescreen.cpp" line="510"/>
         <source>%1 mines</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../screens/gamescreen.cpp" line="504"/>
+        <location filename="../screens/gamescreen.cpp" line="511"/>
         <source>%1 flagged</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../screens/gamescreen.cpp" line="505"/>
+        <location filename="../screens/gamescreen.cpp" line="512"/>
         <source>%1 mines to go</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../screens/gamescreen.cpp" line="506"/>
+        <location filename="../screens/gamescreen.cpp" line="513"/>
         <source>%1% cleared</source>
         <translation type="unfinished"></translation>
     </message>
@@ -264,12 +264,22 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gamewindow.cpp" line="64"/>
+        <location filename="../gamewindow.cpp" line="53"/>
+        <source>Corrupt File</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../gamewindow.cpp" line="54"/>
+        <source>Sorry, that file is corrupt and needs to be deleted.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../gamewindow.cpp" line="74"/>
         <source>Idle</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gamewindow.cpp" line="65"/>
+        <location filename="../gamewindow.cpp" line="75"/>
         <source>Main Menu</source>
         <translation type="unfinished"></translation>
     </message>

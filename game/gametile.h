@@ -49,7 +49,7 @@ class GameTile : public QWidget
         State state();
 
         QByteArray toByteArray();
-        void fromByteArray(QByteArray ba);
+        bool fromByteArray(QByteArray ba);
         void afterLoadComplete();
 
         void setHighlighted(bool highlighted);

@@ -151,7 +151,7 @@ QByteArray GameTile::toByteArray()
     return ba;
 }
 
-void GameTile::fromByteArray(QByteArray ba)
+bool GameTile::fromByteArray(QByteArray ba)
 {
     QDataStream stream(ba);
 
@@ -160,6 +160,10 @@ void GameTile::fromByteArray(QByteArray ba)
     stream >> d->isMine;
 
     d->state = static_cast<State>(state);
+
+    if (stream.status() != QDataStream::Ok) return false;
+
+    return true;
 }
 
 void GameTile::afterLoadComplete()

@@ -203,8 +203,6 @@ void GameScreen::setup()
     }
     d->tiles.clear();
 
-    MusicEngine::setBackgroundMusic("crypto");
-    MusicEngine::playBackgroundMusic();
 }
 
 void GameScreen::finishSetup()
@@ -222,6 +220,9 @@ void GameScreen::finishSetup()
 
     updateTimer();
     resizeTiles();
+
+    MusicEngine::setBackgroundMusic("crypto");
+    MusicEngine::playBackgroundMusic();
 }
 
 void GameScreen::startGame(int width, int height, int mines)
@@ -258,7 +259,7 @@ void GameScreen::startGame(int width, int height, int mines)
     finishSetup();
 }
 
-void GameScreen::loadGame(QDataStream*stream)
+bool GameScreen::loadGame(QDataStream*stream)
 {
     setup();
 
@@ -288,9 +289,11 @@ void GameScreen::loadGame(QDataStream*stream)
         stream->readBytes(bytes, len);
 
         QByteArray ba(bytes, static_cast<int>(len));
-        tile->fromByteArray(ba);
+        bool success = tile->fromByteArray(ba);
 
         delete[] bytes;
+
+        if (!success) return false;
 
         if (tile->isFlagged()) d->minesRemaining--;
 
@@ -301,6 +304,8 @@ void GameScreen::loadGame(QDataStream*stream)
         }
     }
 
+    if (stream->status() != QDataStream::Ok) return false;
+
     //Disable the time counting as it is now inaccurate
     d->showDateTime = false;
     d->dateTimeNotShownReason = tr("Your time was not recorded because loading a save invalidates the timer.");
@@ -310,6 +315,8 @@ void GameScreen::loadGame(QDataStream*stream)
         tile->afterLoadComplete();
     }
     finishSetup();
+
+    return true;
 }
 
 void GameScreen::saveGame(QDataStream*stream)

@@ -24,6 +24,7 @@
 #include <textinputoverlay.h>
 #include <discordintegration.h>
 #include <pauseoverlay.h>
+#include <questionoverlay.h>
 
 GameWindow::GameWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -43,9 +44,18 @@ GameWindow::GameWindow(QWidget *parent)
         ui->gameScreen->setFocus();
     });
     connect(ui->mainScreen, &MainScreen::loadGame, this, [=](QDataStream* stream) {
-        ui->stackedWidget->setCurrentWidget(ui->gameScreen);
-        ui->gameScreen->loadGame(stream);
-        ui->gameScreen->setFocus();
+        if (ui->gameScreen->loadGame(stream)) {
+            ui->stackedWidget->setCurrentWidget(ui->gameScreen);
+            ui->gameScreen->setFocus();
+        } else {
+            QuestionOverlay* question = new QuestionOverlay(this);
+            question->setIcon(QMessageBox::Critical);
+            question->setTitle(tr("Corrupt File"));
+            question->setText(tr("Sorry, that file is corrupt and needs to be deleted."));
+            question->setButtons(QMessageBox::Ok);
+            connect(question, &QuestionOverlay::accepted, question, &QuestionOverlay::deleteLater);
+            connect(question, &QuestionOverlay::rejected, question, &QuestionOverlay::deleteLater);
+        }
     });
     connect(ui->mainScreen, &MainScreen::openSettings, this, [=] {
         ui->settingsScreen->updateSettings();

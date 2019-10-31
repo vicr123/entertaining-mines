@@ -46,7 +46,7 @@ class GameScreen : public QWidget
 
     public slots:
         void startGame(int width, int height, int mines);
-        void loadGame(QDataStream* stream);
+        bool loadGame(QDataStream* stream);
         void saveGame(QDataStream* stream);
         void distributeMines(QPoint clickLocation);
         void performGameOver();
