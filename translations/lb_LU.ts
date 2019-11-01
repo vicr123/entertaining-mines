@@ -104,14 +104,6 @@
     </message>
 </context>
 <context>
-    <name>CustomGameScreen</name>
-    <message>
-        <location filename="../screens/customgamescreen.ui" line="60"/>
-        <source>Title</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
     <name>GameOver</name>
     <message>
         <location filename="../game/gameover.ui" line="79"/>
@@ -286,11 +278,6 @@
 </context>
 <context>
     <name>HelpScreen</name>
-    <message>
-        <location filename="../information/helpscreen.ui" line="14"/>
-        <source>Form</source>
-        <translation type="unfinished"></translation>
-    </message>
     <message>
         <location filename="../information/helpscreen.ui" line="71"/>
         <source>Help</source>

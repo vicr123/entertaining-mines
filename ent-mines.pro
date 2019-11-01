@@ -25,7 +25,6 @@ SOURCES += \
     information/helpscreen.cpp \
     main.cpp \
     gamewindow.cpp \
-    screens/customgamescreen.cpp \
     screens/gamescreen.cpp \
     screens/mainscreen.cpp \
     screens/pausescreen.cpp \
@@ -38,7 +37,6 @@ HEADERS += \
     gamewindow.h \
     information/creditsscreen.h \
     information/helpscreen.h \
-    screens/customgamescreen.h \
     screens/gamescreen.h \
     screens/mainscreen.h \
     screens/pausescreen.h \
@@ -50,7 +48,6 @@ FORMS += \
     gamewindow.ui \
     information/creditsscreen.ui \
     information/helpscreen.ui \
-    screens/customgamescreen.ui \
     screens/gamescreen.ui \
     screens/mainscreen.ui \
     screens/pausescreen.ui \
