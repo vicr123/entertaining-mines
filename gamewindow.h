@@ -26,6 +26,7 @@ QT_BEGIN_NAMESPACE
 namespace Ui { class GameWindow; }
 QT_END_NAMESPACE
 
+struct GameWindowPrivate;
 class GameWindow : public QMainWindow
 {
         Q_OBJECT
@@ -36,5 +37,6 @@ class GameWindow : public QMainWindow
 
     private:
         Ui::GameWindow *ui;
+        GameWindowPrivate* d;
 };
 #endif // GAMEWINDOW_H

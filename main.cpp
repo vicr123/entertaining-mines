@@ -25,6 +25,7 @@
 #include <discordintegration.h>
 #include <musicengine.h>
 #include <QSettings>
+#include <notificationengine.h>
 
 int main(int argc, char *argv[])
 {
@@ -62,5 +63,8 @@ int main(int argc, char *argv[])
 
     GameWindow w;
     w.show();
+
+    NotificationEngine::setApplicationNotificationWindow(&w);
+
     return a.exec();
 }
