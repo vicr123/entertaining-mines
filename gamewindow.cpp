@@ -87,25 +87,31 @@ GameWindow::GameWindow(QWidget *parent)
 
     DiscordIntegration::instance()->setPresence({
         {"state", tr("Idle")},
-        {"details", tr("Main Menu")},
-                                                    {"partyId", "partyaaa"},
-                                                    {"partySize", 1},
-                                                    {"partyMax", 5},
-        {"joinSecret", "secrets"}
+        {"details", tr("Main Menu")}
     });
 
     connect(DiscordIntegration::instance(), &DiscordIntegration::joinRequest, this, [=](DiscordJoinRequestCallback* callback) {
-        NotificationData notification;
-        notification.title = tr("Join Game");
-        notification.text = tr("%1 wants to join your room").arg(callback->userTag());
-        notification.actions = {
-            {"accept", "Accept"},
-            {"decline", "Decline"}
-        };
-        notification.dismissable = false;
-        quint64 notificationId = NotificationEngine::push(notification);
+        auto notifyUser = [=](QPixmap icon) {
+            NotificationData notification;
+            notification.title = tr("Join Game");
+            notification.text = tr("%1 wants to join your room").arg(callback->userTag());
+            notification.actions = {
+                {"accept", "Accept"},
+                {"decline", "Decline"}
+            };
+            notification.dismissable = false;
+            notification.dismissTimer = 30000;
+            notification.icon = QIcon(icon);
+            quint64 notificationId = NotificationEngine::push(notification);
 
-        d->joinCallbacks.insert(notificationId, callback);
+            d->joinCallbacks.insert(notificationId, callback);
+        };
+
+        callback->profilePicture()->then([=](QPixmap pixmap) {
+            notifyUser(pixmap);
+        })->error([=](QString error) {
+            notifyUser(QPixmap());
+        });
     });
     connect(DiscordIntegration::instance(), &DiscordIntegration::joinGame, this, [=](QString joinSecret) {
         NotificationEngine::push({

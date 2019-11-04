@@ -284,12 +284,12 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gamewindow.cpp" line="99"/>
+        <location filename="../gamewindow.cpp" line="96"/>
         <source>Join Game</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gamewindow.cpp" line="100"/>
+        <location filename="../gamewindow.cpp" line="97"/>
         <source>%1 wants to join your room</source>
         <translation type="unfinished"></translation>
     </message>
