@@ -25,6 +25,11 @@
 #include <discordintegration.h>
 #include <pauseoverlay.h>
 #include <questionoverlay.h>
+#include <notificationengine.h>
+
+struct GameWindowPrivate {
+    QMap<quint64, DiscordJoinRequestCallback*> joinCallbacks;
+};
 
 GameWindow::GameWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -33,6 +38,8 @@ GameWindow::GameWindow(QWidget *parent)
     ui->setupUi(this);
 
     ui->menubar->setVisible(false);
+
+    d = new GameWindowPrivate();
 
     PauseOverlay::registerOverlayForWindow(this, ui->centralwidget);
 
@@ -77,10 +84,51 @@ GameWindow::GameWindow(QWidget *parent)
     });
 
     FocusPointer::enableAutomaticFocusPointer();
+
+    DiscordIntegration::instance()->setPresence({
+        {"state", tr("Idle")},
+        {"details", tr("Main Menu")},
+                                                    {"partyId", "partyaaa"},
+                                                    {"partySize", 1},
+                                                    {"partyMax", 5},
+        {"joinSecret", "secrets"}
+    });
+
+    connect(DiscordIntegration::instance(), &DiscordIntegration::joinRequest, this, [=](DiscordJoinRequestCallback* callback) {
+        NotificationData notification;
+        notification.title = tr("Join Game");
+        notification.text = tr("%1 wants to join your room").arg(callback->userTag());
+        notification.actions = {
+            {"accept", "Accept"},
+            {"decline", "Decline"}
+        };
+        notification.dismissable = false;
+        quint64 notificationId = NotificationEngine::push(notification);
+
+        d->joinCallbacks.insert(notificationId, callback);
+    });
+    connect(DiscordIntegration::instance(), &DiscordIntegration::joinGame, this, [=](QString joinSecret) {
+        NotificationEngine::push({
+                                     QStringLiteral("Join a game"),
+                                     QStringLiteral("Join secret is %1").arg(joinSecret)
+                                 });
+    });
+
+    connect(NotificationEngine::instance(), &NotificationEngine::actionClicked, this, [=](quint64 notificationId, QString key) {
+        if (d->joinCallbacks.contains(notificationId)) {
+            DiscordJoinRequestCallback* callback = d->joinCallbacks.value(notificationId);
+            if (key == "accept") {
+                callback->accept();
+            } else {
+                callback->reject();
+            }
+        }
+    });
 }
 
 GameWindow::~GameWindow()
 {
+    delete d;
     delete ui;
 }
 

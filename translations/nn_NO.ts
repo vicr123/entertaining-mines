@@ -259,23 +259,35 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gamewindow.cpp" line="53"/>
+        <location filename="../gamewindow.cpp" line="60"/>
         <source>Corrupt File</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gamewindow.cpp" line="54"/>
+        <location filename="../gamewindow.cpp" line="61"/>
         <source>Sorry, that file is corrupt and needs to be deleted.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gamewindow.cpp" line="74"/>
+        <location filename="../gamewindow.cpp" line="81"/>
+        <location filename="../gamewindow.cpp" line="89"/>
         <source>Idle</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gamewindow.cpp" line="75"/>
+        <location filename="../gamewindow.cpp" line="82"/>
+        <location filename="../gamewindow.cpp" line="90"/>
         <source>Main Menu</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../gamewindow.cpp" line="99"/>
+        <source>Join Game</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../gamewindow.cpp" line="100"/>
+        <source>%1 wants to join your room</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -561,7 +573,7 @@
 <context>
     <name>main</name>
     <message>
-        <location filename="../main.cpp" line="44"/>
+        <location filename="../main.cpp" line="45"/>
         <source>Minesweeper</source>
         <translation type="unfinished"></translation>
     </message>
