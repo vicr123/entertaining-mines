@@ -13,9 +13,12 @@ call "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Auxiliary
 
 git clone https://github.com/discordapp/discord-rpc.git
 cd discord-rpc
-cmake -G"NMake Makefiles" ..
-nmake
-nmake install
+mkdir build
+cd build
+cmake -G"NMake Makefiles" .. -DBUILD_EXAMPLES=OFF -DCMAKE_POSITION_INDEPENDENT_CODE=ON -DCMAKE_BUILD_TYPE=Release
+cmake --build . --config Release
+cmake --build . --config Release --target install
+cd ..
 cd ..
 
 git clone https://github.com/vicr123/the-libs.git
