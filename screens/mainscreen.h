@@ -37,6 +37,7 @@ class MainScreen : public QWidget
     signals:
         void startGame(int width, int height, int mines);
         void loadGame(QDataStream* stream);
+        void playOnline();
         void openSettings();
 
     private slots:
@@ -61,6 +62,8 @@ class MainScreen : public QWidget
         void on_creditsButton_clicked();
 
         void on_helpButton_clicked();
+
+        void on_playOnlineButton_clicked();
 
     private:
         Ui::MainScreen *ui;

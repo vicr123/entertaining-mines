@@ -121,8 +121,8 @@
                <rect>
                 <x>0</x>
                 <y>0</y>
-                <width>634</width>
-                <height>509</height>
+                <width>620</width>
+                <height>580</height>
                </rect>
               </property>
               <layout class="QVBoxLayout" name="verticalLayout_5">
@@ -206,6 +206,36 @@
                </item>
                <item>
                 <spacer name="verticalSpacer">
+                 <property name="orientation">
+                  <enum>Qt::Vertical</enum>
+                 </property>
+                 <property name="sizeType">
+                  <enum>QSizePolicy::Fixed</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>20</width>
+                   <height>40</height>
+                  </size>
+                 </property>
+                </spacer>
+               </item>
+               <item>
+                <widget class="QCommandLinkButton" name="playOnlineButton">
+                 <property name="text">
+                  <string>Play Online</string>
+                 </property>
+                 <property name="icon">
+                  <iconset resource="../resources.qrc">
+                   <normaloff>:/icons/go-next.svg</normaloff>:/icons/go-next.svg</iconset>
+                 </property>
+                 <property name="description">
+                  <string>Play with other people on the Internet</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <spacer name="verticalSpacer_5">
                  <property name="orientation">
                   <enum>Qt::Vertical</enum>
                  </property>
@@ -434,15 +464,15 @@
  </widget>
  <customwidgets>
   <customwidget>
-   <class>FocusBarrier</class>
-   <extends>QPushButton</extends>
-   <header location="global">focusbarrier.h</header>
-  </customwidget>
-  <customwidget>
    <class>GamepadHud</class>
    <extends>QWidget</extends>
    <header location="global">gamepadhud.h</header>
    <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>FocusBarrier</class>
+   <extends>QPushButton</extends>
+   <header location="global">focusbarrier.h</header>
   </customwidget>
   <customwidget>
    <class>tStackedWidget</class>

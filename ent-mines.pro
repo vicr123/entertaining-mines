@@ -1,4 +1,4 @@
-QT       += core gui svg gamepad
+QT       += core gui svg gamepad network websockets
 TARGET   = entertaining-mines
 SHARE_APP_NAME = entertaining-mines
 
@@ -25,6 +25,8 @@ SOURCES += \
     information/helpscreen.cpp \
     main.cpp \
     gamewindow.cpp \
+    online/mainonlinescreen.cpp \
+    online/onlinemenuscreen.cpp \
     screens/gamescreen.cpp \
     screens/mainscreen.cpp \
     screens/pausescreen.cpp \
@@ -37,6 +39,8 @@ HEADERS += \
     gamewindow.h \
     information/creditsscreen.h \
     information/helpscreen.h \
+    online/mainonlinescreen.h \
+    online/onlinemenuscreen.h \
     screens/gamescreen.h \
     screens/mainscreen.h \
     screens/pausescreen.h \
@@ -48,6 +52,8 @@ FORMS += \
     gamewindow.ui \
     information/creditsscreen.ui \
     information/helpscreen.ui \
+    online/mainonlinescreen.ui \
+    online/onlinemenuscreen.ui \
     screens/gamescreen.ui \
     screens/mainscreen.ui \
     screens/pausescreen.ui \

@@ -32,6 +32,8 @@
 #include "information/creditsscreen.h"
 #include "information/helpscreen.h"
 
+#include <online/logindialog.h>
+
 MainScreen::MainScreen(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::MainScreen)
@@ -49,13 +51,7 @@ MainScreen::MainScreen(QWidget *parent) :
     ui->gamepadHud->setButtonText(QGamepadManager::ButtonA, tr("Select"));
     ui->gamepadHud->setButtonText(QGamepadManager::ButtonB, tr("Exit"));
 
-    ui->gamepadHud->setButtonAction(QGamepadManager::ButtonA, [=] {
-        QKeyEvent event(QKeyEvent::KeyPress, Qt::Key_Space, Qt::NoModifier);
-        QApplication::sendEvent(QApplication::focusWidget(), &event);
-
-        QKeyEvent event2(QKeyEvent::KeyRelease, Qt::Key_Space, Qt::NoModifier);
-        QApplication::sendEvent(QApplication::focusWidget(), &event2);
-    });
+    ui->gamepadHud->setButtonAction(QGamepadManager::ButtonA, GamepadHud::standardAction(GamepadHud::SelectAction));
     ui->gamepadHud->setButtonAction(QGamepadManager::ButtonB, [=] {
         if (ui->stackedWidget->currentWidget() == ui->infoScreen) {
             ui->mainMenuButton->click();
@@ -194,4 +190,12 @@ void MainScreen::on_helpButton_clicked()
 {
     HelpScreen* help = new HelpScreen(this);
     connect(help, &HelpScreen::done, help, &HelpScreen::deleteLater);
+}
+
+void MainScreen::on_playOnlineButton_clicked()
+{
+    LoginDialog* login = new LoginDialog(this);
+    if (login->exec()) {
+        emit playOnline();
+    }
 }

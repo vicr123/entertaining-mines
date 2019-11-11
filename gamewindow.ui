@@ -48,6 +48,7 @@
       <widget class="MainScreen" name="mainScreen"/>
       <widget class="GameScreen" name="gameScreen"/>
       <widget class="SettingsScreen" name="settingsScreen"/>
+      <widget class="MainOnlineScreen" name="onlineScreen"/>
      </widget>
     </item>
    </layout>
@@ -86,6 +87,12 @@
    <class>SettingsScreen</class>
    <extends>QWidget</extends>
    <header>screens/settingsscreen.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>MainOnlineScreen</class>
+   <extends>QWidget</extends>
+   <header>online/mainonlinescreen.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>

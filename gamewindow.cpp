@@ -69,6 +69,10 @@ GameWindow::GameWindow(QWidget *parent)
         ui->stackedWidget->setCurrentWidget(ui->settingsScreen);
         ui->settingsScreen->setFocus();
     });
+    connect(ui->mainScreen, &MainScreen::playOnline, this, [=] {
+        ui->stackedWidget->setCurrentWidget(ui->onlineScreen);
+        ui->onlineScreen->connectToOnline();
+    });
 
     connect(ui->settingsScreen, &SettingsScreen::goBack, this, [=] {
         ui->stackedWidget->setCurrentWidget(ui->mainScreen);
@@ -81,6 +85,10 @@ GameWindow::GameWindow(QWidget *parent)
             {"state", tr("Idle")},
             {"details", tr("Main Menu")}
         });
+    });
+
+    connect(ui->onlineScreen, &MainOnlineScreen::quitOnline, this, [=] {
+        ui->stackedWidget->setCurrentWidget(ui->mainScreen);
     });
 
     FocusPointer::enableAutomaticFocusPointer();
