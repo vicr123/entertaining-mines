@@ -16,7 +16,7 @@ jobs:
     - uses: vicr123/the-libs/bootstrap@actions
       name: "Bootstrap Build"
       with:
-        extra-deps-linux: "qt512gamepad"
+        extra-deps-linux: "qt512gamepad qt512websockets"
     - uses: vicr123/libentertaining/actions/build@master
       name: Build libentertaining
     - uses: vicr123/contemporary-theme/actions/build@master
