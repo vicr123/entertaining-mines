@@ -42,6 +42,10 @@ OnlineMenuScreen::OnlineMenuScreen(QWidget *parent) :
 
     ui->focusBarrierTop->setBounceWidget(ui->createLobby);
     ui->focusBarrierBottom->setBounceWidget(ui->exitButton);
+
+    QPalette pal = ui->stackedWidget->palette();
+    pal.setColor(QPalette::Window, Qt::transparent);
+    ui->stackedWidget->setPalette(pal);
 }
 
 OnlineMenuScreen::~OnlineMenuScreen()

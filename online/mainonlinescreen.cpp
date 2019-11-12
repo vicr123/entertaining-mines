@@ -24,6 +24,7 @@
 #include <online/onlinewebsocket.h>
 #include <questionoverlay.h>
 #include <discordintegration.h>
+#include <QSvgRenderer>
 #include "onlinecontroller.h"
 #include "onlinejoinscreen.h"
 
@@ -152,5 +153,31 @@ void MainOnlineScreen::connectToOnline()
         //Clear the Discord Join secret
         OnlineController::instance()->discordJoinSecret();
     });
+}
+
+void MainOnlineScreen::paintEvent(QPaintEvent*event)
+{
+    if (ui->stackedWidget->currentWidget() == ui->menuPage || ui->stackedWidget->currentWidget() == ui->connectingPage) {
+        QPainter painter(this);
+        QSvgRenderer renderer(QStringLiteral(":/icons/background-online.svg"));
+
+        QSize size = renderer.defaultSize();
+        size.scale(this->size(), Qt::KeepAspectRatioByExpanding);
+
+        QRect geometry;
+        geometry.setSize(size);
+        geometry.moveCenter(QPoint(this->width() / 2, this->height() / 2));
+        renderer.render(&painter, geometry);
+
+        QLinearGradient grad(QPoint(0, this->height()), QPoint(0, this->height() - SC_DPI(50)));
+        grad.setColorAt(0, QColor(0, 0, 0, 127));
+        grad.setColorAt(1, QColor(0, 0, 0, 0));
+
+        painter.setBrush(grad);
+        painter.setPen(Qt::transparent);
+        painter.drawRect(0, 0, this->width(), this->height());
+    } else {
+        MainOnlineScreen::paintEvent(event);
+    }
 }
 

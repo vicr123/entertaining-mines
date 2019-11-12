@@ -24,7 +24,7 @@
 
 struct OnlineControllerPrivate {
     OnlineController* instance = nullptr;
-    OnlineWebSocket* ws;
+    OnlineWebSocket* ws = nullptr;
 
     QString discordJoinSecret;
 };
@@ -40,6 +40,11 @@ OnlineController*OnlineController::instance()
 {
     if (!d->instance) d->instance = new OnlineController();
     return d->instance;
+}
+
+bool OnlineController::isConnected()
+{
+    return d->ws != nullptr;
 }
 
 #include <QDebug>

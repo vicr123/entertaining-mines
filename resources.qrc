@@ -16,5 +16,6 @@
         <file>icons/go-previous.svg</file>
         <file>tiles/clock.svg</file>
         <file>icons/application-menu.svg</file>
+        <file>icons/background-online.svg</file>
     </qresource>
 </RCC>

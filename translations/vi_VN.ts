@@ -314,33 +314,33 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../online/mainonlinescreen.cpp" line="51"/>
+        <location filename="../online/mainonlinescreen.cpp" line="52"/>
         <source>You&apos;ve been disconnected because the server is about to undergo maintenance.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../online/mainonlinescreen.cpp" line="54"/>
+        <location filename="../online/mainonlinescreen.cpp" line="55"/>
         <source>You&apos;be been disconnected from the server because there was a communication error.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../online/mainonlinescreen.cpp" line="64"/>
+        <location filename="../online/mainonlinescreen.cpp" line="65"/>
         <source>You&apos;be been disconnected from the server.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../online/mainonlinescreen.cpp" line="72"/>
-        <location filename="../online/mainonlinescreen.cpp" line="140"/>
+        <location filename="../online/mainonlinescreen.cpp" line="73"/>
+        <location filename="../online/mainonlinescreen.cpp" line="141"/>
         <source>Error</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../online/mainonlinescreen.cpp" line="95"/>
+        <location filename="../online/mainonlinescreen.cpp" line="96"/>
         <source>Idle</source>
         <translation type="unfinished">Đang nghỉ</translation>
     </message>
     <message>
-        <location filename="../online/mainonlinescreen.cpp" line="96"/>
+        <location filename="../online/mainonlinescreen.cpp" line="97"/>
         <source>Main Menu</source>
         <translation type="unfinished">Trang chủ</translation>
     </message>
@@ -593,11 +593,6 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../online/onlinemenuscreen.ui" line="289"/>
-        <source>Information</source>
-        <translation type="unfinished">Thông tin</translation>
-    </message>
-    <message>
         <location filename="../online/onlinemenuscreen.ui" line="169"/>
         <source>Create Room</source>
         <translation type="unfinished"></translation>
@@ -623,28 +618,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../online/onlinemenuscreen.ui" line="306"/>
-        <source>Help</source>
-        <translation type="unfinished">Trợ giúp</translation>
-    </message>
-    <message>
-        <location filename="../online/onlinemenuscreen.ui" line="313"/>
-        <source>Get information about how to play</source>
-        <translation type="unfinished">Nhận thông tin về cách chơi</translation>
-    </message>
-    <message>
-        <location filename="../online/onlinemenuscreen.ui" line="320"/>
-        <source>Credits</source>
-        <translation type="unfinished">Tín dụng</translation>
-    </message>
-    <message>
-        <location filename="../online/onlinemenuscreen.ui" line="327"/>
-        <source>See who made the game</source>
-        <translation type="unfinished">Xem ai làm trò chơi</translation>
-    </message>
-    <message>
         <location filename="../online/onlinemenuscreen.ui" line="227"/>
-        <location filename="../online/onlinemenuscreen.ui" line="350"/>
         <location filename="../online/onlinemenuscreen.cpp" line="36"/>
         <source>Main Menu</source>
         <translation type="unfinished">Trang chủ</translation>
@@ -653,11 +627,6 @@
         <location filename="../online/onlinemenuscreen.ui" line="234"/>
         <source>Disconnect from Entertaining Games Online</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../online/onlinemenuscreen.ui" line="357"/>
-        <source>Return to the Main Menu</source>
-        <translation type="unfinished">Trở lại trang chủ</translation>
     </message>
     <message>
         <location filename="../online/onlinemenuscreen.cpp" line="35"/>

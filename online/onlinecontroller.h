@@ -33,6 +33,8 @@ class OnlineController : public QObject
 
         static OnlineController* instance();
 
+        bool isConnected();
+
         void attachToWebSocket(OnlineWebSocket* ws);
         void sendJson(QJsonDocument doc);
         void sendJsonO(QJsonObject object);

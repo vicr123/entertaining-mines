@@ -43,6 +43,8 @@ class MainOnlineScreen : public QWidget
     private:
         Ui::MainOnlineScreen *ui;
         MainOnlineScreenPrivate* d;
+
+        void paintEvent(QPaintEvent* event);
 };
 
 #endif // MAINONLINESCREEN_H
