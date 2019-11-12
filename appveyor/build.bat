@@ -54,5 +54,7 @@ copy translations\*.qm deploy\translations
 copy audio\* deploy\audio
 copy "C:\Program Files\thelibs\lib\the-libs.dll" deploy
 copy "C:\Program Files\libentertaining\lib\entertaining.dll" deploy
+copy "C:\OpenSSL-v111-Win64\bin\libssl-1_1-x64.dll" deploy
+copy "C:\OpenSSL-v111-Win64\bin\libcrypto-1_1-x64.dll" deploy
 cd deploy
 windeployqt entertaining-mines.exe -network -quickwidgets -gamepad -svg -multimedia
