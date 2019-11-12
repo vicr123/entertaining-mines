@@ -25,6 +25,8 @@
 struct OnlineControllerPrivate {
     OnlineController* instance = nullptr;
     OnlineWebSocket* ws;
+
+    QString discordJoinSecret;
 };
 
 OnlineControllerPrivate* OnlineController::d = new OnlineControllerPrivate();
@@ -66,6 +68,18 @@ void OnlineController::sendJson(QJsonDocument doc)
 void OnlineController::sendJsonO(QJsonObject object)
 {
     d->ws->sendJsonO(object);
+}
+
+void OnlineController::setDiscordJoinSecret(QString joinSecret)
+{
+    d->discordJoinSecret = joinSecret;
+}
+
+QString OnlineController::discordJoinSecret()
+{
+    QString discordJoinSecret = d->discordJoinSecret;
+    d->discordJoinSecret = "";
+    return discordJoinSecret;
 }
 
 void OnlineController::close()

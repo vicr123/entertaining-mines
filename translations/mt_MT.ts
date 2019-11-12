@@ -265,34 +265,34 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gamewindow.cpp" line="60"/>
+        <location filename="../gamewindow.cpp" line="62"/>
         <source>Corrupt File</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gamewindow.cpp" line="61"/>
+        <location filename="../gamewindow.cpp" line="63"/>
         <source>Sorry, that file is corrupt and needs to be deleted.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../gamewindow.cpp" line="84"/>
+        <location filename="../gamewindow.cpp" line="96"/>
+        <source>Idle</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../gamewindow.cpp" line="85"/>
         <location filename="../gamewindow.cpp" line="97"/>
-        <source>Idle</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../gamewindow.cpp" line="86"/>
-        <location filename="../gamewindow.cpp" line="98"/>
         <source>Main Menu</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gamewindow.cpp" line="104"/>
+        <location filename="../gamewindow.cpp" line="103"/>
         <source>Join Game</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gamewindow.cpp" line="105"/>
+        <location filename="../gamewindow.cpp" line="104"/>
         <source>%1 wants to join your room</source>
         <translation type="unfinished"></translation>
     </message>
@@ -339,7 +339,7 @@
     </message>
     <message>
         <location filename="../online/mainonlinescreen.cpp" line="72"/>
-        <location filename="../online/mainonlinescreen.cpp" line="124"/>
+        <location filename="../online/mainonlinescreen.cpp" line="140"/>
         <source>Error</source>
         <translation type="unfinished"></translation>
     </message>
@@ -483,27 +483,27 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../screens/mainscreen.cpp" line="51"/>
+        <location filename="../screens/mainscreen.cpp" line="49"/>
         <source>Select</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../screens/mainscreen.cpp" line="52"/>
+        <location filename="../screens/mainscreen.cpp" line="50"/>
         <source>Exit</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../screens/mainscreen.cpp" line="132"/>
+        <location filename="../screens/mainscreen.cpp" line="130"/>
         <source>How wide is the board?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../screens/mainscreen.cpp" line="136"/>
+        <location filename="../screens/mainscreen.cpp" line="134"/>
         <source>How high is the board?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../screens/mainscreen.cpp" line="139"/>
+        <location filename="../screens/mainscreen.cpp" line="137"/>
         <source>How many mines are on this board?</source>
         <translation type="unfinished"></translation>
     </message>

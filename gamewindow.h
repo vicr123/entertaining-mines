@@ -35,6 +35,9 @@ class GameWindow : public QMainWindow
         GameWindow(QWidget *parent = nullptr);
         ~GameWindow();
 
+    private slots:
+        void playOnline();
+
     private:
         Ui::GameWindow *ui;
         GameWindowPrivate* d;

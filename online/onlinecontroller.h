@@ -37,6 +37,9 @@ class OnlineController : public QObject
         void sendJson(QJsonDocument doc);
         void sendJsonO(QJsonObject object);
 
+        void setDiscordJoinSecret(QString joinSecret);
+        QString discordJoinSecret();
+
     public slots:
         void close();
 

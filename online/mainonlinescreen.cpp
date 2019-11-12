@@ -118,6 +118,22 @@ void MainOnlineScreen::connectToOnline()
         ui->menuPage->setFocus();
 
         OnlineController::instance()->attachToWebSocket(ws);
+
+        //Decode the join secret if there is one
+        QString discordJoinSecret = OnlineController::instance()->discordJoinSecret();
+        if (discordJoinSecret != "") {
+            QStringList parts = discordJoinSecret.split(":");
+            int roomId = parts.first().toInt();
+            int pin = parts.at(1).toInt();
+
+            //Attempt to join the room
+            QJsonObject joinMessage({
+                {"type", "joinRoom"},
+                {"roomId", roomId}
+            });
+            if (pin != -1) joinMessage.insert("pin", pin);
+            OnlineController::instance()->sendJsonO(joinMessage);
+        }
     })->error([=](QString error) {
         QuestionOverlay* question = new QuestionOverlay(this);
         question->setIcon(QMessageBox::Critical);
@@ -132,6 +148,9 @@ void MainOnlineScreen::connectToOnline()
 
         connect(question, &QuestionOverlay::accepted, this, handler);
         connect(question, &QuestionOverlay::rejected, this, handler);
+
+        //Clear the Discord Join secret
+        OnlineController::instance()->discordJoinSecret();
     });
 }
 

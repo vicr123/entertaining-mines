@@ -26,6 +26,8 @@
 #include <pauseoverlay.h>
 #include <questionoverlay.h>
 #include <notificationengine.h>
+#include "online/logindialog.h"
+#include "online/onlinecontroller.h"
 
 struct GameWindowPrivate {
     QMap<quint64, DiscordJoinRequestCallback*> joinCallbacks;
@@ -69,10 +71,7 @@ GameWindow::GameWindow(QWidget *parent)
         ui->stackedWidget->setCurrentWidget(ui->settingsScreen);
         ui->settingsScreen->setFocus();
     });
-    connect(ui->mainScreen, &MainScreen::playOnline, this, [=] {
-        ui->stackedWidget->setCurrentWidget(ui->onlineScreen);
-        ui->onlineScreen->connectToOnline();
-    });
+    connect(ui->mainScreen, &MainScreen::playOnline, this, &GameWindow::playOnline);
 
     connect(ui->settingsScreen, &SettingsScreen::goBack, this, [=] {
         ui->stackedWidget->setCurrentWidget(ui->mainScreen);
@@ -122,10 +121,9 @@ GameWindow::GameWindow(QWidget *parent)
         });
     });
     connect(DiscordIntegration::instance(), &DiscordIntegration::joinGame, this, [=](QString joinSecret) {
-        NotificationEngine::push({
-                                     QStringLiteral("Join a game"),
-                                     QStringLiteral("Join secret is %1").arg(joinSecret)
-                                 });
+        OnlineController::instance()->setDiscordJoinSecret(joinSecret);
+
+        playOnline();
     });
 
     connect(NotificationEngine::instance(), &NotificationEngine::actionClicked, this, [=](quint64 notificationId, QString key) {
@@ -144,5 +142,17 @@ GameWindow::~GameWindow()
 {
     delete d;
     delete ui;
+}
+
+void GameWindow::playOnline()
+{
+    LoginDialog* login = new LoginDialog(this);
+    if (login->exec()) {
+        ui->stackedWidget->setCurrentWidget(ui->onlineScreen);
+        ui->onlineScreen->connectToOnline();
+    } else {
+        //Clear the join secret if there is one
+        OnlineController::instance()->discordJoinSecret();
+    }
 }
 

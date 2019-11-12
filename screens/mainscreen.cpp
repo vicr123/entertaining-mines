@@ -32,8 +32,6 @@
 #include "information/creditsscreen.h"
 #include "information/helpscreen.h"
 
-#include <online/logindialog.h>
-
 MainScreen::MainScreen(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::MainScreen)
@@ -194,8 +192,5 @@ void MainScreen::on_helpButton_clicked()
 
 void MainScreen::on_playOnlineButton_clicked()
 {
-    LoginDialog* login = new LoginDialog(this);
-    if (login->exec()) {
-        emit playOnline();
-    }
+    emit playOnline();
 }
