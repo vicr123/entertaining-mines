@@ -177,7 +177,7 @@ void MainOnlineScreen::paintEvent(QPaintEvent*event)
         painter.setPen(Qt::transparent);
         painter.drawRect(0, 0, this->width(), this->height());
     } else {
-        MainOnlineScreen::paintEvent(event);
+        QWidget::paintEvent(event);
     }
 }
 
