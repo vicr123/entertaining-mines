@@ -23,9 +23,12 @@
 #include <online/onlineapi.h>
 #include <online/onlinewebsocket.h>
 #include <questionoverlay.h>
+#include <discordintegration.h>
+#include "onlinecontroller.h"
+#include "onlinejoinscreen.h"
 
 struct MainOnlineScreenPrivate {
-    OnlineWebSocket* socket;
+
 };
 
 MainOnlineScreen::MainOnlineScreen(QWidget *parent) :
@@ -36,7 +39,68 @@ MainOnlineScreen::MainOnlineScreen(QWidget *parent) :
     d = new MainOnlineScreenPrivate();
 
     connect(ui->menuPage, &OnlineMenuScreen::quitOnline, this, [=] {
-        d->socket->close();
+        OnlineController::instance()->close();
+    });
+
+    connect(OnlineController::instance(), &OnlineController::disconnected, this, [=](int closeCode) {
+        QString error;
+        switch (closeCode) {
+            case QWebSocketProtocol::CloseCodeNormal:
+                break;
+            case QWebSocketProtocol::CloseCodeGoingAway:
+                error = tr("You've been disconnected because the server is about to undergo maintenance.");
+                break;
+            case QWebSocketProtocol::CloseCodeProtocolError:
+                error = tr("You'be been disconnected from the server because there was a communication error.");
+                break;
+            case QWebSocketProtocol::CloseCodeDatatypeNotSupported:
+            case QWebSocketProtocol::CloseCodeReserved1004:
+            case QWebSocketProtocol::CloseCodeMissingStatusCode:
+            case QWebSocketProtocol::CloseCodeWrongDatatype:
+            case QWebSocketProtocol::CloseCodePolicyViolated:
+            case QWebSocketProtocol::CloseCodeTooMuchData:
+            case QWebSocketProtocol::CloseCodeAbnormalDisconnection:
+            default:
+                error = tr("You'be been disconnected from the server.");
+        }
+
+        if (error.isEmpty()) {
+            emit quitOnline();
+        } else {
+            QuestionOverlay* question = new QuestionOverlay(this);
+            question->setIcon(QMessageBox::Critical);
+            question->setTitle(tr("Error"));
+            question->setText(error);
+            question->setButtons(QMessageBox::Ok);
+
+            auto handler = [=] {
+                question->deleteLater();
+                emit quitOnline();
+            };
+
+            connect(question, &QuestionOverlay::accepted, this, handler);
+            connect(question, &QuestionOverlay::rejected, this, handler);
+        }
+    });
+
+    connect(OnlineController::instance(), &OnlineController::jsonMessage, this, [=](QJsonDocument doc) {
+        QJsonObject object = doc.object();
+        QString type = object.value("type").toString();
+        if (type == "stateChange") {
+            QString state = object.value("newState").toString();
+            if (state == "idle") {
+                ui->stackedWidget->setCurrentWidget(ui->menuPage);
+
+                DiscordIntegration::instance()->setPresence({
+                    {"state", tr("Idle")},
+                    {"details", tr("Main Menu")}
+                });
+            } else if (state == "lobby") {
+                ui->stackedWidget->setCurrentWidget(ui->lobbyPage);
+            }
+        } else if (type == "availableRoomsReply") {
+            OnlineJoinScreen* joinScreen = new OnlineJoinScreen(object, this);
+        }
     });
 }
 
@@ -50,48 +114,10 @@ void MainOnlineScreen::connectToOnline()
 {
     ui->stackedWidget->setCurrentWidget(ui->connectingPage);
     OnlineApi::instance()->play("EntertainingMines", "1.0", this)->then([=](OnlineWebSocket* ws) {
-        d->socket = ws;
         ui->stackedWidget->setCurrentWidget(ui->menuPage);
         ui->menuPage->setFocus();
 
-        connect(ws, &OnlineWebSocket::disconnected, this, [=] {
-            QString error;
-            switch (ws->closeCode()) {
-                case QWebSocketProtocol::CloseCodeNormal:
-                    break;
-                case QWebSocketProtocol::CloseCodeGoingAway:
-                    error = tr("You've been disconnected because the server is about to undergo maintenance.");
-                    break;
-                case QWebSocketProtocol::CloseCodeDatatypeNotSupported:
-                case QWebSocketProtocol::CloseCodeReserved1004:
-                case QWebSocketProtocol::CloseCodeMissingStatusCode:
-                case QWebSocketProtocol::CloseCodeWrongDatatype:
-                case QWebSocketProtocol::CloseCodePolicyViolated:
-                case QWebSocketProtocol::CloseCodeTooMuchData:
-                case QWebSocketProtocol::CloseCodeProtocolError:
-                case QWebSocketProtocol::CloseCodeAbnormalDisconnection:
-                default:
-                    error = tr("You'be been disconnected from the server.");
-            }
-
-            if (error.isEmpty()) {
-                emit quitOnline();
-            } else {
-                QuestionOverlay* question = new QuestionOverlay(this);
-                question->setIcon(QMessageBox::Critical);
-                question->setTitle(tr("Error"));
-                question->setText(error);
-                question->setButtons(QMessageBox::Ok);
-
-                auto handler = [=] {
-                    question->deleteLater();
-                    emit quitOnline();
-                };
-
-                connect(question, &QuestionOverlay::accepted, this, handler);
-                connect(question, &QuestionOverlay::rejected, this, handler);
-            }
-        });
+        OnlineController::instance()->attachToWebSocket(ws);
     })->error([=](QString error) {
         QuestionOverlay* question = new QuestionOverlay(this);
         question->setIcon(QMessageBox::Critical);

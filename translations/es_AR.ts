@@ -324,24 +324,39 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../online/mainonlinescreen.ui" line="76"/>
+        <location filename="../online/mainonlinescreen.ui" line="79"/>
         <source>Connecting to Entertaining Games</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../online/mainonlinescreen.cpp" line="63"/>
+        <location filename="../online/mainonlinescreen.cpp" line="51"/>
         <source>You&apos;ve been disconnected because the server is about to undergo maintenance.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../online/mainonlinescreen.cpp" line="74"/>
+        <location filename="../online/mainonlinescreen.cpp" line="54"/>
+        <source>You&apos;be been disconnected from the server because there was a communication error.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../online/mainonlinescreen.cpp" line="64"/>
         <source>You&apos;be been disconnected from the server.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../online/mainonlinescreen.cpp" line="82"/>
-        <location filename="../online/mainonlinescreen.cpp" line="98"/>
+        <location filename="../online/mainonlinescreen.cpp" line="72"/>
+        <location filename="../online/mainonlinescreen.cpp" line="124"/>
         <source>Error</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../online/mainonlinescreen.cpp" line="95"/>
+        <source>Idle</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../online/mainonlinescreen.cpp" line="96"/>
+        <source>Main Menu</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -500,6 +515,77 @@
     </message>
 </context>
 <context>
+    <name>OnlineJoinScreen</name>
+    <message>
+        <location filename="../online/onlinejoinscreen.ui" line="14"/>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../online/onlinejoinscreen.ui" line="68"/>
+        <source>Join Game</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../online/onlinejoinscreen.ui" line="93"/>
+        <source>Select a game to join</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../online/onlinejoinscreen.cpp" line="40"/>
+        <source>Join</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../online/onlinejoinscreen.cpp" line="41"/>
+        <source>Back</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>OnlineLobbyScreen</name>
+    <message>
+        <location filename="../online/onlinelobbyscreen.ui" line="14"/>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../online/onlinelobbyscreen.ui" line="71"/>
+        <source>Lobby</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../online/onlinelobbyscreen.ui" line="101"/>
+        <source>Matchmaking...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../online/onlinelobbyscreen.ui" line="134"/>
+        <source>Start Game</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../online/onlinelobbyscreen.cpp" line="40"/>
+        <source>Select</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../online/onlinelobbyscreen.cpp" line="41"/>
+        <source>Leave Room</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../online/onlinelobbyscreen.cpp" line="58"/>
+        <source>In Lobby</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../online/onlinelobbyscreen.cpp" line="59"/>
+        <source>Waiting for players</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>OnlineMenuScreen</name>
     <message>
         <location filename="../online/onlinemenuscreen.ui" line="14"/>
@@ -507,89 +593,89 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../online/onlinemenuscreen.ui" line="64"/>
+        <location filename="../online/onlinemenuscreen.ui" line="79"/>
         <source>Entertaining Mines</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../online/onlinemenuscreen.ui" line="198"/>
+        <location filename="../online/onlinemenuscreen.ui" line="213"/>
         <source>Friends and Relations</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../online/onlinemenuscreen.ui" line="205"/>
+        <location filename="../online/onlinemenuscreen.ui" line="220"/>
         <source>Add or remove friends and manage blocked users</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../online/onlinemenuscreen.ui" line="274"/>
+        <location filename="../online/onlinemenuscreen.ui" line="289"/>
         <source>Information</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../online/onlinemenuscreen.ui" line="154"/>
+        <location filename="../online/onlinemenuscreen.ui" line="169"/>
         <source>Create Room</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../online/onlinemenuscreen.ui" line="79"/>
+        <location filename="../online/onlinemenuscreen.ui" line="94"/>
         <source>Playing Online</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../online/onlinemenuscreen.ui" line="161"/>
+        <location filename="../online/onlinemenuscreen.ui" line="176"/>
         <source>Create a new lobby where friends can join you</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../online/onlinemenuscreen.ui" line="168"/>
+        <location filename="../online/onlinemenuscreen.ui" line="183"/>
         <source>Join Lobby</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../online/onlinemenuscreen.ui" line="175"/>
+        <location filename="../online/onlinemenuscreen.ui" line="190"/>
         <source>Join a friend&apos;s open lobby</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../online/onlinemenuscreen.ui" line="291"/>
+        <location filename="../online/onlinemenuscreen.ui" line="306"/>
         <source>Help</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../online/onlinemenuscreen.ui" line="298"/>
+        <location filename="../online/onlinemenuscreen.ui" line="313"/>
         <source>Get information about how to play</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../online/onlinemenuscreen.ui" line="305"/>
+        <location filename="../online/onlinemenuscreen.ui" line="320"/>
         <source>Credits</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../online/onlinemenuscreen.ui" line="312"/>
+        <location filename="../online/onlinemenuscreen.ui" line="327"/>
         <source>See who made the game</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../online/onlinemenuscreen.ui" line="212"/>
-        <location filename="../online/onlinemenuscreen.ui" line="335"/>
-        <location filename="../online/onlinemenuscreen.cpp" line="34"/>
+        <location filename="../online/onlinemenuscreen.ui" line="227"/>
+        <location filename="../online/onlinemenuscreen.ui" line="350"/>
+        <location filename="../online/onlinemenuscreen.cpp" line="36"/>
         <source>Main Menu</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../online/onlinemenuscreen.ui" line="219"/>
+        <location filename="../online/onlinemenuscreen.ui" line="234"/>
         <source>Disconnect from Entertaining Games Online</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../online/onlinemenuscreen.ui" line="342"/>
+        <location filename="../online/onlinemenuscreen.ui" line="357"/>
         <source>Return to the Main Menu</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../online/onlinemenuscreen.cpp" line="33"/>
+        <location filename="../online/onlinemenuscreen.cpp" line="35"/>
         <source>Select</source>
         <translation type="unfinished"></translation>
     </message>

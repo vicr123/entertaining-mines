@@ -31,6 +31,9 @@
    </property>
    <item>
     <widget class="QStackedWidget" name="stackedWidget">
+     <property name="currentIndex">
+      <number>0</number>
+     </property>
      <widget class="QWidget" name="connectingPage">
       <layout class="QGridLayout" name="gridLayout">
        <item row="0" column="1">
@@ -112,6 +115,7 @@
       </layout>
      </widget>
      <widget class="OnlineMenuScreen" name="menuPage"/>
+     <widget class="OnlineLobbyScreen" name="lobbyPage"/>
     </widget>
    </item>
   </layout>
@@ -127,6 +131,12 @@
    <class>OnlineMenuScreen</class>
    <extends>QWidget</extends>
    <header>online/onlinemenuscreen.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>OnlineLobbyScreen</class>
+   <extends>QWidget</extends>
+   <header>online/onlinelobbyscreen.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>

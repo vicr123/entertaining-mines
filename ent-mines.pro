@@ -26,6 +26,9 @@ SOURCES += \
     main.cpp \
     gamewindow.cpp \
     online/mainonlinescreen.cpp \
+    online/onlinecontroller.cpp \
+    online/onlinejoinscreen.cpp \
+    online/onlinelobbyscreen.cpp \
     online/onlinemenuscreen.cpp \
     screens/gamescreen.cpp \
     screens/mainscreen.cpp \
@@ -40,6 +43,9 @@ HEADERS += \
     information/creditsscreen.h \
     information/helpscreen.h \
     online/mainonlinescreen.h \
+    online/onlinecontroller.h \
+    online/onlinejoinscreen.h \
+    online/onlinelobbyscreen.h \
     online/onlinemenuscreen.h \
     screens/gamescreen.h \
     screens/mainscreen.h \
@@ -53,6 +59,8 @@ FORMS += \
     information/creditsscreen.ui \
     information/helpscreen.ui \
     online/mainonlinescreen.ui \
+    online/onlinejoinscreen.ui \
+    online/onlinelobbyscreen.ui \
     online/onlinemenuscreen.ui \
     screens/gamescreen.ui \
     screens/mainscreen.ui \

@@ -20,6 +20,8 @@
 #include "onlinemenuscreen.h"
 #include "ui_onlinemenuscreen.h"
 
+#include <QJsonObject>
+#include "onlinecontroller.h"
 #include <online/friendsdialog.h>
 
 OnlineMenuScreen::OnlineMenuScreen(QWidget *parent) :
@@ -56,4 +58,20 @@ void OnlineMenuScreen::on_friendsButton_clicked()
 {
     FriendsDialog* d = new FriendsDialog(this);
     connect(d, &FriendsDialog::done, d, &FriendsDialog::deleteLater);
+}
+
+void OnlineMenuScreen::on_createLobby_clicked()
+{
+    //Request to join a new room
+    OnlineController::instance()->sendJsonO({
+        {"type", "createRoom"}
+    });
+}
+
+void OnlineMenuScreen::on_joinLobby_clicked()
+{
+    //Request the list of available rooms
+    OnlineController::instance()->sendJsonO({
+        {"type", "availableRooms"}
+    });
 }

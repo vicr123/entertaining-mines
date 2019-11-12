@@ -14,6 +14,21 @@
    <string>Form</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout_2">
+   <property name="spacing">
+    <number>0</number>
+   </property>
+   <property name="leftMargin">
+    <number>0</number>
+   </property>
+   <property name="topMargin">
+    <number>0</number>
+   </property>
+   <property name="rightMargin">
+    <number>0</number>
+   </property>
+   <property name="bottomMargin">
+    <number>0</number>
+   </property>
    <item>
     <layout class="QHBoxLayout" name="horizontalLayout_2">
      <item>
@@ -121,8 +136,8 @@
                <rect>
                 <x>0</x>
                 <y>0</y>
-                <width>631</width>
-                <height>316</height>
+                <width>649</width>
+                <height>340</height>
                </rect>
               </property>
               <layout class="QVBoxLayout" name="verticalLayout_5">
@@ -154,7 +169,7 @@
                   <string>Create Room</string>
                  </property>
                  <property name="icon">
-                  <iconset>
+                  <iconset resource="../resources.qrc">
                    <normaloff>:/icons/go-next.svg</normaloff>:/icons/go-next.svg</iconset>
                  </property>
                  <property name="description">
@@ -168,7 +183,7 @@
                   <string>Join Lobby</string>
                  </property>
                  <property name="icon">
-                  <iconset>
+                  <iconset resource="../resources.qrc">
                    <normaloff>:/icons/go-next.svg</normaloff>:/icons/go-next.svg</iconset>
                  </property>
                  <property name="description">
@@ -198,7 +213,7 @@
                   <string>Friends and Relations</string>
                  </property>
                  <property name="icon">
-                  <iconset>
+                  <iconset resource="../resources.qrc">
                    <normaloff>:/icons/go-next.svg</normaloff>:/icons/go-next.svg</iconset>
                  </property>
                  <property name="description">
@@ -212,7 +227,7 @@
                   <string>Main Menu</string>
                  </property>
                  <property name="icon">
-                  <iconset>
+                  <iconset resource="../resources.qrc">
                    <normaloff>:/icons/go-next.svg</normaloff>:/icons/go-next.svg</iconset>
                  </property>
                  <property name="description">
@@ -291,7 +306,7 @@
               <string>Help</string>
              </property>
              <property name="icon">
-              <iconset>
+              <iconset resource="../resources.qrc">
                <normaloff>:/icons/go-next.svg</normaloff>:/icons/go-next.svg</iconset>
              </property>
              <property name="description">
@@ -305,7 +320,7 @@
               <string>Credits</string>
              </property>
              <property name="icon">
-              <iconset>
+              <iconset resource="../resources.qrc">
                <normaloff>:/icons/go-next.svg</normaloff>:/icons/go-next.svg</iconset>
              </property>
              <property name="description">
@@ -335,7 +350,7 @@
               <string>Main Menu</string>
              </property>
              <property name="icon">
-              <iconset>
+              <iconset resource="../resources.qrc">
                <normaloff>:/icons/go-next.svg</normaloff>:/icons/go-next.svg</iconset>
              </property>
              <property name="description">
@@ -395,6 +410,8 @@
    <container>1</container>
   </customwidget>
  </customwidgets>
- <resources/>
+ <resources>
+  <include location="../resources.qrc"/>
+ </resources>
  <connections/>
 </ui>
