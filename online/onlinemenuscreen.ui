@@ -222,6 +222,20 @@
                 </widget>
                </item>
                <item>
+                <widget class="QCommandLinkButton" name="accountButton">
+                 <property name="text">
+                  <string>Account</string>
+                 </property>
+                 <property name="icon">
+                  <iconset resource="../resources.qrc">
+                   <normaloff>:/icons/go-next.svg</normaloff>:/icons/go-next.svg</iconset>
+                 </property>
+                 <property name="description">
+                  <string>Manage your account</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
                 <widget class="QCommandLinkButton" name="exitButton">
                  <property name="text">
                   <string>Main Menu</string>

@@ -1,6 +1,7 @@
 #include "settingsscreen.h"
 #include "ui_settingsscreen.h"
 
+#include <the-libs_global.h>
 #include <QShortcut>
 #include <QKeyEvent>
 #include <musicengine.h>
@@ -134,8 +135,8 @@ void SettingsScreen::on_backButton_clicked()
 void SettingsScreen::resizeEvent(QResizeEvent* event)
 {
     int width = 0;
-    if (this->width() > 600) {
-        width = (this->width() - 600) / 2;
+    if (this->width() > SC_DPI(600)) {
+        width = (this->width() - SC_DPI(600)) / 2;
     }
 
     ui->spacer1->changeSize(width, 0, QSizePolicy::Fixed, QSizePolicy::Preferred);

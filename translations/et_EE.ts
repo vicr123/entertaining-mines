@@ -619,17 +619,27 @@
     </message>
     <message>
         <location filename="../online/onlinemenuscreen.ui" line="227"/>
-        <location filename="../online/onlinemenuscreen.cpp" line="36"/>
-        <source>Main Menu</source>
+        <source>Account</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../online/onlinemenuscreen.ui" line="234"/>
+        <source>Manage your account</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../online/onlinemenuscreen.ui" line="241"/>
+        <location filename="../online/onlinemenuscreen.cpp" line="39"/>
+        <source>Main Menu</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../online/onlinemenuscreen.ui" line="248"/>
         <source>Disconnect from Entertaining Games Online</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../online/onlinemenuscreen.cpp" line="35"/>
+        <location filename="../online/onlinemenuscreen.cpp" line="38"/>
         <source>Select</source>
         <translation type="unfinished"></translation>
     </message>
@@ -706,52 +716,52 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../screens/settingsscreen.cpp" line="58"/>
+        <location filename="../screens/settingsscreen.cpp" line="59"/>
         <source>Audio</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../screens/settingsscreen.cpp" line="41"/>
+        <location filename="../screens/settingsscreen.cpp" line="42"/>
         <source>Background Music</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../screens/settingsscreen.cpp" line="42"/>
+        <location filename="../screens/settingsscreen.cpp" line="43"/>
         <source>Sound Effects</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../screens/settingsscreen.cpp" line="52"/>
+        <location filename="../screens/settingsscreen.cpp" line="53"/>
         <source>Gamepad Settings</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../screens/settingsscreen.cpp" line="61"/>
+        <location filename="../screens/settingsscreen.cpp" line="62"/>
         <source>Behaviour</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../screens/settingsscreen.cpp" line="62"/>
+        <location filename="../screens/settingsscreen.cpp" line="63"/>
         <source>Marks</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../screens/settingsscreen.cpp" line="63"/>
+        <location filename="../screens/settingsscreen.cpp" line="64"/>
         <source>When this is enabled, right clicking a flag will change it into the marked state first.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../screens/settingsscreen.cpp" line="64"/>
+        <location filename="../screens/settingsscreen.cpp" line="65"/>
         <source>Hardware</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../screens/settingsscreen.cpp" line="94"/>
+        <location filename="../screens/settingsscreen.cpp" line="95"/>
         <source>Select</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../screens/settingsscreen.cpp" line="95"/>
+        <location filename="../screens/settingsscreen.cpp" line="96"/>
         <source>Back</source>
         <translation type="unfinished"></translation>
     </message>

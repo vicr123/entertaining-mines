@@ -23,6 +23,7 @@
 #include <QJsonObject>
 #include "onlinecontroller.h"
 #include <online/friendsdialog.h>
+#include <online/accountdialog.h>
 
 OnlineMenuScreen::OnlineMenuScreen(QWidget *parent) :
     QWidget(parent),
@@ -31,6 +32,8 @@ OnlineMenuScreen::OnlineMenuScreen(QWidget *parent) :
     ui->setupUi(this);
 
     this->setFocusProxy(ui->createLobby);
+
+    ui->exitButton->setProperty("type", "destructive");
 
     ui->gamepadHud->setButtonText(QGamepadManager::ButtonA, tr("Select"));
     ui->gamepadHud->setButtonText(QGamepadManager::ButtonB, tr("Main Menu"));
@@ -78,4 +81,10 @@ void OnlineMenuScreen::on_joinLobby_clicked()
     OnlineController::instance()->sendJsonO({
         {"type", "availableRooms"}
     });
+}
+
+void OnlineMenuScreen::on_accountButton_clicked()
+{
+    AccountDialog* d = new AccountDialog(this);
+    connect(d, &AccountDialog::done, d, &AccountDialog::deleteLater);
 }

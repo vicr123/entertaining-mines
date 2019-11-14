@@ -46,6 +46,8 @@ class OnlineMenuScreen : public QWidget
 
         void on_joinLobby_clicked();
 
+        void on_accountButton_clicked();
+
     private:
         Ui::OnlineMenuScreen *ui;
 };
