@@ -329,12 +329,12 @@
     </message>
     <message>
         <location filename="../online/mainonlinescreen.cpp" line="55"/>
-        <source>You&apos;be been disconnected from the server because there was a communication error.</source>
+        <source>You&apos;ve been disconnected from the server because there was a communication error.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../online/mainonlinescreen.cpp" line="65"/>
-        <source>You&apos;be been disconnected from the server.</source>
+        <source>You&apos;ve been disconnected from the server.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

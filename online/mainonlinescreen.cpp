@@ -52,7 +52,7 @@ MainOnlineScreen::MainOnlineScreen(QWidget *parent) :
                 error = tr("You've been disconnected because the server is about to undergo maintenance.");
                 break;
             case QWebSocketProtocol::CloseCodeProtocolError:
-                error = tr("You'be been disconnected from the server because there was a communication error.");
+                error = tr("You've been disconnected from the server because there was a communication error.");
                 break;
             case QWebSocketProtocol::CloseCodeDatatypeNotSupported:
             case QWebSocketProtocol::CloseCodeReserved1004:
@@ -62,7 +62,7 @@ MainOnlineScreen::MainOnlineScreen(QWidget *parent) :
             case QWebSocketProtocol::CloseCodeTooMuchData:
             case QWebSocketProtocol::CloseCodeAbnormalDisconnection:
             default:
-                error = tr("You'be been disconnected from the server.");
+                error = tr("You've been disconnected from the server.");
         }
 
         if (error.isEmpty()) {
