@@ -31,19 +31,22 @@
 #include <musicengine.h>
 #include <QUrl>
 #include <QShortcut>
+#include <tvariantanimation.h>
 #include <tpromise.h>
 #include <focusbarrier.h>
 #include <discordintegration.h>
 #include "onlinecontroller.h"
+#include <online/onlineapi.h>
 
 struct OnlineGameScreenPrivate {
     QVector<GameTile*> tiles;
 
+    int currentRoomId = -1;
+    int userCount = 0;
+    int userMax = 0;
+
     int width = 0;
     int mines = 0;
-
-    int remainingTileCount = 0;
-    int minesRemaining = 0;
 
     QDateTime startDateTime;
     QTimer* dateTimeTimer;
@@ -97,6 +100,43 @@ OnlineGameScreen::OnlineGameScreen(QWidget *parent) :
                 GameTile* t = d->tiles.at(obj.value("tile").toInt());
                 t->setRemoteParameters(obj);
             }
+        } else if (type == "endGame") {
+            if (obj.value("victory").toBool()) {
+                //Congratulations
+                ui->gameOverBlameUsername->setText(tr("Congratulations!"));
+                ui->gameOverBlameDescription->setText(tr("You swept this board completely!"));
+                ui->gameOverBlamePicture->setPixmap(QIcon(":/icons/entertaining-mines.svg").pixmap(QSize(ui->gameOverBlameContents->sizeHint().height(), ui->gameOverBlameContents->sizeHint().height())));
+
+                MusicEngine::pauseBackgroundMusic();
+            } else {
+                //Game Over
+                ui->gameOverBlameUsername->setText(obj.value("user").toString());
+                ui->gameOverBlameDescription->setText(tr("stepped on a mine and blew everything up!"));
+                OnlineApi::instance()->profilePicture(obj.value("picture").toString(), ui->gameOverBlameContents->sizeHint().height())->then([=](QImage image) {
+                    ui->gameOverBlamePicture->setPixmap(QPixmap::fromImage(image));
+                });
+
+                this->performGameOver();
+            }
+
+            tVariantAnimation* anim = new tVariantAnimation();
+            anim->setStartValue(0);
+            anim->setEndValue(ui->gameOverBlameWidget->sizeHint().height());
+            anim->setDuration(500);
+            anim->setEasingCurve(QEasingCurve::OutCubic);
+            connect(anim, &tVariantAnimation::valueChanged, this, [=](QVariant value) {
+                ui->gameOverBlameWidget->setFixedHeight(value.toInt());
+                this->resizeTiles();
+            });
+            connect(anim, &tVariantAnimation::finished, anim, &tVariantAnimation::deleteLater);
+            anim->start();
+        } else if (type == "lobbyChange") {
+            d->currentRoomId = obj.value("lobbyId").toInt();
+        } else if (type == "roomUpdate") {
+            d->userCount = obj.value("users").toArray().count();
+            d->userMax = obj.value("maxUsers").toInt();
+        } else if (type == "minesRemainingChanged") {
+            ui->minesRemainingLabel->setText(QString::number(obj.value("minesRemaining").toInt()));
         }
     });
 }
@@ -147,13 +187,7 @@ void OnlineGameScreen::revealedTile()
 
 void OnlineGameScreen::flagChanged(bool didFlag)
 {
-    if (didFlag) {
-        d->minesRemaining--;
-    } else {
-        d->minesRemaining++;
-    }
-
-    ui->minesRemainingLabel->setText(QString::number(d->minesRemaining));
+    //noop
 }
 
 QPoint OnlineGameScreen::indexToPoint(int index)
@@ -200,15 +234,16 @@ void OnlineGameScreen::setup()
 
 void OnlineGameScreen::finishSetup()
 {
-    ui->minesRemainingLabel->setText(QString::number(d->minesRemaining));
-
     d->tiles.first()->setFocus();
     this->setFocusProxy(d->tiles.first());
 
     DiscordIntegration::instance()->setPresence({
         {"state", tr("Online Game")},
         {"details", tr("Cooperative: %1×%2 board with %n mines", nullptr, d->mines).arg(d->width).arg(boardDimensions().height())},
-        {"startTimestamp", QDateTime::currentDateTimeUtc()}
+        {"startTimestamp", QDateTime::currentDateTimeUtc()},
+        {"partyId", QString::number(d->currentRoomId)},
+        {"partySize", d->userCount},
+        {"partyMax", d->userMax}
     });
 
     updateTimer();
@@ -220,6 +255,7 @@ void OnlineGameScreen::finishSetup()
 
 void OnlineGameScreen::startGame(int width, int height, int mines)
 {
+    ui->gameOverBlameWidget->setFixedHeight(0);
     d->width = width;
     d->mines = mines;
 
@@ -263,11 +299,9 @@ void OnlineGameScreen::startGame(int width, int height, int mines)
 
     d->startDateTime = QDateTime::currentDateTimeUtc();
 
-    d->remainingTileCount = width * height - mines;
-    d->minesRemaining = mines + 1;
-    flagChanged(true);
-
     MusicEngine::playSoundEffect(MusicEngine::Selection);
+
+    ui->minesRemainingLabel->setText(QString::number(mines));
 
     finishSetup();
 }
@@ -327,5 +361,21 @@ void OnlineGameScreen::distributeMines(QPoint clickLocation)
 
 void OnlineGameScreen::performGameOver()
 {
-    //noop
+    MusicEngine::pauseBackgroundMusic();
+    (new tPromise<void>([=](QString error) {
+        for (int i = 0; i < d->tiles.count(); i++) {
+            d->tiles.at(i)->metaObject()->invokeMethod(d->tiles.at(i), "performGameOver", Qt::QueuedConnection);
+
+            if (i < 100) {
+                QThread::msleep(20);
+            } else if (i < 200) {
+                QThread::msleep(10);
+            } else {
+                QThread::msleep(5);
+            }
+
+        }
+    }))->then([=] {
+
+    });
 }

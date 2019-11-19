@@ -25,6 +25,7 @@
 #include <questionoverlay.h>
 #include <discordintegration.h>
 #include <QSvgRenderer>
+#include <musicengine.h>
 #include "onlinecontroller.h"
 #include "onlinejoinscreen.h"
 
@@ -154,6 +155,9 @@ void MainOnlineScreen::connectToOnline()
 
         //Clear the Discord Join secret
         OnlineController::instance()->discordJoinSecret();
+
+        //Stop any music
+        MusicEngine::pauseBackgroundMusic();
     });
 }
 

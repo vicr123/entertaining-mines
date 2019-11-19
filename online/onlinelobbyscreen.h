@@ -21,6 +21,7 @@
 #define ONLINELOBBYSCREEN_H
 
 #include <QWidget>
+#include <QStyledItemDelegate>
 
 namespace Ui {
     class OnlineLobbyScreen;
@@ -53,6 +54,15 @@ class OnlineLobbyScreen : public QWidget
         OnlineLobbyScreenPrivate* d;
 
         void sendBoardParams();
+};
+
+class LobbyListDelegate : public QStyledItemDelegate {
+    Q_OBJECT
+    public:
+        explicit LobbyListDelegate(QWidget* parent);
+
+
+        void paint(QPainter *painter, const QStyleOptionViewItem &option, const QModelIndex &index) const override;
 };
 
 #endif // ONLINELOBBYSCREEN_H

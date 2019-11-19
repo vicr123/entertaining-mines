@@ -23,7 +23,10 @@
 #include <QJsonObject>
 #include <QJsonArray>
 #include <discordintegration.h>
+#include <online/onlineapi.h>
 #include "onlinecontroller.h"
+
+#include <QPainter>
 
 struct OnlineLobbyScreenPrivate {
     int currentRoomId = -1;
@@ -45,6 +48,8 @@ OnlineLobbyScreen::OnlineLobbyScreen(QWidget *parent) :
         ui->backButton->click();
     });
 
+    ui->membersInRoom->setItemDelegate(new LobbyListDelegate(ui->membersInRoom));
+
     connect(OnlineController::instance(), &OnlineController::jsonMessage, this, [=](QJsonDocument doc) {
         QJsonObject obj = doc.object();
         QString type = obj.value("type").toString();
@@ -52,7 +57,20 @@ OnlineLobbyScreen::OnlineLobbyScreen(QWidget *parent) :
             ui->membersInRoom->clear();
             QJsonArray users = obj.value("users").toArray();
             for (QJsonValue val : users) {
-                ui->membersInRoom->addItem(val.toString());
+                QJsonObject user = val.toObject();
+
+                QStringList supplementaryText;
+                if (user.value("isHost").toBool()) {
+                    supplementaryText.append("Host");
+                }
+
+                QListWidgetItem* item = new QListWidgetItem();
+                item->setText(user.value("username").toString());
+                item->setData(Qt::UserRole, supplementaryText.join(" "));
+                ui->membersInRoom->addItem(item);
+
+                //Cache the profile picture
+                OnlineApi::instance()->profilePicture(user.value("picture").toString(), 256);
             }
 
             DiscordIntegration::instance()->setPresence({
@@ -150,4 +168,70 @@ void OnlineLobbyScreen::sendBoardParams()
         {"height", ui->heightBox->value()},
         {"mines", ui->minesBox->value()}
     });
+}
+
+LobbyListDelegate::LobbyListDelegate(QWidget*parent) : QStyledItemDelegate(parent)
+{
+
+}
+
+void LobbyListDelegate::paint(QPainter*painter, const QStyleOptionViewItem&option, const QModelIndex&index) const
+{
+    painter->setPen(Qt::transparent);
+
+    QPen textPen;
+    QPen supplementaryPen;
+    if (option.state & QStyle::State_Selected) {
+        painter->setBrush(option.palette.brush(QPalette::Highlight));
+        textPen = option.palette.color(QPalette::HighlightedText);
+        supplementaryPen = option.palette.color(QPalette::HighlightedText);
+    } else if (option.state & QStyle::State_MouseOver) {
+        QColor col = option.palette.color(QPalette::Highlight);
+        col.setAlpha(127);
+        painter->setBrush(col);
+        textPen = option.palette.color(QPalette::HighlightedText);
+        supplementaryPen = option.palette.color(QPalette::HighlightedText);
+    } else {
+        painter->setBrush(option.palette.brush(QPalette::Base));
+        textPen = option.palette.color(QPalette::WindowText);
+
+        QColor suppColor = option.palette.color(QPalette::WindowText);
+        suppColor.setAlpha(127);
+        supplementaryPen = suppColor;
+    }
+    painter->drawRect(option.rect);
+
+    QRect iconRect = option.rect, textRect = option.rect, supplementaryTextRect = option.rect;
+
+    textRect.setHeight(option.rect.height() - 2);
+    supplementaryTextRect.setHeight(option.rect.height() - 2);
+
+    if (!option.icon.isNull()) {
+        const QAbstractItemView* itemView = qobject_cast<const QAbstractItemView*>(option.widget);
+
+        QSize iconSize = SC_DPI_T(QSize(16, 16), QSize);
+        if (itemView) iconSize = itemView->iconSize();
+        iconRect.setSize(iconSize);
+
+        QIcon icon = option.icon;
+        QImage iconImage = icon.pixmap(iconSize).toImage();
+        iconRect.moveLeft(option.rect.left() + 2);
+        iconRect.moveTop(option.rect.top() + (option.rect.height() / 2) - (iconRect.height() / 2));
+        painter->drawImage(iconRect, iconImage);
+        textRect.setLeft(iconRect.right() + 6);
+    } else {
+        textRect.setLeft(option.rect.left() + 6);
+    }
+
+    painter->setPen(textPen);
+    painter->setFont(option.font);
+
+    textRect.setWidth(option.fontMetrics.horizontalAdvance(index.data(Qt::DisplayRole).toString()));
+    painter->drawText(textRect, Qt::AlignLeft | Qt::AlignVCenter, index.data(Qt::DisplayRole).toString());
+
+    if (index.data(Qt::UserRole).toString() != "") {
+        supplementaryTextRect.setLeft(textRect.right() + 6);
+        painter->setPen(supplementaryPen);
+        painter->drawText(supplementaryTextRect, Qt::AlignLeft | Qt::AlignVCenter, index.data(Qt::UserRole).toString());
+    }
 }

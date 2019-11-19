@@ -314,33 +314,33 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../online/mainonlinescreen.cpp" line="52"/>
+        <location filename="../online/mainonlinescreen.cpp" line="53"/>
         <source>You&apos;ve been disconnected because the server is about to undergo maintenance.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../online/mainonlinescreen.cpp" line="55"/>
+        <location filename="../online/mainonlinescreen.cpp" line="56"/>
         <source>You&apos;ve been disconnected from the server because there was a communication error.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../online/mainonlinescreen.cpp" line="65"/>
+        <location filename="../online/mainonlinescreen.cpp" line="66"/>
         <source>You&apos;ve been disconnected from the server.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../online/mainonlinescreen.cpp" line="73"/>
-        <location filename="../online/mainonlinescreen.cpp" line="143"/>
+        <location filename="../online/mainonlinescreen.cpp" line="74"/>
+        <location filename="../online/mainonlinescreen.cpp" line="144"/>
         <source>Error</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../online/mainonlinescreen.cpp" line="96"/>
+        <location filename="../online/mainonlinescreen.cpp" line="97"/>
         <source>Idle</source>
         <translation type="unfinished">Đang nghỉ</translation>
     </message>
     <message>
-        <location filename="../online/mainonlinescreen.cpp" line="97"/>
+        <location filename="../online/mainonlinescreen.cpp" line="98"/>
         <source>Main Menu</source>
         <translation type="unfinished">Trang chủ</translation>
     </message>
@@ -517,41 +517,57 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../online/onlinegamescreen.cpp" line="61"/>
-        <location filename="../online/onlinegamescreen.cpp" line="285"/>
+        <location filename="../online/onlinegamescreen.ui" line="286"/>
+        <location filename="../online/onlinegamescreen.cpp" line="114"/>
+        <source>stepped on a mine and blew everything up!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../online/onlinegamescreen.cpp" line="64"/>
+        <location filename="../online/onlinegamescreen.cpp" line="319"/>
         <source>Reveal</source>
         <translation type="unfinished">Mở</translation>
     </message>
     <message>
-        <location filename="../online/onlinegamescreen.cpp" line="62"/>
-        <location filename="../online/onlinegamescreen.cpp" line="286"/>
+        <location filename="../online/onlinegamescreen.cpp" line="65"/>
+        <location filename="../online/onlinegamescreen.cpp" line="320"/>
         <source>Flag</source>
         <translation type="unfinished">Đặt cờ</translation>
     </message>
     <message>
-        <location filename="../online/onlinegamescreen.cpp" line="209"/>
+        <location filename="../online/onlinegamescreen.cpp" line="106"/>
+        <source>Congratulations!</source>
+        <translation type="unfinished">Chúc mừng!</translation>
+    </message>
+    <message>
+        <location filename="../online/onlinegamescreen.cpp" line="107"/>
+        <source>You swept this board completely!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../online/onlinegamescreen.cpp" line="241"/>
         <source>Online Game</source>
         <translation type="unfinished"></translation>
     </message>
     <message numerus="yes">
-        <location filename="../online/onlinegamescreen.cpp" line="210"/>
+        <location filename="../online/onlinegamescreen.cpp" line="242"/>
         <source>Cooperative: %1×%2 board with %n mines</source>
         <translation type="unfinished">
             <numerusform></numerusform>
         </translation>
     </message>
     <message>
-        <location filename="../online/onlinegamescreen.cpp" line="289"/>
+        <location filename="../online/onlinegamescreen.cpp" line="323"/>
         <source>Mark</source>
         <translation type="unfinished">Đánh dấu</translation>
     </message>
     <message>
-        <location filename="../online/onlinegamescreen.cpp" line="292"/>
+        <location filename="../online/onlinegamescreen.cpp" line="326"/>
         <source>Unflag</source>
         <translation type="unfinished">Gỡ cờ</translation>
     </message>
     <message>
-        <location filename="../online/onlinegamescreen.cpp" line="295"/>
+        <location filename="../online/onlinegamescreen.cpp" line="329"/>
         <source>Sweep</source>
         <translation type="unfinished">Quét</translation>
     </message>
@@ -602,62 +618,62 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../online/onlinelobbyscreen.ui" line="195"/>
+        <location filename="../online/onlinelobbyscreen.ui" line="208"/>
         <source>Game Mode</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../online/onlinelobbyscreen.ui" line="202"/>
+        <location filename="../online/onlinelobbyscreen.ui" line="215"/>
         <source>Board Height</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../online/onlinelobbyscreen.ui" line="222"/>
+        <location filename="../online/onlinelobbyscreen.ui" line="235"/>
         <source>Board Width</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../online/onlinelobbyscreen.ui" line="229"/>
+        <location filename="../online/onlinelobbyscreen.ui" line="242"/>
         <source>Board Mines</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../online/onlinelobbyscreen.ui" line="162"/>
+        <location filename="../online/onlinelobbyscreen.ui" line="175"/>
         <source>Cooperative</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../online/onlinelobbyscreen.ui" line="167"/>
+        <location filename="../online/onlinelobbyscreen.ui" line="180"/>
         <source>Competitive</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../online/onlinelobbyscreen.ui" line="188"/>
+        <location filename="../online/onlinelobbyscreen.ui" line="201"/>
         <source>GAME SETTINGS</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../online/onlinelobbyscreen.ui" line="175"/>
+        <location filename="../online/onlinelobbyscreen.ui" line="188"/>
         <source>Start Game</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../online/onlinelobbyscreen.cpp" line="40"/>
+        <location filename="../online/onlinelobbyscreen.cpp" line="43"/>
         <source>Select</source>
         <translation type="unfinished">Chọn</translation>
     </message>
     <message>
-        <location filename="../online/onlinelobbyscreen.cpp" line="41"/>
+        <location filename="../online/onlinelobbyscreen.cpp" line="44"/>
         <source>Leave Room</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../online/onlinelobbyscreen.cpp" line="59"/>
+        <location filename="../online/onlinelobbyscreen.cpp" line="77"/>
         <source>In Lobby</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../online/onlinelobbyscreen.cpp" line="60"/>
+        <location filename="../online/onlinelobbyscreen.cpp" line="78"/>
         <source>Waiting for players</source>
         <translation type="unfinished"></translation>
     </message>
