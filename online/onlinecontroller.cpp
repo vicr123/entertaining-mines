@@ -72,6 +72,10 @@ void OnlineController::sendJson(QJsonDocument doc)
 
 void OnlineController::sendJsonO(QJsonObject object)
 {
+    if (d->ws == nullptr) {
+        qWarning() << "Tried to send a message to an unopen socket";
+        return;
+    }
     d->ws->sendJsonO(object);
 }
 

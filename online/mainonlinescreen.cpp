@@ -82,6 +82,10 @@ MainOnlineScreen::MainOnlineScreen(QWidget *parent) :
 
             connect(question, &QuestionOverlay::accepted, this, handler);
             connect(question, &QuestionOverlay::rejected, this, handler);
+
+
+            //Stop any music
+            MusicEngine::pauseBackgroundMusic();
         }
     });
 
@@ -155,9 +159,6 @@ void MainOnlineScreen::connectToOnline()
 
         //Clear the Discord Join secret
         OnlineController::instance()->discordJoinSecret();
-
-        //Stop any music
-        MusicEngine::pauseBackgroundMusic();
     });
 }
 

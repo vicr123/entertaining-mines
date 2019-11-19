@@ -304,6 +304,59 @@
     </message>
 </context>
 <context>
+    <name>GamemodeSelect</name>
+    <message>
+        <location filename="../online/gamemodeselect.ui" line="71"/>
+        <source>Game Mode</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../online/gamemodeselect.ui" line="113"/>
+        <source>Select a game mode to play</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../online/gamemodeselect.ui" line="135"/>
+        <source>COOPERATIVE</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../online/gamemodeselect.ui" line="142"/>
+        <source>Work together to sweep the whole board without treading on any mines!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../online/gamemodeselect.ui" line="165"/>
+        <source>Play Cooperative</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../online/gamemodeselect.ui" line="190"/>
+        <source>COMPETITIVE</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../online/gamemodeselect.ui" line="197"/>
+        <source>Play against each other on the same board and try to claim the most flags on the board!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../online/gamemodeselect.ui" line="220"/>
+        <source>Play Competitive</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../online/gamemodeselect.cpp" line="33"/>
+        <source>Select</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../online/gamemodeselect.cpp" line="34"/>
+        <source>Back</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>HelpScreen</name>
     <message>
         <location filename="../information/helpscreen.ui" line="71"/>
@@ -345,17 +398,17 @@
     </message>
     <message>
         <location filename="../online/mainonlinescreen.cpp" line="74"/>
-        <location filename="../online/mainonlinescreen.cpp" line="144"/>
+        <location filename="../online/mainonlinescreen.cpp" line="148"/>
         <source>Error</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../online/mainonlinescreen.cpp" line="97"/>
+        <location filename="../online/mainonlinescreen.cpp" line="101"/>
         <source>Idle</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../online/mainonlinescreen.cpp" line="98"/>
+        <location filename="../online/mainonlinescreen.cpp" line="102"/>
         <source>Main Menu</source>
         <translation type="unfinished"></translation>
     </message>
@@ -633,68 +686,73 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../online/onlinelobbyscreen.ui" line="101"/>
-        <source>Matchmaking...</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../online/onlinelobbyscreen.ui" line="208"/>
+        <location filename="../online/onlinelobbyscreen.ui" line="175"/>
         <source>Game Mode</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../online/onlinelobbyscreen.ui" line="215"/>
+        <location filename="../online/onlinelobbyscreen.ui" line="182"/>
         <source>Board Height</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../online/onlinelobbyscreen.ui" line="235"/>
+        <location filename="../online/onlinelobbyscreen.ui" line="202"/>
         <source>Board Width</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../online/onlinelobbyscreen.ui" line="242"/>
+        <location filename="../online/onlinelobbyscreen.ui" line="209"/>
         <source>Board Mines</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../online/onlinelobbyscreen.ui" line="175"/>
-        <source>Cooperative</source>
+        <location filename="../online/onlinelobbyscreen.ui" line="222"/>
+        <source>PushButton</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../online/onlinelobbyscreen.ui" line="180"/>
-        <source>Competitive</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../online/onlinelobbyscreen.ui" line="201"/>
+        <location filename="../online/onlinelobbyscreen.ui" line="168"/>
         <source>GAME SETTINGS</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../online/onlinelobbyscreen.ui" line="188"/>
+        <location filename="../online/onlinelobbyscreen.ui" line="101"/>
+        <source>Gathering Players...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../online/onlinelobbyscreen.ui" line="155"/>
         <source>Start Game</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../online/onlinelobbyscreen.cpp" line="43"/>
+        <location filename="../online/onlinelobbyscreen.cpp" line="45"/>
         <source>Select</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../online/onlinelobbyscreen.cpp" line="44"/>
+        <location filename="../online/onlinelobbyscreen.cpp" line="46"/>
         <source>Leave Room</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../online/onlinelobbyscreen.cpp" line="77"/>
+        <location filename="../online/onlinelobbyscreen.cpp" line="79"/>
         <source>In Lobby</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../online/onlinelobbyscreen.cpp" line="78"/>
+        <location filename="../online/onlinelobbyscreen.cpp" line="80"/>
         <source>Waiting for players</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../online/onlinelobbyscreen.cpp" line="97"/>
+        <source>Cooperative</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../online/onlinelobbyscreen.cpp" line="99"/>
+        <source>Competitive</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

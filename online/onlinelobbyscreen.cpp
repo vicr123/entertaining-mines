@@ -25,7 +25,9 @@
 #include <discordintegration.h>
 #include <online/onlineapi.h>
 #include "onlinecontroller.h"
+#include "gamemodeselect.h"
 
+#include <tpopover.h>
 #include <QPainter>
 
 struct OnlineLobbyScreenPrivate {
@@ -90,12 +92,11 @@ OnlineLobbyScreen::OnlineLobbyScreen(QWidget *parent) :
                 ui->settingsWidget->setEnabled(false);
             }
         } else if (type == "gamemodeChange") {
-            QSignalBlocker b1(ui->gamemodeBox);
             QString gamemode = obj.value("gamemode").toString();
             if (gamemode == "cooperative") {
-                ui->gamemodeBox->setCurrentIndex(0);
+                ui->gamemodeButton->setText(tr("Cooperative"));
             } else if (gamemode == "competitive") {
-                ui->gamemodeBox->setCurrentIndex(1);
+                ui->gamemodeButton->setText(tr("Competitive"));
             }
         } else if (type == "boardParamsChange") {
             QSignalBlocker b1(ui->widthBox);
@@ -108,6 +109,14 @@ OnlineLobbyScreen::OnlineLobbyScreen(QWidget *parent) :
     });
 
     ui->settingsWidget->setFixedWidth(SC_DPI(300));
+
+    ui->widthBox->setRange(5, 50);
+    ui->heightBox->setRange(5, 50);
+    ui->minesBox->setRange(5, 200);
+
+    ui->widthBox->setValue(9);
+    ui->heightBox->setValue(9);
+    ui->minesBox->setValue(10);
 }
 
 OnlineLobbyScreen::~OnlineLobbyScreen()
@@ -121,20 +130,6 @@ void OnlineLobbyScreen::on_backButton_clicked()
     //Tell the server that we want to leave the room
     OnlineController::instance()->sendJsonO({
         {"type", "leaveRoom"}
-    });
-}
-
-void OnlineLobbyScreen::on_gamemodeBox_currentIndexChanged(int index)
-{
-    const char* gamemodes[] = {
-        "cooperative",
-        "competitive"
-    };
-
-    QString newGamemode = gamemodes[index];
-    OnlineController::instance()->sendJsonO({
-        {"type", "changeGamemode"},
-        {"gamemode", newGamemode}
     });
 }
 
@@ -234,4 +229,28 @@ void LobbyListDelegate::paint(QPainter*painter, const QStyleOptionViewItem&optio
         painter->setPen(supplementaryPen);
         painter->drawText(supplementaryTextRect, Qt::AlignLeft | Qt::AlignVCenter, index.data(Qt::UserRole).toString());
     }
+}
+
+void OnlineLobbyScreen::on_gamemodeButton_clicked()
+{
+
+    GamemodeSelect* options = new GamemodeSelect();
+    tPopover* popover = new tPopover(options);
+    popover->setPopoverSide(tPopover::Bottom);
+    popover->setPopoverWidth(options->sizeHint().height());
+    connect(options, &GamemodeSelect::rejected, popover, &tPopover::dismiss);
+    connect(options, &GamemodeSelect::accepted, this, [=](QString newGamemode) {
+        OnlineController::instance()->sendJsonO({
+            {"type", "changeGamemode"},
+            {"gamemode", newGamemode}
+        });
+
+        popover->dismiss();
+    });
+    connect(popover, &tPopover::dismissed, options, &GamemodeSelect::deleteLater);
+    connect(popover, &tPopover::dismissed, popover, &tPopover::deleteLater);
+    connect(popover, &tPopover::dismissed, this, [=] {
+        ui->gamemodeButton->setFocus();
+    });
+    popover->show(this);
 }

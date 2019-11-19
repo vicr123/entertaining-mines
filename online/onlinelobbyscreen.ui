@@ -98,7 +98,7 @@
      <item>
       <widget class="QLabel" name="label_2">
        <property name="text">
-        <string>Matchmaking...</string>
+        <string>Gathering Players...</string>
        </property>
        <property name="margin">
         <number>9</number>
@@ -149,39 +149,6 @@
        <item>
         <widget class="QWidget" name="settingsWidget" native="true">
          <layout class="QGridLayout" name="gridLayout">
-          <item row="2" column="1">
-           <widget class="QSpinBox" name="widthBox">
-            <property name="minimum">
-             <number>5</number>
-            </property>
-            <property name="maximum">
-             <number>50</number>
-            </property>
-            <property name="value">
-             <number>9</number>
-            </property>
-           </widget>
-          </item>
-          <item row="1" column="1">
-           <widget class="QComboBox" name="gamemodeBox">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <item>
-             <property name="text">
-              <string>Cooperative</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>Competitive</string>
-             </property>
-            </item>
-           </widget>
-          </item>
           <item row="5" column="0" colspan="2">
            <widget class="QPushButton" name="startButton">
             <property name="text">
@@ -243,26 +210,37 @@
             </property>
            </widget>
           </item>
+          <item row="1" column="1">
+           <widget class="QPushButton" name="gamemodeButton">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="text">
+             <string>PushButton</string>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="1">
+           <widget class="HorizontalSpinBox" name="widthBox" native="true">
+            <property name="focusPolicy">
+             <enum>Qt::StrongFocus</enum>
+            </property>
+           </widget>
+          </item>
           <item row="3" column="1">
-           <widget class="QSpinBox" name="heightBox">
-            <property name="minimum">
-             <number>5</number>
-            </property>
-            <property name="maximum">
-             <number>50</number>
-            </property>
-            <property name="value">
-             <number>9</number>
+           <widget class="HorizontalSpinBox" name="heightBox" native="true">
+            <property name="focusPolicy">
+             <enum>Qt::StrongFocus</enum>
             </property>
            </widget>
           </item>
           <item row="4" column="1">
-           <widget class="QSpinBox" name="minesBox">
-            <property name="minimum">
-             <number>5</number>
-            </property>
-            <property name="value">
-             <number>10</number>
+           <widget class="HorizontalSpinBox" name="minesBox" native="true">
+            <property name="focusPolicy">
+             <enum>Qt::StrongFocus</enum>
             </property>
            </widget>
           </item>
@@ -285,7 +263,21 @@
    <header location="global">gamepadhud.h</header>
    <container>1</container>
   </customwidget>
+  <customwidget>
+   <class>HorizontalSpinBox</class>
+   <extends>QWidget</extends>
+   <header location="global">horizontalspinbox.h</header>
+   <container>1</container>
+  </customwidget>
  </customwidgets>
+ <tabstops>
+  <tabstop>gamemodeButton</tabstop>
+  <tabstop>widthBox</tabstop>
+  <tabstop>heightBox</tabstop>
+  <tabstop>minesBox</tabstop>
+  <tabstop>startButton</tabstop>
+  <tabstop>backButton</tabstop>
+ </tabstops>
  <resources/>
  <connections/>
 </ui>
