@@ -57,7 +57,7 @@ struct GameScreenPrivate {
 };
 
 GameScreen::GameScreen(QWidget *parent) :
-    QWidget(parent),
+    AbstractGameScreen(parent),
     ui(new Ui::GameScreen)
 {
     ui->setupUi(this);

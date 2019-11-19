@@ -25,12 +25,13 @@
 #include <QSvgRenderer>
 #include <QMouseEvent>
 #include <tvariantanimation.h>
+#include <QJsonObject>
 
 #include <musicengine.h>
 #include <focuspointer.h>
 
 struct GameTilePrivate {
-    GameScreen* parent;
+    AbstractGameScreen* parent;
     GameTile::State state = GameTile::Idle;
 
     int x;
@@ -48,11 +49,13 @@ struct GameTilePrivate {
 
     bool middleClicked = false;
 
+    bool remote = false;
+
     tVariantAnimation* flashAnim;
     QSettings settings;
 };
 
-GameTile::GameTile(GameScreen* parent, int x, int y) : QWidget(parent)
+GameTile::GameTile(AbstractGameScreen* parent, int x, int y) : QWidget(parent)
 {
     d = new GameTilePrivate();
     d->parent = parent;
@@ -80,6 +83,22 @@ GameTile::GameTile(GameScreen* parent, int x, int y) : QWidget(parent)
 GameTile::~GameTile()
 {
     delete d;
+}
+
+void GameTile::setIsRemote(bool remote)
+{
+    d->remote = remote;
+}
+
+void GameTile::setRemoteParameters(QJsonObject parameters)
+{
+    d->state = static_cast<GameTile::State>(parameters.value("state").toInt());
+    if (parameters.contains("number")) {
+        d->numMinesAdjacent = parameters.value("number").toInt();
+        d->isMine = parameters.value("isMine").toBool();
+    }
+
+    this->update();
 }
 
 QSize GameTile::sizeHint() const
@@ -183,6 +202,11 @@ void GameTile::setHighlighted(bool highlighted)
 
 void GameTile::reveal()
 {
+    if (d->remote) {
+        emit revealTile();
+        return;
+    }
+
     if (d->parent->isGameOver()) return;
 
     if (d->state == Idle) {
@@ -212,6 +236,11 @@ void GameTile::reveal()
 
 void GameTile::toggleFlagStatus()
 {
+    if (d->remote) {
+        emit flagTile();
+        return;
+    }
+
     if (d->parent->isGameOver()) return;
 
     switch (d->state) {
@@ -241,6 +270,11 @@ void GameTile::toggleFlagStatus()
 
 void GameTile::sweep()
 {
+    if (d->remote) {
+        emit sweepTile();
+        return;
+    }
+
     if (d->parent->isGameOver()) return;
 
     if (this->state() == Revealed) {

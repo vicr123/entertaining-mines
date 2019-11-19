@@ -345,7 +345,7 @@
     </message>
     <message>
         <location filename="../online/mainonlinescreen.cpp" line="73"/>
-        <location filename="../online/mainonlinescreen.cpp" line="141"/>
+        <location filename="../online/mainonlinescreen.cpp" line="143"/>
         <source>Error</source>
         <translation type="unfinished"></translation>
     </message>
@@ -515,6 +515,68 @@
     </message>
 </context>
 <context>
+    <name>OnlineGameScreen</name>
+    <message>
+        <location filename="../online/onlinegamescreen.ui" line="14"/>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../online/onlinegamescreen.ui" line="99"/>
+        <source>TextLabel</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../online/onlinegamescreen.ui" line="106"/>
+        <source>005</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../online/onlinegamescreen.cpp" line="61"/>
+        <location filename="../online/onlinegamescreen.cpp" line="285"/>
+        <source>Reveal</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../online/onlinegamescreen.cpp" line="62"/>
+        <location filename="../online/onlinegamescreen.cpp" line="286"/>
+        <source>Flag</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../online/onlinegamescreen.cpp" line="209"/>
+        <source>Online Game</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message numerus="yes">
+        <location filename="../online/onlinegamescreen.cpp" line="210"/>
+        <source>Cooperative: %1×%2 board with %n mines</source>
+        <translation type="unfinished">
+            <numerusform></numerusform>
+            <numerusform></numerusform>
+            <numerusform></numerusform>
+            <numerusform></numerusform>
+            <numerusform></numerusform>
+            <numerusform></numerusform>
+        </translation>
+    </message>
+    <message>
+        <location filename="../online/onlinegamescreen.cpp" line="289"/>
+        <source>Mark</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../online/onlinegamescreen.cpp" line="292"/>
+        <source>Unflag</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../online/onlinegamescreen.cpp" line="295"/>
+        <source>Sweep</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>OnlineJoinScreen</name>
     <message>
         <location filename="../online/onlinejoinscreen.ui" line="14"/>
@@ -560,7 +622,42 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../online/onlinelobbyscreen.ui" line="134"/>
+        <location filename="../online/onlinelobbyscreen.ui" line="195"/>
+        <source>Game Mode</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../online/onlinelobbyscreen.ui" line="202"/>
+        <source>Board Height</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../online/onlinelobbyscreen.ui" line="222"/>
+        <source>Board Width</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../online/onlinelobbyscreen.ui" line="229"/>
+        <source>Board Mines</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../online/onlinelobbyscreen.ui" line="162"/>
+        <source>Cooperative</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../online/onlinelobbyscreen.ui" line="167"/>
+        <source>Competitive</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../online/onlinelobbyscreen.ui" line="188"/>
+        <source>GAME SETTINGS</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../online/onlinelobbyscreen.ui" line="175"/>
         <source>Start Game</source>
         <translation type="unfinished"></translation>
     </message>
@@ -575,12 +672,12 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../online/onlinelobbyscreen.cpp" line="58"/>
+        <location filename="../online/onlinelobbyscreen.cpp" line="59"/>
         <source>In Lobby</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../online/onlinelobbyscreen.cpp" line="59"/>
+        <location filename="../online/onlinelobbyscreen.cpp" line="60"/>
         <source>Waiting for players</source>
         <translation type="unfinished"></translation>
     </message>

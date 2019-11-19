@@ -17,54 +17,27 @@
  *   along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
  * *************************************/
-#ifndef GAMESCREEN_H
-#define GAMESCREEN_H
+#ifndef ONLINEGAMESCREEN_H
+#define ONLINEGAMESCREEN_H
 
 #include <QWidget>
+#include "screens/gamescreen.h"
 
 namespace Ui {
-    class GameScreen;
+    class OnlineGameScreen;
 }
 
+struct OnlineGameScreenPrivate;
 class GameTile;
-class AbstractGameScreen : public QWidget
-{
-    Q_OBJECT
-
-    public:
-        explicit AbstractGameScreen(QWidget* parent = nullptr) : QWidget(parent) {}
-
-        virtual bool hasGameStarted() = 0;
-        virtual bool isGameOver() = 0;
-        virtual QSize gameArea() = 0;
-
-        virtual GameTile* tileAt(QPoint location) = 0;
-
-    public slots:
-        virtual void distributeMines(QPoint clickLocation) = 0;
-        virtual void performGameOver() = 0;
-
-    signals:
-        void boardResized();
-
-    protected:
-        friend GameTile;
-        virtual QSize boardDimensions() = 0;
-
-        virtual void revealedTile() = 0;
-        virtual void flagChanged(bool didFlag) = 0;
-};
-
-struct GameScreenPrivate;
-class GameScreen : public AbstractGameScreen
+class OnlineGameScreen : public AbstractGameScreen
 {
         Q_OBJECT
 
     public:
-        explicit GameScreen(QWidget *parent = nullptr);
-        ~GameScreen();
+        explicit OnlineGameScreen(QWidget *parent = nullptr);
+        ~OnlineGameScreen();
 
-        bool hasGameStarted(); //Returns whether the user has clicked on the first tile yet
+        bool hasGameStarted();
         bool isGameOver();
 
         QSize gameArea();
@@ -72,19 +45,14 @@ class GameScreen : public AbstractGameScreen
         GameTile* tileAt(QPoint location);
         GameTile* currentTile();
 
-    public slots:
-        void startGame(int width, int height, int mines);
-        bool loadGame(QDataStream* stream);
-        void saveGame(QDataStream* stream);
-        void distributeMines(QPoint clickLocation);
-        void performGameOver();
-
     private slots:
         void currentTileChanged();
         void updateTimer();
 
-    signals:
-        void returnToMainMenu();
+    public slots:
+        void startGame(int width, int height, int mines);
+        void distributeMines(QPoint clickLocation);
+        void performGameOver();
 
     protected:
         friend GameTile;
@@ -93,12 +61,9 @@ class GameScreen : public AbstractGameScreen
         void revealedTile();
         void flagChanged(bool didFlag);
 
-    private slots:
-        void on_menuButton_clicked();
-
     private:
-        Ui::GameScreen *ui;
-        GameScreenPrivate* d;
+        Ui::OnlineGameScreen *ui;
+        OnlineGameScreenPrivate* d;
 
         QPoint indexToPoint(int index);
         int pointToIndex(QPoint point);
@@ -111,4 +76,4 @@ class GameScreen : public AbstractGameScreen
         void finishSetup();
 };
 
-#endif // GAMESCREEN_H
+#endif // ONLINEGAMESCREEN_H

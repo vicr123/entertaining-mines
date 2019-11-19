@@ -98,6 +98,8 @@ MainOnlineScreen::MainOnlineScreen(QWidget *parent) :
                 });
             } else if (state == "lobby") {
                 ui->stackedWidget->setCurrentWidget(ui->lobbyPage);
+            } else if (state == "game") {
+                ui->stackedWidget->setCurrentWidget(ui->gamePage);
             }
         } else if (type == "availableRoomsReply") {
             OnlineJoinScreen* joinScreen = new OnlineJoinScreen(object, this);

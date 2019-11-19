@@ -23,7 +23,7 @@
 #include <QWidget>
 
 struct GameTilePrivate;
-class GameScreen;
+class AbstractGameScreen;
 class GameTile : public QWidget
 {
         Q_OBJECT
@@ -35,8 +35,11 @@ class GameTile : public QWidget
             Marked = 3
         };
 
-        explicit GameTile(GameScreen *parent, int x, int y);
+        explicit GameTile(AbstractGameScreen *parent, int x, int y);
         ~GameTile();
+
+        void setIsRemote(bool remote);
+        void setRemoteParameters(QJsonObject parameters);
 
         QSize sizeHint() const;
 
@@ -56,6 +59,10 @@ class GameTile : public QWidget
 
     signals:
         void currentTileChanged();
+
+        void revealTile();
+        void sweepTile();
+        void flagTile();
 
     public slots:
         void reveal();

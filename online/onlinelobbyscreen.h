@@ -38,9 +38,21 @@ class OnlineLobbyScreen : public QWidget
     private slots:
         void on_backButton_clicked();
 
+        void on_gamemodeBox_currentIndexChanged(int index);
+
+        void on_startButton_clicked();
+
+        void on_widthBox_valueChanged(int arg1);
+
+        void on_heightBox_valueChanged(int arg1);
+
+        void on_minesBox_valueChanged(int arg1);
+
     private:
         Ui::OnlineLobbyScreen *ui;
         OnlineLobbyScreenPrivate* d;
+
+        void sendBoardParams();
 };
 
 #endif // ONLINELOBBYSCREEN_H

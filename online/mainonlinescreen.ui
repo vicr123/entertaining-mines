@@ -116,6 +116,7 @@
      </widget>
      <widget class="OnlineMenuScreen" name="menuPage"/>
      <widget class="OnlineLobbyScreen" name="lobbyPage"/>
+     <widget class="OnlineGameScreen" name="gamePage"/>
     </widget>
    </item>
   </layout>
@@ -137,6 +138,12 @@
    <class>OnlineLobbyScreen</class>
    <extends>QWidget</extends>
    <header>online/onlinelobbyscreen.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>OnlineGameScreen</class>
+   <extends>QWidget</extends>
+   <header>online/onlinegamescreen.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>

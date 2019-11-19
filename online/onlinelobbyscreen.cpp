@@ -47,7 +47,8 @@ OnlineLobbyScreen::OnlineLobbyScreen(QWidget *parent) :
 
     connect(OnlineController::instance(), &OnlineController::jsonMessage, this, [=](QJsonDocument doc) {
         QJsonObject obj = doc.object();
-        if (obj.value("type").toString() == "roomUpdate") {
+        QString type = obj.value("type").toString();
+        if (type == "roomUpdate") {
             ui->membersInRoom->clear();
             QJsonArray users = obj.value("users").toArray();
             for (QJsonValue val : users) {
@@ -62,10 +63,29 @@ OnlineLobbyScreen::OnlineLobbyScreen(QWidget *parent) :
                 {"partyMax", obj.value("maxUsers").toInt()},
                 {"joinSecret", QStringLiteral("%1:%2").arg(d->currentRoomId).arg(d->currentRoomPin)}
             });
-        } else if (obj.value("type").toString() == "lobbyChange") {
+        } else if (type == "lobbyChange") {
             d->currentRoomId = obj.value("lobbyId").toInt();
+        } else if (type == "hostUpdate") {
+            if (obj.value("isHost").toBool()) {
+                ui->settingsWidget->setEnabled(true);
+            } else {
+                ui->settingsWidget->setEnabled(false);
+            }
+        } else if (type == "gamemodeChange") {
+            QString gamemode = obj.value("gamemode").toString();
+            if (gamemode == "cooperative") {
+                ui->gamemodeBox->setCurrentIndex(0);
+            } else if (gamemode == "competitive") {
+                ui->gamemodeBox->setCurrentIndex(1);
+            }
+        } else if (type == "boardParamsChange") {
+            ui->widthBox->setValue(obj.value("width").toInt());
+            ui->heightBox->setValue(obj.value("height").toInt());
+            ui->minesBox->setValue(obj.value("mines").toInt());
         }
     });
+
+    ui->settingsWidget->setFixedWidth(SC_DPI(300));
 }
 
 OnlineLobbyScreen::~OnlineLobbyScreen()
@@ -79,5 +99,51 @@ void OnlineLobbyScreen::on_backButton_clicked()
     //Tell the server that we want to leave the room
     OnlineController::instance()->sendJsonO({
         {"type", "leaveRoom"}
+    });
+}
+
+void OnlineLobbyScreen::on_gamemodeBox_currentIndexChanged(int index)
+{
+    const char* gamemodes[] = {
+        "cooperative",
+        "competitive"
+    };
+
+    QString newGamemode = gamemodes[index];
+    OnlineController::instance()->sendJsonO({
+        {"type", "changeGamemode"},
+        {"gamemode", newGamemode}
+    });
+}
+
+void OnlineLobbyScreen::on_startButton_clicked()
+{
+    OnlineController::instance()->sendJsonO({
+        {"type", "startGame"}
+    });
+}
+
+void OnlineLobbyScreen::on_widthBox_valueChanged(int arg1)
+{
+    sendBoardParams();
+}
+
+void OnlineLobbyScreen::on_heightBox_valueChanged(int arg1)
+{
+    sendBoardParams();
+}
+
+void OnlineLobbyScreen::on_minesBox_valueChanged(int arg1)
+{
+    sendBoardParams();
+}
+
+void OnlineLobbyScreen::sendBoardParams()
+{
+    OnlineController::instance()->sendJsonO({
+        {"type", "changeBoardParams"},
+        {"width", ui->widthBox->value()},
+        {"height", ui->heightBox->value()},
+        {"mines", ui->minesBox->value()}
     });
 }
