@@ -72,6 +72,7 @@ OnlineLobbyScreen::OnlineLobbyScreen(QWidget *parent) :
                 ui->settingsWidget->setEnabled(false);
             }
         } else if (type == "gamemodeChange") {
+            QSignalBlocker b1(ui->gamemodeBox);
             QString gamemode = obj.value("gamemode").toString();
             if (gamemode == "cooperative") {
                 ui->gamemodeBox->setCurrentIndex(0);
@@ -79,6 +80,9 @@ OnlineLobbyScreen::OnlineLobbyScreen(QWidget *parent) :
                 ui->gamemodeBox->setCurrentIndex(1);
             }
         } else if (type == "boardParamsChange") {
+            QSignalBlocker b1(ui->widthBox);
+            QSignalBlocker b2(ui->heightBox);
+            QSignalBlocker b3(ui->minesBox);
             ui->widthBox->setValue(obj.value("width").toInt());
             ui->heightBox->setValue(obj.value("height").toInt());
             ui->minesBox->setValue(obj.value("mines").toInt());
