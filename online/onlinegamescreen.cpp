@@ -54,6 +54,8 @@ struct OnlineGameScreenPrivate {
     QString gamemode;
 
     QPushButton* focusPreventer;
+
+    QSettings settings;
 };
 
 OnlineGameScreen::OnlineGameScreen(QWidget *parent) :
@@ -221,6 +223,11 @@ void OnlineGameScreen::resizeEvent(QResizeEvent*event)
     resizeTiles();
 }
 
+void OnlineGameScreen::showEvent(QShowEvent*event)
+{
+    resizeTiles();
+}
+
 void OnlineGameScreen::resizeTiles()
 {
     int targetHeight = qMax(SC_DPI(50), static_cast<int>(this->height() * 0.05));
@@ -346,6 +353,8 @@ void OnlineGameScreen::startGame(int width, int height, int mines)
                 OnlineController::instance()->sendJsonO({
                     {"type", "boardAction"},
                     {"action", "flag"},
+                    {"tileState", tile->state()},
+                    {"doMarks", d->settings.value("behaviour/marks", true).toBool()},
                     {"tile", width * y + x}
                 });
             });

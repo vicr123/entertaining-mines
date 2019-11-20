@@ -71,6 +71,7 @@ PlayerCarousel::PlayerCarousel(QWidget *parent) :
                 QPointer<PlayerCarouselItem> item(new PlayerCarouselItem());
                 item->setPlayerName(user.value("username").toString());
                 item->setPlayerColor(QColor(user.value("colour").toVariant().toUInt()));
+                item->installEventFilter(this);
                 ui->carouselLayout->addWidget(item);
                 d->items.insert(session, item);
 
@@ -139,13 +140,15 @@ void PlayerCarousel::setCurrentPlayer(int session)
     d->currentTurn = session;
 
     if (d->items.contains(d->currentTurn)) {
-        d->items.value(d->currentTurn)->setIsCurrentTurn(true);
+        PlayerCarouselItem* item = d->items.value(d->currentTurn);
+        item->setIsCurrentTurn(true);
+        ui->scrollArea->ensureWidgetVisible(item, SC_DPI(100), 0);
     }
 }
 
 bool PlayerCarousel::eventFilter(QObject*watched, QEvent*event)
 {
-    if (watched == ui->carouselLayout && event->type() == QEvent::LayoutRequest) {
+    if ((watched == ui->carouselLayout && event->type() == QEvent::LayoutRequest) || event->type() == QEvent::Show) {
         if (!d->collapsed) this->setFixedHeight(this->preferredHeight());
     }
     return false;

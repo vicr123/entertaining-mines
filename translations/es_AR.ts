@@ -601,59 +601,59 @@
     </message>
     <message>
         <location filename="../online/onlinegamescreen.ui" line="286"/>
-        <location filename="../online/onlinegamescreen.cpp" line="125"/>
+        <location filename="../online/onlinegamescreen.cpp" line="127"/>
         <source>stepped on a mine and blew everything up!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../online/onlinegamescreen.cpp" line="66"/>
-        <location filename="../online/onlinegamescreen.cpp" line="255"/>
+        <location filename="../online/onlinegamescreen.cpp" line="68"/>
+        <location filename="../online/onlinegamescreen.cpp" line="262"/>
         <source>Reveal</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../online/onlinegamescreen.cpp" line="67"/>
-        <location filename="../online/onlinegamescreen.cpp" line="256"/>
+        <location filename="../online/onlinegamescreen.cpp" line="69"/>
+        <location filename="../online/onlinegamescreen.cpp" line="263"/>
         <source>Flag</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../online/onlinegamescreen.cpp" line="117"/>
+        <location filename="../online/onlinegamescreen.cpp" line="119"/>
         <source>Congratulations!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../online/onlinegamescreen.cpp" line="118"/>
+        <location filename="../online/onlinegamescreen.cpp" line="120"/>
         <source>You swept this board completely!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../online/onlinegamescreen.cpp" line="269"/>
+        <location filename="../online/onlinegamescreen.cpp" line="276"/>
         <source>Skip Turn</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../online/onlinegamescreen.cpp" line="295"/>
+        <location filename="../online/onlinegamescreen.cpp" line="302"/>
         <source>Cooperative</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../online/onlinegamescreen.cpp" line="296"/>
+        <location filename="../online/onlinegamescreen.cpp" line="303"/>
         <source>Turn-Based Cooperative</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../online/onlinegamescreen.cpp" line="297"/>
+        <location filename="../online/onlinegamescreen.cpp" line="304"/>
         <source>Competitive</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../online/onlinegamescreen.cpp" line="300"/>
+        <location filename="../online/onlinegamescreen.cpp" line="307"/>
         <source>Online Game</source>
         <translation type="unfinished"></translation>
     </message>
     <message numerus="yes">
-        <location filename="../online/onlinegamescreen.cpp" line="301"/>
+        <location filename="../online/onlinegamescreen.cpp" line="308"/>
         <source>%1: %2×%3 board with %n mines</source>
         <translation type="unfinished">
             <numerusform></numerusform>
@@ -665,17 +665,17 @@
         </translation>
     </message>
     <message>
-        <location filename="../online/onlinegamescreen.cpp" line="259"/>
+        <location filename="../online/onlinegamescreen.cpp" line="266"/>
         <source>Mark</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../online/onlinegamescreen.cpp" line="262"/>
+        <location filename="../online/onlinegamescreen.cpp" line="269"/>
         <source>Unflag</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../online/onlinegamescreen.cpp" line="265"/>
+        <location filename="../online/onlinegamescreen.cpp" line="272"/>
         <source>Sweep</source>
         <translation type="unfinished"></translation>
     </message>

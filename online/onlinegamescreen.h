@@ -69,6 +69,7 @@ class OnlineGameScreen : public AbstractGameScreen
         int pointToIndex(QPoint point);
 
         void resizeEvent(QResizeEvent* event);
+        void showEvent(QShowEvent* event);
 
         void resizeTiles();
         void updateHudText();
