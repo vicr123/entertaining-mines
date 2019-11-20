@@ -51,6 +51,8 @@ struct OnlineGameScreenPrivate {
     QDateTime startDateTime;
     QTimer* dateTimeTimer;
 
+    QString gamemode;
+
     QPushButton* focusPreventer;
 };
 
@@ -71,6 +73,15 @@ OnlineGameScreen::OnlineGameScreen(QWidget *parent) :
     ui->gamepadHud->setButtonAction(QGamepadManager::ButtonX, [=] {
         GameTile* currentTile = this->currentTile();
         if (currentTile != nullptr) currentTile->toggleFlagStatus();
+    });
+    ui->gamepadHud->setButtonAction(QGamepadManager::ButtonY, [=] {
+        if (d->gamemode == "tb-cooperative") {
+            //Skip turn
+            OnlineController::instance()->sendJsonO({
+                {"type", "boardAction"},
+                {"action", "skip"}
+            });
+        }
     });
 
     d->dateTimeTimer = new QTimer();
@@ -119,6 +130,7 @@ OnlineGameScreen::OnlineGameScreen(QWidget *parent) :
                 this->performGameOver();
             }
 
+            ui->playerCarousel->collapse();
             tVariantAnimation* anim = new tVariantAnimation();
             anim->setStartValue(0);
             anim->setEndValue(ui->gameOverBlameWidget->sizeHint().height());
@@ -135,6 +147,10 @@ OnlineGameScreen::OnlineGameScreen(QWidget *parent) :
         } else if (type == "roomUpdate") {
             d->userCount = obj.value("users").toArray().count();
             d->userMax = obj.value("maxUsers").toInt();
+        } else if (type == "gamemodeChange") {
+            d->gamemode = obj.value("gamemode").toString();
+
+            updateHudText();
         } else if (type == "minesRemainingChanged") {
             ui->minesRemainingLabel->setText(QString::number(obj.value("minesRemaining").toInt()));
         }
@@ -221,6 +237,44 @@ void OnlineGameScreen::resizeTiles()
     emit boardResized();
 }
 
+void OnlineGameScreen::updateHudText()
+{
+    GameTile* tile = this->currentTile();
+    if (tile != nullptr) {
+        //Update button text accordingly
+        ui->gamepadHud->removeText(QGamepadManager::ButtonA);
+        ui->gamepadHud->removeText(QGamepadManager::ButtonX);
+        ui->gamepadHud->removeText(QGamepadManager::ButtonY);
+
+        QString buttonA = "";
+        QString buttonX = "";
+        QString buttonY = "";
+
+        switch (tile->state()) {
+            case GameTile::Idle:
+                buttonA = tr("Reveal");
+                buttonX = tr("Flag");
+                break;
+            case GameTile::Flagged:
+                buttonX = tr("Mark");
+                break;
+            case GameTile::Marked:
+                buttonX = tr("Unflag");
+                break;
+            case GameTile::Revealed:
+                buttonA = tr("Sweep");
+        }
+
+        if (d->gamemode == "tb-cooperative") {
+            buttonY = tr("Skip Turn");
+        }
+
+        if (buttonA != "") ui->gamepadHud->setButtonText(QGamepadManager::ButtonA, buttonA);
+        if (buttonX != "") ui->gamepadHud->setButtonText(QGamepadManager::ButtonX, buttonX);
+        if (buttonY != "") ui->gamepadHud->setButtonText(QGamepadManager::ButtonY, buttonY);
+    }
+}
+
 void OnlineGameScreen::setup()
 {
     //Clear out the tiles
@@ -237,14 +291,22 @@ void OnlineGameScreen::finishSetup()
     d->tiles.first()->setFocus();
     this->setFocusProxy(d->tiles.first());
 
+    QString friendlyGamemode;
+    if (d->gamemode == "cooperative") friendlyGamemode = tr("Cooperative");
+    if (d->gamemode == "tb-cooperative") friendlyGamemode = tr("Turn-Based Cooperative");
+    if (d->gamemode == "competitive") friendlyGamemode = tr("Competitive");
+
     DiscordIntegration::instance()->setPresence({
         {"state", tr("Online Game")},
-        {"details", tr("Cooperative: %1×%2 board with %n mines", nullptr, d->mines).arg(d->width).arg(boardDimensions().height())},
+        {"details", tr("%1: %2×%3 board with %n mines", nullptr, d->mines).arg(friendlyGamemode).arg(d->width).arg(boardDimensions().height())},
         {"startTimestamp", QDateTime::currentDateTimeUtc()},
         {"partyId", QString::number(d->currentRoomId)},
         {"partySize", d->userCount},
         {"partyMax", d->userMax}
     });
+
+    ui->gameOverBlameWidget->setFixedHeight(0);
+    ui->playerCarousel->expand();
 
     updateTimer();
     resizeTiles();
@@ -308,39 +370,7 @@ void OnlineGameScreen::startGame(int width, int height, int mines)
 
 void OnlineGameScreen::currentTileChanged()
 {
-    GameTile* tile = this->currentTile();
-    if (tile != nullptr) {
-        //Update button text accordingly
-        QString buttonA = "";
-        QString buttonX = "";
-
-        switch (tile->state()) {
-            case GameTile::Idle:
-                buttonA = tr("Reveal");
-                buttonX = tr("Flag");
-                break;
-            case GameTile::Flagged:
-                buttonX = tr("Mark");
-                break;
-            case GameTile::Marked:
-                buttonX = tr("Unflag");
-                break;
-            case GameTile::Revealed:
-                buttonA = tr("Sweep");
-        }
-
-        if (buttonA == "") {
-            ui->gamepadHud->removeText(QGamepadManager::ButtonA);
-        } else {
-            ui->gamepadHud->setButtonText(QGamepadManager::ButtonA, buttonA);
-        }
-
-        if (buttonX == "") {
-            ui->gamepadHud->removeText(QGamepadManager::ButtonX);
-        } else {
-            ui->gamepadHud->setButtonText(QGamepadManager::ButtonX, buttonX);
-        }
-    }
+    updateHudText();
 }
 
 void OnlineGameScreen::updateTimer()

@@ -45,6 +45,8 @@ class GamemodeSelect : public QWidget
 
         void on_backButton_clicked();
 
+        void on_turnBasedCooperative_clicked();
+
     private:
         Ui::GamemodeSelect *ui;
 };

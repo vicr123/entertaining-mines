@@ -66,8 +66,12 @@ OnlineLobbyScreen::OnlineLobbyScreen(QWidget *parent) :
                     supplementaryText.append("Host");
                 }
 
+                QPixmap px(1, 1);
+                px.fill(QColor(user.value("colour").toVariant().toUInt()));
+
                 QListWidgetItem* item = new QListWidgetItem();
                 item->setText(user.value("username").toString());
+                item->setIcon(QIcon(px));
                 item->setData(Qt::UserRole, supplementaryText.join(" "));
                 ui->membersInRoom->addItem(item);
 
@@ -95,6 +99,8 @@ OnlineLobbyScreen::OnlineLobbyScreen(QWidget *parent) :
             QString gamemode = obj.value("gamemode").toString();
             if (gamemode == "cooperative") {
                 ui->gamemodeButton->setText(tr("Cooperative"));
+            } else if (gamemode == "tb-cooperative") {
+                ui->gamemodeButton->setText(tr("Turn-Based Cooperative"));
             } else if (gamemode == "competitive") {
                 ui->gamemodeButton->setText(tr("Competitive"));
             }
@@ -201,14 +207,13 @@ void LobbyListDelegate::paint(QPainter*painter, const QStyleOptionViewItem&optio
     textRect.setHeight(option.rect.height() - 2);
     supplementaryTextRect.setHeight(option.rect.height() - 2);
 
-    if (!option.icon.isNull()) {
+    QIcon icon = index.data(Qt::DecorationRole).value<QIcon>();
+    if (!icon.isNull()) {
         const QAbstractItemView* itemView = qobject_cast<const QAbstractItemView*>(option.widget);
 
         QSize iconSize = SC_DPI_T(QSize(16, 16), QSize);
-        if (itemView) iconSize = itemView->iconSize();
         iconRect.setSize(iconSize);
 
-        QIcon icon = option.icon;
         QImage iconImage = icon.pixmap(iconSize).toImage();
         iconRect.moveLeft(option.rect.left() + 2);
         iconRect.moveTop(option.rect.top() + (option.rect.height() / 2) - (iconRect.height() / 2));

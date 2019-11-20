@@ -71,6 +71,7 @@ class OnlineGameScreen : public AbstractGameScreen
         void resizeEvent(QResizeEvent* event);
 
         void resizeTiles();
+        void updateHudText();
 
         void setup();
         void finishSetup();

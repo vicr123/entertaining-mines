@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>706</width>
-    <height>295</height>
+    <width>817</width>
+    <height>322</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -102,7 +102,7 @@
        </property>
        <property name="maximumSize">
         <size>
-         <width>600</width>
+         <width>700</width>
          <height>16777215</height>
         </size>
        </property>
@@ -169,7 +169,21 @@
           </layout>
          </widget>
         </item>
-        <item row="2" column="1">
+        <item row="1" column="0" colspan="3">
+         <widget class="FocusBarrier" name="focusBarrier">
+          <property name="text">
+           <string notr="true">Barrier</string>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="0" colspan="3">
+         <widget class="FocusBarrier" name="focusBarrier_2">
+          <property name="text">
+           <string notr="true">Barrier</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="2">
          <widget class="QFrame" name="frame_2">
           <property name="frameShape">
            <enum>QFrame::StyledPanel</enum>
@@ -224,18 +238,59 @@
           </layout>
          </widget>
         </item>
-        <item row="3" column="0" colspan="2">
-         <widget class="FocusBarrier" name="focusBarrier_2">
-          <property name="text">
-           <string notr="true">Barrier</string>
+        <item row="2" column="1">
+         <widget class="QFrame" name="frame_3">
+          <property name="frameShape">
+           <enum>QFrame::StyledPanel</enum>
           </property>
-         </widget>
-        </item>
-        <item row="1" column="0" colspan="2">
-         <widget class="FocusBarrier" name="focusBarrier">
-          <property name="text">
-           <string notr="true">Barrier</string>
+          <property name="frameShadow">
+           <enum>QFrame::Raised</enum>
           </property>
+          <layout class="QVBoxLayout" name="verticalLayout_4">
+           <item>
+            <widget class="QLabel" name="label_7">
+             <property name="font">
+              <font>
+               <weight>75</weight>
+               <bold>true</bold>
+              </font>
+             </property>
+             <property name="text">
+              <string>TURN-BASED COOPERATIVE</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="label_8">
+             <property name="text">
+              <string>Cooperative mode too chaotic for you? Play Cooperative mode, but take turns at the controls!</string>
+             </property>
+             <property name="wordWrap">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <spacer name="verticalSpacer_3">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>40</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item>
+            <widget class="QPushButton" name="turnBasedCooperative">
+             <property name="text">
+              <string>Play Turn-based Cooperative</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
          </widget>
         </item>
        </layout>
@@ -264,6 +319,7 @@
  <tabstops>
   <tabstop>focusBarrier</tabstop>
   <tabstop>playCooperative</tabstop>
+  <tabstop>turnBasedCooperative</tabstop>
   <tabstop>playCompetitive</tabstop>
   <tabstop>focusBarrier_2</tabstop>
   <tabstop>backButton</tabstop>

@@ -32,6 +32,8 @@ SOURCES += \
     online/onlinejoinscreen.cpp \
     online/onlinelobbyscreen.cpp \
     online/onlinemenuscreen.cpp \
+    online/playercarousel.cpp \
+    online/playercarouselitem.cpp \
     screens/gamescreen.cpp \
     screens/mainscreen.cpp \
     screens/pausescreen.cpp \
@@ -51,6 +53,8 @@ HEADERS += \
     online/onlinejoinscreen.h \
     online/onlinelobbyscreen.h \
     online/onlinemenuscreen.h \
+    online/playercarousel.h \
+    online/playercarouselitem.h \
     screens/gamescreen.h \
     screens/mainscreen.h \
     screens/pausescreen.h \
@@ -68,6 +72,8 @@ FORMS += \
     online/onlinejoinscreen.ui \
     online/onlinelobbyscreen.ui \
     online/onlinemenuscreen.ui \
+    online/playercarousel.ui \
+    online/playercarouselitem.ui \
     screens/gamescreen.ui \
     screens/mainscreen.ui \
     screens/pausescreen.ui \

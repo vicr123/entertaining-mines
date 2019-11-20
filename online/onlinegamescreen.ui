@@ -310,6 +310,9 @@
         </widget>
        </item>
        <item>
+        <widget class="PlayerCarousel" name="playerCarousel" native="true"/>
+       </item>
+       <item>
         <widget class="GamepadHud" name="gamepadHud" native="true"/>
        </item>
       </layout>
@@ -324,6 +327,12 @@
    <class>GamepadHud</class>
    <extends>QWidget</extends>
    <header location="global">gamepadhud.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>PlayerCarousel</class>
+   <extends>QWidget</extends>
+   <header>online/playercarousel.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>

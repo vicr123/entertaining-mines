@@ -28,7 +28,7 @@ GamemodeSelect::GamemodeSelect(QWidget *parent) :
 {
     ui->setupUi(this);
 
-    ui->mainContainer->setFixedWidth(SC_DPI(600));
+    ui->mainContainer->setFixedWidth(SC_DPI(700));
 
     ui->gamepadHud->setButtonText(QGamepadManager::ButtonA, tr("Select"));
     ui->gamepadHud->setButtonText(QGamepadManager::ButtonB, tr("Back"));
@@ -62,4 +62,9 @@ void GamemodeSelect::on_playCompetitive_clicked()
 void GamemodeSelect::on_backButton_clicked()
 {
     emit rejected();
+}
+
+void GamemodeSelect::on_turnBasedCooperative_clicked()
+{
+    emit accepted("tb-cooperative");
 }

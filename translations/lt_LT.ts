@@ -322,18 +322,33 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../online/gamemodeselect.ui" line="190"/>
+        <location filename="../online/gamemodeselect.ui" line="204"/>
         <source>COMPETITIVE</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../online/gamemodeselect.ui" line="197"/>
+        <location filename="../online/gamemodeselect.ui" line="211"/>
         <source>Play against each other on the same board and try to claim the most flags on the board!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../online/gamemodeselect.ui" line="220"/>
+        <location filename="../online/gamemodeselect.ui" line="234"/>
         <source>Play Competitive</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../online/gamemodeselect.ui" line="259"/>
+        <source>TURN-BASED COOPERATIVE</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../online/gamemodeselect.ui" line="266"/>
+        <source>Cooperative mode too chaotic for you? Play Cooperative mode, but take turns at the controls!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../online/gamemodeselect.ui" line="289"/>
+        <source>Play Turn-based Cooperative</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -577,40 +592,60 @@
     </message>
     <message>
         <location filename="../online/onlinegamescreen.ui" line="286"/>
-        <location filename="../online/onlinegamescreen.cpp" line="114"/>
+        <location filename="../online/onlinegamescreen.cpp" line="125"/>
         <source>stepped on a mine and blew everything up!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../online/onlinegamescreen.cpp" line="64"/>
-        <location filename="../online/onlinegamescreen.cpp" line="319"/>
+        <location filename="../online/onlinegamescreen.cpp" line="66"/>
+        <location filename="../online/onlinegamescreen.cpp" line="255"/>
         <source>Reveal</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../online/onlinegamescreen.cpp" line="65"/>
-        <location filename="../online/onlinegamescreen.cpp" line="320"/>
+        <location filename="../online/onlinegamescreen.cpp" line="67"/>
+        <location filename="../online/onlinegamescreen.cpp" line="256"/>
         <source>Flag</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../online/onlinegamescreen.cpp" line="106"/>
+        <location filename="../online/onlinegamescreen.cpp" line="117"/>
         <source>Congratulations!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../online/onlinegamescreen.cpp" line="107"/>
+        <location filename="../online/onlinegamescreen.cpp" line="118"/>
         <source>You swept this board completely!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../online/onlinegamescreen.cpp" line="241"/>
+        <location filename="../online/onlinegamescreen.cpp" line="269"/>
+        <source>Skip Turn</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../online/onlinegamescreen.cpp" line="295"/>
+        <source>Cooperative</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../online/onlinegamescreen.cpp" line="296"/>
+        <source>Turn-Based Cooperative</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../online/onlinegamescreen.cpp" line="297"/>
+        <source>Competitive</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../online/onlinegamescreen.cpp" line="300"/>
         <source>Online Game</source>
         <translation type="unfinished"></translation>
     </message>
     <message numerus="yes">
-        <location filename="../online/onlinegamescreen.cpp" line="242"/>
-        <source>Cooperative: %1×%2 board with %n mines</source>
+        <location filename="../online/onlinegamescreen.cpp" line="301"/>
+        <source>%1: %2×%3 board with %n mines</source>
         <translation type="unfinished">
             <numerusform></numerusform>
             <numerusform></numerusform>
@@ -618,17 +653,17 @@
         </translation>
     </message>
     <message>
-        <location filename="../online/onlinegamescreen.cpp" line="323"/>
+        <location filename="../online/onlinegamescreen.cpp" line="259"/>
         <source>Mark</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../online/onlinegamescreen.cpp" line="326"/>
+        <location filename="../online/onlinegamescreen.cpp" line="262"/>
         <source>Unflag</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../online/onlinegamescreen.cpp" line="329"/>
+        <location filename="../online/onlinegamescreen.cpp" line="265"/>
         <source>Sweep</source>
         <translation type="unfinished"></translation>
     </message>
@@ -724,22 +759,27 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../online/onlinelobbyscreen.cpp" line="79"/>
+        <location filename="../online/onlinelobbyscreen.cpp" line="83"/>
         <source>In Lobby</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../online/onlinelobbyscreen.cpp" line="80"/>
+        <location filename="../online/onlinelobbyscreen.cpp" line="84"/>
         <source>Waiting for players</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../online/onlinelobbyscreen.cpp" line="97"/>
+        <location filename="../online/onlinelobbyscreen.cpp" line="101"/>
         <source>Cooperative</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../online/onlinelobbyscreen.cpp" line="99"/>
+        <location filename="../online/onlinelobbyscreen.cpp" line="103"/>
+        <source>Turn-Based Cooperative</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../online/onlinelobbyscreen.cpp" line="105"/>
         <source>Competitive</source>
         <translation type="unfinished"></translation>
     </message>
