@@ -44,7 +44,7 @@ class PlayerCarousel : public QWidget
         Ui::PlayerCarousel *ui;
         PlayerCarouselPrivate* d;
 
-        void setCurrentPlayer(int session);
+        void setCurrentPlayer(int session, qint64 timeout = 0);
         bool eventFilter(QObject* watched, QEvent* event);
 };
 

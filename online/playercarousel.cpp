@@ -32,6 +32,7 @@
 struct PlayerCarouselPrivate {
     QMap<int, PlayerCarouselItem*> items;
     int currentTurn = -1;
+    qint64 lastTimeout = 0;
 
     int thisSessionId = -1;
 
@@ -90,7 +91,7 @@ PlayerCarousel::PlayerCarousel(QWidget *parent) :
         } else if (type == "gamemodeChange") {
             d->gamemode = obj.value("gamemode").toString();
         } else if (type == "currentPlayerChange") {
-            this->setCurrentPlayer(obj.value("session").toInt());
+            this->setCurrentPlayer(obj.value("session").toInt(), obj.value("timeout").toVariant().toLongLong());
 
             if (d->currentTurn == d->thisSessionId) MusicEngine::playSoundEffect("yourturn");
         } else if (type == "endGame") {
@@ -131,17 +132,20 @@ void PlayerCarousel::expand()
     this->setFixedHeight(this->preferredHeight());
 }
 
-void PlayerCarousel::setCurrentPlayer(int session)
+void PlayerCarousel::setCurrentPlayer(int session, qint64 timeout)
 {
     if (d->items.contains(d->currentTurn)) {
-        d->items.value(d->currentTurn)->setIsCurrentTurn(false);
+        d->items.value(d->currentTurn)->clearCurrentTurn();
     }
 
     d->currentTurn = session;
 
+    if (timeout == 0) timeout = d->lastTimeout;
+    d->lastTimeout = timeout;
+
     if (d->items.contains(d->currentTurn)) {
         PlayerCarouselItem* item = d->items.value(d->currentTurn);
-        item->setIsCurrentTurn(true);
+        item->setCurrentTurn(timeout);
         ui->scrollArea->ensureWidgetVisible(item, SC_DPI(100), 0);
     }
 }

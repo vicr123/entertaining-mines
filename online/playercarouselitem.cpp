@@ -22,12 +22,14 @@
 
 #include <tvariantanimation.h>
 #include <QPainter>
+#include <QDateTime>
 
 struct PlayerCarouselItemPrivate {
     QString playerName;
     QColor playerCol;
 
     tVariantAnimation colHeight;
+    tVariantAnimation timeoutBar;
 };
 
 PlayerCarouselItem::PlayerCarouselItem(QWidget *parent) :
@@ -42,6 +44,11 @@ PlayerCarouselItem::PlayerCarouselItem(QWidget *parent) :
     d->colHeight.setDuration(250);
     d->colHeight.setEasingCurve(QEasingCurve::Linear);
     connect(&d->colHeight, &tVariantAnimation::valueChanged, this, [=] {
+        this->update();
+    });
+
+    d->timeoutBar.setEasingCurve(QEasingCurve::Linear);
+    connect(&d->timeoutBar, &tVariantAnimation::valueChanged, this, [=] {
         this->update();
     });
 }
@@ -68,14 +75,31 @@ void PlayerCarouselItem::setProfilePicture(QImage picture)
     ui->profilePictureIcon->setPixmap(QPixmap::fromImage(picture));
 }
 
-void PlayerCarouselItem::setIsCurrentTurn(bool isCurrentTurn)
+void PlayerCarouselItem::setCurrentTurn(qint64 timeout)
 {
-    if (isCurrentTurn) {
-        d->colHeight.setDirection(tVariantAnimation::Forward);
-    } else {
-        d->colHeight.setDirection(tVariantAnimation::Backward);
-    }
+    d->colHeight.setDirection(tVariantAnimation::Forward);
     d->colHeight.start();
+
+    qint64 currentTime = QDateTime::currentMSecsSinceEpoch();
+    if (timeout > currentTime) {
+        d->timeoutBar.setStartValue(1.0);
+        d->timeoutBar.setEndValue(0.0);
+        d->timeoutBar.setDuration(static_cast<int>(timeout - currentTime));
+        d->timeoutBar.setCurrentTime(0);
+        d->timeoutBar.start();
+    }
+}
+
+void PlayerCarouselItem::clearCurrentTurn()
+{
+    d->colHeight.setDirection(tVariantAnimation::Backward);
+    d->colHeight.start();
+
+    d->timeoutBar.setStartValue(d->timeoutBar.currentValue());
+    d->timeoutBar.setEndValue(0.0);
+    d->timeoutBar.setDuration(250);
+    d->timeoutBar.setCurrentTime(0);
+    d->timeoutBar.start();
 }
 
 void PlayerCarouselItem::resizeEvent(QResizeEvent*event)
@@ -87,7 +111,13 @@ void PlayerCarouselItem::paintEvent(QPaintEvent*event)
 {
     QPainter painter(this);
     painter.setPen(Qt::transparent);
-    painter.setBrush(d->playerCol);
 
-    painter.drawRect(0, this->height() - d->colHeight.currentValue().toInt(), this->width(), d->colHeight.currentValue().toInt());
+    int colHeight = d->colHeight.currentValue().toInt();
+    painter.setBrush(d->playerCol);
+    painter.drawRect(0, this->height() - colHeight, this->width(), colHeight);
+
+    //Draw the timeout bar
+    int timeoutBarHeight = static_cast<int>(colHeight * d->timeoutBar.currentValue().toDouble());
+    painter.setBrush(d->playerCol.darker(175));
+    painter.drawRect(0, this->height() - timeoutBarHeight, this->width(), timeoutBarHeight);
 }
