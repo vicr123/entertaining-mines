@@ -256,34 +256,34 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gamewindow.cpp" line="62"/>
+        <location filename="../gamewindow.cpp" line="63"/>
         <source>Corrupt File</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gamewindow.cpp" line="63"/>
+        <location filename="../gamewindow.cpp" line="64"/>
         <source>Sorry, that file is corrupt and needs to be deleted.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gamewindow.cpp" line="84"/>
-        <location filename="../gamewindow.cpp" line="96"/>
+        <location filename="../gamewindow.cpp" line="85"/>
+        <location filename="../gamewindow.cpp" line="98"/>
         <source>Idle</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gamewindow.cpp" line="85"/>
-        <location filename="../gamewindow.cpp" line="97"/>
+        <location filename="../gamewindow.cpp" line="86"/>
+        <location filename="../gamewindow.cpp" line="99"/>
         <source>Main Menu</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gamewindow.cpp" line="103"/>
+        <location filename="../gamewindow.cpp" line="105"/>
         <source>Join Game</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gamewindow.cpp" line="104"/>
+        <location filename="../gamewindow.cpp" line="106"/>
         <source>%1 wants to join your room</source>
         <translation type="unfinished"></translation>
     </message>
@@ -398,17 +398,17 @@
     </message>
     <message>
         <location filename="../online/mainonlinescreen.cpp" line="74"/>
-        <location filename="../online/mainonlinescreen.cpp" line="148"/>
+        <location filename="../online/mainonlinescreen.cpp" line="156"/>
         <source>Error</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../online/mainonlinescreen.cpp" line="101"/>
+        <location filename="../online/mainonlinescreen.cpp" line="103"/>
         <source>Idle</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../online/mainonlinescreen.cpp" line="102"/>
+        <location filename="../online/mainonlinescreen.cpp" line="104"/>
         <source>Main Menu</source>
         <translation type="unfinished"></translation>
     </message>
@@ -552,17 +552,17 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../screens/mainscreen.cpp" line="130"/>
+        <location filename="../screens/mainscreen.cpp" line="136"/>
         <source>How wide is the board?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../screens/mainscreen.cpp" line="134"/>
+        <location filename="../screens/mainscreen.cpp" line="140"/>
         <source>How high is the board?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../screens/mainscreen.cpp" line="137"/>
+        <location filename="../screens/mainscreen.cpp" line="143"/>
         <source>How many mines are on this board?</source>
         <translation type="unfinished"></translation>
     </message>
@@ -585,20 +585,27 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../online/onlinegamescreen.ui" line="286"/>
+        <location filename="../online/onlinegamescreen.ui" line="143"/>
+        <source>ms</source>
+        <comment>ms for milliseconds</comment>
+        <extracomment>ms for milliseconds</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../online/onlinegamescreen.ui" line="326"/>
         <location filename="../online/onlinegamescreen.cpp" line="127"/>
         <source>stepped on a mine and blew everything up!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../online/onlinegamescreen.cpp" line="68"/>
-        <location filename="../online/onlinegamescreen.cpp" line="262"/>
+        <location filename="../online/onlinegamescreen.cpp" line="274"/>
         <source>Reveal</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../online/onlinegamescreen.cpp" line="69"/>
-        <location filename="../online/onlinegamescreen.cpp" line="263"/>
+        <location filename="../online/onlinegamescreen.cpp" line="275"/>
         <source>Flag</source>
         <translation type="unfinished"></translation>
     </message>
@@ -613,49 +620,49 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../online/onlinegamescreen.cpp" line="276"/>
+        <location filename="../online/onlinegamescreen.cpp" line="288"/>
         <source>Skip Turn</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../online/onlinegamescreen.cpp" line="302"/>
+        <location filename="../online/onlinegamescreen.cpp" line="314"/>
         <source>Cooperative</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../online/onlinegamescreen.cpp" line="303"/>
+        <location filename="../online/onlinegamescreen.cpp" line="315"/>
         <source>Turn-Based Cooperative</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../online/onlinegamescreen.cpp" line="304"/>
+        <location filename="../online/onlinegamescreen.cpp" line="316"/>
         <source>Competitive</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../online/onlinegamescreen.cpp" line="307"/>
+        <location filename="../online/onlinegamescreen.cpp" line="319"/>
         <source>Online Game</source>
         <translation type="unfinished"></translation>
     </message>
     <message numerus="yes">
-        <location filename="../online/onlinegamescreen.cpp" line="308"/>
+        <location filename="../online/onlinegamescreen.cpp" line="320"/>
         <source>%1: %2×%3 board with %n mines</source>
         <translation type="unfinished">
             <numerusform></numerusform>
         </translation>
     </message>
     <message>
-        <location filename="../online/onlinegamescreen.cpp" line="266"/>
+        <location filename="../online/onlinegamescreen.cpp" line="278"/>
         <source>Mark</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../online/onlinegamescreen.cpp" line="269"/>
+        <location filename="../online/onlinegamescreen.cpp" line="281"/>
         <source>Unflag</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../online/onlinegamescreen.cpp" line="272"/>
+        <location filename="../online/onlinegamescreen.cpp" line="284"/>
         <source>Sweep</source>
         <translation type="unfinished"></translation>
     </message>
@@ -975,7 +982,7 @@
 <context>
     <name>main</name>
     <message>
-        <location filename="../main.cpp" line="45"/>
+        <location filename="../main.cpp" line="50"/>
         <source>Minesweeper</source>
         <translation type="unfinished"></translation>
     </message>

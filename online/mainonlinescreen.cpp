@@ -95,6 +95,8 @@ MainOnlineScreen::MainOnlineScreen(QWidget *parent) :
         if (type == "stateChange") {
             QString state = object.value("newState").toString();
             if (state == "idle") {
+                MusicEngine::pauseBackgroundMusic();
+
                 ui->stackedWidget->setCurrentWidget(ui->menuPage);
 
                 DiscordIntegration::instance()->setPresence({
@@ -102,8 +104,14 @@ MainOnlineScreen::MainOnlineScreen(QWidget *parent) :
                     {"details", tr("Main Menu")}
                 });
             } else if (state == "lobby") {
+                MusicEngine::setBackgroundMusic("airlounge");
+                MusicEngine::playBackgroundMusic();
+
                 ui->stackedWidget->setCurrentWidget(ui->lobbyPage);
             } else if (state == "game") {
+                MusicEngine::setBackgroundMusic("crypto");
+                MusicEngine::playBackgroundMusic();
+
                 ui->stackedWidget->setCurrentWidget(ui->gamePage);
             }
         } else if (type == "availableRoomsReply") {

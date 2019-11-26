@@ -63,6 +63,7 @@ void OnlineController::attachToWebSocket(OnlineWebSocket*ws)
     connect(ws, &OnlineWebSocket::jsonMessageReceived, this, [=](QJsonDocument doc) {
         qDebug() << doc.toJson();
     });
+    connect(ws, &OnlineWebSocket::pingChanged, this, &OnlineController::pingChanged);
 }
 
 void OnlineController::sendJson(QJsonDocument doc)
@@ -89,6 +90,11 @@ QString OnlineController::discordJoinSecret()
     QString discordJoinSecret = d->discordJoinSecret;
     d->discordJoinSecret = "";
     return discordJoinSecret;
+}
+
+int OnlineController::ping()
+{
+    return d->ws->ping();
 }
 
 void OnlineController::close()

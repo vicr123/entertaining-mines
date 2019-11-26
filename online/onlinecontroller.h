@@ -42,12 +42,15 @@ class OnlineController : public QObject
         void setDiscordJoinSecret(QString joinSecret);
         QString discordJoinSecret();
 
+        int ping();
+
     public slots:
         void close();
 
     signals:
         void disconnected(int closeCode);
         void jsonMessage(QJsonDocument doc);
+        void pingChanged();
 
     private:
         static OnlineControllerPrivate* d;

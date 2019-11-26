@@ -37,6 +37,9 @@ struct GameTilePrivate {
     int x;
     int y;
 
+    int curtain;
+    QPointF touchStart;
+
     int numMinesAdjacent = -1;
 
     bool mouseIsPressed = false;
@@ -73,6 +76,7 @@ GameTile::GameTile(AbstractGameScreen* parent, int x, int y) : QWidget(parent)
     });
 
     this->setMouseTracking(true);
+    this->setAttribute(Qt::WA_AcceptTouchEvents);
     this->setFocusPolicy(Qt::StrongFocus);
 
     connect(d->parent, &GameScreen::boardResized, this, [=] {
@@ -98,6 +102,7 @@ void GameTile::setRemoteParameters(QJsonObject parameters)
         d->isMine = parameters.value("isMine").toBool();
     }
 
+    d->curtain = 0;
     this->update();
 }
 
@@ -241,6 +246,7 @@ void GameTile::toggleFlagStatus()
         return;
     }
 
+    d->curtain = 0;
     if (d->parent->isGameOver()) return;
 
     switch (d->state) {
@@ -334,80 +340,22 @@ void GameTile::paintEvent(QPaintEvent*event)
 {
     QPainter painter(this);
 
-    QFont font = this->font();
-    font.setPixelSize(this->height() - SC_DPI(18));
-    painter.setFont(font);
+    //Draw the tile
+    paintState(&painter, d->state, QPoint(0, 0));
 
-    //Paint the background
-    switch (d->state) {
-        case Idle:
-            paintSvg(&painter, ":/tiles/background.svg");
-            break;
-        case Flagged:
-            paintSvg(&painter, ":/tiles/backgroundFlag.svg");
-            break;
-        case Marked:
-            paintSvg(&painter, ":/tiles/backgroundMark.svg");
-            break;
-        case Revealed:
-            if (this->isMine()) {
-                paintSvg(&painter, ":/tiles/backgroundMine.svg");
-            } else {
-                paintSvg(&painter, ":/tiles/backgroundRev.svg");
-            }
-    }
-
-    if (d->state != Revealed && ((!FocusPointer::isEnabled() && this->underMouse()) || (FocusPointer::isEnabled() && this->hasFocus()))) {
-        if (d->drawMouseIsPressed) {
-            painter.setBrush(QColor(0, 0, 0, 50));
+    //Draw the curtain
+    State curtainState = d->state;
+    if (d->state == Idle) curtainState = Flagged;
+    if (d->state == Flagged) {
+        if (d->settings.value("behaviour/marks", true).toBool()) {
+            curtainState = Marked;
         } else {
-            painter.setBrush(QColor(255, 255, 255, 50));
+            curtainState = Idle;
         }
-        painter.setPen(Qt::transparent);
-        painter.drawRect(0, 0, this->width(), this->height());
-    } else if (d->state == Idle && d->paintHighlighted) {
-        painter.setBrush(QColor(0, 100, 0, 50));
-        painter.setPen(Qt::transparent);
-        painter.drawRect(0, 0, this->width(), this->height());
     }
+    if (d->state == Marked) curtainState = Idle;
 
-    //Paint the tile
-    switch (d->state) {
-        case Idle:
-            if (d->paintIsGameOver && this->isMine()) {
-                //Draw the mine tile
-                paintSvg(&painter, ":/tiles/mine.svg");
-            }
-            //Do nothing
-            break;
-        case Flagged:
-            if (d->paintIsGameOver && !this->isMine()) {
-                //Draw the incorrect flag tile
-                paintSvg(&painter, ":/tiles/flagNot.svg");
-            } else {
-                //Draw a flag
-                paintSvg(&painter, ":/tiles/flag.svg");
-            }
-            break;
-        case Marked:
-            if (d->paintIsGameOver && this->isMine()) {
-                //Draw the mine tile
-                paintSvg(&painter, ":/tiles/mine.svg");
-            } else {
-                //Draw a mark
-                paintSvg(&painter, ":/tiles/mark.svg");
-            }
-            break;
-        case Revealed:
-            //Draw the number of tiles
-            if (this->isMine()) {
-                //Draw the mine tile
-                paintSvg(&painter, ":/tiles/mine.svg");
-            } else if (d->numMinesAdjacent != 0) {
-                painter.setPen(Qt::white);
-                painter.drawText(0, 0, this->height(), this->width(), Qt::AlignCenter, QString::number(d->numMinesAdjacent));
-            }
-    }
+    if (curtainState != d->state) paintState(&painter, curtainState, QPoint(0, d->curtain - this->height()));
 
     if (d->flashAnim->state() == tVariantAnimation::Running) {
         painter.setBrush(QColor(255, 255, 255, d->flashAnim->currentValue().toInt()));
@@ -532,6 +480,138 @@ void GameTile::mouseReleaseEvent(QMouseEvent*event)
         d->mouseIsPressed = false;
         d->middleClicked = false;
     }
+}
+
+bool GameTile::event(QEvent*event)
+{
+    if (event->type() == QEvent::TouchBegin) {
+        QTouchEvent* e = static_cast<QTouchEvent*>(event);
+        d->touchStart = e->touchPoints().first().pos();
+        e->accept();
+        return true;
+    } else if (event->type() == QEvent::TouchUpdate) {
+        QTouchEvent* e = static_cast<QTouchEvent*>(event);
+        d->curtain = static_cast<int>(e->touchPoints().first().pos().y() - d->touchStart.y());
+        if (d->curtain > this->height()) d->curtain = this->height();
+
+        this->update();
+        e->accept();
+        return true;
+    } else if (event->type() == QEvent::TouchEnd) {
+        QTouchEvent* e = static_cast<QTouchEvent*>(event);
+
+        QRect tapRect;
+        tapRect.setSize(SC_DPI_T(QSize(10, 10), QSize));
+        tapRect.moveCenter(d->touchStart.toPoint());
+        if (d->curtain > this->height() * 0.8) {
+            this->toggleFlagStatus();
+        } else if (tapRect.contains(e->touchPoints().first().pos().toPoint())) {
+            this->revealOrSweep();
+        } else {
+            tVariantAnimation* anim = new tVariantAnimation();
+            anim->setStartValue(d->curtain);
+            anim->setEndValue(0);
+            anim->setEasingCurve(QEasingCurve::OutCubic);
+            anim->setDuration(500);
+            connect(anim, &tVariantAnimation::valueChanged, this, [=](QVariant value) {
+                d->curtain = value.toInt();
+                this->update();
+            });
+            connect(anim, &tVariantAnimation::finished, anim, &tVariantAnimation::deleteLater);
+            anim->start();
+        }
+        e->accept();
+        return true;
+    } else if (event->type() == QEvent::TouchCancel) {
+        d->curtain = 0;
+        this->update();
+        event->accept();
+        return true;
+    }
+    return QWidget::event(event);
+}
+
+void GameTile::paintState(QPainter*painter, GameTile::State state, QPoint topLeft)
+{
+    painter->save();
+    painter->translate(topLeft);
+
+    QFont font = this->font();
+    font.setPixelSize(this->height() - SC_DPI(18));
+    painter->setFont(font);
+
+    //Paint the background
+    switch (state) {
+        case Idle:
+            paintSvg(painter, ":/tiles/background.svg");
+            break;
+        case Flagged:
+            paintSvg(painter, ":/tiles/backgroundFlag.svg");
+            break;
+        case Marked:
+            paintSvg(painter, ":/tiles/backgroundMark.svg");
+            break;
+        case Revealed:
+            if (this->isMine()) {
+                paintSvg(painter, ":/tiles/backgroundMine.svg");
+            } else {
+                paintSvg(painter, ":/tiles/backgroundRev.svg");
+            }
+    }
+
+    if (state != Revealed && ((!FocusPointer::isEnabled() && this->underMouse()) || (FocusPointer::isEnabled() && this->hasFocus()))) {
+        if (d->drawMouseIsPressed) {
+            painter->setBrush(QColor(0, 0, 0, 50));
+        } else {
+            painter->setBrush(QColor(255, 255, 255, 50));
+        }
+        painter->setPen(Qt::transparent);
+        painter->drawRect(0, 0, this->width(), this->height());
+    } else if (state == Idle && d->paintHighlighted) {
+        painter->setBrush(QColor(0, 100, 0, 50));
+        painter->setPen(Qt::transparent);
+        painter->drawRect(0, 0, this->width(), this->height());
+    }
+
+    //Paint the tile
+    switch (state) {
+        case Idle:
+            if (d->paintIsGameOver && this->isMine()) {
+                //Draw the mine tile
+                paintSvg(painter, ":/tiles/mine.svg");
+            }
+            //Do nothing
+            break;
+        case Flagged:
+            if (d->paintIsGameOver && !this->isMine()) {
+                //Draw the incorrect flag tile
+                paintSvg(painter, ":/tiles/flagNot.svg");
+            } else {
+                //Draw a flag
+                paintSvg(painter, ":/tiles/flag.svg");
+            }
+            break;
+        case Marked:
+            if (d->paintIsGameOver && this->isMine()) {
+                //Draw the mine tile
+                paintSvg(painter, ":/tiles/mine.svg");
+            } else {
+                //Draw a mark
+                paintSvg(painter, ":/tiles/mark.svg");
+            }
+            break;
+        case Revealed:
+            //Draw the number of tiles
+            if (this->isMine()) {
+                //Draw the mine tile
+                paintSvg(painter, ":/tiles/mine.svg");
+            } else if (d->numMinesAdjacent != 0) {
+                painter->setPen(Qt::white);
+                painter->drawText(0, 0, this->height(), this->width(), Qt::AlignCenter, QString::number(d->numMinesAdjacent));
+            }
+    }
+
+    painter->restore();
 }
 
 void GameTile::focusInEvent(QFocusEvent*event)

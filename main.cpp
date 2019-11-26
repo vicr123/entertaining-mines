@@ -29,6 +29,11 @@
 
 int main(int argc, char *argv[])
 {
+
+#ifdef Q_OS_ANDROID
+    qputenv("QT_SCALE_FACTOR", "1.5");
+#endif
+
     tApplication a(argc, argv);
 
     if (QDir("/usr/share/entertaining-mines").exists()) {

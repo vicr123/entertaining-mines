@@ -157,6 +157,9 @@ OnlineGameScreen::OnlineGameScreen(QWidget *parent) :
             ui->minesRemainingLabel->setText(QString::number(obj.value("minesRemaining").toInt()));
         }
     });
+    connect(OnlineController::instance(), &OnlineController::pingChanged, this, [=] {
+        ui->pingLabel->setText(QString::number(OnlineController::instance()->ping()));
+    });
 }
 
 OnlineGameScreen::~OnlineGameScreen()
@@ -237,9 +240,18 @@ void OnlineGameScreen::resizeTiles()
     fnt.setPixelSize(fontHeight);
     ui->hudWidget->setFont(fnt);
 
+    QFont msFont = ui->msLabel->font();
+    msFont.setPixelSize(SC_DPI(13));
+    ui->msLabel->setFont(msFont);
+
+//    QFont pingFont = ui->pingLabel->font();
+//    pingFont.setPixelSize(fontHeight - SC_DPI(13));
+//    ui->pingLabel->setFont(pingFont);
+
     QSize iconSize(fontHeight, fontHeight);
     ui->mineIcon->setPixmap(QIcon(":/tiles/mine.svg").pixmap(iconSize));
     ui->timeIcon->setPixmap(QIcon(":/tiles/clock.svg").pixmap(iconSize));
+    ui->pingIcon->setPixmap(QIcon::fromTheme("network-cellular").pixmap(iconSize));
 
     emit boardResized();
 }
@@ -317,9 +329,6 @@ void OnlineGameScreen::finishSetup()
 
     updateTimer();
     resizeTiles();
-
-    MusicEngine::setBackgroundMusic("crypto");
-    MusicEngine::playBackgroundMusic();
 }
 
 void OnlineGameScreen::startGame(int width, int height, int mines)

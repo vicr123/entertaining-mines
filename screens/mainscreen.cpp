@@ -72,7 +72,13 @@ MainScreen::~MainScreen()
 
 void MainScreen::resizeEvent(QResizeEvent*event)
 {
-    ui->leftSpacing->changeSize(this->width() * 0.4, 0, QSizePolicy::Fixed, QSizePolicy::Fixed);
+    int width;
+    if (this->width() < SC_DPI(600)) {
+        width = 0;
+    } else {
+        width = static_cast<int>(this->width() * 0.4);
+    }
+    ui->leftSpacing->changeSize(width, 0, QSizePolicy::Fixed, QSizePolicy::Fixed);
     this->layout()->invalidate();
 }
 

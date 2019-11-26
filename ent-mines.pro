@@ -83,7 +83,7 @@ RESOURCES += \
     resources.qrc
 
 
-unix:!macx {
+unix:!macx:!android {
     # Include the-libs build tools
     include(/usr/share/the-libs/pri/buildmaster.pri)
 
@@ -138,3 +138,35 @@ macx {
 
     QMAKE_POST_LINK += $$quote(cp $${PWD}/dmgicon.icns $${PWD}/app-dmg-background.png $${OUT_PWD})
 }
+
+android {
+    # Include the-libs build tools
+    include(/opt/thesuite-android/share/the-libs/pri/gentranslations.pri)
+
+    QT += multimedia
+    INCLUDEPATH += "/opt/thesuite-android/include/the-libs" "/opt/thesuite-android/include/libentertaining"
+    LIBS += -L/opt/thesuite-android/libs/armeabi-v7a -lthe-libs -lentertaining
+
+    ANDROID_EXTRA_LIBS = \
+        /opt/thesuite-android/libs/armeabi-v7a/libentertaining.so \
+        /opt/thesuite-android/libs/armeabi-v7a/libthe-libs.so \
+        /opt/thesuite-android/openssl/libcrypto_1_1.so \
+        /opt/thesuite-android/openssl/libssl_1_1.so
+
+    ANDROID_EXTRA_PLUGINS = \
+        /opt/thesuite-android/plugins/
+
+    ANDROID_PACKAGE_SOURCE_DIR = \
+        $$PWD/android
+}
+heart
+DISTFILES += \
+    android/AndroidManifest.xml \
+    android/build.gradle \
+    android/gradle/wrapper/gradle-wrapper.jar \
+    android/gradle/wrapper/gradle-wrapper.properties \
+    android/gradlew \
+    android/gradlew.bat \
+    android/res/values/libs.xml
+
+

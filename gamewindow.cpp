@@ -28,6 +28,7 @@
 #include <notificationengine.h>
 #include "online/logindialog.h"
 #include "online/onlinecontroller.h"
+#include "online/reportcontroller.h"
 
 struct GameWindowPrivate {
     QMap<quint64, DiscordJoinRequestCallback*> joinCallbacks;
@@ -87,6 +88,7 @@ GameWindow::GameWindow(QWidget *parent)
     });
 
     connect(ui->onlineScreen, &MainOnlineScreen::quitOnline, this, [=] {
+        ReportController::setAutomaticReportingEnabled(this, false);
         ui->stackedWidget->setCurrentWidget(ui->mainScreen);
     });
 
@@ -150,6 +152,8 @@ void GameWindow::playOnline()
     if (login->exec()) {
         ui->stackedWidget->setCurrentWidget(ui->onlineScreen);
         ui->onlineScreen->connectToOnline();
+
+        ReportController::setAutomaticReportingEnabled(this, true);
     } else {
         //Clear the join secret if there is one
         OnlineController::instance()->discordJoinSecret();
