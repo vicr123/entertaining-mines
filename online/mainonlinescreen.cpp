@@ -151,6 +151,14 @@ void MainOnlineScreen::connectToOnline()
             OnlineController::instance()->sendJsonO(joinMessage);
         }
     })->error([=](QString error) {
+        //Clear the Discord Join secret
+        OnlineController::instance()->discordJoinSecret();
+
+        if (error == "disconnect") {
+            emit quitOnline();
+            return;
+        }
+
         QuestionOverlay* question = new QuestionOverlay(this);
         question->setIcon(QMessageBox::Critical);
         question->setTitle(tr("Error"));
@@ -164,9 +172,6 @@ void MainOnlineScreen::connectToOnline()
 
         connect(question, &QuestionOverlay::accepted, this, handler);
         connect(question, &QuestionOverlay::rejected, this, handler);
-
-        //Clear the Discord Join secret
-        OnlineController::instance()->discordJoinSecret();
     });
 }
 

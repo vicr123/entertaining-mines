@@ -413,7 +413,7 @@
     </message>
     <message>
         <location filename="../online/mainonlinescreen.cpp" line="74"/>
-        <location filename="../online/mainonlinescreen.cpp" line="156"/>
+        <location filename="../online/mainonlinescreen.cpp" line="164"/>
         <source>Error</source>
         <translation type="unfinished"></translation>
     </message>
