@@ -52,6 +52,7 @@ struct GameTilePrivate {
 
     bool middleClicked = false;
 
+    QList<QColor> remoteColors;
     bool remote = false;
 
     tVariantAnimation* flashAnim;
@@ -103,6 +104,18 @@ void GameTile::setRemoteParameters(QJsonObject parameters)
     }
 
     d->curtain = 0;
+    this->update();
+}
+
+void GameTile::addRemoteColor(QColor color)
+{
+    d->remoteColors.append(color);
+    this->update();
+}
+
+void GameTile::resetRemoteColors()
+{
+    d->remoteColors.clear();
     this->update();
 }
 
@@ -362,6 +375,18 @@ void GameTile::paintEvent(QPaintEvent*event)
         painter.setPen(Qt::transparent);
         painter.drawRect(0, 0, this->width(), this->height());
     }
+
+    //Draw the highlight colours (if any)
+    if (!d->remoteColors.isEmpty()) {
+        QColor col = d->remoteColors.first();
+
+        painter.setBrush(col);
+        painter.setPen(Qt::transparent);
+        painter.drawRect(0, 0, this->width(), SC_DPI(5));
+        painter.drawRect(0, 0, SC_DPI(5), this->height());
+        painter.drawRect(0, this->height() - SC_DPI(5), this->width(), SC_DPI(5));
+        painter.drawRect(this->width() - SC_DPI(5), 0, SC_DPI(5), this->height());
+    }
 }
 
 void GameTile::paintSvg(QPainter*painter, QString filePath)
@@ -435,6 +460,10 @@ void GameTile::mousePressEvent(QMouseEvent*event)
 
 void GameTile::mouseMoveEvent(QMouseEvent*event)
 {
+    if (!this->hasFocus()) {
+        this->setFocus();
+        emit currentTileChanged();
+    }
     this->update();
 }
 

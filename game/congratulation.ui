@@ -88,6 +88,9 @@
          <property name="text">
           <string>TextLabel</string>
          </property>
+         <property name="wordWrap">
+          <bool>true</bool>
+         </property>
          <property name="margin">
           <number>9</number>
          </property>
@@ -189,15 +192,15 @@
  </widget>
  <customwidgets>
   <customwidget>
-   <class>FocusBarrier</class>
-   <extends>QPushButton</extends>
-   <header location="global">focusbarrier.h</header>
-  </customwidget>
-  <customwidget>
    <class>GamepadHud</class>
    <extends>QWidget</extends>
    <header location="global">gamepadhud.h</header>
    <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>FocusBarrier</class>
+   <extends>QPushButton</extends>
+   <header location="global">focusbarrier.h</header>
   </customwidget>
  </customwidgets>
  <resources>

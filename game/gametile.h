@@ -40,6 +40,8 @@ class GameTile : public QWidget
 
         void setIsRemote(bool remote);
         void setRemoteParameters(QJsonObject parameters);
+        void addRemoteColor(QColor color);
+        void resetRemoteColors();
 
         QSize sizeHint() const;
 

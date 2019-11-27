@@ -40,10 +40,12 @@
 
 struct OnlineGameScreenPrivate {
     QVector<GameTile*> tiles;
+    QList<QPointer<GameTile>> colorTiles;
 
     int currentRoomId = -1;
     int userCount = 0;
     int userMax = 0;
+    int thisSessionId = -1;
 
     int width = 0;
     int mines = 0;
@@ -54,6 +56,7 @@ struct OnlineGameScreenPrivate {
     QString gamemode;
 
     QPushButton* focusPreventer;
+    GameTile* oldCurrentTile = nullptr;
 
     QSettings settings;
 };
@@ -106,7 +109,9 @@ OnlineGameScreen::OnlineGameScreen(QWidget *parent) :
     connect(OnlineController::instance(), &OnlineController::jsonMessage, this, [=](QJsonDocument doc) {
         QJsonObject obj = doc.object();
         QString type = obj.value("type").toString();
-        if (type == "boardSetup") {
+        if (type == "sessionIdChanged") {
+            d->thisSessionId = obj.value("session").toInt();
+        } else if (type == "boardSetup") {
             startGame(obj.value("width").toInt(), obj.value("height").toInt(), obj.value("mines").toInt());
         } else if (type == "tileUpdate") {
             if (d->tiles.count() > obj.value("tile").toInt()) {
@@ -155,6 +160,22 @@ OnlineGameScreen::OnlineGameScreen(QWidget *parent) :
             updateHudText();
         } else if (type == "minesRemainingChanged") {
             ui->minesRemainingLabel->setText(QString::number(obj.value("minesRemaining").toInt()));
+        } else if (type == "currentTilesChanged") {
+            for (QPointer<GameTile> t : d->colorTiles) {
+                if (!t.isNull()) t->resetRemoteColors();
+            }
+            d->colorTiles.clear();
+
+            QJsonArray tiles = obj.value("tiles").toArray();
+            for (QJsonValue descriptorValue : tiles) {
+                QJsonObject descriptor = descriptorValue.toObject();
+
+                if (descriptor.value("user").toInt() != d->thisSessionId) {
+                    GameTile* t = d->tiles.at(descriptor.value("tile").toInt());
+                    t->addRemoteColor(QColor(descriptor.value("colour").toVariant().toUInt()));
+                    d->colorTiles.append(t);
+                }
+            }
         }
     });
     connect(OnlineController::instance(), &OnlineController::pingChanged, this, [=] {
@@ -388,6 +409,15 @@ void OnlineGameScreen::startGame(int width, int height, int mines)
 
 void OnlineGameScreen::currentTileChanged()
 {
+    if (d->oldCurrentTile != this->currentTile()) {
+        d->oldCurrentTile = this->currentTile();
+
+        //Tell the server that the current tile has changed
+        OnlineController::instance()->sendJsonO({
+            {"type", "currentTileChanged"},
+            {"tile", d->tiles.indexOf(d->oldCurrentTile)}
+        });
+    }
     updateHudText();
 }
 
