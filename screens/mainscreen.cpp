@@ -140,7 +140,7 @@ void MainScreen::on_startCustom_clicked()
     height = TextInputOverlay::getInt(this, tr("How high is the board?"), &canceled, height, 5, 99, QLineEdit::Normal);
     if (canceled) goto askWidth;
 
-    mines = TextInputOverlay::getInt(this, tr("How many mines are on this board?"), &canceled, mines, 1, static_cast<int>(width * height * 0.9) - 1, QLineEdit::Normal);
+    mines = TextInputOverlay::getInt(this, tr("How many mines are on this board?"), &canceled, mines, 1, static_cast<int>(width * height * 0.9) - 9, QLineEdit::Normal);
     if (canceled) goto askHeight;
 
     emit startGame(width, height, mines);

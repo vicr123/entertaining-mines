@@ -599,13 +599,13 @@
     </message>
     <message>
         <location filename="../online/onlinegamescreen.cpp" line="71"/>
-        <location filename="../online/onlinegamescreen.cpp" line="295"/>
+        <location filename="../online/onlinegamescreen.cpp" line="291"/>
         <source>Reveal</source>
         <translation type="unfinished">Mở</translation>
     </message>
     <message>
         <location filename="../online/onlinegamescreen.cpp" line="72"/>
-        <location filename="../online/onlinegamescreen.cpp" line="296"/>
+        <location filename="../online/onlinegamescreen.cpp" line="292"/>
         <source>Flag</source>
         <translation type="unfinished">Đặt cờ</translation>
     </message>
@@ -620,51 +620,51 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../online/onlinegamescreen.cpp" line="309"/>
-        <source>Skip Turn</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../online/onlinegamescreen.cpp" line="335"/>
-        <source>Cooperative</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../online/onlinegamescreen.cpp" line="336"/>
-        <source>Turn-Based Cooperative</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../online/onlinegamescreen.cpp" line="337"/>
-        <source>Competitive</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../online/onlinegamescreen.cpp" line="340"/>
-        <source>Online Game</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message numerus="yes">
-        <location filename="../online/onlinegamescreen.cpp" line="341"/>
-        <source>%1: %2×%3 board with %n mines</source>
-        <translation type="unfinished">
-            <numerusform></numerusform>
-        </translation>
-    </message>
-    <message>
-        <location filename="../online/onlinegamescreen.cpp" line="299"/>
+        <location filename="../online/onlinegamescreen.cpp" line="295"/>
         <source>Mark</source>
         <translation type="unfinished">Đánh dấu</translation>
     </message>
     <message>
-        <location filename="../online/onlinegamescreen.cpp" line="302"/>
+        <location filename="../online/onlinegamescreen.cpp" line="298"/>
         <source>Unflag</source>
         <translation type="unfinished">Gỡ cờ</translation>
     </message>
     <message>
-        <location filename="../online/onlinegamescreen.cpp" line="305"/>
+        <location filename="../online/onlinegamescreen.cpp" line="301"/>
         <source>Sweep</source>
         <translation type="unfinished">Quét</translation>
+    </message>
+    <message>
+        <location filename="../online/onlinegamescreen.cpp" line="305"/>
+        <source>Skip Turn</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../online/onlinegamescreen.cpp" line="345"/>
+        <source>Cooperative</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../online/onlinegamescreen.cpp" line="346"/>
+        <source>Turn-Based Cooperative</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../online/onlinegamescreen.cpp" line="347"/>
+        <source>Competitive</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../online/onlinegamescreen.cpp" line="350"/>
+        <source>Online Game</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message numerus="yes">
+        <location filename="../online/onlinegamescreen.cpp" line="351"/>
+        <source>%1: %2×%3 board with %n mines</source>
+        <translation type="unfinished">
+            <numerusform></numerusform>
+        </translation>
     </message>
 </context>
 <context>

@@ -282,10 +282,6 @@ void OnlineGameScreen::updateHudText()
     GameTile* tile = this->currentTile();
     if (tile != nullptr) {
         //Update button text accordingly
-        ui->gamepadHud->removeText(QGamepadManager::ButtonA);
-        ui->gamepadHud->removeText(QGamepadManager::ButtonX);
-        ui->gamepadHud->removeText(QGamepadManager::ButtonY);
-
         QString buttonA = "";
         QString buttonX = "";
         QString buttonY = "";
@@ -309,9 +305,23 @@ void OnlineGameScreen::updateHudText()
             buttonY = tr("Skip Turn");
         }
 
-        if (buttonA != "") ui->gamepadHud->setButtonText(QGamepadManager::ButtonA, buttonA);
-        if (buttonX != "") ui->gamepadHud->setButtonText(QGamepadManager::ButtonX, buttonX);
-        if (buttonY != "") ui->gamepadHud->setButtonText(QGamepadManager::ButtonY, buttonY);
+        if (buttonA == "") {
+            ui->gamepadHud->removeText(QGamepadManager::ButtonA);
+        } else {
+            ui->gamepadHud->setButtonText(QGamepadManager::ButtonA, buttonA);
+        }
+
+        if (buttonX == "") {
+            ui->gamepadHud->removeText(QGamepadManager::ButtonX);
+        } else {
+            ui->gamepadHud->setButtonText(QGamepadManager::ButtonX, buttonX);
+        }
+
+        if (buttonY == "") {
+            ui->gamepadHud->removeText(QGamepadManager::ButtonY);
+        } else {
+            ui->gamepadHud->setButtonText(QGamepadManager::ButtonY, buttonY);
+        }
     }
 }
 

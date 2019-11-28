@@ -397,6 +397,10 @@ void GameTile::paintSvg(QPainter*painter, QString filePath)
 
 void GameTile::enterEvent(QEvent*event)
 {
+    if (!this->hasFocus()) {
+        this->setFocus();
+        emit currentTileChanged();
+    }
     this->update();
 }
 
@@ -460,10 +464,6 @@ void GameTile::mousePressEvent(QMouseEvent*event)
 
 void GameTile::mouseMoveEvent(QMouseEvent*event)
 {
-    if (!this->hasFocus()) {
-        this->setFocus();
-        emit currentTileChanged();
-    }
     this->update();
 }
 
