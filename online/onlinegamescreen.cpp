@@ -27,7 +27,7 @@
 #include "game/gameover.h"
 #include "game/congratulation.h"
 #include <pauseoverlay.h>
-//#include "pausescreen.h"
+#include "cannedmessagepopover.h"
 #include <musicengine.h>
 #include <QUrl>
 #include <QShortcut>
@@ -37,10 +37,14 @@
 #include <discordintegration.h>
 #include "onlinecontroller.h"
 #include <online/onlineapi.h>
+#include <tpopover.h>
+#include "cannedmessagebox.h"
 
 struct OnlineGameScreenPrivate {
     QVector<GameTile*> tiles;
     QList<QPointer<GameTile>> colorTiles;
+
+    QStringList cannedMessages;
 
     int currentRoomId = -1;
     int userCount = 0;
@@ -68,12 +72,30 @@ OnlineGameScreen::OnlineGameScreen(QWidget *parent) :
     ui->setupUi(this);
     d = new OnlineGameScreenPrivate();
 
+    d->cannedMessages = QStringList({
+        tr("Hello!"),
+        tr("Good luck!"),
+        tr("Booyah!"),
+        tr("Wait!"),
+        tr("Uh-oh!"),
+        tr("It's a 50-50!"),
+        tr("I can solve this!"),
+        tr("We need to guess!"),
+        tr("I'm on my phone!"),
+        tr("I'm using a keyboard!"),
+        tr("I'm using a mouse!"),
+        tr("I'm using tilt controls!")
+    });
+
     ui->gamepadHud->setButtonText(QGamepadManager::ButtonA, tr("Reveal"));
     ui->gamepadHud->setButtonText(QGamepadManager::ButtonX, tr("Flag"));
 
     ui->gamepadHud->setButtonAction(QGamepadManager::ButtonA, [=] {
         GameTile* currentTile = this->currentTile();
         if (currentTile != nullptr) currentTile->revealOrSweep();
+    });
+    ui->gamepadHud->setButtonAction(QGamepadManager::ButtonB, [=] {
+        this->sendCannedMessage();
     });
     ui->gamepadHud->setButtonAction(QGamepadManager::ButtonX, [=] {
         GameTile* currentTile = this->currentTile();
@@ -176,10 +198,17 @@ OnlineGameScreen::OnlineGameScreen(QWidget *parent) :
                     d->colorTiles.append(t);
                 }
             }
+        } else if (type == "cannedMessage") {
+            new CannedMessageBox(d->cannedMessages.at(obj.value("message").toInt()), ui->playerCarousel->carouselItemForPlayer(obj.value("user").toInt()), this);
         }
     });
     connect(OnlineController::instance(), &OnlineController::pingChanged, this, [=] {
         ui->pingLabel->setText(QString::number(OnlineController::instance()->ping()));
+    });
+
+    QShortcut* cannedShortcut = new QShortcut(QKeySequence(Qt::Key_T), this);
+    connect(cannedShortcut, &QShortcut::activated, this, [=] {
+        this->sendCannedMessage();
     });
 }
 
@@ -311,6 +340,8 @@ void OnlineGameScreen::updateHudText()
             ui->gamepadHud->setButtonText(QGamepadManager::ButtonA, buttonA);
         }
 
+        ui->gamepadHud->setButtonText(QGamepadManager::ButtonB, tr("Message"));
+
         if (buttonX == "") {
             ui->gamepadHud->removeText(QGamepadManager::ButtonX);
         } else {
@@ -360,6 +391,30 @@ void OnlineGameScreen::finishSetup()
 
     updateTimer();
     resizeTiles();
+}
+
+void OnlineGameScreen::sendCannedMessage()
+{
+    CannedMessagePopover* options = new CannedMessagePopover(d->cannedMessages);
+    tPopover* popover = new tPopover(options);
+    popover->setPopoverSide(tPopover::Bottom);
+    popover->setPopoverWidth(options->sizeHint().height());
+    connect(options, &CannedMessagePopover::done, popover, &tPopover::dismiss);
+    connect(options, &CannedMessagePopover::sendCannedMessage, this, [=](int message) {
+        popover->dismiss();
+
+        //Send message
+        OnlineController::instance()->sendJsonO({
+            {"type", "sendMessage"},
+            {"message", message}
+        });
+    });
+    connect(popover, &tPopover::dismissed, options, &CannedMessagePopover::deleteLater);
+    connect(popover, &tPopover::dismissed, popover, &tPopover::deleteLater);
+    connect(popover, &tPopover::dismissed, this, [=] {
+        d->tiles.first()->setFocus();
+    });
+    popover->show(this);
 }
 
 void OnlineGameScreen::startGame(int width, int height, int mines)

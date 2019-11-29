@@ -36,6 +36,8 @@ class PlayerCarousel : public QWidget
         ~PlayerCarousel();
 
         int preferredHeight();
+        QWidget* carouselItemForPlayer(int sessionId);
+        int playerXLocation(int sessionId, QWidget* mapTo);
 
         void collapse();
         void expand();

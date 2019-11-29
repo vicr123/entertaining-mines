@@ -25,6 +25,8 @@ SOURCES += \
     information/helpscreen.cpp \
     main.cpp \
     gamewindow.cpp \
+    online/cannedmessagebox.cpp \
+    online/cannedmessagepopover.cpp \
     online/gamemodeselect.cpp \
     online/mainonlinescreen.cpp \
     online/onlinecontroller.cpp \
@@ -46,6 +48,8 @@ HEADERS += \
     gamewindow.h \
     information/creditsscreen.h \
     information/helpscreen.h \
+    online/cannedmessagebox.h \
+    online/cannedmessagepopover.h \
     online/gamemodeselect.h \
     online/mainonlinescreen.h \
     online/onlinecontroller.h \
@@ -66,6 +70,8 @@ FORMS += \
     gamewindow.ui \
     information/creditsscreen.ui \
     information/helpscreen.ui \
+    online/cannedmessagebox.ui \
+    online/cannedmessagepopover.ui \
     online/gamemodeselect.ui \
     online/mainonlinescreen.ui \
     online/onlinegamescreen.ui \

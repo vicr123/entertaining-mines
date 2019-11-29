@@ -72,6 +72,7 @@ PlayerCarousel::PlayerCarousel(QWidget *parent) :
                 QPointer<PlayerCarouselItem> item(new PlayerCarouselItem());
                 item->setPlayerName(user.value("username").toString());
                 item->setPlayerColor(QColor(user.value("colour").toVariant().toUInt()));
+                item->setSessionId(session);
                 item->installEventFilter(this);
                 ui->carouselLayout->addWidget(item);
                 d->items.insert(session, item);
@@ -109,6 +110,21 @@ PlayerCarousel::~PlayerCarousel()
 int PlayerCarousel::preferredHeight()
 {
     return ui->carouselWidget->sizeHint().height();
+}
+
+QWidget*PlayerCarousel::carouselItemForPlayer(int sessionId)
+{
+    return d->items.value(sessionId, nullptr);
+}
+
+int PlayerCarousel::playerXLocation(int sessionId, QWidget*mapTo)
+{
+    if (d->items.contains(sessionId)) {
+        PlayerCarouselItem* item = d->items.value(sessionId);
+        QPoint mapped = item->mapTo(mapTo, QPoint(item->width() / 2, 0));
+        return mapped.x();
+    }
+    return 0;
 }
 
 void PlayerCarousel::collapse()

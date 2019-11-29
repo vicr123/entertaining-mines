@@ -39,7 +39,10 @@ class PlayerCarouselItem : public QWidget
         void setPlayerColor(QColor col);
         void setProfilePicture(QImage picture);
         void setCurrentTurn(qint64 timeout);
+        void setSessionId(int sessionId);
         void clearCurrentTurn();
+
+        int sessionId();
 
     private:
         Ui::PlayerCarouselItem *ui;

@@ -30,6 +30,8 @@ struct PlayerCarouselItemPrivate {
 
     tVariantAnimation colHeight;
     tVariantAnimation timeoutBar;
+
+    int sessionId;
 };
 
 PlayerCarouselItem::PlayerCarouselItem(QWidget *parent) :
@@ -90,6 +92,11 @@ void PlayerCarouselItem::setCurrentTurn(qint64 timeout)
     }
 }
 
+void PlayerCarouselItem::setSessionId(int sessionId)
+{
+    d->sessionId = sessionId;
+}
+
 void PlayerCarouselItem::clearCurrentTurn()
 {
     d->colHeight.setDirection(tVariantAnimation::Backward);
@@ -100,6 +107,11 @@ void PlayerCarouselItem::clearCurrentTurn()
     d->timeoutBar.setDuration(250);
     d->timeoutBar.setCurrentTime(0);
     d->timeoutBar.start();
+}
+
+int PlayerCarouselItem::sessionId()
+{
+    return d->sessionId;
 }
 
 void PlayerCarouselItem::resizeEvent(QResizeEvent*event)
