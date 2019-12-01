@@ -89,6 +89,10 @@ OnlineGameScreen::OnlineGameScreen(QWidget *parent) :
 
     ui->gamepadHud->setButtonText(QGamepadManager::ButtonA, tr("Reveal"));
     ui->gamepadHud->setButtonText(QGamepadManager::ButtonX, tr("Flag"));
+    ui->gamepadHud->bindKey(Qt::Key_Return, QGamepadManager::ButtonA);
+    ui->gamepadHud->bindKey(Qt::Key_Space, QGamepadManager::ButtonX);
+    ui->gamepadHud->bindKey(Qt::Key_T, QGamepadManager::ButtonB);
+    ui->gamepadHud->bindKey(Qt::Key_Tab, QGamepadManager::ButtonY);
 
     ui->gamepadHud->setButtonAction(QGamepadManager::ButtonA, [=] {
         GameTile* currentTile = this->currentTile();
@@ -102,13 +106,7 @@ OnlineGameScreen::OnlineGameScreen(QWidget *parent) :
         if (currentTile != nullptr) currentTile->toggleFlagStatus();
     });
     ui->gamepadHud->setButtonAction(QGamepadManager::ButtonY, [=] {
-        if (d->gamemode == "tb-cooperative") {
-            //Skip turn
-            OnlineController::instance()->sendJsonO({
-                {"type", "boardAction"},
-                {"action", "skip"}
-            });
-        }
+        this->skipTurn();
     });
 
     d->dateTimeTimer = new QTimer();
@@ -206,6 +204,10 @@ OnlineGameScreen::OnlineGameScreen(QWidget *parent) :
         ui->pingLabel->setText(QString::number(OnlineController::instance()->ping()));
     });
 
+    QShortcut* skipShortcut = new QShortcut(QKeySequence(Qt::Key_Tab), this);
+    connect(skipShortcut, &QShortcut::activated, this, [=] {
+        this->skipTurn();
+    });
     QShortcut* cannedShortcut = new QShortcut(QKeySequence(Qt::Key_T), this);
     connect(cannedShortcut, &QShortcut::activated, this, [=] {
         this->sendCannedMessage();
@@ -391,6 +393,17 @@ void OnlineGameScreen::finishSetup()
 
     updateTimer();
     resizeTiles();
+}
+
+void OnlineGameScreen::skipTurn()
+{
+    if (d->gamemode == "tb-cooperative") {
+        //Skip turn
+        OnlineController::instance()->sendJsonO({
+            {"type", "boardAction"},
+            {"action", "skip"}
+        });
+    }
 }
 
 void OnlineGameScreen::sendCannedMessage()

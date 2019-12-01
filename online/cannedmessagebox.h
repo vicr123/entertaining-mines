@@ -35,6 +35,7 @@ class CannedMessageBox : public QWidget
         explicit CannedMessageBox(QString cannedMessage, QWidget* carouselItem, QWidget *parent);
         ~CannedMessageBox();
 
+        void show();
         void hide();
 
     private:
@@ -44,6 +45,7 @@ class CannedMessageBox : public QWidget
         void paintEvent(QPaintEvent* event);
         bool eventFilter(QObject* watched, QEvent* event);
 
+        QRect endGeometry();
         void updatePosition();
 };
 

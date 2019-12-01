@@ -45,6 +45,8 @@ class CannedMessagePopover : public QWidget
 
     private:
         Ui::CannedMessagePopover *ui;
+
+        bool isDone = false;
 };
 
 #endif // CANNEDMESSAGEPOPOVER_H

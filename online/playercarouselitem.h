@@ -27,6 +27,7 @@ namespace Ui {
 }
 
 struct PlayerCarouselItemPrivate;
+class CannedMessageBox;
 class PlayerCarouselItem : public QWidget
 {
         Q_OBJECT
@@ -40,9 +41,11 @@ class PlayerCarouselItem : public QWidget
         void setProfilePicture(QImage picture);
         void setCurrentTurn(qint64 timeout);
         void setSessionId(int sessionId);
+        void setCannedMessageBox(CannedMessageBox* box);
         void clearCurrentTurn();
 
         int sessionId();
+        CannedMessageBox* cannedMessageBox();
 
     private:
         Ui::PlayerCarouselItem *ui;

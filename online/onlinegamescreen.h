@@ -77,6 +77,7 @@ class OnlineGameScreen : public AbstractGameScreen
         void setup();
         void finishSetup();
 
+        void skipTurn();
         void sendCannedMessage();
 };
 

@@ -116,6 +116,24 @@ MainOnlineScreen::MainOnlineScreen(QWidget *parent) :
             }
         } else if (type == "availableRoomsReply") {
             OnlineJoinScreen* joinScreen = new OnlineJoinScreen(object, this);
+        } else if (type == "joinRoomFailed") {
+            QString error = tr("Give it another go.");
+            QString serverMessage = object.value("reason").toString();
+            if (serverMessage == "room.invalid") {
+                error = tr("That room doesn't exist.");
+            } else if (serverMessage == "room.full") {
+                error = tr("That room is full.");
+            } else if (serverMessage == "room.closed") {
+                error = tr("That room is closed. Wait for the current game to end and then you'll be able to join.");
+            }
+
+            QuestionOverlay* question = new QuestionOverlay(this);
+            question->setIcon(QMessageBox::Critical);
+            question->setTitle(tr("Can't join that room"));
+            question->setText(error);
+            question->setButtons(QMessageBox::Ok);
+            connect(question, &QuestionOverlay::accepted, question, &QuestionOverlay::deleteLater);
+            connect(question, &QuestionOverlay::rejected, question, &QuestionOverlay::deleteLater);
         }
     });
 }

@@ -179,89 +179,89 @@
     </message>
     <message>
         <location filename="../screens/gamescreen.cpp" line="66"/>
-        <location filename="../screens/gamescreen.cpp" line="445"/>
+        <location filename="../screens/gamescreen.cpp" line="448"/>
         <source>Reveal</source>
         <translation>Mở</translation>
     </message>
     <message>
         <location filename="../screens/gamescreen.cpp" line="67"/>
-        <location filename="../screens/gamescreen.cpp" line="446"/>
+        <location filename="../screens/gamescreen.cpp" line="449"/>
         <source>Flag</source>
         <translation>Đặt cờ</translation>
     </message>
     <message>
-        <location filename="../screens/gamescreen.cpp" line="216"/>
+        <location filename="../screens/gamescreen.cpp" line="219"/>
         <source>In Game</source>
         <translation>Đang chơi</translation>
     </message>
     <message>
-        <location filename="../screens/gamescreen.cpp" line="449"/>
+        <location filename="../screens/gamescreen.cpp" line="452"/>
         <source>Mark</source>
         <translation>Đánh dấu</translation>
     </message>
     <message>
-        <location filename="../screens/gamescreen.cpp" line="452"/>
+        <location filename="../screens/gamescreen.cpp" line="455"/>
         <source>Unflag</source>
         <translation>Gỡ cờ</translation>
     </message>
     <message>
-        <location filename="../screens/gamescreen.cpp" line="455"/>
+        <location filename="../screens/gamescreen.cpp" line="458"/>
         <source>Sweep</source>
         <translation>Quét</translation>
     </message>
     <message>
-        <location filename="../screens/gamescreen.cpp" line="311"/>
+        <location filename="../screens/gamescreen.cpp" line="314"/>
         <source>Your time was not recorded because loading a save invalidates the timer.</source>
         <translation>Thời gian chơi của bạn không có bị ghi tại vì khi bạn mở bản lưu, bộ hẹn giờ sẽ bị vô hiệu.</translation>
     </message>
     <message numerus="yes">
-        <location filename="../screens/gamescreen.cpp" line="217"/>
+        <location filename="../screens/gamescreen.cpp" line="220"/>
         <source>%1×%2 board with %n mines</source>
         <translation>
             <numerusform>Bảng %1×%2 với %n só mìn</numerusform>
         </translation>
     </message>
     <message numerus="yes">
-        <location filename="../screens/gamescreen.cpp" line="375"/>
+        <location filename="../screens/gamescreen.cpp" line="378"/>
         <source>You completed a %1×%2 board with %n mines in %4. Divine!</source>
         <translation>
             <numerusform>Bạn đã hoàn thành một bảng %1×%2 với %n só mìn trong %4. Làm tốt lắm!</numerusform>
         </translation>
     </message>
     <message numerus="yes">
-        <location filename="../screens/gamescreen.cpp" line="380"/>
+        <location filename="../screens/gamescreen.cpp" line="383"/>
         <source>You completed a %1×%2 board with %n mines.</source>
         <translation>
             <numerusform>Bạn đã hoàn thành một bảng %1×%2 với %n só mìn.</numerusform>
         </translation>
     </message>
     <message>
-        <location filename="../screens/gamescreen.cpp" line="487"/>
+        <location filename="../screens/gamescreen.cpp" line="490"/>
         <source>Your time was not recorded because pausing the game invalidates the timer.</source>
         <translation>Thời gian chơi của bạn không có bị ghi tại vì khi bạn tạm dừng phiên chơi, bộ hẹn giờ sẽ bị vô hiệu.</translation>
     </message>
     <message>
-        <location filename="../screens/gamescreen.cpp" line="509"/>
+        <location filename="../screens/gamescreen.cpp" line="512"/>
         <source>%1 × %2 board</source>
         <translation>Bảng %1 × %2</translation>
     </message>
     <message>
-        <location filename="../screens/gamescreen.cpp" line="510"/>
+        <location filename="../screens/gamescreen.cpp" line="513"/>
         <source>%1 mines</source>
         <translation>%n só mìn</translation>
     </message>
     <message>
-        <location filename="../screens/gamescreen.cpp" line="511"/>
+        <location filename="../screens/gamescreen.cpp" line="514"/>
         <source>%1 flagged</source>
         <translation>%n đã đặt cờ</translation>
     </message>
     <message>
-        <location filename="../screens/gamescreen.cpp" line="512"/>
+        <location filename="../screens/gamescreen.cpp" line="515"/>
         <source>%1 mines to go</source>
         <translation>Còn lại %n só mìn</translation>
     </message>
     <message>
-        <location filename="../screens/gamescreen.cpp" line="513"/>
+        <location filename="../screens/gamescreen.cpp" line="516"/>
         <source>%1% cleared</source>
         <translation>%1% hoàn thành</translation>
     </message>
@@ -416,7 +416,7 @@
     </message>
     <message>
         <location filename="../online/mainonlinescreen.cpp" line="74"/>
-        <location filename="../online/mainonlinescreen.cpp" line="164"/>
+        <location filename="../online/mainonlinescreen.cpp" line="182"/>
         <source>Error</source>
         <translation type="unfinished"></translation>
     </message>
@@ -429,6 +429,31 @@
         <location filename="../online/mainonlinescreen.cpp" line="104"/>
         <source>Main Menu</source>
         <translation type="unfinished">Trang chủ</translation>
+    </message>
+    <message>
+        <location filename="../online/mainonlinescreen.cpp" line="120"/>
+        <source>Give it another go.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../online/mainonlinescreen.cpp" line="123"/>
+        <source>That room doesn&apos;t exist.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../online/mainonlinescreen.cpp" line="125"/>
+        <source>That room is full.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../online/mainonlinescreen.cpp" line="127"/>
+        <source>That room is closed. Wait for the current game to end and then you&apos;ll be able to join.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../online/mainonlinescreen.cpp" line="132"/>
+        <source>Can&apos;t join that room</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -611,7 +636,7 @@
     </message>
     <message>
         <location filename="../online/onlinegamescreen.ui" line="326"/>
-        <location filename="../online/onlinegamescreen.cpp" line="154"/>
+        <location filename="../online/onlinegamescreen.cpp" line="152"/>
         <source>stepped on a mine and blew everything up!</source>
         <translation type="unfinished"></translation>
     </message>
@@ -677,73 +702,73 @@
     </message>
     <message>
         <location filename="../online/onlinegamescreen.cpp" line="90"/>
-        <location filename="../online/onlinegamescreen.cpp" line="320"/>
+        <location filename="../online/onlinegamescreen.cpp" line="322"/>
         <source>Reveal</source>
         <translation type="unfinished">Mở</translation>
     </message>
     <message>
         <location filename="../online/onlinegamescreen.cpp" line="91"/>
-        <location filename="../online/onlinegamescreen.cpp" line="321"/>
+        <location filename="../online/onlinegamescreen.cpp" line="323"/>
         <source>Flag</source>
         <translation type="unfinished">Đặt cờ</translation>
     </message>
     <message>
-        <location filename="../online/onlinegamescreen.cpp" line="146"/>
+        <location filename="../online/onlinegamescreen.cpp" line="144"/>
         <source>Congratulations!</source>
         <translation type="unfinished">Chúc mừng!</translation>
     </message>
     <message>
-        <location filename="../online/onlinegamescreen.cpp" line="147"/>
+        <location filename="../online/onlinegamescreen.cpp" line="145"/>
         <source>You swept this board completely!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../online/onlinegamescreen.cpp" line="324"/>
+        <location filename="../online/onlinegamescreen.cpp" line="326"/>
         <source>Mark</source>
         <translation type="unfinished">Đánh dấu</translation>
     </message>
     <message>
-        <location filename="../online/onlinegamescreen.cpp" line="327"/>
+        <location filename="../online/onlinegamescreen.cpp" line="329"/>
         <source>Unflag</source>
         <translation type="unfinished">Gỡ cờ</translation>
     </message>
     <message>
-        <location filename="../online/onlinegamescreen.cpp" line="330"/>
+        <location filename="../online/onlinegamescreen.cpp" line="332"/>
         <source>Sweep</source>
         <translation type="unfinished">Quét</translation>
     </message>
     <message>
-        <location filename="../online/onlinegamescreen.cpp" line="334"/>
+        <location filename="../online/onlinegamescreen.cpp" line="336"/>
         <source>Skip Turn</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../online/onlinegamescreen.cpp" line="343"/>
+        <location filename="../online/onlinegamescreen.cpp" line="345"/>
         <source>Message</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../online/onlinegamescreen.cpp" line="376"/>
+        <location filename="../online/onlinegamescreen.cpp" line="378"/>
         <source>Cooperative</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../online/onlinegamescreen.cpp" line="377"/>
+        <location filename="../online/onlinegamescreen.cpp" line="379"/>
         <source>Turn-Based Cooperative</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../online/onlinegamescreen.cpp" line="378"/>
+        <location filename="../online/onlinegamescreen.cpp" line="380"/>
         <source>Competitive</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../online/onlinegamescreen.cpp" line="381"/>
+        <location filename="../online/onlinegamescreen.cpp" line="383"/>
         <source>Online Game</source>
         <translation type="unfinished"></translation>
     </message>
     <message numerus="yes">
-        <location filename="../online/onlinegamescreen.cpp" line="382"/>
+        <location filename="../online/onlinegamescreen.cpp" line="384"/>
         <source>%1: %2×%3 board with %n mines</source>
         <translation type="unfinished">
             <numerusform></numerusform>

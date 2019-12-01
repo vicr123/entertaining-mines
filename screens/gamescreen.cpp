@@ -65,6 +65,9 @@ GameScreen::GameScreen(QWidget *parent) :
 
     ui->gamepadHud->setButtonText(QGamepadManager::ButtonA, tr("Reveal"));
     ui->gamepadHud->setButtonText(QGamepadManager::ButtonX, tr("Flag"));
+    ui->gamepadHud->bindKey(Qt::Key_Return, QGamepadManager::ButtonA);
+    ui->gamepadHud->bindKey(Qt::Key_Space, QGamepadManager::ButtonX);
+    ui->gamepadHud->bindKey(Qt::Key_Escape, QGamepadManager::ButtonStart);
 
     ui->gamepadHud->setButtonAction(QGamepadManager::ButtonStart, [=] {
         ui->menuButton->click();

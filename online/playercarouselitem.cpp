@@ -27,6 +27,7 @@
 struct PlayerCarouselItemPrivate {
     QString playerName;
     QColor playerCol;
+    CannedMessageBox* box = nullptr;
 
     tVariantAnimation colHeight;
     tVariantAnimation timeoutBar;
@@ -97,6 +98,11 @@ void PlayerCarouselItem::setSessionId(int sessionId)
     d->sessionId = sessionId;
 }
 
+void PlayerCarouselItem::setCannedMessageBox(CannedMessageBox*box)
+{
+    d->box = box;
+}
+
 void PlayerCarouselItem::clearCurrentTurn()
 {
     d->colHeight.setDirection(tVariantAnimation::Backward);
@@ -112,6 +118,11 @@ void PlayerCarouselItem::clearCurrentTurn()
 int PlayerCarouselItem::sessionId()
 {
     return d->sessionId;
+}
+
+CannedMessageBox*PlayerCarouselItem::cannedMessageBox()
+{
+    return d->box;
 }
 
 void PlayerCarouselItem::resizeEvent(QResizeEvent*event)

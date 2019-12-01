@@ -23,44 +23,112 @@
 #include <QTimer>
 #include <QGraphicsOpacityEffect>
 #include <QPainter>
+#include <musicengine.h>
+#include <QPointer>
+#include "playercarouselitem.h"
 #include <the-libs_global.h>
+#include <tvariantanimation.h>
 
 struct CannedMessageBoxPrivate {
     QGraphicsOpacityEffect* effect;
-    QWidget* carouselItem;
+    QPointer<PlayerCarouselItem> carouselItem;
+
+    bool hiding = false;
 };
 
-CannedMessageBox::CannedMessageBox(QString cannedMessage, QWidget*carouselItem, QWidget *parent) :
+CannedMessageBox::CannedMessageBox(QString cannedMessage, QWidget* carouselItem, QWidget *parent) :
     QWidget(parent),
     ui(new Ui::CannedMessageBox)
 {
     ui->setupUi(this);
 
     d = new CannedMessageBoxPrivate();
-    d->carouselItem = carouselItem;
+    d->carouselItem = qobject_cast<PlayerCarouselItem*>(carouselItem);
+    d->effect = new QGraphicsOpacityEffect();
+
+    if (d->carouselItem->cannedMessageBox()) {
+        d->carouselItem->cannedMessageBox()->hide();
+    }
+
+    d->carouselItem->setCannedMessageBox(this);
 
     this->setAttribute(Qt::WA_TransparentForMouseEvents);
     this->setContentsMargins(SC_DPI(9), SC_DPI(9), SC_DPI(9), SC_DPI(14));
+    this->setGraphicsEffect(d->effect);
 
     ui->messageLabel->setText(cannedMessage);
 
     carouselItem->installEventFilter(this);
     parent->installEventFilter(this);
 
-    updatePosition();
     this->show();
 
     QTimer::singleShot(5000, this, &CannedMessageBox::hide);
+    MusicEngine::playSoundEffect("message");
 }
 
 CannedMessageBox::~CannedMessageBox()
 {
+    delete d;
     delete ui;
+}
+
+void CannedMessageBox::show()
+{
+    d->effect->setOpacity(0);
+    QRect startGeom = this->endGeometry();
+    startGeom.translate(0, SC_DPI(50));
+
+    this->setGeometry(startGeom);
+
+    QWidget::show();
+
+    tVariantAnimation* geom = new tVariantAnimation();
+    geom->setStartValue(startGeom);
+    geom->setEndValue(this->endGeometry());
+    geom->setDuration(500);
+    geom->setEasingCurve(QEasingCurve::OutCubic);
+    connect(geom, &tVariantAnimation::valueChanged, this, [=](QVariant value) {
+        this->setGeometry(value.toRect());
+    });
+    connect(geom, &tVariantAnimation::finished, geom, &tVariantAnimation::deleteLater);
+    geom->start();
+
+    tVariantAnimation* opac = new tVariantAnimation();
+    opac->setStartValue(0.0);
+    opac->setEndValue(1.0);
+    opac->setDuration(500);
+    opac->setEasingCurve(QEasingCurve::OutCubic);
+    connect(opac, &tVariantAnimation::valueChanged, opac, [=](QVariant value) {
+        d->effect->setOpacity(value.toDouble());
+    });
+    connect(opac, &tVariantAnimation::finished, opac, &tVariantAnimation::deleteLater);
+    opac->start();
 }
 
 void CannedMessageBox::hide()
 {
-    QWidget::hide();
+    if (d->hiding) return;
+    d->hiding = true;
+
+    if (!d->carouselItem.isNull()) {
+        d->carouselItem->setCannedMessageBox(nullptr);
+    }
+
+    tVariantAnimation* opac = new tVariantAnimation();
+    opac->setStartValue(1.0);
+    opac->setEndValue(0.0);
+    opac->setDuration(500);
+    opac->setEasingCurve(QEasingCurve::OutCubic);
+    connect(opac, &tVariantAnimation::valueChanged, opac, [=](QVariant value) {
+        d->effect->setOpacity(value.toDouble());
+    });
+    connect(opac, &tVariantAnimation::finished, this, [=] {
+        QWidget::hide();
+        opac->deleteLater();
+        this->deleteLater();
+    });
+    opac->start();
 }
 
 void CannedMessageBox::paintEvent(QPaintEvent*event)
@@ -91,7 +159,7 @@ bool CannedMessageBox::eventFilter(QObject*watched, QEvent*event)
     return false;
 }
 
-void CannedMessageBox::updatePosition()
+QRect CannedMessageBox::endGeometry()
 {
     QPoint mappingPoint(d->carouselItem->width() / 2, 0);
     QPoint centerBottom = d->carouselItem->mapTo(this->parentWidget(), mappingPoint);
@@ -99,5 +167,10 @@ void CannedMessageBox::updatePosition()
     QRect geometry;
     geometry.setSize(this->sizeHint());
     geometry.moveCenter(centerBottom - QPoint(0, this->sizeHint().height() / 2));
-    this->setGeometry(geometry);
+    return geometry;
+}
+
+void CannedMessageBox::updatePosition()
+{
+    this->setGeometry(this->endGeometry());
 }

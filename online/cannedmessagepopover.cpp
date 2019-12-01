@@ -60,6 +60,9 @@ CannedMessagePopover::~CannedMessagePopover()
 
 void CannedMessagePopover::on_cannedMessagesList_activated(const QModelIndex &index)
 {
+    if (this->isDone) return;
+    this->isDone = true;
+
     emit sendCannedMessage(index.row());
 }
 
