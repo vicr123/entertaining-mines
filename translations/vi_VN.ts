@@ -6,17 +6,17 @@
     <message>
         <location filename="../online/cannedmessagepopover.ui" line="71"/>
         <source>Send a canned message</source>
-        <translation type="unfinished"></translation>
+        <translation>Nhắn tin</translation>
     </message>
     <message>
         <location filename="../online/cannedmessagepopover.cpp" line="37"/>
         <source>Select</source>
-        <translation type="unfinished">Chọn</translation>
+        <translation>Chọn</translation>
     </message>
     <message>
         <location filename="../online/cannedmessagepopover.cpp" line="38"/>
         <source>Back</source>
-        <translation type="unfinished">Lại</translation>
+        <translation>Lại</translation>
     </message>
 </context>
 <context>
@@ -113,7 +113,7 @@
     <message>
         <location filename="../information/creditsscreen.ui" line="332"/>
         <source>Licensed under the terms of the GNU General Public License, version 3, or later.</source>
-        <translation type="unfinished"></translation>
+        <translation>Được cấp phép theo điều khoản của Giấy phép Công cộng GNU, phiên bản 3, hoặc mới hơn.</translation>
     </message>
     <message>
         <location filename="../information/creditsscreen.cpp" line="44"/>
@@ -276,12 +276,12 @@
     <message>
         <location filename="../gamewindow.cpp" line="63"/>
         <source>Corrupt File</source>
-        <translation type="unfinished"></translation>
+        <translation>Tệp hỏng</translation>
     </message>
     <message>
         <location filename="../gamewindow.cpp" line="64"/>
         <source>Sorry, that file is corrupt and needs to be deleted.</source>
-        <translation type="unfinished"></translation>
+        <translation>Rất tiếc, tệp đó đã bị hỏng và cần phải bị xóa.</translation>
     </message>
     <message>
         <location filename="../gamewindow.cpp" line="85"/>
@@ -298,12 +298,12 @@
     <message>
         <location filename="../gamewindow.cpp" line="105"/>
         <source>Join Game</source>
-        <translation type="unfinished"></translation>
+        <translation>Tham gia trò chơi</translation>
     </message>
     <message>
         <location filename="../gamewindow.cpp" line="106"/>
         <source>%1 wants to join your room</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 muốn tham gia trò chơi của bạn</translation>
     </message>
 </context>
 <context>
@@ -311,67 +311,67 @@
     <message>
         <location filename="../online/gamemodeselect.ui" line="71"/>
         <source>Game Mode</source>
-        <translation type="unfinished"></translation>
+        <translation>Chế độ</translation>
     </message>
     <message>
         <location filename="../online/gamemodeselect.ui" line="113"/>
         <source>Select a game mode to play</source>
-        <translation type="unfinished"></translation>
+        <translation>Chọn một chế độ để chơi</translation>
     </message>
     <message>
         <location filename="../online/gamemodeselect.ui" line="135"/>
         <source>COOPERATIVE</source>
-        <translation type="unfinished"></translation>
+        <translation>HỢP TÁC</translation>
     </message>
     <message>
         <location filename="../online/gamemodeselect.ui" line="142"/>
         <source>Work together to sweep the whole board without treading on any mines!</source>
-        <translation type="unfinished"></translation>
+        <translation>Chơi cùng nhau để quét hoàn toàn cái bảng không có bước lên bom mìn nào!</translation>
     </message>
     <message>
         <location filename="../online/gamemodeselect.ui" line="165"/>
         <source>Play Cooperative</source>
-        <translation type="unfinished"></translation>
+        <translation>Chơi Hợp Tác</translation>
     </message>
     <message>
         <location filename="../online/gamemodeselect.ui" line="204"/>
         <source>COMPETITIVE</source>
-        <translation type="unfinished"></translation>
+        <translation>CẠNH TRANH</translation>
     </message>
     <message>
         <location filename="../online/gamemodeselect.ui" line="211"/>
         <source>Play against each other on the same board and try to claim the most flags on the board!</source>
-        <translation type="unfinished"></translation>
+        <translation>Chơi đối với nhau trên cùng một bảng và cố gắng đật nhiều cờ nhất!</translation>
     </message>
     <message>
         <location filename="../online/gamemodeselect.ui" line="234"/>
         <source>Play Competitive</source>
-        <translation type="unfinished"></translation>
+        <translation>Chơi Cạnh Tranh</translation>
     </message>
     <message>
         <location filename="../online/gamemodeselect.ui" line="259"/>
         <source>TURN-BASED COOPERATIVE</source>
-        <translation type="unfinished"></translation>
+        <translation>HỢP TÁC THAY PHIÊN NHAU</translation>
     </message>
     <message>
         <location filename="../online/gamemodeselect.ui" line="266"/>
         <source>Cooperative mode too chaotic for you? Play Cooperative mode, but take turns at the controls!</source>
-        <translation type="unfinished"></translation>
+        <translation>Chế độ hợp tác quá hỗn loạn? Chơi Chế Độ Hợp Tác nhưng thay phiên nhau với quyền điều khiển!</translation>
     </message>
     <message>
         <location filename="../online/gamemodeselect.ui" line="289"/>
         <source>Play Turn-based Cooperative</source>
-        <translation type="unfinished"></translation>
+        <translation>Chơi Hợp Tác Thay Phiên Nhau</translation>
     </message>
     <message>
         <location filename="../online/gamemodeselect.cpp" line="33"/>
         <source>Select</source>
-        <translation type="unfinished">Chọn</translation>
+        <translation>Chọn</translation>
     </message>
     <message>
         <location filename="../online/gamemodeselect.cpp" line="34"/>
         <source>Back</source>
-        <translation type="unfinished">Lại</translation>
+        <translation>Lại</translation>
     </message>
 </context>
 <context>
@@ -397,63 +397,63 @@
     <message>
         <location filename="../online/mainonlinescreen.ui" line="79"/>
         <source>Connecting to Entertaining Games</source>
-        <translation type="unfinished"></translation>
+        <translation>Đang kết nối với Trò Chơi Giải Trí</translation>
     </message>
     <message>
         <location filename="../online/mainonlinescreen.cpp" line="53"/>
         <source>You&apos;ve been disconnected because the server is about to undergo maintenance.</source>
-        <translation type="unfinished"></translation>
+        <translation>Kết nối của bạn đã bị ngất vì máy chủ đang chuẩn bị trải qua bảo trì.</translation>
     </message>
     <message>
         <location filename="../online/mainonlinescreen.cpp" line="56"/>
         <source>You&apos;ve been disconnected from the server because there was a communication error.</source>
-        <translation type="unfinished"></translation>
+        <translation>Kết nối của bạn đã bị ngất vì một lỗi về giao tiếp đã xảy ra.</translation>
     </message>
     <message>
         <location filename="../online/mainonlinescreen.cpp" line="66"/>
         <source>You&apos;ve been disconnected from the server.</source>
-        <translation type="unfinished"></translation>
+        <translation>Kết nối của bạn đã bị ngất.</translation>
     </message>
     <message>
         <location filename="../online/mainonlinescreen.cpp" line="74"/>
         <location filename="../online/mainonlinescreen.cpp" line="182"/>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Lỗi</translation>
     </message>
     <message>
         <location filename="../online/mainonlinescreen.cpp" line="103"/>
         <source>Idle</source>
-        <translation type="unfinished">Đang nghỉ</translation>
+        <translation>Đang nghỉ</translation>
     </message>
     <message>
         <location filename="../online/mainonlinescreen.cpp" line="104"/>
         <source>Main Menu</source>
-        <translation type="unfinished">Trang chủ</translation>
+        <translation>Trang chủ</translation>
     </message>
     <message>
         <location filename="../online/mainonlinescreen.cpp" line="120"/>
         <source>Give it another go.</source>
-        <translation type="unfinished"></translation>
+        <translation>Hãy thử lại.</translation>
     </message>
     <message>
         <location filename="../online/mainonlinescreen.cpp" line="123"/>
         <source>That room doesn&apos;t exist.</source>
-        <translation type="unfinished"></translation>
+        <translation>Phòng chơi đó không tồn tại.</translation>
     </message>
     <message>
         <location filename="../online/mainonlinescreen.cpp" line="125"/>
         <source>That room is full.</source>
-        <translation type="unfinished"></translation>
+        <translation>Phòng chơi đó đã đầy.</translation>
     </message>
     <message>
         <location filename="../online/mainonlinescreen.cpp" line="127"/>
         <source>That room is closed. Wait for the current game to end and then you&apos;ll be able to join.</source>
-        <translation type="unfinished"></translation>
+        <translation>Phòng chơi đó đã bị đóng. Hãy chờ cho phòng chơi để kết thúc trước; sau đó bạn có thể tham gia.</translation>
     </message>
     <message>
         <location filename="../online/mainonlinescreen.cpp" line="132"/>
         <source>Can&apos;t join that room</source>
-        <translation type="unfinished"></translation>
+        <translation>Không thể tham gia phòng chơi đồ</translation>
     </message>
 </context>
 <context>
@@ -506,12 +506,12 @@
     <message>
         <location filename="../screens/mainscreen.ui" line="226"/>
         <source>Play Online</source>
-        <translation type="unfinished"></translation>
+        <translation>Chơi trực tuyến</translation>
     </message>
     <message>
         <location filename="../screens/mainscreen.ui" line="233"/>
         <source>Play with other people on the Internet</source>
-        <translation type="unfinished"></translation>
+        <translation>Chơi với người khác trên Internet</translation>
     </message>
     <message>
         <location filename="../screens/mainscreen.ui" line="256"/>
@@ -638,17 +638,17 @@
         <location filename="../online/onlinegamescreen.ui" line="326"/>
         <location filename="../online/onlinegamescreen.cpp" line="152"/>
         <source>stepped on a mine and blew everything up!</source>
-        <translation type="unfinished"></translation>
+        <translation>đã bước lên một bom mìn và nổ tung mọi thứ!</translation>
     </message>
     <message>
         <location filename="../online/onlinegamescreen.cpp" line="76"/>
         <source>Hello!</source>
-        <translation type="unfinished"></translation>
+        <translation>Chào!</translation>
     </message>
     <message>
         <location filename="../online/onlinegamescreen.cpp" line="77"/>
         <source>Good luck!</source>
-        <translation type="unfinished"></translation>
+        <translation>Chúc may mắn!</translation>
     </message>
     <message>
         <location filename="../online/onlinegamescreen.cpp" line="78"/>
@@ -658,7 +658,7 @@
     <message>
         <location filename="../online/onlinegamescreen.cpp" line="79"/>
         <source>Wait!</source>
-        <translation type="unfinished"></translation>
+        <translation>Chờ một chút!</translation>
     </message>
     <message>
         <location filename="../online/onlinegamescreen.cpp" line="80"/>
@@ -668,110 +668,110 @@
     <message>
         <location filename="../online/onlinegamescreen.cpp" line="81"/>
         <source>It&apos;s a 50-50!</source>
-        <translation type="unfinished"></translation>
+        <translation>Cơ hội là một nửa!</translation>
     </message>
     <message>
         <location filename="../online/onlinegamescreen.cpp" line="82"/>
         <source>I can solve this!</source>
-        <translation type="unfinished"></translation>
+        <translation>Tôi giải này được!</translation>
     </message>
     <message>
         <location filename="../online/onlinegamescreen.cpp" line="83"/>
         <source>We need to guess!</source>
-        <translation type="unfinished"></translation>
+        <translation>Mình cần đoán!</translation>
     </message>
     <message>
         <location filename="../online/onlinegamescreen.cpp" line="84"/>
         <source>I&apos;m on my phone!</source>
-        <translation type="unfinished"></translation>
+        <translation>Tôi trên điện thoại!</translation>
     </message>
     <message>
         <location filename="../online/onlinegamescreen.cpp" line="85"/>
         <source>I&apos;m using a keyboard!</source>
-        <translation type="unfinished"></translation>
+        <translation>Tôi đùng bàn phím!</translation>
     </message>
     <message>
         <location filename="../online/onlinegamescreen.cpp" line="86"/>
         <source>I&apos;m using a mouse!</source>
-        <translation type="unfinished"></translation>
+        <translation>Tôi dùng chuột!</translation>
     </message>
     <message>
         <location filename="../online/onlinegamescreen.cpp" line="87"/>
         <source>I&apos;m using tilt controls!</source>
-        <translation type="unfinished"></translation>
+        <translation>Tôi đùng điều khiển chuyển động!</translation>
     </message>
     <message>
         <location filename="../online/onlinegamescreen.cpp" line="90"/>
         <location filename="../online/onlinegamescreen.cpp" line="322"/>
         <source>Reveal</source>
-        <translation type="unfinished">Mở</translation>
+        <translation>Mở</translation>
     </message>
     <message>
         <location filename="../online/onlinegamescreen.cpp" line="91"/>
         <location filename="../online/onlinegamescreen.cpp" line="323"/>
         <source>Flag</source>
-        <translation type="unfinished">Đặt cờ</translation>
+        <translation>Đặt cờ</translation>
     </message>
     <message>
         <location filename="../online/onlinegamescreen.cpp" line="144"/>
         <source>Congratulations!</source>
-        <translation type="unfinished">Chúc mừng!</translation>
+        <translation>Chúc mừng!</translation>
     </message>
     <message>
         <location filename="../online/onlinegamescreen.cpp" line="145"/>
         <source>You swept this board completely!</source>
-        <translation type="unfinished"></translation>
+        <translation>Bạn đã giải quyết bảng này hoàn toàn!</translation>
     </message>
     <message>
         <location filename="../online/onlinegamescreen.cpp" line="326"/>
         <source>Mark</source>
-        <translation type="unfinished">Đánh dấu</translation>
+        <translation>Đánh dấu</translation>
     </message>
     <message>
         <location filename="../online/onlinegamescreen.cpp" line="329"/>
         <source>Unflag</source>
-        <translation type="unfinished">Gỡ cờ</translation>
+        <translation>Gỡ cờ</translation>
     </message>
     <message>
         <location filename="../online/onlinegamescreen.cpp" line="332"/>
         <source>Sweep</source>
-        <translation type="unfinished">Quét</translation>
+        <translation>Quét</translation>
     </message>
     <message>
         <location filename="../online/onlinegamescreen.cpp" line="336"/>
         <source>Skip Turn</source>
-        <translation type="unfinished"></translation>
+        <translation>Bỏ qua lượt</translation>
     </message>
     <message>
         <location filename="../online/onlinegamescreen.cpp" line="345"/>
         <source>Message</source>
-        <translation type="unfinished"></translation>
+        <translation>Nhắn tin</translation>
     </message>
     <message>
         <location filename="../online/onlinegamescreen.cpp" line="378"/>
         <source>Cooperative</source>
-        <translation type="unfinished"></translation>
+        <translation>Hợp Tác</translation>
     </message>
     <message>
         <location filename="../online/onlinegamescreen.cpp" line="379"/>
         <source>Turn-Based Cooperative</source>
-        <translation type="unfinished"></translation>
+        <translation>Hợp Tác Thay Phiên Nhau</translation>
     </message>
     <message>
         <location filename="../online/onlinegamescreen.cpp" line="380"/>
         <source>Competitive</source>
-        <translation type="unfinished"></translation>
+        <translation>Cạnh Tranh</translation>
     </message>
     <message>
         <location filename="../online/onlinegamescreen.cpp" line="383"/>
         <source>Online Game</source>
-        <translation type="unfinished"></translation>
+        <translation>Trò chơi trực tuyến</translation>
     </message>
     <message numerus="yes">
         <location filename="../online/onlinegamescreen.cpp" line="384"/>
         <source>%1: %2×%3 board with %n mines</source>
-        <translation type="unfinished">
-            <numerusform></numerusform>
+        <translation>
+            <numerusform>%1: bảng %2×%3 với %n bom mìn</numerusform>
         </translation>
     </message>
 </context>
@@ -785,22 +785,22 @@
     <message>
         <location filename="../online/onlinejoinscreen.ui" line="68"/>
         <source>Join Game</source>
-        <translation type="unfinished"></translation>
+        <translation>Tham gia trò chơi</translation>
     </message>
     <message>
         <location filename="../online/onlinejoinscreen.ui" line="93"/>
         <source>Select a game to join</source>
-        <translation type="unfinished"></translation>
+        <translation>Chọn một trò chơi để tham gia</translation>
     </message>
     <message>
         <location filename="../online/onlinejoinscreen.cpp" line="40"/>
         <source>Join</source>
-        <translation type="unfinished"></translation>
+        <translation>Tham gia</translation>
     </message>
     <message>
         <location filename="../online/onlinejoinscreen.cpp" line="41"/>
         <source>Back</source>
-        <translation type="unfinished">Lại</translation>
+        <translation>Lại</translation>
     </message>
 </context>
 <context>
@@ -813,27 +813,27 @@
     <message>
         <location filename="../online/onlinelobbyscreen.ui" line="71"/>
         <source>Lobby</source>
-        <translation type="unfinished"></translation>
+        <translation>Sảnh chờ</translation>
     </message>
     <message>
         <location filename="../online/onlinelobbyscreen.ui" line="175"/>
         <source>Game Mode</source>
-        <translation type="unfinished"></translation>
+        <translation>Chế độ trò chơi</translation>
     </message>
     <message>
         <location filename="../online/onlinelobbyscreen.ui" line="182"/>
         <source>Board Height</source>
-        <translation type="unfinished"></translation>
+        <translation>Chiều cao của bảng</translation>
     </message>
     <message>
         <location filename="../online/onlinelobbyscreen.ui" line="202"/>
         <source>Board Width</source>
-        <translation type="unfinished"></translation>
+        <translation>Chiều rộng của bảng</translation>
     </message>
     <message>
         <location filename="../online/onlinelobbyscreen.ui" line="209"/>
         <source>Board Mines</source>
-        <translation type="unfinished"></translation>
+        <translation>Số bom mìn</translation>
     </message>
     <message>
         <location filename="../online/onlinelobbyscreen.ui" line="222"/>
@@ -843,52 +843,52 @@
     <message>
         <location filename="../online/onlinelobbyscreen.ui" line="168"/>
         <source>GAME SETTINGS</source>
-        <translation type="unfinished"></translation>
+        <translation>CÀI ĐẶT TRÒ CHƠI</translation>
     </message>
     <message>
         <location filename="../online/onlinelobbyscreen.ui" line="101"/>
         <source>Gathering Players...</source>
-        <translation type="unfinished"></translation>
+        <translation>Đang thu thập người chơi...</translation>
     </message>
     <message>
         <location filename="../online/onlinelobbyscreen.ui" line="155"/>
         <source>Start Game</source>
-        <translation type="unfinished"></translation>
+        <translation>Bắt đầu trò chơi</translation>
     </message>
     <message>
         <location filename="../online/onlinelobbyscreen.cpp" line="45"/>
         <source>Select</source>
-        <translation type="unfinished">Chọn</translation>
+        <translation>Chọn</translation>
     </message>
     <message>
         <location filename="../online/onlinelobbyscreen.cpp" line="46"/>
         <source>Leave Room</source>
-        <translation type="unfinished"></translation>
+        <translation>Rời khỏi phòng</translation>
     </message>
     <message>
         <location filename="../online/onlinelobbyscreen.cpp" line="83"/>
         <source>In Lobby</source>
-        <translation type="unfinished"></translation>
+        <translation>Trong phòng chờ</translation>
     </message>
     <message>
         <location filename="../online/onlinelobbyscreen.cpp" line="84"/>
         <source>Waiting for players</source>
-        <translation type="unfinished"></translation>
+        <translation>Đang chờ cho người chơi</translation>
     </message>
     <message>
         <location filename="../online/onlinelobbyscreen.cpp" line="101"/>
         <source>Cooperative</source>
-        <translation type="unfinished"></translation>
+        <translation>Hợp Tác</translation>
     </message>
     <message>
         <location filename="../online/onlinelobbyscreen.cpp" line="103"/>
         <source>Turn-Based Cooperative</source>
-        <translation type="unfinished"></translation>
+        <translation>Hợp Tác Thay Phiên Nhau</translation>
     </message>
     <message>
         <location filename="../online/onlinelobbyscreen.cpp" line="105"/>
         <source>Competitive</source>
-        <translation type="unfinished"></translation>
+        <translation>Cạnh Tranh</translation>
     </message>
 </context>
 <context>
@@ -901,68 +901,68 @@
     <message>
         <location filename="../online/onlinemenuscreen.ui" line="79"/>
         <source>Entertaining Mines</source>
-        <translation type="unfinished">Mìn giải trí</translation>
+        <translation>Mìn giải trí</translation>
     </message>
     <message>
         <location filename="../online/onlinemenuscreen.ui" line="213"/>
         <source>Friends and Relations</source>
-        <translation type="unfinished"></translation>
+        <translation>Bạn bè và quan hệ</translation>
     </message>
     <message>
         <location filename="../online/onlinemenuscreen.ui" line="220"/>
         <source>Add or remove friends and manage blocked users</source>
-        <translation type="unfinished"></translation>
+        <translation>Thêm hoặc xóa bạn bè và quản lý người dùng bị chặn</translation>
     </message>
     <message>
         <location filename="../online/onlinemenuscreen.ui" line="169"/>
         <source>Create Room</source>
-        <translation type="unfinished"></translation>
+        <translation>Tạo phòng chơi</translation>
     </message>
     <message>
         <location filename="../online/onlinemenuscreen.ui" line="94"/>
         <source>Playing Online</source>
-        <translation type="unfinished"></translation>
+        <translation>Đang chơi trực tuyến</translation>
     </message>
     <message>
         <location filename="../online/onlinemenuscreen.ui" line="176"/>
         <source>Create a new lobby where friends can join you</source>
-        <translation type="unfinished"></translation>
+        <translation>Tạo một phòng chờ cho bạn bè tham gia</translation>
     </message>
     <message>
         <location filename="../online/onlinemenuscreen.ui" line="183"/>
         <source>Join Lobby</source>
-        <translation type="unfinished"></translation>
+        <translation>Tham gia phòng chờ</translation>
     </message>
     <message>
         <location filename="../online/onlinemenuscreen.ui" line="190"/>
         <source>Join a friend&apos;s open lobby</source>
-        <translation type="unfinished"></translation>
+        <translation>Tham gia phòng chờ của một bạn bè</translation>
     </message>
     <message>
         <location filename="../online/onlinemenuscreen.ui" line="227"/>
         <source>Account</source>
-        <translation type="unfinished"></translation>
+        <translation>Tài khoản</translation>
     </message>
     <message>
         <location filename="../online/onlinemenuscreen.ui" line="234"/>
         <source>Manage your account</source>
-        <translation type="unfinished"></translation>
+        <translation>Quản lý tài khoản của bạn</translation>
     </message>
     <message>
         <location filename="../online/onlinemenuscreen.ui" line="241"/>
         <location filename="../online/onlinemenuscreen.cpp" line="39"/>
         <source>Main Menu</source>
-        <translation type="unfinished">Trang chủ</translation>
+        <translation>Trang chủ</translation>
     </message>
     <message>
         <location filename="../online/onlinemenuscreen.ui" line="248"/>
         <source>Disconnect from Entertaining Games Online</source>
-        <translation type="unfinished"></translation>
+        <translation>Ngắt kết nối với Trò Chơi Giải Trí Trực Tuyến</translation>
     </message>
     <message>
         <location filename="../online/onlinemenuscreen.cpp" line="38"/>
         <source>Select</source>
-        <translation type="unfinished">Chọn</translation>
+        <translation>Chọn</translation>
     </message>
 </context>
 <context>
@@ -1054,7 +1054,7 @@
     <message>
         <location filename="../screens/settingsscreen.cpp" line="53"/>
         <source>Gamepad Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Cài đặt bộ điều khiển</translation>
     </message>
     <message>
         <location filename="../screens/settingsscreen.cpp" line="62"/>
@@ -1074,7 +1074,7 @@
     <message>
         <location filename="../screens/settingsscreen.cpp" line="65"/>
         <source>Hardware</source>
-        <translation type="unfinished"></translation>
+        <translation>PHẦN CỨNG</translation>
     </message>
     <message>
         <location filename="../screens/settingsscreen.cpp" line="95"/>
