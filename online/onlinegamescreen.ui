@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Form</string>
+   <string notr="true">Form</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <property name="spacing">
@@ -96,14 +96,14 @@
           <item>
            <widget class="QLabel" name="timeIcon">
             <property name="text">
-             <string>TextLabel</string>
+             <string notr="true">TextLabel</string>
             </property>
            </widget>
           </item>
           <item>
            <widget class="QLabel" name="timeLabel">
             <property name="text">
-             <string>005</string>
+             <string notr="true">005</string>
             </property>
            </widget>
           </item>

@@ -94,14 +94,14 @@
       <item>
        <widget class="QLabel" name="timeIcon">
         <property name="text">
-         <string>TextLabel</string>
+         <string notr="true">TextLabel</string>
         </property>
        </widget>
       </item>
       <item>
        <widget class="QLabel" name="timeLabel">
         <property name="text">
-         <string>005</string>
+         <string notr="true">005</string>
         </property>
        </widget>
       </item>

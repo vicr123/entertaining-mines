@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Form</string>
+   <string notr="true">Form</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout_2">
    <property name="spacing">
@@ -288,6 +288,15 @@
  </widget>
  <customwidgets>
   <customwidget>
+   <class>tStackedWidget</class>
+   <extends>QStackedWidget</extends>
+   <header location="global">tstackedwidget.h</header>
+   <container>1</container>
+   <slots>
+    <signal>switchingFrame(int)</signal>
+   </slots>
+  </customwidget>
+  <customwidget>
    <class>GamepadHud</class>
    <extends>QWidget</extends>
    <header location="global">gamepadhud.h</header>
@@ -297,12 +306,6 @@
    <class>FocusBarrier</class>
    <extends>QPushButton</extends>
    <header location="global">focusbarrier.h</header>
-  </customwidget>
-  <customwidget>
-   <class>tStackedWidget</class>
-   <extends>QStackedWidget</extends>
-   <header location="global">tstackedwidget.h</header>
-   <container>1</container>
   </customwidget>
  </customwidgets>
  <resources>

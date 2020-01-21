@@ -27,11 +27,6 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../game/congratulation.ui" line="89"/>
-        <source>TextLabel</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../game/congratulation.ui" line="109"/>
         <source>Play Again</source>
         <translation type="unfinished"></translation>
@@ -167,16 +162,6 @@
 </context>
 <context>
     <name>GameScreen</name>
-    <message>
-        <location filename="../screens/gamescreen.ui" line="97"/>
-        <source>TextLabel</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../screens/gamescreen.ui" line="104"/>
-        <source>005</source>
-        <translation type="unfinished"></translation>
-    </message>
     <message>
         <location filename="../screens/gamescreen.cpp" line="66"/>
         <location filename="../screens/gamescreen.cpp" line="448"/>
@@ -389,11 +374,6 @@
 </context>
 <context>
     <name>MainOnlineScreen</name>
-    <message>
-        <location filename="../online/mainonlinescreen.ui" line="14"/>
-        <source>Form</source>
-        <translation type="unfinished"></translation>
-    </message>
     <message>
         <location filename="../online/mainonlinescreen.ui" line="79"/>
         <source>Connecting to Entertaining Games</source>
@@ -613,21 +593,6 @@
 <context>
     <name>OnlineGameScreen</name>
     <message>
-        <location filename="../online/onlinegamescreen.ui" line="14"/>
-        <source>Form</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../online/onlinegamescreen.ui" line="99"/>
-        <source>TextLabel</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../online/onlinegamescreen.ui" line="106"/>
-        <source>005</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../online/onlinegamescreen.ui" line="143"/>
         <source>ms</source>
         <comment>ms for milliseconds</comment>
@@ -778,11 +743,6 @@
 <context>
     <name>OnlineJoinScreen</name>
     <message>
-        <location filename="../online/onlinejoinscreen.ui" line="14"/>
-        <source>Form</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../online/onlinejoinscreen.ui" line="68"/>
         <source>Join Game</source>
         <translation type="unfinished"></translation>
@@ -805,11 +765,6 @@
 </context>
 <context>
     <name>OnlineLobbyScreen</name>
-    <message>
-        <location filename="../online/onlinelobbyscreen.ui" line="14"/>
-        <source>Form</source>
-        <translation type="unfinished"></translation>
-    </message>
     <message>
         <location filename="../online/onlinelobbyscreen.ui" line="71"/>
         <source>Lobby</source>
@@ -893,11 +848,6 @@
 </context>
 <context>
     <name>OnlineMenuScreen</name>
-    <message>
-        <location filename="../online/onlinemenuscreen.ui" line="14"/>
-        <source>Form</source>
-        <translation type="unfinished"></translation>
-    </message>
     <message>
         <location filename="../online/onlinemenuscreen.ui" line="79"/>
         <source>Entertaining Mines</source>
