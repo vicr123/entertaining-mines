@@ -595,17 +595,17 @@
         <translation>Thoát</translation>
     </message>
     <message>
-        <location filename="../screens/mainscreen.cpp" line="136"/>
+        <location filename="../screens/mainscreen.cpp" line="137"/>
         <source>How wide is the board?</source>
         <translation>Bảng này rộng bao nhiêu?</translation>
     </message>
     <message>
-        <location filename="../screens/mainscreen.cpp" line="140"/>
+        <location filename="../screens/mainscreen.cpp" line="141"/>
         <source>How high is the board?</source>
         <translation>Bảng này cao bao nhiêu?</translation>
     </message>
     <message>
-        <location filename="../screens/mainscreen.cpp" line="143"/>
+        <location filename="../screens/mainscreen.cpp" line="144"/>
         <source>How many mines are on this board?</source>
         <translation>Bảng này có mấy mìn?</translation>
     </message>
@@ -1090,7 +1090,7 @@
 <context>
     <name>main</name>
     <message>
-        <location filename="../main.cpp" line="50"/>
+        <location filename="../main.cpp" line="51"/>
         <source>Minesweeper</source>
         <translation>Gỡ mìn</translation>
     </message>

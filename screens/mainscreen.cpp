@@ -102,6 +102,7 @@ void MainScreen::paintEvent(QPaintEvent*event)
     painter.setBrush(grad);
     painter.setPen(Qt::transparent);
     painter.drawRect(0, 0, this->width(), this->height());
+
 }
 
 void MainScreen::on_startEasy_clicked()

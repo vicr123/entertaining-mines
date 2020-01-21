@@ -35,6 +35,7 @@ int main(int argc, char *argv[])
 #endif
 
     tApplication a(argc, argv);
+    a.registerCrashTrap();
 
     if (QDir("/usr/share/entertaining-mines").exists()) {
         a.setShareDir("/usr/share/entertaining-mines");
