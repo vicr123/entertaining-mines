@@ -799,11 +799,6 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../online/onlinelobbyscreen.ui" line="222"/>
-        <source>PushButton</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../online/onlinelobbyscreen.ui" line="168"/>
         <source>GAME SETTINGS</source>
         <translation type="unfinished"></translation>

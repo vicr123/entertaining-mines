@@ -219,7 +219,7 @@
              </sizepolicy>
             </property>
             <property name="text">
-             <string>PushButton</string>
+             <string notr="true">PushButton</string>
             </property>
            </widget>
           </item>
