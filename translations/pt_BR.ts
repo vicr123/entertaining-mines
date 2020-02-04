@@ -6,17 +6,17 @@
     <message>
         <location filename="../online/cannedmessagepopover.ui" line="71"/>
         <source>Send a canned message</source>
-        <translation type="unfinished"></translation>
+        <translation>Mandar uma mensagem encanada</translation>
     </message>
     <message>
         <location filename="../online/cannedmessagepopover.cpp" line="37"/>
         <source>Select</source>
-        <translation type="unfinished"></translation>
+        <translation>Selecionar</translation>
     </message>
     <message>
         <location filename="../online/cannedmessagepopover.cpp" line="38"/>
         <source>Back</source>
-        <translation type="unfinished"></translation>
+        <translation>Voltar</translation>
     </message>
 </context>
 <context>
@@ -24,43 +24,43 @@
     <message>
         <location filename="../game/congratulation.ui" line="79"/>
         <source>Congratulations!</source>
-        <translation type="unfinished"></translation>
+        <translation>Parabéns!</translation>
     </message>
     <message>
         <location filename="../game/congratulation.ui" line="109"/>
         <source>Play Again</source>
-        <translation type="unfinished"></translation>
+        <translation>Jogar de Novo</translation>
     </message>
     <message>
         <location filename="../game/congratulation.ui" line="116"/>
         <source>Play a new board with the same parameters</source>
-        <translation type="unfinished"></translation>
+        <translation>Jogar num tabuleiro novo com os mesmo parâmetros</translation>
     </message>
     <message>
         <location filename="../game/congratulation.ui" line="123"/>
         <source>Review</source>
-        <translation type="unfinished"></translation>
+        <translation>Visualizar</translation>
     </message>
     <message>
         <location filename="../game/congratulation.ui" line="130"/>
         <source>See the board</source>
-        <translation type="unfinished"></translation>
+        <translation>Ver o tabuleiro</translation>
     </message>
     <message>
         <location filename="../game/congratulation.ui" line="153"/>
         <location filename="../game/congratulation.cpp" line="28"/>
         <source>Main Menu</source>
-        <translation type="unfinished"></translation>
+        <translation>Menu Principal</translation>
     </message>
     <message>
         <location filename="../game/congratulation.ui" line="160"/>
         <source>Return to the Main Menu</source>
-        <translation type="unfinished"></translation>
+        <translation>Voltar ao Menu Principal</translation>
     </message>
     <message>
         <location filename="../game/congratulation.cpp" line="27"/>
         <source>Select</source>
-        <translation type="unfinished"></translation>
+        <translation>Selecionar</translation>
     </message>
 </context>
 <context>
@@ -68,52 +68,52 @@
     <message>
         <location filename="../information/creditsscreen.ui" line="71"/>
         <source>Credits</source>
-        <translation type="unfinished"></translation>
+        <translation>Créditos</translation>
     </message>
     <message>
         <location filename="../information/creditsscreen.ui" line="158"/>
         <source>Entertaining Mines</source>
-        <translation type="unfinished"></translation>
+        <translation>Entertaining Mines</translation>
     </message>
     <message>
         <location filename="../information/creditsscreen.ui" line="180"/>
         <source>DEVELOPED BY</source>
-        <translation type="unfinished"></translation>
+        <translation>DESENVOLVIDO POR</translation>
     </message>
     <message>
         <location filename="../information/creditsscreen.ui" line="233"/>
         <source>MUSIC BY</source>
-        <translation type="unfinished"></translation>
+        <translation>MÚSICA POR</translation>
     </message>
     <message>
         <location filename="../information/creditsscreen.ui" line="264"/>
         <source>Background Music - &quot;Crypto&quot;</source>
-        <translation type="unfinished"></translation>
+        <translation>Música de Fundo - &quot;Crypto&quot;</translation>
     </message>
     <message>
         <location filename="../information/creditsscreen.ui" line="277"/>
         <source>Defeat Music - &quot;Piano Between&quot;</source>
-        <translation type="unfinished"></translation>
+        <translation>Música Padrão - &quot;Piano Between&quot;</translation>
     </message>
     <message>
         <location filename="../information/creditsscreen.ui" line="290"/>
         <source>Victory Music - &quot;Disco Sting&quot;</source>
-        <translation type="unfinished"></translation>
+        <translation>Música de Vitória - &quot;Disco Sting&quot;</translation>
     </message>
     <message>
         <location filename="../information/creditsscreen.ui" line="303"/>
         <source>Music is licensed under Creative Commons: BY 4.0</source>
-        <translation type="unfinished"></translation>
+        <translation>Música está licenciada sob Creative Commons: BY 4.0</translation>
     </message>
     <message>
         <location filename="../information/creditsscreen.ui" line="332"/>
         <source>Licensed under the terms of the GNU General Public License, version 3, or later.</source>
-        <translation type="unfinished"></translation>
+        <translation>Licenciado sob os termos da Licença Pública Geral GNU, versão 3 ou posterior.</translation>
     </message>
     <message>
         <location filename="../information/creditsscreen.cpp" line="44"/>
         <source>Back</source>
-        <translation type="unfinished"></translation>
+        <translation>Voltar</translation>
     </message>
 </context>
 <context>
@@ -121,43 +121,43 @@
     <message>
         <location filename="../game/gameover.ui" line="79"/>
         <source>Game Over</source>
-        <translation type="unfinished"></translation>
+        <translation>Fim de Jogo</translation>
     </message>
     <message>
         <location filename="../game/gameover.ui" line="96"/>
         <source>Play Again</source>
-        <translation type="unfinished"></translation>
+        <translation>Jogar de novo</translation>
     </message>
     <message>
         <location filename="../game/gameover.ui" line="103"/>
         <source>Play a new board with the same parameters</source>
-        <translation type="unfinished"></translation>
+        <translation>Jogar num tabuleiro novo com os mesmo parâmetros</translation>
     </message>
     <message>
         <location filename="../game/gameover.ui" line="110"/>
         <source>Review</source>
-        <translation type="unfinished"></translation>
+        <translation>Visualizar</translation>
     </message>
     <message>
         <location filename="../game/gameover.ui" line="117"/>
         <source>See the board</source>
-        <translation type="unfinished"></translation>
+        <translation>Ver o tabuleiro</translation>
     </message>
     <message>
         <location filename="../game/gameover.ui" line="140"/>
         <location filename="../game/gameover.cpp" line="28"/>
         <source>Main Menu</source>
-        <translation type="unfinished"></translation>
+        <translation>Menu Principal</translation>
     </message>
     <message>
         <location filename="../game/gameover.ui" line="147"/>
         <source>Return to the Main Menu</source>
-        <translation type="unfinished"></translation>
+        <translation>Voltar ao Menu Principal</translation>
     </message>
     <message>
         <location filename="../game/gameover.cpp" line="27"/>
         <source>Select</source>
-        <translation type="unfinished"></translation>
+        <translation>Selecionar</translation>
     </message>
 </context>
 <context>
@@ -166,92 +166,92 @@
         <location filename="../screens/gamescreen.cpp" line="66"/>
         <location filename="../screens/gamescreen.cpp" line="448"/>
         <source>Reveal</source>
-        <translation type="unfinished"></translation>
+        <translation>Revelar</translation>
     </message>
     <message>
         <location filename="../screens/gamescreen.cpp" line="67"/>
         <location filename="../screens/gamescreen.cpp" line="449"/>
         <source>Flag</source>
-        <translation type="unfinished"></translation>
+        <translation>Bandeira</translation>
     </message>
     <message>
         <location filename="../screens/gamescreen.cpp" line="219"/>
         <source>In Game</source>
-        <translation type="unfinished"></translation>
+        <translation>Em Jogo</translation>
     </message>
     <message>
         <location filename="../screens/gamescreen.cpp" line="452"/>
         <source>Mark</source>
-        <translation type="unfinished"></translation>
+        <translation>Marcar</translation>
     </message>
     <message>
         <location filename="../screens/gamescreen.cpp" line="455"/>
         <source>Unflag</source>
-        <translation type="unfinished"></translation>
+        <translation>Tirar bandeira</translation>
     </message>
     <message>
         <location filename="../screens/gamescreen.cpp" line="458"/>
         <source>Sweep</source>
-        <translation type="unfinished"></translation>
+        <translation>Limpar</translation>
     </message>
     <message>
         <location filename="../screens/gamescreen.cpp" line="314"/>
         <source>Your time was not recorded because loading a save invalidates the timer.</source>
-        <translation type="unfinished"></translation>
+        <translation>Seu tempo não foi salvo por porque carregar um jogo salvo invalida o timer.</translation>
     </message>
     <message numerus="yes">
         <location filename="../screens/gamescreen.cpp" line="220"/>
         <source>%1×%2 board with %n mines</source>
-        <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+        <translation>
+            <numerusform>Tabuleiro %1×%2 com %n mina</numerusform>
+            <numerusform>Tabuleiro %1×%2 com %n minas</numerusform>
         </translation>
     </message>
     <message numerus="yes">
         <location filename="../screens/gamescreen.cpp" line="378"/>
         <source>You completed a %1×%2 board with %n mines in %4. Divine!</source>
-        <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+        <translation>
+            <numerusform>Você completou um tabuleiro %1x%2 com %n mina em %4. Divino!</numerusform>
+            <numerusform>Você completou um tabuleiro %1x%2 com %n minas em %4. Divino!</numerusform>
         </translation>
     </message>
     <message numerus="yes">
         <location filename="../screens/gamescreen.cpp" line="383"/>
         <source>You completed a %1×%2 board with %n mines.</source>
-        <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+        <translation>
+            <numerusform>Você completou um tabuleiro %1x%2 com %n mina.</numerusform>
+            <numerusform>Você completou um tabuleiro %1x%2 com %n minas.</numerusform>
         </translation>
     </message>
     <message>
         <location filename="../screens/gamescreen.cpp" line="490"/>
         <source>Your time was not recorded because pausing the game invalidates the timer.</source>
-        <translation type="unfinished"></translation>
+        <translation>Seu tempo não foi salvo porque pausar o jogo invalida o timer.</translation>
     </message>
     <message>
         <location filename="../screens/gamescreen.cpp" line="512"/>
         <source>%1 × %2 board</source>
-        <translation type="unfinished"></translation>
+        <translation>Tabuleiro %1 x %2</translation>
     </message>
     <message>
         <location filename="../screens/gamescreen.cpp" line="513"/>
         <source>%1 mines</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 minas</translation>
     </message>
     <message>
         <location filename="../screens/gamescreen.cpp" line="514"/>
         <source>%1 flagged</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 embandeiradas</translation>
     </message>
     <message>
         <location filename="../screens/gamescreen.cpp" line="515"/>
         <source>%1 mines to go</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 minas restantes</translation>
     </message>
     <message>
         <location filename="../screens/gamescreen.cpp" line="516"/>
         <source>%1% cleared</source>
-        <translation type="unfinished"></translation>
+        <translation>%1% limpas</translation>
     </message>
 </context>
 <context>
@@ -259,39 +259,39 @@
     <message>
         <location filename="../gamewindow.ui" line="14"/>
         <source>Entertaining Mines</source>
-        <translation type="unfinished"></translation>
+        <translation>Entertaining Mines</translation>
     </message>
     <message>
         <location filename="../gamewindow.cpp" line="63"/>
         <source>Corrupt File</source>
-        <translation type="unfinished"></translation>
+        <translation>Arquivo Corrupto</translation>
     </message>
     <message>
         <location filename="../gamewindow.cpp" line="64"/>
         <source>Sorry, that file is corrupt and needs to be deleted.</source>
-        <translation type="unfinished"></translation>
+        <translation>Deslcupe, esse arquivo é corrupto e precisa ser deletado.</translation>
     </message>
     <message>
         <location filename="../gamewindow.cpp" line="85"/>
         <location filename="../gamewindow.cpp" line="98"/>
         <source>Idle</source>
-        <translation type="unfinished"></translation>
+        <translation>Ausente</translation>
     </message>
     <message>
         <location filename="../gamewindow.cpp" line="86"/>
         <location filename="../gamewindow.cpp" line="99"/>
         <source>Main Menu</source>
-        <translation type="unfinished"></translation>
+        <translation>Menu Principal</translation>
     </message>
     <message>
         <location filename="../gamewindow.cpp" line="105"/>
         <source>Join Game</source>
-        <translation type="unfinished"></translation>
+        <translation>Entrar em Jogo</translation>
     </message>
     <message>
         <location filename="../gamewindow.cpp" line="106"/>
         <source>%1 wants to join your room</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 quer entrar na sua sala</translation>
     </message>
 </context>
 <context>
@@ -299,22 +299,22 @@
     <message>
         <location filename="../online/gamemodeselect.ui" line="71"/>
         <source>Game Mode</source>
-        <translation type="unfinished"></translation>
+        <translation>Modo de Jogo</translation>
     </message>
     <message>
         <location filename="../online/gamemodeselect.ui" line="113"/>
         <source>Select a game mode to play</source>
-        <translation type="unfinished"></translation>
+        <translation>Selecione um jogo para jogar</translation>
     </message>
     <message>
         <location filename="../online/gamemodeselect.ui" line="135"/>
         <source>COOPERATIVE</source>
-        <translation type="unfinished"></translation>
+        <translation>COOPERATIVO</translation>
     </message>
     <message>
         <location filename="../online/gamemodeselect.ui" line="142"/>
         <source>Work together to sweep the whole board without treading on any mines!</source>
-        <translation type="unfinished"></translation>
+        <translation>Trabalhe junto para limpar o tabuleiro inteiro sem pisar em nehuma mina!</translation>
     </message>
     <message>
         <location filename="../online/gamemodeselect.ui" line="165"/>
