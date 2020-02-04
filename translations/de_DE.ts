@@ -210,48 +210,48 @@
     <message numerus="yes">
         <location filename="../screens/gamescreen.cpp" line="378"/>
         <source>You completed a %1×%2 board with %n mines in %4. Divine!</source>
-        <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+        <translation>
+            <numerusform>Du hast ein %1×%2 Brett mit %n Mine in %4 gelöst. Klasse!</numerusform>
+            <numerusform>Du hast ein %1×%2 Brett mit %n Minen in %4 gelöst. Klasse!</numerusform>
         </translation>
     </message>
     <message numerus="yes">
         <location filename="../screens/gamescreen.cpp" line="383"/>
         <source>You completed a %1×%2 board with %n mines.</source>
-        <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+        <translation>
+            <numerusform>Du hast ein %1×%2 Brett mit %n Mine gelöst.</numerusform>
+            <numerusform>Du hast ein %1×%2 Brett mit %n Minen gelöst.</numerusform>
         </translation>
     </message>
     <message>
         <location filename="../screens/gamescreen.cpp" line="490"/>
         <source>Your time was not recorded because pausing the game invalidates the timer.</source>
-        <translation type="unfinished"></translation>
+        <translation>Deine Zeit wurde nicht aufgenommen, da das Pausieren des Spiels den Timer invalidiert.</translation>
     </message>
     <message>
         <location filename="../screens/gamescreen.cpp" line="512"/>
         <source>%1 × %2 board</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 × %2 Brett</translation>
     </message>
     <message>
         <location filename="../screens/gamescreen.cpp" line="513"/>
         <source>%1 mines</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 Minen</translation>
     </message>
     <message>
         <location filename="../screens/gamescreen.cpp" line="514"/>
         <source>%1 flagged</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 Markiert</translation>
     </message>
     <message>
         <location filename="../screens/gamescreen.cpp" line="515"/>
         <source>%1 mines to go</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 Minen noch</translation>
     </message>
     <message>
         <location filename="../screens/gamescreen.cpp" line="516"/>
         <source>%1% cleared</source>
-        <translation type="unfinished"></translation>
+        <translation>%1% Geleert</translation>
     </message>
 </context>
 <context>
@@ -259,39 +259,39 @@
     <message>
         <location filename="../gamewindow.ui" line="14"/>
         <source>Entertaining Mines</source>
-        <translation type="unfinished"></translation>
+        <translation>Entertaining Mines</translation>
     </message>
     <message>
         <location filename="../gamewindow.cpp" line="63"/>
         <source>Corrupt File</source>
-        <translation type="unfinished"></translation>
+        <translation>Beschädigte Datei</translation>
     </message>
     <message>
         <location filename="../gamewindow.cpp" line="64"/>
         <source>Sorry, that file is corrupt and needs to be deleted.</source>
-        <translation type="unfinished"></translation>
+        <translation>Die Datei ist leider beschädigt und muss gelöscht werden.</translation>
     </message>
     <message>
         <location filename="../gamewindow.cpp" line="85"/>
         <location filename="../gamewindow.cpp" line="98"/>
         <source>Idle</source>
-        <translation type="unfinished"></translation>
+        <translation>Unbeschäftigt</translation>
     </message>
     <message>
         <location filename="../gamewindow.cpp" line="86"/>
         <location filename="../gamewindow.cpp" line="99"/>
         <source>Main Menu</source>
-        <translation type="unfinished"></translation>
+        <translation>Hauptmenü</translation>
     </message>
     <message>
         <location filename="../gamewindow.cpp" line="105"/>
         <source>Join Game</source>
-        <translation type="unfinished"></translation>
+        <translation>Spiel Beitreten</translation>
     </message>
     <message>
         <location filename="../gamewindow.cpp" line="106"/>
         <source>%1 wants to join your room</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 möchte deinem Raum beitreten</translation>
     </message>
 </context>
 <context>
@@ -299,32 +299,32 @@
     <message>
         <location filename="../online/gamemodeselect.ui" line="71"/>
         <source>Game Mode</source>
-        <translation type="unfinished"></translation>
+        <translation>Spielmodus</translation>
     </message>
     <message>
         <location filename="../online/gamemodeselect.ui" line="113"/>
         <source>Select a game mode to play</source>
-        <translation type="unfinished"></translation>
+        <translation>Wähle einen Spielmodus</translation>
     </message>
     <message>
         <location filename="../online/gamemodeselect.ui" line="135"/>
         <source>COOPERATIVE</source>
-        <translation type="unfinished"></translation>
+        <translation>KOOPERATIV</translation>
     </message>
     <message>
         <location filename="../online/gamemodeselect.ui" line="142"/>
         <source>Work together to sweep the whole board without treading on any mines!</source>
-        <translation type="unfinished"></translation>
+        <translation>Arbeitet zusammen um das gesamte Spielbrett zu lösen ohne auf Minen zu treten!</translation>
     </message>
     <message>
         <location filename="../online/gamemodeselect.ui" line="165"/>
         <source>Play Cooperative</source>
-        <translation type="unfinished"></translation>
+        <translation>Kooperativ spielen</translation>
     </message>
     <message>
         <location filename="../online/gamemodeselect.ui" line="204"/>
         <source>COMPETITIVE</source>
-        <translation type="unfinished"></translation>
+        <translation>KOMPETITIV</translation>
     </message>
     <message>
         <location filename="../online/gamemodeselect.ui" line="211"/>
