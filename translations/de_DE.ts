@@ -329,12 +329,12 @@
     <message>
         <location filename="../online/gamemodeselect.ui" line="211"/>
         <source>Play against each other on the same board and try to claim the most flags on the board!</source>
-        <translation type="unfinished"></translation>
+        <translation>Spielt gegeneinander auf dem selben Spielfeld und versucht die meisten Minen auf dem Feld zu markieren!</translation>
     </message>
     <message>
         <location filename="../online/gamemodeselect.ui" line="234"/>
         <source>Play Competitive</source>
-        <translation type="unfinished"></translation>
+        <translation>Gegeneinander spielen</translation>
     </message>
     <message>
         <location filename="../online/gamemodeselect.ui" line="259"/>
