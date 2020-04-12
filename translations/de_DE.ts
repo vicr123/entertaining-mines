@@ -197,7 +197,7 @@
     <message>
         <location filename="../screens/gamescreen.cpp" line="314"/>
         <source>Your time was not recorded because loading a save invalidates the timer.</source>
-        <translation>Deine Zeit wurde nicht gespeichert, da das Laden eines Speicherstandes den Timer verfälscht</translation>
+        <translation>Deine Zeit wurde nicht gespeichert, da das Laden eines Speicherstandes den Timer ungültig macht.</translation>
     </message>
     <message numerus="yes">
         <location filename="../screens/gamescreen.cpp" line="220"/>
