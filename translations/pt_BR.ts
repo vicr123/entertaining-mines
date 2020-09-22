@@ -880,7 +880,7 @@
     <message>
         <location filename="../online/onlinemenuscreen.ui" line="183"/>
         <source>Join Lobby</source>
-        <translation>Entrar em saa</translation>
+        <translation>Entrar em sala</translation>
     </message>
     <message>
         <location filename="../online/onlinemenuscreen.ui" line="190"/>
