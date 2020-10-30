@@ -646,100 +646,101 @@
     <message>
         <location filename="../online/onlinegamescreen.cpp" line="83"/>
         <source>We need to guess!</source>
-        <translation type="unfinished"></translation>
+        <translation>Tahmin etmeliyiz!</translation>
     </message>
     <message>
         <location filename="../online/onlinegamescreen.cpp" line="84"/>
         <source>I&apos;m on my phone!</source>
-        <translation type="unfinished"></translation>
+        <translation>Kendi telefonumdayım!</translation>
     </message>
     <message>
         <location filename="../online/onlinegamescreen.cpp" line="85"/>
         <source>I&apos;m using a keyboard!</source>
-        <translation type="unfinished"></translation>
+        <translation>Klavye kullanıyorum!</translation>
     </message>
     <message>
         <location filename="../online/onlinegamescreen.cpp" line="86"/>
         <source>I&apos;m using a mouse!</source>
-        <translation type="unfinished"></translation>
+        <translation>Mouse kullanıyorum!</translation>
     </message>
     <message>
         <location filename="../online/onlinegamescreen.cpp" line="87"/>
         <source>I&apos;m using tilt controls!</source>
-        <translation type="unfinished"></translation>
+        <translation>Eğim kontrolleri kullanıyorum!</translation>
     </message>
     <message>
         <location filename="../online/onlinegamescreen.cpp" line="90"/>
         <location filename="../online/onlinegamescreen.cpp" line="322"/>
         <source>Reveal</source>
-        <translation type="unfinished"></translation>
+        <translation>Göster</translation>
     </message>
     <message>
         <location filename="../online/onlinegamescreen.cpp" line="91"/>
         <location filename="../online/onlinegamescreen.cpp" line="323"/>
         <source>Flag</source>
-        <translation type="unfinished"></translation>
+        <translation>Bayrak</translation>
     </message>
     <message>
         <location filename="../online/onlinegamescreen.cpp" line="144"/>
         <source>Congratulations!</source>
-        <translation type="unfinished"></translation>
+        <translation>Tebrik ederim!</translation>
     </message>
     <message>
         <location filename="../online/onlinegamescreen.cpp" line="145"/>
         <source>You swept this board completely!</source>
-        <translation type="unfinished"></translation>
+        <translation>Bu tahtayı tamamen taradın!</translation>
     </message>
     <message>
         <location filename="../online/onlinegamescreen.cpp" line="326"/>
         <source>Mark</source>
-        <translation type="unfinished"></translation>
+        <translation>İşaret</translation>
     </message>
     <message>
         <location filename="../online/onlinegamescreen.cpp" line="329"/>
         <source>Unflag</source>
-        <translation type="unfinished"></translation>
+        <translation>İşareti kaldır</translation>
     </message>
     <message>
         <location filename="../online/onlinegamescreen.cpp" line="332"/>
         <source>Sweep</source>
-        <translation type="unfinished"></translation>
+        <translation>Süpürme</translation>
     </message>
     <message>
         <location filename="../online/onlinegamescreen.cpp" line="336"/>
         <source>Skip Turn</source>
-        <translation type="unfinished"></translation>
+        <translation>Dönüşü Atla</translation>
     </message>
     <message>
         <location filename="../online/onlinegamescreen.cpp" line="345"/>
         <source>Message</source>
-        <translation type="unfinished"></translation>
+        <translation>İleti</translation>
     </message>
     <message>
         <location filename="../online/onlinegamescreen.cpp" line="378"/>
         <source>Cooperative</source>
-        <translation type="unfinished"></translation>
+        <translation>Kooperatif</translation>
     </message>
     <message>
         <location filename="../online/onlinegamescreen.cpp" line="379"/>
         <source>Turn-Based Cooperative</source>
-        <translation type="unfinished"></translation>
+        <translation>Sıra Tabanlı Kooperatif</translation>
     </message>
     <message>
         <location filename="../online/onlinegamescreen.cpp" line="380"/>
         <source>Competitive</source>
-        <translation type="unfinished"></translation>
+        <translation>Rekabetçi</translation>
     </message>
     <message>
         <location filename="../online/onlinegamescreen.cpp" line="383"/>
         <source>Online Game</source>
-        <translation type="unfinished"></translation>
+        <translation>Çevrimiçi oyun</translation>
     </message>
     <message numerus="yes">
         <location filename="../online/onlinegamescreen.cpp" line="384"/>
         <source>%1: %2×%3 board with %n mines</source>
-        <translation type="unfinished">
-            <numerusform></numerusform>
+        <translation>
+            <numerusform>%1: %2×%3 panosu, %n mayınlı</numerusform>
+            <numerusform>%1: %2×%3 panosu, %n mayınları</numerusform>
         </translation>
     </message>
 </context>
@@ -748,22 +749,22 @@
     <message>
         <location filename="../online/onlinejoinscreen.ui" line="68"/>
         <source>Join Game</source>
-        <translation type="unfinished"></translation>
+        <translation>Oyuna katılmak</translation>
     </message>
     <message>
         <location filename="../online/onlinejoinscreen.ui" line="93"/>
         <source>Select a game to join</source>
-        <translation type="unfinished"></translation>
+        <translation>Katılmak için bir oyun seçin</translation>
     </message>
     <message>
         <location filename="../online/onlinejoinscreen.cpp" line="40"/>
         <source>Join</source>
-        <translation type="unfinished"></translation>
+        <translation>Katıl</translation>
     </message>
     <message>
         <location filename="../online/onlinejoinscreen.cpp" line="41"/>
         <source>Back</source>
-        <translation type="unfinished"></translation>
+        <translation>Geri</translation>
     </message>
 </context>
 <context>
@@ -771,77 +772,77 @@
     <message>
         <location filename="../online/onlinelobbyscreen.ui" line="71"/>
         <source>Lobby</source>
-        <translation type="unfinished"></translation>
+        <translation>Lobi</translation>
     </message>
     <message>
         <location filename="../online/onlinelobbyscreen.ui" line="175"/>
         <source>Game Mode</source>
-        <translation type="unfinished"></translation>
+        <translation>Oyun modu</translation>
     </message>
     <message>
         <location filename="../online/onlinelobbyscreen.ui" line="182"/>
         <source>Board Height</source>
-        <translation type="unfinished"></translation>
+        <translation>Kart Yüksekliği</translation>
     </message>
     <message>
         <location filename="../online/onlinelobbyscreen.ui" line="202"/>
         <source>Board Width</source>
-        <translation type="unfinished"></translation>
+        <translation>Pano Genişliği</translation>
     </message>
     <message>
         <location filename="../online/onlinelobbyscreen.ui" line="209"/>
         <source>Board Mines</source>
-        <translation type="unfinished"></translation>
+        <translation>Yönetim Kurulu Madenleri</translation>
     </message>
     <message>
         <location filename="../online/onlinelobbyscreen.ui" line="168"/>
         <source>GAME SETTINGS</source>
-        <translation type="unfinished"></translation>
+        <translation>OYUN AYARLARI</translation>
     </message>
     <message>
         <location filename="../online/onlinelobbyscreen.ui" line="101"/>
         <source>Gathering Players...</source>
-        <translation type="unfinished"></translation>
+        <translation>Oyuncular Toplanıyor...</translation>
     </message>
     <message>
         <location filename="../online/onlinelobbyscreen.ui" line="155"/>
         <source>Start Game</source>
-        <translation type="unfinished"></translation>
+        <translation>Oyunu başlat</translation>
     </message>
     <message>
         <location filename="../online/onlinelobbyscreen.cpp" line="45"/>
         <source>Select</source>
-        <translation type="unfinished"></translation>
+        <translation>Seç</translation>
     </message>
     <message>
         <location filename="../online/onlinelobbyscreen.cpp" line="46"/>
         <source>Leave Room</source>
-        <translation type="unfinished"></translation>
+        <translation>Odayı terket</translation>
     </message>
     <message>
         <location filename="../online/onlinelobbyscreen.cpp" line="83"/>
         <source>In Lobby</source>
-        <translation type="unfinished"></translation>
+        <translation>Lobide</translation>
     </message>
     <message>
         <location filename="../online/onlinelobbyscreen.cpp" line="84"/>
         <source>Waiting for players</source>
-        <translation type="unfinished"></translation>
+        <translation>Oyuncuları bekliyorum</translation>
     </message>
     <message>
         <location filename="../online/onlinelobbyscreen.cpp" line="101"/>
         <source>Cooperative</source>
-        <translation type="unfinished"></translation>
+        <translation>Kooperatif</translation>
     </message>
     <message>
         <location filename="../online/onlinelobbyscreen.cpp" line="103"/>
         <source>Turn-Based Cooperative</source>
-        <translation type="unfinished"></translation>
+        <translation>Sıra Tabanlı Kooperatif</translation>
     </message>
     <message>
         <location filename="../online/onlinelobbyscreen.cpp" line="105"/>
         <source>Competitive</source>
-        <translation type="unfinished"></translation>
+        <translation>Rekabetçi</translation>
     </message>
 </context>
 <context>
@@ -849,68 +850,68 @@
     <message>
         <location filename="../online/onlinemenuscreen.ui" line="79"/>
         <source>Entertaining Mines</source>
-        <translation type="unfinished"></translation>
+        <translation>Eğlenceli Madenler</translation>
     </message>
     <message>
         <location filename="../online/onlinemenuscreen.ui" line="213"/>
         <source>Friends and Relations</source>
-        <translation type="unfinished"></translation>
+        <translation>Arkadaşlar ve İlişkiler</translation>
     </message>
     <message>
         <location filename="../online/onlinemenuscreen.ui" line="220"/>
         <source>Add or remove friends and manage blocked users</source>
-        <translation type="unfinished"></translation>
+        <translation>Arkadaş ekleyin veya kaldırın ve engellenen kullanıcıları yönetin</translation>
     </message>
     <message>
         <location filename="../online/onlinemenuscreen.ui" line="169"/>
         <source>Create Room</source>
-        <translation type="unfinished"></translation>
+        <translation>Oda yarat</translation>
     </message>
     <message>
         <location filename="../online/onlinemenuscreen.ui" line="94"/>
         <source>Playing Online</source>
-        <translation type="unfinished"></translation>
+        <translation>Çevrimiçi oynamak</translation>
     </message>
     <message>
         <location filename="../online/onlinemenuscreen.ui" line="176"/>
         <source>Create a new lobby where friends can join you</source>
-        <translation type="unfinished"></translation>
+        <translation>Arkadaşlarınızın size katılabileceği yeni bir lobi oluşturun</translation>
     </message>
     <message>
         <location filename="../online/onlinemenuscreen.ui" line="183"/>
         <source>Join Lobby</source>
-        <translation type="unfinished"></translation>
+        <translation>Lobiye Katıl</translation>
     </message>
     <message>
         <location filename="../online/onlinemenuscreen.ui" line="190"/>
         <source>Join a friend&apos;s open lobby</source>
-        <translation type="unfinished"></translation>
+        <translation>Bir arkadaşınızın açık lobisine katılın</translation>
     </message>
     <message>
         <location filename="../online/onlinemenuscreen.ui" line="227"/>
         <source>Account</source>
-        <translation type="unfinished"></translation>
+        <translation>Hesap</translation>
     </message>
     <message>
         <location filename="../online/onlinemenuscreen.ui" line="234"/>
         <source>Manage your account</source>
-        <translation type="unfinished"></translation>
+        <translation>Hesabını düzenle</translation>
     </message>
     <message>
         <location filename="../online/onlinemenuscreen.ui" line="241"/>
         <location filename="../online/onlinemenuscreen.cpp" line="39"/>
         <source>Main Menu</source>
-        <translation type="unfinished"></translation>
+        <translation>Ana menü</translation>
     </message>
     <message>
         <location filename="../online/onlinemenuscreen.ui" line="248"/>
         <source>Disconnect from Entertaining Games Online</source>
-        <translation type="unfinished"></translation>
+        <translation>Çevrimiçi Eğlenceli Oyunlarla Bağlantıyı Kes</translation>
     </message>
     <message>
         <location filename="../online/onlinemenuscreen.cpp" line="38"/>
         <source>Select</source>
-        <translation type="unfinished"></translation>
+        <translation>Seç</translation>
     </message>
 </context>
 <context>
@@ -918,63 +919,63 @@
     <message>
         <location filename="../screens/pausescreen.ui" line="79"/>
         <source>Pause</source>
-        <translation type="unfinished"></translation>
+        <translation>Duraklat</translation>
     </message>
     <message>
         <location filename="../screens/pausescreen.ui" line="96"/>
         <location filename="../screens/pausescreen.cpp" line="49"/>
         <source>Resume</source>
-        <translation type="unfinished"></translation>
+        <translation>Devam et</translation>
     </message>
     <message>
         <location filename="../screens/pausescreen.ui" line="103"/>
         <source>Resume the game</source>
-        <translation type="unfinished"></translation>
+        <translation>Oyunu devam et</translation>
     </message>
     <message>
         <location filename="../screens/pausescreen.ui" line="110"/>
         <source>Save</source>
-        <translation type="unfinished"></translation>
+        <translation>Kaydet</translation>
     </message>
     <message>
         <location filename="../screens/pausescreen.ui" line="117"/>
         <source>Save this game so you can resume it later</source>
-        <translation type="unfinished"></translation>
+        <translation>Daha sonra devam edebilmek için bu oyunu kaydedin</translation>
     </message>
     <message>
         <location filename="../screens/pausescreen.ui" line="124"/>
         <source>New Game</source>
-        <translation type="unfinished"></translation>
+        <translation>Yeni oyun</translation>
     </message>
     <message>
         <location filename="../screens/pausescreen.ui" line="131"/>
         <source>Abandon this game and start a new one with the same parameters</source>
-        <translation type="unfinished"></translation>
+        <translation>Bu oyunu terk edin ve aynı parametrelerle yeni bir oyuna başlayın</translation>
     </message>
     <message>
         <location filename="../screens/pausescreen.ui" line="154"/>
         <source>Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Ayarlar</translation>
     </message>
     <message>
         <location filename="../screens/pausescreen.ui" line="161"/>
         <source>Go to Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Ayarlara git</translation>
     </message>
     <message>
         <location filename="../screens/pausescreen.ui" line="168"/>
         <source>Main Menu</source>
-        <translation type="unfinished"></translation>
+        <translation>Ana menü</translation>
     </message>
     <message>
         <location filename="../screens/pausescreen.ui" line="175"/>
         <source>Abandon this game</source>
-        <translation type="unfinished"></translation>
+        <translation>Bu oyunu bırak</translation>
     </message>
     <message>
         <location filename="../screens/pausescreen.cpp" line="48"/>
         <source>Select</source>
-        <translation type="unfinished"></translation>
+        <translation>Seç</translation>
     </message>
 </context>
 <context>
@@ -982,57 +983,57 @@
     <message>
         <location filename="../screens/settingsscreen.ui" line="71"/>
         <source>Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Ayarlar</translation>
     </message>
     <message>
         <location filename="../screens/settingsscreen.cpp" line="59"/>
         <source>Audio</source>
-        <translation type="unfinished"></translation>
+        <translation>Ses</translation>
     </message>
     <message>
         <location filename="../screens/settingsscreen.cpp" line="42"/>
         <source>Background Music</source>
-        <translation type="unfinished"></translation>
+        <translation>Arka plan müziği</translation>
     </message>
     <message>
         <location filename="../screens/settingsscreen.cpp" line="43"/>
         <source>Sound Effects</source>
-        <translation type="unfinished"></translation>
+        <translation>Ses efektleri</translation>
     </message>
     <message>
         <location filename="../screens/settingsscreen.cpp" line="53"/>
         <source>Gamepad Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Oyun Kumandası Ayarları</translation>
     </message>
     <message>
         <location filename="../screens/settingsscreen.cpp" line="62"/>
         <source>Behaviour</source>
-        <translation type="unfinished"></translation>
+        <translation>Davranış</translation>
     </message>
     <message>
         <location filename="../screens/settingsscreen.cpp" line="63"/>
         <source>Marks</source>
-        <translation type="unfinished"></translation>
+        <translation>İşaretler</translation>
     </message>
     <message>
         <location filename="../screens/settingsscreen.cpp" line="64"/>
         <source>When this is enabled, right clicking a flag will change it into the marked state first.</source>
-        <translation type="unfinished"></translation>
+        <translation>Bu etkinleştirildiğinde, bir bayrağa sağ tıklamak onu önce işaretli duruma değiştirecektir.</translation>
     </message>
     <message>
         <location filename="../screens/settingsscreen.cpp" line="65"/>
         <source>Hardware</source>
-        <translation type="unfinished"></translation>
+        <translation>Donanım</translation>
     </message>
     <message>
         <location filename="../screens/settingsscreen.cpp" line="95"/>
         <source>Select</source>
-        <translation type="unfinished"></translation>
+        <translation>Seç</translation>
     </message>
     <message>
         <location filename="../screens/settingsscreen.cpp" line="96"/>
         <source>Back</source>
-        <translation type="unfinished"></translation>
+        <translation>Geri</translation>
     </message>
 </context>
 <context>
@@ -1040,7 +1041,7 @@
     <message>
         <location filename="../main.cpp" line="51"/>
         <source>Minesweeper</source>
-        <translation type="unfinished"></translation>
+        <translation>Mayın tarama gemisi</translation>
     </message>
 </context>
 </TS>
