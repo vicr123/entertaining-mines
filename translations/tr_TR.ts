@@ -550,47 +550,47 @@
     <message>
         <location filename="../screens/mainscreen.ui" line="391"/>
         <source>Credits</source>
-        <translation type="unfinished"></translation>
+        <translation>Krediler</translation>
     </message>
     <message>
         <location filename="../screens/mainscreen.ui" line="398"/>
         <source>See who made the game</source>
-        <translation type="unfinished"></translation>
+        <translation>Oyunu kimin yaptığını görün</translation>
     </message>
     <message>
         <location filename="../screens/mainscreen.ui" line="421"/>
         <source>Main Menu</source>
-        <translation type="unfinished"></translation>
+        <translation>Ana menü</translation>
     </message>
     <message>
         <location filename="../screens/mainscreen.ui" line="428"/>
         <source>Return to the Main Menu</source>
-        <translation type="unfinished"></translation>
+        <translation>Ana Menüye Dön</translation>
     </message>
     <message>
         <location filename="../screens/mainscreen.cpp" line="49"/>
         <source>Select</source>
-        <translation type="unfinished"></translation>
+        <translation>Seç</translation>
     </message>
     <message>
         <location filename="../screens/mainscreen.cpp" line="50"/>
         <source>Exit</source>
-        <translation type="unfinished"></translation>
+        <translation>Vazgeç</translation>
     </message>
     <message>
         <location filename="../screens/mainscreen.cpp" line="137"/>
         <source>How wide is the board?</source>
-        <translation type="unfinished"></translation>
+        <translation>Yönetim kurulu ne kadar geniş?</translation>
     </message>
     <message>
         <location filename="../screens/mainscreen.cpp" line="141"/>
         <source>How high is the board?</source>
-        <translation type="unfinished"></translation>
+        <translation>Yönetim kurulu ne kadar yüksek?</translation>
     </message>
     <message>
         <location filename="../screens/mainscreen.cpp" line="144"/>
         <source>How many mines are on this board?</source>
-        <translation type="unfinished"></translation>
+        <translation>Bu tahtada kaç tane maden var?</translation>
     </message>
 </context>
 <context>
@@ -600,48 +600,48 @@
         <source>ms</source>
         <comment>ms for milliseconds</comment>
         <extracomment>ms for milliseconds</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>ms</translation>
     </message>
     <message>
         <location filename="../online/onlinegamescreen.ui" line="326"/>
         <location filename="../online/onlinegamescreen.cpp" line="152"/>
         <source>stepped on a mine and blew everything up!</source>
-        <translation type="unfinished"></translation>
+        <translation>bir mayına bastı ve her şeyi havaya uçurdu!</translation>
     </message>
     <message>
         <location filename="../online/onlinegamescreen.cpp" line="76"/>
         <source>Hello!</source>
-        <translation type="unfinished"></translation>
+        <translation>Merhaba!</translation>
     </message>
     <message>
         <location filename="../online/onlinegamescreen.cpp" line="77"/>
         <source>Good luck!</source>
-        <translation type="unfinished"></translation>
+        <translation>İyi şanslar!</translation>
     </message>
     <message>
         <location filename="../online/onlinegamescreen.cpp" line="78"/>
         <source>Booyah!</source>
-        <translation type="unfinished"></translation>
+        <translation>Parlak!</translation>
     </message>
     <message>
         <location filename="../online/onlinegamescreen.cpp" line="79"/>
         <source>Wait!</source>
-        <translation type="unfinished"></translation>
+        <translation>Bekle!</translation>
     </message>
     <message>
         <location filename="../online/onlinegamescreen.cpp" line="80"/>
         <source>Uh-oh!</source>
-        <translation type="unfinished"></translation>
+        <translation>Uh-oh!</translation>
     </message>
     <message>
         <location filename="../online/onlinegamescreen.cpp" line="81"/>
         <source>It&apos;s a 50-50!</source>
-        <translation type="unfinished"></translation>
+        <translation>Bu bir 50-50!</translation>
     </message>
     <message>
         <location filename="../online/onlinegamescreen.cpp" line="82"/>
         <source>I can solve this!</source>
-        <translation type="unfinished"></translation>
+        <translation>Bunu çözebilirim!</translation>
     </message>
     <message>
         <location filename="../online/onlinegamescreen.cpp" line="83"/>
