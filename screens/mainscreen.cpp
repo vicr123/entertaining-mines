@@ -32,10 +32,9 @@
 #include "information/creditsscreen.h"
 #include "information/helpscreen.h"
 
-MainScreen::MainScreen(QWidget *parent) :
+MainScreen::MainScreen(QWidget* parent) :
     QWidget(parent),
-    ui(new Ui::MainScreen)
-{
+    ui(new Ui::MainScreen) {
     ui->setupUi(this);
 
     ui->stackedWidget->setCurrentAnimation(tStackedWidget::None);
@@ -50,7 +49,7 @@ MainScreen::MainScreen(QWidget *parent) :
     ui->gamepadHud->setButtonText(QGamepadManager::ButtonB, tr("Exit"));
 
     ui->gamepadHud->setButtonAction(QGamepadManager::ButtonA, GamepadHud::standardAction(GamepadHud::SelectAction));
-    ui->gamepadHud->setButtonAction(QGamepadManager::ButtonB, [=] {
+    ui->gamepadHud->setButtonAction(QGamepadManager::ButtonB, [ = ] {
         if (ui->stackedWidget->currentWidget() == ui->infoScreen) {
             ui->mainMenuButton->click();
         } else {
@@ -65,13 +64,11 @@ MainScreen::MainScreen(QWidget *parent) :
     ui->stackedWidget->setPalette(pal);
 }
 
-MainScreen::~MainScreen()
-{
+MainScreen::~MainScreen() {
     delete ui;
 }
 
-void MainScreen::resizeEvent(QResizeEvent*event)
-{
+void MainScreen::resizeEvent(QResizeEvent* event) {
     int width;
     if (this->width() < SC_DPI(600)) {
         width = 0;
@@ -82,8 +79,7 @@ void MainScreen::resizeEvent(QResizeEvent*event)
     this->layout()->invalidate();
 }
 
-void MainScreen::paintEvent(QPaintEvent*event)
-{
+void MainScreen::paintEvent(QPaintEvent* event) {
     QPainter painter(this);
     QSvgRenderer renderer(QStringLiteral(":/icons/background.svg"));
 
@@ -105,39 +101,34 @@ void MainScreen::paintEvent(QPaintEvent*event)
 
 }
 
-void MainScreen::on_startEasy_clicked()
-{
+void MainScreen::on_startEasy_clicked() {
     emit startGame(9, 9, 10);
 }
 
-void MainScreen::on_startIntermediate_clicked()
-{
+void MainScreen::on_startIntermediate_clicked() {
     emit startGame(16, 16, 40);
 }
 
-void MainScreen::on_startDifficult_clicked()
-{
+void MainScreen::on_startDifficult_clicked() {
     emit startGame(30, 16, 99);
 }
 
-void MainScreen::on_exitButton_clicked()
-{
+void MainScreen::on_exitButton_clicked() {
     QApplication::exit();
 }
 
-void MainScreen::on_startCustom_clicked()
-{
+void MainScreen::on_startCustom_clicked() {
     bool canceled;
 
     int width = 15;
     int height = 15;
     int mines = 60;
 
-    askWidth:
+askWidth:
     width = TextInputOverlay::getInt(this, tr("How wide is the board?"), &canceled, width, 5, 99, QLineEdit::Normal);
     if (canceled) return;
 
-    askHeight:
+askHeight:
     height = TextInputOverlay::getInt(this, tr("How high is the board?"), &canceled, height, 5, 99, QLineEdit::Normal);
     if (canceled) goto askWidth;
 
@@ -147,8 +138,7 @@ void MainScreen::on_startCustom_clicked()
     emit startGame(width, height, mines);
 }
 
-void MainScreen::on_loadButton_clicked()
-{
+void MainScreen::on_loadButton_clicked() {
 //    QFile* f = new QFile("/home/victor/.local/share/theSuite/Entertaining Mines/saves/coolsave");
 //    f->open(QFile::ReadWrite);
 //    QDataStream str(f);
@@ -163,41 +153,35 @@ void MainScreen::on_loadButton_clicked()
 
     MusicEngine::playSoundEffect(MusicEngine::Selection);
     LoadOverlay* load = new LoadOverlay(this);
-    connect(load, &LoadOverlay::loadData, this, [=](QDataStream* stream) {
+    connect(load, &LoadOverlay::loadData, this, [ = ](QDataStream * stream) {
         loadGame(stream);
     });
     load->load();
 }
 
 
-void MainScreen::on_settingsButton_clicked()
-{
+void MainScreen::on_settingsButton_clicked() {
     emit openSettings();
 }
 
-void MainScreen::on_infoButton_clicked()
-{
+void MainScreen::on_infoButton_clicked() {
     ui->stackedWidget->setCurrentWidget(ui->infoScreen);
 }
 
-void MainScreen::on_mainMenuButton_clicked()
-{
+void MainScreen::on_mainMenuButton_clicked() {
     ui->stackedWidget->setCurrentWidget(ui->mainPage);
 }
 
-void MainScreen::on_creditsButton_clicked()
-{
+void MainScreen::on_creditsButton_clicked() {
     CreditsScreen* cred = new CreditsScreen(this);
     connect(cred, &CreditsScreen::done, cred, &CreditsScreen::deleteLater);
 }
 
-void MainScreen::on_helpButton_clicked()
-{
+void MainScreen::on_helpButton_clicked() {
     HelpScreen* help = new HelpScreen(this);
     connect(help, &HelpScreen::done, help, &HelpScreen::deleteLater);
 }
 
-void MainScreen::on_playOnlineButton_clicked()
-{
+void MainScreen::on_playOnlineButton_clicked() {
     emit playOnline();
 }

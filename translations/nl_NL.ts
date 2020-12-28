@@ -568,27 +568,27 @@
         <translation>Terugkeren naar het hoofdmenu</translation>
     </message>
     <message>
-        <location filename="../screens/mainscreen.cpp" line="49"/>
+        <location filename="../screens/mainscreen.cpp" line="48"/>
         <source>Select</source>
         <translation>Selecteren</translation>
     </message>
     <message>
-        <location filename="../screens/mainscreen.cpp" line="50"/>
+        <location filename="../screens/mainscreen.cpp" line="49"/>
         <source>Exit</source>
         <translation>Afsluiten</translation>
     </message>
     <message>
-        <location filename="../screens/mainscreen.cpp" line="137"/>
+        <location filename="../screens/mainscreen.cpp" line="128"/>
         <source>How wide is the board?</source>
         <translation>Hoe breed is het bord?</translation>
     </message>
     <message>
-        <location filename="../screens/mainscreen.cpp" line="141"/>
+        <location filename="../screens/mainscreen.cpp" line="132"/>
         <source>How high is the board?</source>
         <translation>Hoe hoog is het bord?</translation>
     </message>
     <message>
-        <location filename="../screens/mainscreen.cpp" line="144"/>
+        <location filename="../screens/mainscreen.cpp" line="135"/>
         <source>How many mines are on this board?</source>
         <translation>Hoeveel mijnen zijn er op dit bord?</translation>
     </message>

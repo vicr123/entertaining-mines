@@ -204,7 +204,6 @@
         <source>%1×%2 board with %n mines</source>
         <translation>
             <numerusform>%1×%2 %n mayınlı tahta</numerusform>
-            <numerusform>%1×%2 %n mayınlılar tahta</numerusform>
         </translation>
     </message>
     <message numerus="yes">
@@ -212,7 +211,6 @@
         <source>You completed a %1×%2 board with %n mines in %4. Divine!</source>
         <translation>
             <numerusform>%4 içinde% n benimle bir %1×%2 panosunu tamamladınız. İlahi!</numerusform>
-            <numerusform>%4 içinde% n benimle bir %1×%2 panosunular tamamladınız. İlahi!</numerusform>
         </translation>
     </message>
     <message numerus="yes">
@@ -220,7 +218,6 @@
         <source>You completed a %1×%2 board with %n mines.</source>
         <translation>
             <numerusform>%n benim ile bir %1×%2 panosunu tamamladınız.</numerusform>
-            <numerusform>%n benim ile bir %1×%2 panosunular tamamladınız.</numerusform>
         </translation>
     </message>
     <message>
@@ -568,27 +565,27 @@
         <translation>Ana Menüye Dön</translation>
     </message>
     <message>
-        <location filename="../screens/mainscreen.cpp" line="49"/>
+        <location filename="../screens/mainscreen.cpp" line="48"/>
         <source>Select</source>
         <translation>Seç</translation>
     </message>
     <message>
-        <location filename="../screens/mainscreen.cpp" line="50"/>
+        <location filename="../screens/mainscreen.cpp" line="49"/>
         <source>Exit</source>
         <translation>Vazgeç</translation>
     </message>
     <message>
-        <location filename="../screens/mainscreen.cpp" line="137"/>
+        <location filename="../screens/mainscreen.cpp" line="128"/>
         <source>How wide is the board?</source>
         <translation>Yönetim kurulu ne kadar geniş?</translation>
     </message>
     <message>
-        <location filename="../screens/mainscreen.cpp" line="141"/>
+        <location filename="../screens/mainscreen.cpp" line="132"/>
         <source>How high is the board?</source>
         <translation>Yönetim kurulu ne kadar yüksek?</translation>
     </message>
     <message>
-        <location filename="../screens/mainscreen.cpp" line="144"/>
+        <location filename="../screens/mainscreen.cpp" line="135"/>
         <source>How many mines are on this board?</source>
         <translation>Bu tahtada kaç tane maden var?</translation>
     </message>
@@ -740,7 +737,6 @@
         <source>%1: %2×%3 board with %n mines</source>
         <translation>
             <numerusform>%1: %2×%3 panosu, %n mayınlı</numerusform>
-            <numerusform>%1: %2×%3 panosu, %n mayınları</numerusform>
         </translation>
     </message>
 </context>

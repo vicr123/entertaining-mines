@@ -120,7 +120,7 @@
               <property name="geometry">
                <rect>
                 <x>0</x>
-                <y>0</y>
+                <y>-71</y>
                 <width>620</width>
                 <height>580</height>
                </rect>
@@ -464,6 +464,12 @@
  </widget>
  <customwidgets>
   <customwidget>
+   <class>tStackedWidget</class>
+   <extends>QStackedWidget</extends>
+   <header location="global">tstackedwidget.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
    <class>GamepadHud</class>
    <extends>QWidget</extends>
    <header location="global">gamepadhud.h</header>
@@ -473,12 +479,6 @@
    <class>FocusBarrier</class>
    <extends>QPushButton</extends>
    <header location="global">focusbarrier.h</header>
-  </customwidget>
-  <customwidget>
-   <class>tStackedWidget</class>
-   <extends>QStackedWidget</extends>
-   <header location="global">tstackedwidget.h</header>
-   <container>1</container>
   </customwidget>
  </customwidgets>
  <resources>

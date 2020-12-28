@@ -568,27 +568,27 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../screens/mainscreen.cpp" line="49"/>
+        <location filename="../screens/mainscreen.cpp" line="48"/>
         <source>Select</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../screens/mainscreen.cpp" line="50"/>
+        <location filename="../screens/mainscreen.cpp" line="49"/>
         <source>Exit</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../screens/mainscreen.cpp" line="137"/>
+        <location filename="../screens/mainscreen.cpp" line="128"/>
         <source>How wide is the board?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../screens/mainscreen.cpp" line="141"/>
+        <location filename="../screens/mainscreen.cpp" line="132"/>
         <source>How high is the board?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../screens/mainscreen.cpp" line="144"/>
+        <location filename="../screens/mainscreen.cpp" line="135"/>
         <source>How many mines are on this board?</source>
         <translation type="unfinished"></translation>
     </message>

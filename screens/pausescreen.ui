@@ -96,7 +96,7 @@
           <string>Resume</string>
          </property>
          <property name="icon">
-          <iconset resource="../resources.qrc">
+          <iconset>
            <normaloff>:/icons/go-next.svg</normaloff>:/icons/go-next.svg</iconset>
          </property>
          <property name="description">
@@ -110,7 +110,7 @@
           <string>Save</string>
          </property>
          <property name="icon">
-          <iconset resource="../resources.qrc">
+          <iconset>
            <normaloff>:/icons/go-next.svg</normaloff>:/icons/go-next.svg</iconset>
          </property>
          <property name="description">
@@ -124,7 +124,7 @@
           <string>New Game</string>
          </property>
          <property name="icon">
-          <iconset resource="../resources.qrc">
+          <iconset>
            <normaloff>:/icons/go-next.svg</normaloff>:/icons/go-next.svg</iconset>
          </property>
          <property name="description">
@@ -154,7 +154,7 @@
           <string>Settings</string>
          </property>
          <property name="icon">
-          <iconset resource="../resources.qrc">
+          <iconset>
            <normaloff>:/icons/go-next.svg</normaloff>:/icons/go-next.svg</iconset>
          </property>
          <property name="description">
@@ -168,7 +168,7 @@
           <string>Main Menu</string>
          </property>
          <property name="icon">
-          <iconset resource="../resources.qrc">
+          <iconset>
            <normaloff>:/icons/go-next.svg</normaloff>:/icons/go-next.svg</iconset>
          </property>
          <property name="description">
@@ -218,8 +218,6 @@
    <container>1</container>
   </customwidget>
  </customwidgets>
- <resources>
-  <include location="../resources.qrc"/>
- </resources>
+ <resources/>
  <connections/>
 </ui>

@@ -339,27 +339,27 @@
     <message>
         <location filename="../online/gamemodeselect.ui" line="259"/>
         <source>TURN-BASED COOPERATIVE</source>
-        <translation>RUNDENBASIERTES KOOP</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../online/gamemodeselect.ui" line="266"/>
         <source>Cooperative mode too chaotic for you? Play Cooperative mode, but take turns at the controls!</source>
-        <translation>Ist der Koop-Modus zu chaotisch? Spiele kooperative, aber wechselt euch ab!</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../online/gamemodeselect.ui" line="289"/>
         <source>Play Turn-based Cooperative</source>
-        <translation>Spiele Rundenbasiertes Koop</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../online/gamemodeselect.cpp" line="33"/>
         <source>Select</source>
-        <translation>Auswählen</translation>
+        <translation type="unfinished">Auswählen</translation>
     </message>
     <message>
         <location filename="../online/gamemodeselect.cpp" line="34"/>
         <source>Back</source>
-        <translation>Zurück</translation>
+        <translation type="unfinished">Zurück</translation>
     </message>
 </context>
 <context>
@@ -367,12 +367,12 @@
     <message>
         <location filename="../information/helpscreen.ui" line="71"/>
         <source>Help</source>
-        <translation>Hilfe</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../information/helpscreen.cpp" line="38"/>
         <source>Back</source>
-        <translation>Zurück</translation>
+        <translation type="unfinished">Zurück</translation>
     </message>
 </context>
 <context>
@@ -380,63 +380,63 @@
     <message>
         <location filename="../online/mainonlinescreen.ui" line="79"/>
         <source>Connecting to Entertaining Games</source>
-        <translation>Verbinde mit Entertaining Games</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../online/mainonlinescreen.cpp" line="53"/>
         <source>You&apos;ve been disconnected because the server is about to undergo maintenance.</source>
-        <translation>Deine Verbindung wurde aufgrund von Wartungsarbeiten am Server unterbrochen.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../online/mainonlinescreen.cpp" line="56"/>
         <source>You&apos;ve been disconnected from the server because there was a communication error.</source>
-        <translation>Deine Verbindung wurde aufgrund eines Kommunikationsfehlers unterbrochen.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../online/mainonlinescreen.cpp" line="66"/>
         <source>You&apos;ve been disconnected from the server.</source>
-        <translation>Deine Verbindung zum Server wurde unterbrochen.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../online/mainonlinescreen.cpp" line="74"/>
         <location filename="../online/mainonlinescreen.cpp" line="182"/>
         <source>Error</source>
-        <translation>Fehler</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../online/mainonlinescreen.cpp" line="103"/>
         <source>Idle</source>
-        <translation>Untätig</translation>
+        <translation type="unfinished">Unbeschäftigt</translation>
     </message>
     <message>
         <location filename="../online/mainonlinescreen.cpp" line="104"/>
         <source>Main Menu</source>
-        <translation>Hauptmenü</translation>
+        <translation type="unfinished">Hauptmenü</translation>
     </message>
     <message>
         <location filename="../online/mainonlinescreen.cpp" line="120"/>
         <source>Give it another go.</source>
-        <translation>Versuch&apos;s nochmal.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../online/mainonlinescreen.cpp" line="123"/>
         <source>That room doesn&apos;t exist.</source>
-        <translation>Dieser Raum existiert nicht.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../online/mainonlinescreen.cpp" line="125"/>
         <source>That room is full.</source>
-        <translation>Dieser Raum ist voll.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../online/mainonlinescreen.cpp" line="127"/>
         <source>That room is closed. Wait for the current game to end and then you&apos;ll be able to join.</source>
-        <translation>Dieser Raum ist geschlossen. Warte bist das aktuelle Spiel zu ende ist, bevor du beitreten kannst.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../online/mainonlinescreen.cpp" line="132"/>
         <source>Can&apos;t join that room</source>
-        <translation>Kann diesem Raum nicht beitreten</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -444,153 +444,153 @@
     <message>
         <location filename="../screens/mainscreen.ui" line="79"/>
         <source>Entertaining Mines</source>
-        <translation>Entertaining Mines</translation>
+        <translation type="unfinished">Entertaining Mines</translation>
     </message>
     <message>
         <location filename="../screens/mainscreen.ui" line="154"/>
         <source>Easy Game</source>
-        <translation>Einfaches Spiel</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../screens/mainscreen.ui" line="161"/>
         <source>Start a 9×9 game with 10 mines</source>
-        <translation>Starte ein 9x9 Spiel mit 10 Minen</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../screens/mainscreen.ui" line="168"/>
         <source>Intermediate Game</source>
-        <translation>Mittleres Spiel</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../screens/mainscreen.ui" line="175"/>
         <source>Start a 16×16 game with 40 mines</source>
-        <translation>Starte ein 16x16 Spiel mit 40 Minen</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../screens/mainscreen.ui" line="182"/>
         <source>Difficult Game</source>
-        <translation>Schweres Spiel</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../screens/mainscreen.ui" line="189"/>
         <source>Start a 30×16 game with 99 mines</source>
-        <translation>Starte ein 30x16 Spiel mit 99 Minen</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../screens/mainscreen.ui" line="196"/>
         <source>Custom Game</source>
-        <translation>Benutzerdefiniertes Spiel</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../screens/mainscreen.ui" line="203"/>
         <source>Select the board size and number of mines to play with</source>
-        <translation>Wähle eine Spielbrettgröße und die Anzahl der Minen</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../screens/mainscreen.ui" line="226"/>
         <source>Play Online</source>
-        <translation>Online spielen</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../screens/mainscreen.ui" line="233"/>
         <source>Play with other people on the Internet</source>
-        <translation>Spiele mit anderen Leuten über das Internet</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../screens/mainscreen.ui" line="256"/>
         <source>Load Game</source>
-        <translation>Spiel laden</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../screens/mainscreen.ui" line="263"/>
         <source>Open a game that you have saved</source>
-        <translation>Lade ein Spiel, das du gespeichert hast</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../screens/mainscreen.ui" line="270"/>
         <source>Settings</source>
-        <translation>Einstellungen</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../screens/mainscreen.ui" line="277"/>
         <source>Go to Settings</source>
-        <translation>Gehe zu den Einstellungen</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../screens/mainscreen.ui" line="284"/>
         <location filename="../screens/mainscreen.ui" line="360"/>
         <source>Information</source>
-        <translation>Informationen</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../screens/mainscreen.ui" line="291"/>
         <source>Get help or view information about the game</source>
-        <translation>Erhalte Hilfe oder sieh Information zum Spiel an</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../screens/mainscreen.ui" line="298"/>
         <source>Exit to Desktop</source>
-        <translation>Zurück zum Desktop</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../screens/mainscreen.ui" line="305"/>
         <source>Leave Entertaining Mines</source>
-        <translation>Entertaining Mines verlassen</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../screens/mainscreen.ui" line="377"/>
         <source>Help</source>
-        <translation>Hilfe</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../screens/mainscreen.ui" line="384"/>
         <source>Get information about how to play</source>
-        <translation>Informationen zum Spiel erhalten</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../screens/mainscreen.ui" line="391"/>
         <source>Credits</source>
-        <translation>Credits</translation>
+        <translation type="unfinished">Credits</translation>
     </message>
     <message>
         <location filename="../screens/mainscreen.ui" line="398"/>
         <source>See who made the game</source>
-        <translation>Sieh, wer am Spiel gearbeitet hat</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../screens/mainscreen.ui" line="421"/>
         <source>Main Menu</source>
-        <translation>Hauptmenü</translation>
+        <translation type="unfinished">Hauptmenü</translation>
     </message>
     <message>
         <location filename="../screens/mainscreen.ui" line="428"/>
         <source>Return to the Main Menu</source>
-        <translation>Zurück zum Hauptmenü</translation>
+        <translation type="unfinished">Zum Hauptmenü zurückkehren</translation>
+    </message>
+    <message>
+        <location filename="../screens/mainscreen.cpp" line="48"/>
+        <source>Select</source>
+        <translation type="unfinished">Auswählen</translation>
     </message>
     <message>
         <location filename="../screens/mainscreen.cpp" line="49"/>
-        <source>Select</source>
-        <translation>Auswählen</translation>
-    </message>
-    <message>
-        <location filename="../screens/mainscreen.cpp" line="50"/>
         <source>Exit</source>
-        <translation>Beenden</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../screens/mainscreen.cpp" line="137"/>
+        <location filename="../screens/mainscreen.cpp" line="128"/>
         <source>How wide is the board?</source>
-        <translation>Wie breit ist das Spielbrett?</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../screens/mainscreen.cpp" line="141"/>
+        <location filename="../screens/mainscreen.cpp" line="132"/>
         <source>How high is the board?</source>
-        <translation>Wie hoch ist das Spielbrett?</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../screens/mainscreen.cpp" line="144"/>
+        <location filename="../screens/mainscreen.cpp" line="135"/>
         <source>How many mines are on this board?</source>
-        <translation>Wie viele Minen sind auf dem Spielbrett?</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -600,23 +600,23 @@
         <source>ms</source>
         <comment>ms for milliseconds</comment>
         <extracomment>ms for milliseconds</extracomment>
-        <translation>ms</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../online/onlinegamescreen.ui" line="326"/>
         <location filename="../online/onlinegamescreen.cpp" line="152"/>
         <source>stepped on a mine and blew everything up!</source>
-        <translation>trat auf eine Mine und jagte alles in die Luft!</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../online/onlinegamescreen.cpp" line="76"/>
         <source>Hello!</source>
-        <translation>Hallo!</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../online/onlinegamescreen.cpp" line="77"/>
         <source>Good luck!</source>
-        <translation>Viel Glück!</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../online/onlinegamescreen.cpp" line="78"/>
@@ -672,18 +672,18 @@
         <location filename="../online/onlinegamescreen.cpp" line="90"/>
         <location filename="../online/onlinegamescreen.cpp" line="322"/>
         <source>Reveal</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Aufdecken</translation>
     </message>
     <message>
         <location filename="../online/onlinegamescreen.cpp" line="91"/>
         <location filename="../online/onlinegamescreen.cpp" line="323"/>
         <source>Flag</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Flagge</translation>
     </message>
     <message>
         <location filename="../online/onlinegamescreen.cpp" line="144"/>
         <source>Congratulations!</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Glückwunsch!</translation>
     </message>
     <message>
         <location filename="../online/onlinegamescreen.cpp" line="145"/>
@@ -693,17 +693,17 @@
     <message>
         <location filename="../online/onlinegamescreen.cpp" line="326"/>
         <source>Mark</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Markieren</translation>
     </message>
     <message>
         <location filename="../online/onlinegamescreen.cpp" line="329"/>
         <source>Unflag</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Markierung entfernen</translation>
     </message>
     <message>
         <location filename="../online/onlinegamescreen.cpp" line="332"/>
         <source>Sweep</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Räumen</translation>
     </message>
     <message>
         <location filename="../online/onlinegamescreen.cpp" line="336"/>
@@ -749,7 +749,7 @@
     <message>
         <location filename="../online/onlinejoinscreen.ui" line="68"/>
         <source>Join Game</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Spiel Beitreten</translation>
     </message>
     <message>
         <location filename="../online/onlinejoinscreen.ui" line="93"/>
@@ -764,7 +764,7 @@
     <message>
         <location filename="../online/onlinejoinscreen.cpp" line="41"/>
         <source>Back</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Zurück</translation>
     </message>
 </context>
 <context>
@@ -777,7 +777,7 @@
     <message>
         <location filename="../online/onlinelobbyscreen.ui" line="175"/>
         <source>Game Mode</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Spielmodus</translation>
     </message>
     <message>
         <location filename="../online/onlinelobbyscreen.ui" line="182"/>
@@ -812,7 +812,7 @@
     <message>
         <location filename="../online/onlinelobbyscreen.cpp" line="45"/>
         <source>Select</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Auswählen</translation>
     </message>
     <message>
         <location filename="../online/onlinelobbyscreen.cpp" line="46"/>
@@ -850,7 +850,7 @@
     <message>
         <location filename="../online/onlinemenuscreen.ui" line="79"/>
         <source>Entertaining Mines</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Entertaining Mines</translation>
     </message>
     <message>
         <location filename="../online/onlinemenuscreen.ui" line="213"/>
@@ -901,7 +901,7 @@
         <location filename="../online/onlinemenuscreen.ui" line="241"/>
         <location filename="../online/onlinemenuscreen.cpp" line="39"/>
         <source>Main Menu</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Hauptmenü</translation>
     </message>
     <message>
         <location filename="../online/onlinemenuscreen.ui" line="248"/>
@@ -911,7 +911,7 @@
     <message>
         <location filename="../online/onlinemenuscreen.cpp" line="38"/>
         <source>Select</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Auswählen</translation>
     </message>
 </context>
 <context>
@@ -965,7 +965,7 @@
     <message>
         <location filename="../screens/pausescreen.ui" line="168"/>
         <source>Main Menu</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Hauptmenü</translation>
     </message>
     <message>
         <location filename="../screens/pausescreen.ui" line="175"/>
@@ -975,7 +975,7 @@
     <message>
         <location filename="../screens/pausescreen.cpp" line="48"/>
         <source>Select</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Auswählen</translation>
     </message>
 </context>
 <context>
@@ -1028,12 +1028,12 @@
     <message>
         <location filename="../screens/settingsscreen.cpp" line="95"/>
         <source>Select</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Auswählen</translation>
     </message>
     <message>
         <location filename="../screens/settingsscreen.cpp" line="96"/>
         <source>Back</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Zurück</translation>
     </message>
 </context>
 <context>
