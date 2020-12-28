@@ -204,20 +204,23 @@
         <source>%1×%2 board with %n mines</source>
         <translation>
             <numerusform>%1×%2 %n mayınlı tahta</numerusform>
+            <numerusform>%1×%2 %n mayınlı tahta</numerusform>
         </translation>
     </message>
     <message numerus="yes">
         <location filename="../screens/gamescreen.cpp" line="378"/>
         <source>You completed a %1×%2 board with %n mines in %4. Divine!</source>
         <translation>
-            <numerusform>%4 içinde% n benimle bir %1×%2 panosunu tamamladınız. İlahi!</numerusform>
+            <numerusform>%1×%2 tahtasını %4&apos;te %n mayın tamamladınız. İlahi!</numerusform>
+            <numerusform>%1×%2 tahtasını %4&apos;te %n mayın tamamladınız. İlahi!</numerusform>
         </translation>
     </message>
     <message numerus="yes">
         <location filename="../screens/gamescreen.cpp" line="383"/>
         <source>You completed a %1×%2 board with %n mines.</source>
         <translation>
-            <numerusform>%n benim ile bir %1×%2 panosunu tamamladınız.</numerusform>
+            <numerusform>%n mayınlı %1×%2 tahtasını tamamladınız.</numerusform>
+            <numerusform>%n mayınlı %1×%2 tahtasını tamamladınız.</numerusform>
         </translation>
     </message>
     <message>
@@ -736,7 +739,8 @@
         <location filename="../online/onlinegamescreen.cpp" line="384"/>
         <source>%1: %2×%3 board with %n mines</source>
         <translation>
-            <numerusform>%1: %2×%3 panosu, %n mayınlı</numerusform>
+            <numerusform>%1: %2×%3 %n mayınlı tahta</numerusform>
+            <numerusform>%1: %2×%3 %n mayınlı tahta</numerusform>
         </translation>
     </message>
 </context>
