@@ -262,34 +262,24 @@
         <translation>Entertaining Mines</translation>
     </message>
     <message>
-        <location filename="../gamewindow.cpp" line="63"/>
-        <source>Corrupt File</source>
-        <translation>Arquivo Corrupto</translation>
-    </message>
-    <message>
-        <location filename="../gamewindow.cpp" line="64"/>
-        <source>Sorry, that file is corrupt and needs to be deleted.</source>
-        <translation>Deslcupe, esse arquivo é corrupto e precisa ser deletado.</translation>
-    </message>
-    <message>
-        <location filename="../gamewindow.cpp" line="85"/>
-        <location filename="../gamewindow.cpp" line="98"/>
+        <location filename="../gamewindow.cpp" line="82"/>
+        <location filename="../gamewindow.cpp" line="95"/>
         <source>Idle</source>
         <translation>Ausente</translation>
     </message>
     <message>
-        <location filename="../gamewindow.cpp" line="86"/>
-        <location filename="../gamewindow.cpp" line="99"/>
+        <location filename="../gamewindow.cpp" line="83"/>
+        <location filename="../gamewindow.cpp" line="96"/>
         <source>Main Menu</source>
         <translation>Menu Principal</translation>
     </message>
     <message>
-        <location filename="../gamewindow.cpp" line="105"/>
+        <location filename="../gamewindow.cpp" line="102"/>
         <source>Join Game</source>
         <translation>Entrar em Jogo</translation>
     </message>
     <message>
-        <location filename="../gamewindow.cpp" line="106"/>
+        <location filename="../gamewindow.cpp" line="103"/>
         <source>%1 wants to join your room</source>
         <translation>%1 quer entrar na sua sala</translation>
     </message>
@@ -383,58 +373,42 @@
         <translation>Conectando a Entertaining Games</translation>
     </message>
     <message>
-        <location filename="../online/mainonlinescreen.cpp" line="53"/>
-        <source>You&apos;ve been disconnected because the server is about to undergo maintenance.</source>
-        <translation>Você foi desconectado porque o servidor está prestes a entrar em manutenção.</translation>
-    </message>
-    <message>
-        <location filename="../online/mainonlinescreen.cpp" line="56"/>
-        <source>You&apos;ve been disconnected from the server because there was a communication error.</source>
-        <translation>Você foi desconectado porque houve um erro de comunicação.</translation>
-    </message>
-    <message>
-        <location filename="../online/mainonlinescreen.cpp" line="66"/>
-        <source>You&apos;ve been disconnected from the server.</source>
-        <translation>Você foi desconectado do servidor.</translation>
-    </message>
-    <message>
-        <location filename="../online/mainonlinescreen.cpp" line="74"/>
-        <location filename="../online/mainonlinescreen.cpp" line="182"/>
+        <location filename="../online/mainonlinescreen.cpp" line="172"/>
         <source>Error</source>
         <translation>Erro</translation>
     </message>
     <message>
-        <location filename="../online/mainonlinescreen.cpp" line="103"/>
+        <location filename="../online/mainonlinescreen.cpp" line="95"/>
         <source>Idle</source>
         <translation>Ausente</translation>
     </message>
     <message>
-        <location filename="../online/mainonlinescreen.cpp" line="104"/>
+        <location filename="../online/mainonlinescreen.cpp" line="96"/>
         <source>Main Menu</source>
         <translation>Menu Principal</translation>
     </message>
     <message>
-        <location filename="../online/mainonlinescreen.cpp" line="120"/>
+        <location filename="../online/mainonlinescreen.cpp" line="112"/>
         <source>Give it another go.</source>
         <translation>Tente outra vez.</translation>
     </message>
     <message>
-        <location filename="../online/mainonlinescreen.cpp" line="123"/>
+        <location filename="../online/mainonlinescreen.cpp" line="115"/>
         <source>That room doesn&apos;t exist.</source>
         <translation>Essa sala não existe.</translation>
     </message>
     <message>
-        <location filename="../online/mainonlinescreen.cpp" line="125"/>
+        <location filename="../online/mainonlinescreen.cpp" line="117"/>
         <source>That room is full.</source>
         <translation>Essa sala está cheia.</translation>
     </message>
     <message>
-        <location filename="../online/mainonlinescreen.cpp" line="127"/>
+        <location filename="../online/mainonlinescreen.cpp" line="119"/>
         <source>That room is closed. Wait for the current game to end and then you&apos;ll be able to join.</source>
         <translation>Essa sala está fechada. Espere o jogo terminar para que você possa entrar.</translation>
     </message>
     <message>
-        <location filename="../online/mainonlinescreen.cpp" line="132"/>
+        <location filename="../online/mainonlinescreen.cpp" line="124"/>
         <source>Can&apos;t join that room</source>
         <translation>Não pôde entrar na sala</translation>
     </message>

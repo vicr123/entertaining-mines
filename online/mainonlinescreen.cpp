@@ -33,27 +33,30 @@ struct MainOnlineScreenPrivate {
 
 };
 
-MainOnlineScreen::MainOnlineScreen(QWidget *parent) :
+MainOnlineScreen::MainOnlineScreen(QWidget* parent) :
     QWidget(parent),
-    ui(new Ui::MainOnlineScreen)
-{
+    ui(new Ui::MainOnlineScreen) {
     ui->setupUi(this);
     d = new MainOnlineScreenPrivate();
 
-    connect(ui->menuPage, &OnlineMenuScreen::quitOnline, this, [=] {
+    connect(ui->menuPage, &OnlineMenuScreen::quitOnline, this, [ = ] {
         OnlineController::instance()->close();
     });
 
-    connect(OnlineController::instance(), &OnlineController::disconnected, this, [=](int closeCode) {
-        QString error;
+    connect(OnlineController::instance(), &OnlineController::disconnected, this, [ = ](int closeCode) {
+        //Stop any music
+        MusicEngine::pauseBackgroundMusic();
+
+        QuestionOverlay::StandardDialog error;
         switch (closeCode) {
             case QWebSocketProtocol::CloseCodeNormal:
-                break;
+                emit quitOnline();
+                return;
             case QWebSocketProtocol::CloseCodeGoingAway:
-                error = tr("You've been disconnected because the server is about to undergo maintenance.");
+                error = QuestionOverlay::ServerMaintenanceAboutToStart;
                 break;
             case QWebSocketProtocol::CloseCodeProtocolError:
-                error = tr("You've been disconnected from the server because there was a communication error.");
+                error = QuestionOverlay::ServerProtocolError;
                 break;
             case QWebSocketProtocol::CloseCodeDatatypeNotSupported:
             case QWebSocketProtocol::CloseCodeReserved1004:
@@ -63,33 +66,22 @@ MainOnlineScreen::MainOnlineScreen(QWidget *parent) :
             case QWebSocketProtocol::CloseCodeTooMuchData:
             case QWebSocketProtocol::CloseCodeAbnormalDisconnection:
             default:
-                error = tr("You've been disconnected from the server.");
+                error = QuestionOverlay::ServerDisconnected;
         }
 
-        if (error.isEmpty()) {
+        QuestionOverlay* question = new QuestionOverlay(this);
+        question->setStandardDialog(error);
+
+        auto handler = [ = ] {
+            question->deleteLater();
             emit quitOnline();
-        } else {
-            QuestionOverlay* question = new QuestionOverlay(this);
-            question->setIcon(QMessageBox::Critical);
-            question->setTitle(tr("Error"));
-            question->setText(error);
-            question->setButtons(QMessageBox::Ok);
+        };
 
-            auto handler = [=] {
-                question->deleteLater();
-                emit quitOnline();
-            };
-
-            connect(question, &QuestionOverlay::accepted, this, handler);
-            connect(question, &QuestionOverlay::rejected, this, handler);
-
-
-            //Stop any music
-            MusicEngine::pauseBackgroundMusic();
-        }
+        connect(question, &QuestionOverlay::accepted, this, handler);
+        connect(question, &QuestionOverlay::rejected, this, handler);
     });
 
-    connect(OnlineController::instance(), &OnlineController::jsonMessage, this, [=](QJsonDocument doc) {
+    connect(OnlineController::instance(), &OnlineController::jsonMessage, this, [ = ](QJsonDocument doc) {
         QJsonObject object = doc.object();
         QString type = object.value("type").toString();
         if (type == "stateChange") {
@@ -138,16 +130,14 @@ MainOnlineScreen::MainOnlineScreen(QWidget *parent) :
     });
 }
 
-MainOnlineScreen::~MainOnlineScreen()
-{
+MainOnlineScreen::~MainOnlineScreen() {
     delete d;
     delete ui;
 }
 
-void MainOnlineScreen::connectToOnline()
-{
+void MainOnlineScreen::connectToOnline() {
     ui->stackedWidget->setCurrentWidget(ui->connectingPage);
-    OnlineApi::instance()->play("EntertainingMines", "1.0", this)->then([=](OnlineWebSocket* ws) {
+    OnlineApi::instance()->play("EntertainingMines", "1.0", this)->then([ = ](OnlineWebSocket * ws) {
         ui->stackedWidget->setCurrentWidget(ui->menuPage);
         ui->menuPage->setFocus();
 
@@ -168,7 +158,7 @@ void MainOnlineScreen::connectToOnline()
             if (pin != -1) joinMessage.insert("pin", pin);
             OnlineController::instance()->sendJsonO(joinMessage);
         }
-    })->error([=](QString error) {
+    })->error([ = ](QString error) {
         //Clear the Discord Join secret
         OnlineController::instance()->discordJoinSecret();
 
@@ -183,7 +173,7 @@ void MainOnlineScreen::connectToOnline()
         question->setText(OnlineApi::errorFromPromiseRejection(error));
         question->setButtons(QMessageBox::Ok);
 
-        auto handler = [=] {
+        auto handler = [ = ] {
             question->deleteLater();
             emit quitOnline();
         };
@@ -193,8 +183,7 @@ void MainOnlineScreen::connectToOnline()
     });
 }
 
-void MainOnlineScreen::paintEvent(QPaintEvent*event)
-{
+void MainOnlineScreen::paintEvent(QPaintEvent* event) {
     if (ui->stackedWidget->currentWidget() == ui->menuPage || ui->stackedWidget->currentWidget() == ui->connectingPage) {
         QPainter painter(this);
         QSvgRenderer renderer(QStringLiteral(":/icons/background-online.svg"));
