@@ -24,11 +24,10 @@
 #include <entertaining.h>
 #include <discordintegration.h>
 #include <musicengine.h>
-#include <QSettings>
+#include <tsettings.h>
 #include <notificationengine.h>
 
-int main(int argc, char *argv[])
-{
+int main(int argc, char* argv[]) {
 
 #ifdef Q_OS_ANDROID
     qputenv("QT_SCALE_FACTOR", "1.5");
@@ -54,18 +53,28 @@ int main(int argc, char *argv[])
     a.setCopyrightHolder("Victor Tran");
     a.setCopyrightYear("2019");
     a.setDesktopFileName("com.vicr123.entertaining.mines");
-    #ifdef T_BLUEPRINT_BUILD
-        a.setApplicationName("Entertaining Mines Blueprint");
-    #else
-        a.setApplicationName("Entertaining Mines");
-    #endif
+#ifdef T_BLUEPRINT_BUILD
+    a.setApplicationName("Entertaining Mines Blueprint");
+#else
+    a.setApplicationName("Entertaining Mines");
+#endif
+
+    tSettings::registerDefaults(a.applicationDirPath() + "/defaults.conf");
+    tSettings::registerDefaults("/etc/entertaining-games/entertaining-chess/defaults.conf");
 
     Entertaining::initialize();
     DiscordIntegration::makeInstance("638385511530102794", "");
 
-    QSettings settings;
-    MusicEngine::setMuteMusic(!settings.value("audio/background", true).toBool());
-    MusicEngine::setMuteEffects(!settings.value("audio/effects", true).toBool());
+    tSettings settings;
+    QObject::connect(&settings, &tSettings::settingChanged, [ = ](QString key, QVariant value) {
+        if (key == "audio/backgroundVol") {
+            MusicEngine::setUserBackgroundVolume(value.toInt() / 100.0);
+        } else if (key == "audio/effects") {
+            MusicEngine::setMuteEffects(!value.toBool());
+        }
+    });
+    MusicEngine::setUserBackgroundVolume(settings.value("audio/backgroundVol").toInt() / 100.0);
+    MusicEngine::setMuteEffects(!settings.value("audio/effects").toBool());
 
     GameWindow w;
     w.show();

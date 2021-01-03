@@ -88,6 +88,7 @@ RESOURCES += \
     help.qrc \
     resources.qrc
 
+QMAKE_POST_LINK += $$QMAKE_COPY $$quote($$PWD/defaults.conf) $$shell_quote($$OUT_PWD)
 
 unix:!macx:!android {
     # Include the-libs build tools
@@ -107,7 +108,10 @@ unix:!macx:!android {
     audio.path = /usr/share/entertaining-mines/audio
     audio.files = audio/*
 
-    INSTALLS += target desktop icon audio
+    defaults.files = defaults.conf
+    defaults.path = /etc/entertaining-games/entertaining-mines/
+
+    INSTALLS += target desktop icon audio defaults
 }
 
 win32 {
@@ -173,6 +177,7 @@ DISTFILES += \
     android/gradle/wrapper/gradle-wrapper.properties \
     android/gradlew \
     android/gradlew.bat \
-    android/res/values/libs.xml
+    android/res/values/libs.xml \
+    defaults.conf
 
 

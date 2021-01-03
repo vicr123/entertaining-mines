@@ -956,52 +956,52 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../screens/settingsscreen.cpp" line="59"/>
+        <location filename="../screens/settingsscreen.cpp" line="51"/>
         <source>Audio</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../screens/settingsscreen.cpp" line="42"/>
-        <source>Background Music</source>
+        <location filename="../screens/settingsscreen.cpp" line="41"/>
+        <source>Background Volume</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../screens/settingsscreen.cpp" line="43"/>
+        <location filename="../screens/settingsscreen.cpp" line="42"/>
         <source>Sound Effects</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../screens/settingsscreen.cpp" line="53"/>
+        <location filename="../screens/settingsscreen.cpp" line="45"/>
         <source>Gamepad Settings</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../screens/settingsscreen.cpp" line="62"/>
+        <location filename="../screens/settingsscreen.cpp" line="54"/>
         <source>Behaviour</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../screens/settingsscreen.cpp" line="63"/>
+        <location filename="../screens/settingsscreen.cpp" line="55"/>
         <source>Marks</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../screens/settingsscreen.cpp" line="64"/>
+        <location filename="../screens/settingsscreen.cpp" line="56"/>
         <source>When this is enabled, right clicking a flag will change it into the marked state first.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../screens/settingsscreen.cpp" line="65"/>
+        <location filename="../screens/settingsscreen.cpp" line="57"/>
         <source>Hardware</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../screens/settingsscreen.cpp" line="95"/>
+        <location filename="../screens/settingsscreen.cpp" line="87"/>
         <source>Select</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../screens/settingsscreen.cpp" line="96"/>
+        <location filename="../screens/settingsscreen.cpp" line="88"/>
         <source>Back</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1009,7 +1009,7 @@
 <context>
     <name>main</name>
     <message>
-        <location filename="../main.cpp" line="51"/>
+        <location filename="../main.cpp" line="50"/>
         <source>Minesweeper</source>
         <translation type="unfinished"></translation>
     </message>

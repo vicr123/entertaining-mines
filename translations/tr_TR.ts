@@ -204,14 +204,12 @@
         <source>%1×%2 board with %n mines</source>
         <translation>
             <numerusform>%1×%2 %n mayınlı tahta</numerusform>
-            <numerusform>%1×%2 %n mayınlı tahta</numerusform>
         </translation>
     </message>
     <message numerus="yes">
         <location filename="../screens/gamescreen.cpp" line="378"/>
         <source>You completed a %1×%2 board with %n mines in %4. Divine!</source>
         <translation>
-            <numerusform>%1×%2 tahtasını %4&apos;te %n mayın tamamladınız. İlahi!</numerusform>
             <numerusform>%1×%2 tahtasını %4&apos;te %n mayın tamamladınız. İlahi!</numerusform>
         </translation>
     </message>
@@ -220,7 +218,6 @@
         <source>You completed a %1×%2 board with %n mines.</source>
         <translation>
             <numerusform>%n mayınlı %1×%2 tahtasını tamamladınız.</numerusform>
-            <numerusform>%n mayınlı %1×%2 tahtasını tamamladın.</numerusform>
         </translation>
     </message>
     <message>
@@ -714,7 +711,6 @@
         <source>%1: %2×%3 board with %n mines</source>
         <translation>
             <numerusform>%1: %2×%3 %n mayınlı tahta</numerusform>
-            <numerusform>%1: %2×%3 %n mayınlı tahta</numerusform>
         </translation>
     </message>
 </context>
@@ -960,52 +956,52 @@
         <translation>Ayarlar</translation>
     </message>
     <message>
-        <location filename="../screens/settingsscreen.cpp" line="59"/>
+        <location filename="../screens/settingsscreen.cpp" line="51"/>
         <source>Audio</source>
         <translation>Ses</translation>
     </message>
     <message>
-        <location filename="../screens/settingsscreen.cpp" line="42"/>
-        <source>Background Music</source>
-        <translation>Arka plan müziği</translation>
+        <location filename="../screens/settingsscreen.cpp" line="41"/>
+        <source>Background Volume</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../screens/settingsscreen.cpp" line="43"/>
+        <location filename="../screens/settingsscreen.cpp" line="42"/>
         <source>Sound Effects</source>
         <translation>Ses efektleri</translation>
     </message>
     <message>
-        <location filename="../screens/settingsscreen.cpp" line="53"/>
+        <location filename="../screens/settingsscreen.cpp" line="45"/>
         <source>Gamepad Settings</source>
         <translation>Oyun Kumandası Ayarları</translation>
     </message>
     <message>
-        <location filename="../screens/settingsscreen.cpp" line="62"/>
+        <location filename="../screens/settingsscreen.cpp" line="54"/>
         <source>Behaviour</source>
         <translation>Davranış</translation>
     </message>
     <message>
-        <location filename="../screens/settingsscreen.cpp" line="63"/>
+        <location filename="../screens/settingsscreen.cpp" line="55"/>
         <source>Marks</source>
         <translation>İşaretler</translation>
     </message>
     <message>
-        <location filename="../screens/settingsscreen.cpp" line="64"/>
+        <location filename="../screens/settingsscreen.cpp" line="56"/>
         <source>When this is enabled, right clicking a flag will change it into the marked state first.</source>
         <translation>Bu etkinleştirildiğinde, bir bayrağa sağ tıklamak onu önce işaretli duruma değiştirecektir.</translation>
     </message>
     <message>
-        <location filename="../screens/settingsscreen.cpp" line="65"/>
+        <location filename="../screens/settingsscreen.cpp" line="57"/>
         <source>Hardware</source>
         <translation>Donanım</translation>
     </message>
     <message>
-        <location filename="../screens/settingsscreen.cpp" line="95"/>
+        <location filename="../screens/settingsscreen.cpp" line="87"/>
         <source>Select</source>
         <translation>Seç</translation>
     </message>
     <message>
-        <location filename="../screens/settingsscreen.cpp" line="96"/>
+        <location filename="../screens/settingsscreen.cpp" line="88"/>
         <source>Back</source>
         <translation>Geri</translation>
     </message>
@@ -1013,7 +1009,7 @@
 <context>
     <name>main</name>
     <message>
-        <location filename="../main.cpp" line="51"/>
+        <location filename="../main.cpp" line="50"/>
         <source>Minesweeper</source>
         <translation>Mayın tarama gemisi</translation>
     </message>
