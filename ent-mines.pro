@@ -120,7 +120,7 @@ win32 {
 
     INCLUDEPATH += "C:/Program Files/thelibs/include" "C:/Program Files/libentertaining/include"
     LIBS += -L"C:/Program Files/thelibs/lib" -lthe-libs -L"C:/Program Files/libentertaining/lib" -lentertaining
-#    RC_FILE = icon.rc
+    RC_FILE = icon.rc
 }
 
 macx {
