@@ -106,7 +106,12 @@
         <translation>Música está licenciada sob Creative Commons: BY 4.0</translation>
     </message>
     <message>
-        <location filename="../information/creditsscreen.ui" line="332"/>
+        <location filename="../information/creditsscreen.ui" line="358"/>
+        <source>Copyright © 2021 Victor Tran.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../information/creditsscreen.ui" line="368"/>
         <source>Licensed under the terms of the GNU General Public License, version 3, or later.</source>
         <translation>Licenciado sob os termos da Licença Pública Geral GNU, versão 3 ou posterior.</translation>
     </message>

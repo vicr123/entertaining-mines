@@ -106,7 +106,12 @@
         <translation>Nhạc được cấp phép theo Creative Commons: BY 4.0</translation>
     </message>
     <message>
-        <location filename="../information/creditsscreen.ui" line="332"/>
+        <location filename="../information/creditsscreen.ui" line="358"/>
+        <source>Copyright © 2021 Victor Tran.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../information/creditsscreen.ui" line="368"/>
         <source>Licensed under the terms of the GNU General Public License, version 3, or later.</source>
         <translation>Được cấp phép theo điều khoản của Giấy phép Công cộng GNU, phiên bản 3, hoặc mới hơn.</translation>
     </message>

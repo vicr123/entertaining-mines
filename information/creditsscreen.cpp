@@ -22,16 +22,16 @@
 
 #include <QShortcut>
 #include <QLayout>
+#include <the-libs_global.h>
 #include <pauseoverlay.h>
 
 struct CreditsScreenPrivate {
 
 };
 
-CreditsScreen::CreditsScreen(QWidget *parent) :
+CreditsScreen::CreditsScreen(QWidget* parent) :
     QWidget(parent),
-    ui(new Ui::CreditsScreen)
-{
+    ui(new Ui::CreditsScreen) {
     ui->setupUi(this);
 
     d = new CreditsScreenPrivate();
@@ -42,33 +42,32 @@ CreditsScreen::CreditsScreen(QWidget *parent) :
     ui->scrollArea->setPalette(pal);
 
     ui->gamepadHud->setButtonText(QGamepadManager::ButtonB, tr("Back"));
-    ui->gamepadHud->setButtonAction(QGamepadManager::ButtonB, [=] {
+    ui->gamepadHud->setButtonAction(QGamepadManager::ButtonB, [ = ] {
         ui->backButton->click();
     });
 
     ui->bottomSpacer->changeSize(0, 0, QSizePolicy::Preferred, QSizePolicy::Expanding);
 
     QShortcut* backShortcut = new QShortcut(QKeySequence(Qt::Key_Escape), this);
-    connect(backShortcut, &QShortcut::activatedAmbiguously, this, [=] {
+    connect(backShortcut, &QShortcut::activatedAmbiguously, this, [ = ] {
         ui->backButton->click();
     });
+
+    ui->entertainingLogo->setPixmap(QIcon(":/libentertaining/icons/entertaining-logo-wordmark-dark.svg").pixmap(SC_DPI_T(QSize(280, 32), QSize)));
 }
 
-CreditsScreen::~CreditsScreen()
-{
+CreditsScreen::~CreditsScreen() {
     delete ui;
     delete d;
 }
 
-void CreditsScreen::on_backButton_clicked()
-{
-    PauseOverlay::overlayForWindow(this->parentWidget())->popOverlayWidget([=] {
+void CreditsScreen::on_backButton_clicked() {
+    PauseOverlay::overlayForWindow(this->parentWidget())->popOverlayWidget([ = ] {
         emit done();
     });
 }
 
-void CreditsScreen::resizeEvent(QResizeEvent*event)
-{
+void CreditsScreen::resizeEvent(QResizeEvent* event) {
     int width = 0;
     if (this->width() > 600) {
         width = (this->width() - 600) / 2;

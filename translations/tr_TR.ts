@@ -106,7 +106,12 @@
         <translation>Müzik Creative Commons altında lisanslanmıştır: 4.0 TARAFINDAN</translation>
     </message>
     <message>
-        <location filename="../information/creditsscreen.ui" line="332"/>
+        <location filename="../information/creditsscreen.ui" line="358"/>
+        <source>Copyright © 2021 Victor Tran.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../information/creditsscreen.ui" line="368"/>
         <source>Licensed under the terms of the GNU General Public License, version 3, or later.</source>
         <translation>GNU Genel Kamu Lisansı, sürüm 3 veya daha sonraki koşullar kapsamında lisanslanmıştır.</translation>
     </message>
