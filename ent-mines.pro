@@ -88,7 +88,7 @@ RESOURCES += \
     help.qrc \
     resources.qrc
 
-QMAKE_POST_LINK += $$QMAKE_COPY $$quote($$PWD/defaults.conf) $$shell_quote($$OUT_PWD)
+QMAKE_POST_LINK += $$QMAKE_COPY $$quote($$PWD/defaults.conf) $$shell_quote($$OUT_PWD);
 
 unix:!macx:!android {
     # Include the-libs build tools
@@ -169,7 +169,7 @@ android {
     ANDROID_PACKAGE_SOURCE_DIR = \
         $$PWD/android
 }
-heart
+
 DISTFILES += \
     android/AndroidManifest.xml \
     android/build.gradle \
