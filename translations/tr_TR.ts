@@ -209,6 +209,7 @@
         <source>%1×%2 board with %n mines</source>
         <translation>
             <numerusform>%1×%2 %n mayınlı tahta</numerusform>
+            <numerusform>%1×%2 %n mayınlı tahta</numerusform>
         </translation>
     </message>
     <message numerus="yes">
@@ -216,12 +217,14 @@
         <source>You completed a %1×%2 board with %n mines in %4. Divine!</source>
         <translation>
             <numerusform>%1×%2 tahtasını %4&apos;te %n mayın tamamladınız. İlahi!</numerusform>
+            <numerusform>%1×%2 tahtasını %4&apos;te %n mayın tamamladınız. İlahi!</numerusform>
         </translation>
     </message>
     <message numerus="yes">
         <location filename="../screens/gamescreen.cpp" line="383"/>
         <source>You completed a %1×%2 board with %n mines.</source>
         <translation>
+            <numerusform>%n mayınlı %1×%2 tahtasını tamamladınız.</numerusform>
             <numerusform>%n mayınlı %1×%2 tahtasını tamamladınız.</numerusform>
         </translation>
     </message>
@@ -716,6 +719,7 @@
         <source>%1: %2×%3 board with %n mines</source>
         <translation>
             <numerusform>%1: %2×%3 %n mayınlı tahta</numerusform>
+            <numerusform>%1: %2×%3 %n mayınlı tahta</numerusform>
         </translation>
     </message>
 </context>
@@ -968,7 +972,7 @@
     <message>
         <location filename="../screens/settingsscreen.cpp" line="41"/>
         <source>Background Volume</source>
-        <translation type="unfinished"></translation>
+        <translation>Arka plan ses seviyesi</translation>
     </message>
     <message>
         <location filename="../screens/settingsscreen.cpp" line="42"/>
