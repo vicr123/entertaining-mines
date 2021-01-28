@@ -108,7 +108,7 @@
     <message>
         <location filename="../information/creditsscreen.ui" line="358"/>
         <source>Copyright © 2021 Victor Tran.</source>
-        <translation type="unfinished"></translation>
+        <translation>Copyright © 2021 Victor Tran.</translation>
     </message>
     <message>
         <location filename="../information/creditsscreen.ui" line="368"/>
@@ -972,7 +972,7 @@
     <message>
         <location filename="../screens/settingsscreen.cpp" line="41"/>
         <source>Background Volume</source>
-        <translation type="unfinished"></translation>
+        <translation>Achtergrondmuziek-volume</translation>
     </message>
     <message>
         <location filename="../screens/settingsscreen.cpp" line="42"/>
