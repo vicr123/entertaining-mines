@@ -544,7 +544,7 @@
     <message>
         <location filename="../screens/mainscreen.ui" line="428"/>
         <source>Return to the Main Menu</source>
-        <translation>Retornar ao menu principar</translation>
+        <translation>Retornar ao menu principal</translation>
     </message>
     <message>
         <location filename="../screens/mainscreen.cpp" line="48"/>
@@ -880,7 +880,7 @@
         <location filename="../online/onlinemenuscreen.ui" line="241"/>
         <location filename="../online/onlinemenuscreen.cpp" line="39"/>
         <source>Main Menu</source>
-        <translation>Menu Principar</translation>
+        <translation>Menu Principal</translation>
     </message>
     <message>
         <location filename="../online/onlinemenuscreen.ui" line="248"/>
