@@ -58,4 +58,4 @@ copy "C:\OpenSSL-v111-Win64\bin\libssl-1_1-x64.dll" deploy
 copy "C:\OpenSSL-v111-Win64\bin\libcrypto-1_1-x64.dll" deploy
 copy defaults.conf deploy
 cd deploy
-windeployqt entertaining-mines.exe -network -quickwidgets -gamepad -svg -multimedia -printsupport
+windeployqt entertaining-mines.exe -network -quickwidgets -gamepad -svg -multimedia -printsupport -concurrent
