@@ -14,7 +14,7 @@
    <string>Entertaining Mines</string>
   </property>
   <property name="windowIcon">
-   <iconset resource="resources.qrc">
+   <iconset>
     <normaloff>:/icons/entertaining-mines.svg</normaloff>:/icons/entertaining-mines.svg</iconset>
   </property>
   <widget class="QWidget" name="centralwidget">
@@ -59,18 +59,12 @@
      <x>0</x>
      <y>0</y>
      <width>741</width>
-     <height>22</height>
+     <height>24</height>
     </rect>
    </property>
   </widget>
  </widget>
  <customwidgets>
-  <customwidget>
-   <class>tStackedWidget</class>
-   <extends>QStackedWidget</extends>
-   <header location="global">tstackedwidget.h</header>
-   <container>1</container>
-  </customwidget>
   <customwidget>
    <class>MainScreen</class>
    <extends>QWidget</extends>
@@ -90,14 +84,18 @@
    <container>1</container>
   </customwidget>
   <customwidget>
+   <class>tStackedWidget</class>
+   <extends>QStackedWidget</extends>
+   <header location="global">tstackedwidget.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
    <class>MainOnlineScreen</class>
    <extends>QWidget</extends>
    <header>online/mainonlinescreen.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>
- <resources>
-  <include location="resources.qrc"/>
- </resources>
+ <resources/>
  <connections/>
 </ui>

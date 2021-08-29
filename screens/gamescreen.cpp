@@ -56,10 +56,9 @@ struct GameScreenPrivate {
     QPushButton* focusPreventer;
 };
 
-GameScreen::GameScreen(QWidget *parent) :
+GameScreen::GameScreen(QWidget* parent) :
     AbstractGameScreen(parent),
-    ui(new Ui::GameScreen)
-{
+    ui(new Ui::GameScreen) {
     ui->setupUi(this);
     d = new GameScreenPrivate();
 
@@ -69,20 +68,20 @@ GameScreen::GameScreen(QWidget *parent) :
     ui->gamepadHud->bindKey(Qt::Key_Space, QGamepadManager::ButtonX);
     ui->gamepadHud->bindKey(Qt::Key_Escape, QGamepadManager::ButtonStart);
 
-    ui->gamepadHud->setButtonAction(QGamepadManager::ButtonStart, [=] {
+    ui->gamepadHud->setButtonAction(QGamepadManager::ButtonStart, [ = ] {
         ui->menuButton->click();
     });
-    ui->gamepadHud->setButtonAction(QGamepadManager::ButtonA, [=] {
+    ui->gamepadHud->setButtonAction(QGamepadManager::ButtonA, [ = ] {
         GameTile* currentTile = this->currentTile();
         if (currentTile != nullptr) currentTile->revealOrSweep();
     });
-    ui->gamepadHud->setButtonAction(QGamepadManager::ButtonX, [=] {
+    ui->gamepadHud->setButtonAction(QGamepadManager::ButtonX, [ = ] {
         GameTile* currentTile = this->currentTile();
         if (currentTile != nullptr) currentTile->toggleFlagStatus();
     });
 
     QShortcut* pauseShortcut = new QShortcut(QKeySequence(Qt::Key_Escape), this);
-    connect(pauseShortcut, &QShortcut::activated, this, [=] {
+    connect(pauseShortcut, &QShortcut::activated, this, [ = ] {
         ui->menuButton->click();
     });
 
@@ -107,55 +106,46 @@ GameScreen::GameScreen(QWidget *parent) :
     layout->setParent(this);
 }
 
-GameScreen::~GameScreen()
-{
+GameScreen::~GameScreen() {
     delete ui;
     delete d;
 }
 
-bool GameScreen::hasGameStarted()
-{
+bool GameScreen::hasGameStarted() {
     return d->gameStarted;
 }
 
-bool GameScreen::isGameOver()
-{
+bool GameScreen::isGameOver() {
     return d->gameIsOver;
 }
 
-QSize GameScreen::gameArea()
-{
+QSize GameScreen::gameArea() {
     return ui->gameArea->size();
 }
 
-GameTile*GameScreen::tileAt(QPoint location)
-{
+GameTile* GameScreen::tileAt(QPoint location) {
     return d->tiles.at(pointToIndex(location));
 }
 
-GameTile*GameScreen::currentTile()
-{
+GameTile* GameScreen::currentTile() {
     for (GameTile* tile : d->tiles) {
         if (tile->hasFocus()) return tile;
     }
     return nullptr;
 }
 
-QSize GameScreen::boardDimensions()
-{
+QSize GameScreen::boardDimensions() {
     return QSize(d->width, d->tiles.count() / d->width);
 }
 
-void GameScreen::revealedTile()
-{
+void GameScreen::revealedTile() {
     d->remainingTileCount--;
     if (d->remainingTileCount == 0) {
         performGameOver();
     }
 }
 
-void GameScreen::flagChanged(bool didFlag)
-{
+void GameScreen::flagChanged(bool didFlag) {
     if (didFlag) {
         d->minesRemaining--;
     } else {
@@ -165,23 +155,19 @@ void GameScreen::flagChanged(bool didFlag)
     ui->minesRemainingLabel->setText(QString::number(d->minesRemaining));
 }
 
-QPoint GameScreen::indexToPoint(int index)
-{
+QPoint GameScreen::indexToPoint(int index) {
     return QPoint(index % d->width, index / d->width);
 }
 
-int GameScreen::pointToIndex(QPoint point)
-{
+int GameScreen::pointToIndex(QPoint point) {
     return point.y() * d->width + point.x();
 }
 
-void GameScreen::resizeEvent(QResizeEvent*event)
-{
+void GameScreen::resizeEvent(QResizeEvent* event) {
     resizeTiles();
 }
 
-void GameScreen::resizeTiles()
-{
+void GameScreen::resizeTiles() {
     int targetHeight = qMax(SC_DPI(50), static_cast<int>(this->height() * 0.05));
     int fontHeight = targetHeight - 18;
 
@@ -197,8 +183,7 @@ void GameScreen::resizeTiles()
     emit boardResized();
 }
 
-void GameScreen::setup()
-{
+void GameScreen::setup() {
     //Clear out the tiles
     for (GameTile* tile : d->tiles) {
         ui->gameGrid->removeWidget(tile);
@@ -208,8 +193,7 @@ void GameScreen::setup()
 
 }
 
-void GameScreen::finishSetup()
-{
+void GameScreen::finishSetup() {
     ui->minesRemainingLabel->setText(QString::number(d->minesRemaining));
 
     d->tiles.first()->setFocus();
@@ -225,11 +209,12 @@ void GameScreen::finishSetup()
     resizeTiles();
 
     MusicEngine::setBackgroundMusic("crypto");
+//    MusicEngine::setBackgroundMusic(QUrl::fromLocalFile("/home/victor/Downloads/crypto.mp3"));
+//    MusicEngine::setBackgroundMusic(QUrl::fromLocalFile("/home/victor/silence.wav"));
     MusicEngine::playBackgroundMusic();
 }
 
-void GameScreen::startGame(int width, int height, int mines)
-{
+void GameScreen::startGame(int width, int height, int mines) {
     d->width = width;
     d->mines = mines;
 
@@ -262,8 +247,7 @@ void GameScreen::startGame(int width, int height, int mines)
     finishSetup();
 }
 
-bool GameScreen::loadGame(QDataStream*stream)
-{
+bool GameScreen::loadGame(QDataStream* stream) {
     setup();
 
     //Start loading in data
@@ -322,8 +306,7 @@ bool GameScreen::loadGame(QDataStream*stream)
     return true;
 }
 
-void GameScreen::saveGame(QDataStream*stream)
-{
+void GameScreen::saveGame(QDataStream* stream) {
     *stream << d->width;
     *stream << d->remainingTileCount;
     *stream << d->mines;
@@ -337,8 +320,7 @@ void GameScreen::saveGame(QDataStream*stream)
     }
 }
 
-void GameScreen::distributeMines(QPoint clickLocation)
-{
+void GameScreen::distributeMines(QPoint clickLocation) {
     Q_ASSERT(!d->gameStarted);
 
     //Distribute the mines across the board
@@ -365,8 +347,7 @@ void GameScreen::distributeMines(QPoint clickLocation)
     d->gameStarted = true;
 }
 
-void GameScreen::performGameOver()
-{
+void GameScreen::performGameOver() {
     d->gameIsOver = true;
     d->focusPreventer->setFocus();
 
@@ -376,31 +357,31 @@ void GameScreen::performGameOver()
             QTime time(0, 0);
             time = time.addSecs(d->startDateTime.secsTo(QDateTime::currentDateTimeUtc()));
             information = tr("You completed a %1×%2 board with %n mines in %4. Divine!", nullptr, d->mines)
-                          .arg(d->width)
-                          .arg(boardDimensions().height())
-                          .arg(time.toString("mm:ss"));
+                .arg(d->width)
+                .arg(boardDimensions().height())
+                .arg(time.toString("mm:ss"));
         } else {
             information = tr("You completed a %1×%2 board with %n mines.", nullptr, d->mines)
-                          .arg(d->width)
-                          .arg(boardDimensions().height());
+                .arg(d->width)
+                .arg(boardDimensions().height());
             information.append("\n\n").append(d->dateTimeNotShownReason);
         }
         Congratulation* go = new Congratulation(this);
         go->setInformation(information);
-        connect(go, &Congratulation::playAgain, this, [=] {
+        connect(go, &Congratulation::playAgain, this, [ = ] {
             go->deleteLater();
             startGame(d->width, boardDimensions().height(), d->mines);
         });
-        connect(go, &Congratulation::mainMenu, this, [=] {
+        connect(go, &Congratulation::mainMenu, this, [ = ] {
             go->deleteLater();
             emit returnToMainMenu();
         });
-        connect(go, &Congratulation::review, this, [=] {
+        connect(go, &Congratulation::review, this, [ = ] {
             go->deleteLater();
         });
     } else {
         MusicEngine::pauseBackgroundMusic();
-        (new tPromise<void>([=](QString error) {
+        (new tPromise<void>([ = ](QString error) {
             for (int i = 0; i < d->tiles.count(); i++) {
                 d->tiles.at(i)->metaObject()->invokeMethod(d->tiles.at(i), "performGameOver", Qt::QueuedConnection);
 
@@ -414,17 +395,17 @@ void GameScreen::performGameOver()
 
             }
             QThread::sleep(1);
-        }))->then([=] {
+        }))->then([ = ] {
             GameOver* go = new GameOver(this);
-            connect(go, &GameOver::playAgain, this, [=] {
+            connect(go, &GameOver::playAgain, this, [ = ] {
                 go->deleteLater();
                 startGame(d->width, boardDimensions().height(), d->mines);
             });
-            connect(go, &GameOver::mainMenu, this, [=] {
+            connect(go, &GameOver::mainMenu, this, [ = ] {
                 go->deleteLater();
                 emit returnToMainMenu();
             });
-            connect(go, &GameOver::review, this, [=] {
+            connect(go, &GameOver::review, this, [ = ] {
                 go->deleteLater();
             });
         });
@@ -435,8 +416,7 @@ void GameScreen::performGameOver()
     }
 }
 
-void GameScreen::currentTileChanged()
-{
+void GameScreen::currentTileChanged() {
     GameTile* tile = this->currentTile();
     if (tile != nullptr) {
         //Update button text accordingly
@@ -472,8 +452,7 @@ void GameScreen::currentTileChanged()
     }
 }
 
-void GameScreen::updateTimer()
-{
+void GameScreen::updateTimer() {
     if (d->showDateTime) {
         QString seconds = QString::number(d->startDateTime.secsTo(QDateTime::currentDateTimeUtc()));
         QString display = seconds.rightJustified(3, QLatin1Char('0'), true);
@@ -483,8 +462,7 @@ void GameScreen::updateTimer()
     }
 }
 
-void GameScreen::on_menuButton_clicked()
-{
+void GameScreen::on_menuButton_clicked() {
     //Disable the time counting as it is now inaccurate
     d->showDateTime = false;
     d->dateTimeNotShownReason = tr("Your time was not recorded because pausing the game invalidates the timer.");
@@ -494,19 +472,19 @@ void GameScreen::on_menuButton_clicked()
     MusicEngine::playSoundEffect(MusicEngine::Pause);
 
     PauseScreen* screen = new PauseScreen(this);
-    connect(screen, &PauseScreen::resume, this, [=] {
+    connect(screen, &PauseScreen::resume, this, [ = ] {
         screen->deleteLater();
         d->tiles.first()->setFocus();
     });
-    connect(screen, &PauseScreen::newGame, this, [=] {
+    connect(screen, &PauseScreen::newGame, this, [ = ] {
         screen->deleteLater();
         startGame(d->width, boardDimensions().height(), d->mines);
     });
-    connect(screen, &PauseScreen::mainMenu, this, [=] {
+    connect(screen, &PauseScreen::mainMenu, this, [ = ] {
         screen->deleteLater();
         emit returnToMainMenu();
     });
-    connect(screen, &PauseScreen::provideMetadata, this, [=](QVariantMap* metadata) {
+    connect(screen, &PauseScreen::provideMetadata, this, [ = ](QVariantMap * metadata) {
         //TODO
         QStringList description;
         description.append(tr("%1 × %2 board").arg(d->width).arg(boardDimensions().height()));
