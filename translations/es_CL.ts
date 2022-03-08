@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" sourcelanguage="en_US">
+<TS version="2.1" sourcelanguage="en_US" language="es_CL">
 <context>
     <name>CannedMessagePopover</name>
     <message>
@@ -29,7 +29,7 @@
     <message>
         <location filename="../game/congratulation.ui" line="109"/>
         <source>Play Again</source>
-        <translation type="unfinished"></translation>
+        <translation>nuevo juego</translation>
     </message>
     <message>
         <location filename="../game/congratulation.ui" line="116"/>
