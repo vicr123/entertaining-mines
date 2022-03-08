@@ -11,12 +11,12 @@
     <message>
         <location filename="../online/cannedmessagepopover.cpp" line="37"/>
         <source>Select</source>
-        <translation type="unfinished"></translation>
+        <translation>escoger</translation>
     </message>
     <message>
         <location filename="../online/cannedmessagepopover.cpp" line="38"/>
         <source>Back</source>
-        <translation type="unfinished"></translation>
+        <translation>volver</translation>
     </message>
 </context>
 <context>
@@ -29,7 +29,7 @@
     <message>
         <location filename="../game/congratulation.ui" line="109"/>
         <source>Play Again</source>
-        <translation type="unfinished"></translation>
+        <translation>juega de nuevo</translation>
     </message>
     <message>
         <location filename="../game/congratulation.ui" line="116"/>
@@ -39,12 +39,12 @@
     <message>
         <location filename="../game/congratulation.ui" line="123"/>
         <source>Review</source>
-        <translation type="unfinished"></translation>
+        <translation>revisar</translation>
     </message>
     <message>
         <location filename="../game/congratulation.ui" line="130"/>
         <source>See the board</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ver el tablero</translation>
     </message>
     <message>
         <location filename="../game/congratulation.ui" line="153"/>
@@ -78,17 +78,17 @@
     <message>
         <location filename="../information/creditsscreen.ui" line="180"/>
         <source>DEVELOPED BY</source>
-        <translation type="unfinished"></translation>
+        <translation>desarrollado por</translation>
     </message>
     <message>
         <location filename="../information/creditsscreen.ui" line="233"/>
         <source>MUSIC BY</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">música hecha por</translation>
     </message>
     <message>
         <location filename="../information/creditsscreen.ui" line="264"/>
         <source>Background Music - &quot;Crypto&quot;</source>
-        <translation type="unfinished"></translation>
+        <translation>Música de fondo echo por - &quot;Crypto&quot;</translation>
     </message>
     <message>
         <location filename="../information/creditsscreen.ui" line="277"/>
@@ -118,7 +118,7 @@
     <message>
         <location filename="../information/creditsscreen.cpp" line="44"/>
         <source>Back</source>
-        <translation type="unfinished"></translation>
+        <translation>atras</translation>
     </message>
 </context>
 <context>
