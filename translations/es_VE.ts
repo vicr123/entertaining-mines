@@ -50,12 +50,12 @@
         <location filename="../game/congratulation.ui" line="153"/>
         <location filename="../game/congratulation.cpp" line="28"/>
         <source>Main Menu</source>
-        <translation type="unfinished"></translation>
+        <translation>menú principal</translation>
     </message>
     <message>
         <location filename="../game/congratulation.ui" line="160"/>
         <source>Return to the Main Menu</source>
-        <translation type="unfinished"></translation>
+        <translation>volver al menú principal</translation>
     </message>
     <message>
         <location filename="../game/congratulation.cpp" line="27"/>
@@ -68,12 +68,12 @@
     <message>
         <location filename="../information/creditsscreen.ui" line="71"/>
         <source>Credits</source>
-        <translation type="unfinished"></translation>
+        <translation>creditos</translation>
     </message>
     <message>
         <location filename="../information/creditsscreen.ui" line="158"/>
         <source>Entertaining Mines</source>
-        <translation type="unfinished"></translation>
+        <translation>Minas de Entretenimiento</translation>
     </message>
     <message>
         <location filename="../information/creditsscreen.ui" line="180"/>
@@ -83,7 +83,7 @@
     <message>
         <location filename="../information/creditsscreen.ui" line="233"/>
         <source>MUSIC BY</source>
-        <translation type="unfinished">música hecha por</translation>
+        <translation>musica de</translation>
     </message>
     <message>
         <location filename="../information/creditsscreen.ui" line="264"/>
