@@ -6,7 +6,7 @@
     <message>
         <location filename="../online/cannedmessagepopover.ui" line="71"/>
         <source>Send a canned message</source>
-        <translation type="unfinished"></translation>
+        <translation>Enviar un mensaje enlatado</translation>
     </message>
     <message>
         <location filename="../online/cannedmessagepopover.cpp" line="37"/>
@@ -24,7 +24,7 @@
     <message>
         <location filename="../game/congratulation.ui" line="79"/>
         <source>Congratulations!</source>
-        <translation type="unfinished"></translation>
+        <translation>¡Buen trabajo!</translation>
     </message>
     <message>
         <location filename="../game/congratulation.ui" line="109"/>
@@ -34,7 +34,7 @@
     <message>
         <location filename="../game/congratulation.ui" line="116"/>
         <source>Play a new board with the same parameters</source>
-        <translation type="unfinished"></translation>
+        <translation>comenzar un jeugo neuvo con los mismo parámetros</translation>
     </message>
     <message>
         <location filename="../game/congratulation.ui" line="123"/>
@@ -126,7 +126,7 @@
     <message>
         <location filename="../game/gameover.ui" line="79"/>
         <source>Game Over</source>
-        <translation type="unfinished"></translation>
+        <translation>Fin del juego</translation>
     </message>
     <message>
         <location filename="../game/gameover.ui" line="96"/>
