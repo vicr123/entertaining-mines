@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" sourcelanguage="en_US">
+<TS version="2.1" sourcelanguage="en_US" language="cs_CZ">
 <context>
     <name>CannedMessagePopover</name>
     <message>
@@ -11,12 +11,12 @@
     <message>
         <location filename="../online/cannedmessagepopover.cpp" line="37"/>
         <source>Select</source>
-        <translation type="unfinished"></translation>
+        <translation>Vybrat</translation>
     </message>
     <message>
         <location filename="../online/cannedmessagepopover.cpp" line="38"/>
         <source>Back</source>
-        <translation type="unfinished"></translation>
+        <translation>Zpět</translation>
     </message>
 </context>
 <context>
@@ -24,17 +24,17 @@
     <message>
         <location filename="../game/congratulation.ui" line="79"/>
         <source>Congratulations!</source>
-        <translation type="unfinished"></translation>
+        <translation>Gratuluji!</translation>
     </message>
     <message>
         <location filename="../game/congratulation.ui" line="109"/>
         <source>Play Again</source>
-        <translation type="unfinished"></translation>
+        <translation>Hrát znovu</translation>
     </message>
     <message>
         <location filename="../game/congratulation.ui" line="116"/>
         <source>Play a new board with the same parameters</source>
-        <translation type="unfinished"></translation>
+        <translation>Nová hra se stejnými parametry</translation>
     </message>
     <message>
         <location filename="../game/congratulation.ui" line="123"/>
@@ -44,23 +44,23 @@
     <message>
         <location filename="../game/congratulation.ui" line="130"/>
         <source>See the board</source>
-        <translation type="unfinished"></translation>
+        <translation>Zobrazit desku</translation>
     </message>
     <message>
         <location filename="../game/congratulation.ui" line="153"/>
         <location filename="../game/congratulation.cpp" line="28"/>
         <source>Main Menu</source>
-        <translation type="unfinished"></translation>
+        <translation>Hlavní menu</translation>
     </message>
     <message>
         <location filename="../game/congratulation.ui" line="160"/>
         <source>Return to the Main Menu</source>
-        <translation type="unfinished"></translation>
+        <translation>Vrátit se do hlavního menu</translation>
     </message>
     <message>
         <location filename="../game/congratulation.cpp" line="27"/>
         <source>Select</source>
-        <translation type="unfinished"></translation>
+        <translation>Vybrat</translation>
     </message>
 </context>
 <context>
@@ -68,47 +68,47 @@
     <message>
         <location filename="../information/creditsscreen.ui" line="71"/>
         <source>Credits</source>
-        <translation type="unfinished"></translation>
+        <translation>Zásluhy</translation>
     </message>
     <message>
         <location filename="../information/creditsscreen.ui" line="158"/>
         <source>Entertaining Mines</source>
-        <translation type="unfinished"></translation>
+        <translation>Zábavné miny</translation>
     </message>
     <message>
         <location filename="../information/creditsscreen.ui" line="180"/>
         <source>DEVELOPED BY</source>
-        <translation type="unfinished"></translation>
+        <translation>VYVÍJELI</translation>
     </message>
     <message>
         <location filename="../information/creditsscreen.ui" line="233"/>
         <source>MUSIC BY</source>
-        <translation type="unfinished"></translation>
+        <translation>HUDBA OD</translation>
     </message>
     <message>
         <location filename="../information/creditsscreen.ui" line="264"/>
         <source>Background Music - &quot;Crypto&quot;</source>
-        <translation type="unfinished"></translation>
+        <translation>Hudba na pozadí - &quot;Crypto&quot;</translation>
     </message>
     <message>
         <location filename="../information/creditsscreen.ui" line="277"/>
         <source>Defeat Music - &quot;Piano Between&quot;</source>
-        <translation type="unfinished"></translation>
+        <translation>Hudba při prohře - &quot;Piano Between&quot;</translation>
     </message>
     <message>
         <location filename="../information/creditsscreen.ui" line="290"/>
         <source>Victory Music - &quot;Disco Sting&quot;</source>
-        <translation type="unfinished"></translation>
+        <translation>Hudba při výhře - &quot;Disco Sting&quot;</translation>
     </message>
     <message>
         <location filename="../information/creditsscreen.ui" line="303"/>
         <source>Music is licensed under Creative Commons: BY 4.0</source>
-        <translation type="unfinished"></translation>
+        <translation>Hudba je licencována pod Creative Commons: OD 4.0</translation>
     </message>
     <message>
         <location filename="../information/creditsscreen.ui" line="358"/>
         <source>Copyright © 2021 Victor Tran.</source>
-        <translation type="unfinished"></translation>
+        <translation>Copyright © 2021 Victor Tran.</translation>
     </message>
     <message>
         <location filename="../information/creditsscreen.ui" line="368"/>
